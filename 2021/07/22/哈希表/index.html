@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>哈希表 | Dragon Liu</title><meta name="description" content="哈希表"><meta name="keywords" content="数据结构"><meta name="author" content="Dragon Liu"><meta name="copyright" content="Dragon Liu"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="http://q4wib37p7.bkt.clouddn.com/BlogFavicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="canonical" href="https://Dragonliu2018.github.io/2021/07/22/哈希表/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="哈希表"><meta name="twitter:description" content="哈希表"><meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/2ON8Kt5.jpg"><meta property="og:type" content="article"><meta property="og:title" content="哈希表"><meta property="og:url" content="https://Dragonliu2018.github.io/2021/07/22/哈希表/"><meta property="og:site_name" content="Dragon Liu"><meta property="og:description" content="哈希表"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/2ON8Kt5.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="prev" title="STL" href="https://Dragonliu2018.github.io/2021/07/22/STL/"><link rel="next" title="KMP算法" href="https://Dragonliu2018.github.io/2021/04/10/KMP算法/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight_copy: 'true',
+  highlight_lang: 'true',
+  highlight_shrink: 'true',
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    title: '添加书签',
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天'
+
+  
+}</script><link rel="alternate" href="/atom.xml" title="Dragon Liu" type="application/atom+xml">
+</head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div class="auto_open" id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#哈希表"><span class="toc-text">哈希表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常见的散列函数"><span class="toc-text">常见的散列函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#解决冲突"><span class="toc-text">解决冲突</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#STL"><span class="toc-text">STL</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#练习"><span class="toc-text">练习</span></a></li></ol></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/2ON8Kt5.jpg)"><div id="page-header"><span class="pull-left"> <a class="blog_title" id="site-name" href="/">Dragon Liu</a></span><div class="open toggle-menu pull-right"><div class="menu-icon-first"></div><div class="menu-icon-second"></div><div class="menu-icon-third"></div></div><div class="menu_mask"></div><span class="pull-right menus"><div class="mobile_author_icon"><img class="lozad avatar_img" src="https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/avatar.png" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/friend_404.gif'"></div><div class="mobile_post_data"><div class="mobile_data_item text-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">38</div></a></div></div><div class="mobile_data_item text-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">15</div></a></div></div><div class="mobile_data_item text-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">5</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/books/"><i class="fa-fw fa fa-book"></i><span> 读书</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-photo"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/theme/"><i class="fa-fw fa fa-superpowers"></i><span> 主题</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><script>document.body.addEventListener('touchstart', function(){ });</script></div></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title"><div class="posttitle">哈希表</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2021-07-22<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> 更新于 2021-09-21</time><span class="post-meta__separator mobile_hidden">|</span><span class="mobile_hidden"><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/数据结构和算法/">数据结构和算法</a></span><div class="post-meta-wordcount"><span>字数总计: </span><span class="word-count">828</span><span class="post-meta__separator">|</span><span>阅读时长: 2 分钟</span><span class="post-meta__separator">|</span><span>阅读量: </span><span id="busuanzi_value_page_pv"></span></div></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><h1 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h1><p>散列表（Hash Table），又称哈希表。是一种数据结构，特点是：数据元素的关键字与其存储地址直接相关，通过“散列函数（哈希函数）”：$Addr=H(key)$。</p>
+<p>若不同的关键字通过散列函数映射到同一个值，则称它们为“同义词”</p>
+<p>通过散列函数确定的位置已经存放了其他元素，则称这种情况为“冲突”</p>
+<h1 id="常见的散列函数"><a href="#常见的散列函数" class="headerlink" title="常见的散列函数"></a>常见的散列函数</h1><ol>
+<li>除留余数法——$H(key)=key\%p$，散列表表长为$m$，取一个不大于$m$但最接近或等于$m$的质数$p$</li>
+<li>直接定址法——$H(key)=key$ 或$H(key)=a*key +b$，其中，a和b是常数。这种方法计算最简单，且不会产生冲突。它适合关键字的分布基本连续的情况，若关键字分布不连续，空位较多，则会造成存储空间的浪费。</li>
+<li>数字分析法——选取数码分布较为均匀的若干位作为散列地址，如手机号码。</li>
+<li>平方取中法——取关键字的平方值的中间几位作为散列地址。具体取多少位要视实际情况而定。这种方法得到的散列地址与关键字的每位都有关系，因此使得散列地址分布比较均匀，适用于关键字的每位取值都不够均匀或均小于散列地址所需的位数。如身份证号。</li>
+</ol>
+<h1 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h1><ol>
+<li>拉链法：把所有“同义词”存储在一个链表中，Java中的HashMap、HashSet</li>
+<li>开放定址法：可存放新表项的空闲地址既向它的同义词表项开放，又向它的非同义词表项开放。其数学递推公式为：$H<em>{i}=\left(H(k e y)+d</em>{i}\right) \% m$，$i=0,1,2, \ldots, k \quad(k \leqslant m-1)$，其中$m$表示散列表表长；$d_i$为增量序列；$i$可理解为“第$i$次发生冲突”<ul>
+<li>线性探测法：$d_{i}=0,1,2,3, \ldots, m-1$; 即发生冲突时，每次往后探测相邻的下一个单元是否为空<ul>
+<li>线性探测法很容易造成同义词、非同义词的“聚集（堆积）”现象，严重影响查找效率</li>
+<li>产生原因——冲突后再探测一定是放在某个连续的位置</li>
+</ul>
+</li>
+<li>平方探测法：当 $\mathrm{d}_{\mathrm{i}}=\mathbf{0}^{2}, \mathbf{1}^{2},-\mathbf{1}^{2}, \mathbf{2}^{2},-\mathbf{2}^{2}, \ldots, \mathbf{k}^{2},-\mathbf{k}^{2}$ 时，称为平方探测法，又称二次探测法其中 $\mathbf{k} \leq \mathbf{m} / \mathbf{2}$<ul>
+<li>比起线性探测法更不易产生“聚集（堆积）”问题</li>
+<li>散列表长度m必须是一个可以表示成$4j+3$的素数，才能探测到所有位置</li>
+</ul>
+</li>
+<li>伪随机序列法：$\mathbf{d}<em>{\mathrm{i}}$ 是一个伪随机序列，如 $\mathrm{d}</em>{\mathrm{i}}=\mathbf{0 , 5 , 2 4 , 1 1 , \ldots}$</li>
+</ul>
+</li>
+<li>再散列法：除了原始的散列函数$H(key)$之外，多准备几个散列函数，当散列函数冲突时，用下一个散列函数计算一个新地址，直到不冲突为止：$\mathrm{H}<em>{\mathrm{i}}=\mathrm{RH}</em>{\mathrm{i}}(\mathrm{Key}) \quad \mathrm{i}=1,2,3 \ldots ., \mathrm{k}$</li>
+</ol>
+<h1 id="STL"><a href="#STL" class="headerlink" title="STL"></a>STL</h1><ul>
+<li>无序集合：unordered_set</li>
+<li>无序字典：unordered_map</li>
+</ul>
+<h1 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h1><ol>
+<li><a href="https://www.luogu.com.cn/problem/P4305" target="_blank" rel="noopener">洛谷——P4305 [JLOI2011]不重复数字</a>：需要加快读</li>
+<li><a href="https://leetcode-cn.com/problems/two-sum/" target="_blank" rel="noopener">leetcode-1 两数之和 (简单)</a></li>
+<li></li>
+</ol>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Dragon Liu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://Dragonliu2018.github.io/2021/07/22/哈希表/">https://Dragonliu2018.github.io/2021/07/22/哈希表/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://Dragonliu2018.github.io">Dragon Liu</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/数据结构/">数据结构    </a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/2ON8Kt5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></div></div><nav class="pagination_post" id="pagination"><div class="prev-post pull-left"><a href="/2021/07/22/STL/"><img class="prev_cover lozad" data-src="https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/v2-e7b364ab77c6fa4a79cde9a45782ec80_720w.png" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/404.jpg'"><div class="label">上一篇</div><div class="prev_info"><span>STL</span></div></a></div><div class="next-post pull-right"><a href="/2021/04/10/KMP算法/"><img class="next_cover lozad" data-src="https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/k1.png" onerror="onerror=null;src='https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/404.jpg'"><div class="label">下一篇</div><div class="next_info"><span>KMP算法</span></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2021/04/09/并查集/" title="并查集"><img class="relatedPosts_cover lozad" data-src="https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/dsu1.png"><div class="relatedPosts_title">并查集</div></a></div></div><div class="clear_both"></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var notify = false == true ? true : false;
+var verify = false == true ? true : false;
+var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+
+window.valine = new Valine({
+  el:'#vcomment',
+  notify:notify,
+  verify:verify,
+  appId:'Pbjl2Wajl9och0xVbR5eqoH1-gzGzoHsz',
+  appKey:'PgxFh1wV6pyMMllhxs7NJijb',
+  placeholder:'Please leave your footprints',
+  avatar:'monsterid',
+  guest_info:guest_info,
+  pageSize:'10',
+  lang:'zh-cn',
+  recordIP: true
+});</script></div></div></div><footer><div id="footer"><div class="copyright">&copy;2019 - 2021 By Dragon Liu</div><div class="framework-info"><span>驱动 </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://dragonliu.tk">blog</a>!</div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><section class="rightside" id="rightside"><a id="to_comment" href="#post-comment"><i class="scroll_to_comment fa fa-comments"></i></a><i class="fa fa-book" id="readmode" title="阅读模式"> </i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换">繁</a><i class="nightshift fa fa-moon-o" id="nightshift" title="夜间模式"></i></section><div class=" " id="post_bottom"><div id="post_bottom_items"><a id="mobile_to_comment" href="#post-comment"><i class="mobile_scroll_to_comment fa fa-comments"></i></a><i class="fa fa-list" id="mobile_toc"></i><div id="toc_mobile"><div class="toc_mobile_headline">目录</div><ol class="toc_mobile_items"><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#哈希表"><span class="toc_mobile_items-number">1.</span> <span class="toc_mobile_items-text">哈希表</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#常见的散列函数"><span class="toc_mobile_items-number">2.</span> <span class="toc_mobile_items-text">常见的散列函数</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#解决冲突"><span class="toc_mobile_items-number">3.</span> <span class="toc_mobile_items-text">解决冲突</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#STL"><span class="toc_mobile_items-number">4.</span> <span class="toc_mobile_items-text">STL</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#练习"><span class="toc_mobile_items-number">5.</span> <span class="toc_mobile_items-text">练习</span></a></li></ol></div></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  CommonHTML: {
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "HTML-CSS": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "SVG": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script async src="/js/search/local-search.js"></script><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="/js/third-party/fireworks.js"></script><script src="/js/nightshift.js"></script><script id="ribbon" src="/js/third-party/canvas-ribbon.js" size="150" alpha="0.6" zindex="-1" data-click="false"></script><script color="0,0,255" opacity="0.7" zindex="-1" count="99" src="https://cdn.jsdelivr.net/gh/jerryc127/CDN/js/canvas-nest.js"></script><script src="/js/tw_cn.js"></script><script>translateInitilization()
+
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@1.2.2/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script>const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+observer.observe();</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div><script type="text/javascript" src="/js/dytitle.js"></script>
+<script src="//code.tidio.co/tpwa8ucmrevvxpnhenh6elnstjmuuz5v.js" async></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"superSample":2,"width":100,"height":100,"position":"left"},"mobile":{"show":false},"react":{"opacityDefault":0.9,"opacityOnHover":0.5},"log":false});</script></body></html>
