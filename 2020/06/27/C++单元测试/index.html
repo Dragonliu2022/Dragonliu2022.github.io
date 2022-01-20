@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000">
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top">
+  
+  
+  <title>C++单元测试 | Melo&#39;s Blogs</title>
+  <meta name="description" content="0 情景导入 在实习时，用到了C++中的单元测试，整理一下。分别在Windows和子系统（Ubuntu）中安装配置。  1 安装googletest  1.1 环境配置   下载gtest：git clone https://github.com/google/googletest.git   安装cmake：  CMake 是一个开源的跨平台的自动化构建系统，主要用于 C++ 的工程构建、测试">
+<meta name="keywords" content="C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++单元测试">
+<meta property="og:url" content="https://Dragonliu2018.github.io/2020/06/27/C++单元测试/index.html">
+<meta property="og:site_name" content="Dragon Liu">
+<meta property="og:description" content="0 情景导入 在实习时，用到了C++中的单元测试，整理一下。分别在Windows和子系统（Ubuntu）中安装配置。  1 安装googletest  1.1 环境配置   下载gtest：git clone https://github.com/google/googletest.git   安装cmake：  CMake 是一个开源的跨平台的自动化构建系统，主要用于 C++ 的工程构建、测试">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2021/10/06/quPZfVpBdWGCriI.png">
+<meta property="og:image" content="https://i.loli.net/2021/10/06/c2JyQ41X3nImkTK.png">
+<meta property="og:updated_time" content="2022-01-20T08:05:13.779Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C++单元测试">
+<meta name="twitter:description" content="0 情景导入 在实习时，用到了C++中的单元测试，整理一下。分别在Windows和子系统（Ubuntu）中安装配置。  1 安装googletest  1.1 环境配置   下载gtest：git clone https://github.com/google/googletest.git   安装cmake：  CMake 是一个开源的跨平台的自动化构建系统，主要用于 C++ 的工程构建、测试">
+<meta name="twitter:image" content="https://i.loli.net/2021/10/06/quPZfVpBdWGCriI.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://Dragonliu2018.github.io/2020/06/27/C++单元测试/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Dragon Liu" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+  
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/dragonliu2018" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Melo&#39;s Blogs</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Nuaa CSer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Nanjing, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dragonliu2018" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/其他/">其他</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/安全/">安全</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发/">开发</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">8</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Crypto/">Crypto</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区块链/">区块链</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/C/" style="font-size: 13.5px;">C++</a> <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Crypto/" style="font-size: 13.5px;">Crypto</a> <a href="/tags/Hexo/" style="font-size: 13.5px;">Hexo</a> <a href="/tags/Web/" style="font-size: 13.5px;">Web</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/区块链/" style="font-size: 13px;">区块链</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/环境与工具/">环境与工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/09/21/Hexo迁移到新电脑/" class="title">Hexo迁移到新电脑</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-09-21T15:28:58.000Z" itemprop="datePublished">2021-09-21</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/安全/">安全</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/03/04/MAC地址欺骗/" class="title">MAC地址泛洪与欺骗</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-03-04T13:47:39.000Z" itemprop="datePublished">2021-03-04</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/安全/">安全</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/02/17/ARP欺骗-断网攻击/" class="title">ARP攻击</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-02-17T04:03:04.000Z" itemprop="datePublished">2021-02-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/其他/">其他</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/11/08/图像滤波整理/" class="title">图像滤波整理</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-11-08T13:53:34.000Z" itemprop="datePublished">2020-11-08</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/安全/">安全</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/07/13/CTF编码加密整理/" class="title">CTF编码加密整理</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-07-13T01:04:26.000Z" itemprop="datePublished">2020-07-13</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-C++单元测试" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      C++单元测试
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/06/27/C++单元测试/" class="article-date">
+	  <time datetime="2020-06-27T01:44:22.000Z" itemprop="datePublished">2020-06-27</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/开发/">开发</a>►<a class="article-category-link" href="/categories/环境与工具/">环境与工具</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/C/">C++</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/06/27/C++单元测试/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 566(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="0-情景导入"><a class="markdownIt-Anchor" href="#0-情景导入"></a> 0 情景导入</h1>
+<p>在实习时，用到了C++中的单元测试，整理一下。分别在Windows和子系统（Ubuntu）中安装配置。</p>
+<h1 id="1-安装googletest"><a class="markdownIt-Anchor" href="#1-安装googletest"></a> 1 安装googletest</h1>
+<h2 id="11-环境配置"><a class="markdownIt-Anchor" href="#11-环境配置"></a> 1.1 环境配置</h2>
+<ol>
+<li>
+<p>下载gtest：<code>git clone https://github.com/google/googletest.git</code></p>
+</li>
+<li>
+<p>安装cmake：</p>
+<blockquote>
+<p>CMake 是一个开源的跨平台的自动化构建系统，主要用于 C++ 的工程构建、测试以及打包等自动化操作。它能根据开发者编写的 CMakeLists.txt 规则文件，在不同的平台输出所需要的工程文件，然后开发者可以按照常见的构建方式使用生成的工程文件编译最终的程序。</p>
+<p>CMake 是 Cross platform Make 的缩写，虽然名字中含有“make”，但是 CMake 和 Linux 上常见的 make 系统有所区别，是更上一层的构建系统。</p>
+</blockquote>
+<ul>
+<li><strong>Windows</strong>：首先打开 CMake 官方网站，在<a href="https://cmake.org/download/" target="_blank" rel="noopener">下载页面</a>选择 Windows win64-x64 Installer 下载并安装</li>
+<li><strong>Ubuntu</strong>：<code>apt-get install cmake</code></li>
+</ul>
+</li>
+<li>
+<p>windows配置clion编译环境：<a href="https://www.jianshu.com/p/1aa989808e15" target="_blank" rel="noopener">Window10上CLion极简配置教程</a></p>
+</li>
+</ol>
+<h2 id="12-编译gtest库"><a class="markdownIt-Anchor" href="#12-编译gtest库"></a> 1.2 编译gtest库</h2>
+<ol>
+<li>
+<p>使用clion打开<code>googletest</code>代码目录，选择<code>gtest</code>项目编译生成：</p>
+<img src="https://i.loli.net/2021/10/06/quPZfVpBdWGCriI.png" width="800" height="300" alt="图片名称" align="center">
+</li>
+<li>
+<p>显示下面的信息表明编译成功（显示<code>Error running</code>，不用管他），生成的<code>libgtestd.a</code>即为gtest的库文件，项目中引用这个库文件就能使用gtest了。</p>
+<img src="https://i.loli.net/2021/10/06/c2JyQ41X3nImkTK.png" width="900" height="200" alt="图片名称" align="center">
+</li>
+</ol>
+<h1 id="2-使用googletest"><a class="markdownIt-Anchor" href="#2-使用googletest"></a> 2 使用googletest</h1>
+<h2 id="21-引入库"><a class="markdownIt-Anchor" href="#21-引入库"></a> 2.1 引入库</h2>
+<p>新建测试项目<code>cliontest</code>，将libgtestd.a文件拷贝到该代码根路径的lib路径下，在CMakeList.txt中加上以下内容：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加上库文件的路径，注意相对路径</span></span><br><span class="line"><span class="keyword">link_directories</span>(lib/)</span><br><span class="line"><span class="comment"># 添加可执行文件</span></span><br><span class="line"><span class="keyword">add_executable</span>(cliontest main.cpp)</span><br><span class="line"><span class="comment"># 链接gtest库文件</span></span><br><span class="line"><span class="keyword">target_link_libraries</span>(cliontest libgtestd.a)</span><br></pre></td></tr></table></figure>
+<h2 id="22-引入头文件"><a class="markdownIt-Anchor" href="#22-引入头文件"></a> 2.2 引入头文件</h2>
+<p>拷贝<code>googletest/include</code>下的<code>gtest</code>目录到项目下的<code>include</code>目录下，然后在CMakeList.txt中添加上对应的调用：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">include_directories</span>(</span><br><span class="line">    <span class="keyword">include</span>/</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>然后在代码中添加头文件gtest/gtest.h就可以使用了。</p>
+<h2 id="23-测试"><a class="markdownIt-Anchor" href="#23-测试"></a> 2.3 测试</h2>
+<p>修改<code>main.cpp</code>并运行：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"gtest/gtest.h"</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">TEST(add, zero) &#123;</span><br><span class="line">    EXPECT_EQ(<span class="number">0</span>, add(<span class="number">0</span>, <span class="number">0</span>));</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">TEST(add, positive_number) &#123;</span><br><span class="line">    EXPECT_EQ(<span class="number">3</span>, add(<span class="number">1</span>, <span class="number">2</span>));</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">TEST(add, negative_number) &#123;</span><br><span class="line">    EXPECT_EQ(<span class="number">-3</span>, add(<span class="number">-1</span>, <span class="number">-2</span>));</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ::testing::InitGoogleTest();</span><br><span class="line">    <span class="keyword">return</span> RUN_ALL_TESTS();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="3-gtest的使用教程"><a class="markdownIt-Anchor" href="#3-gtest的使用教程"></a> 3 gtest的使用教程</h1>
+<p>参考文档：<a href="https://github.com/google/googletest/blob/master/googletest/docs/primer.md" target="_blank" rel="noopener">Googletest Primer</a>，google官方出品。</p>
+<p><a href="https://www.dyxmq.cn/program/usage-of-googletest.html" target="_blank" rel="noopener">https://www.dyxmq.cn/program/usage-of-googletest.html</a></p>
+<h1 id="7-参考"><a class="markdownIt-Anchor" href="#7-参考"></a> 7 参考</h1>
+<ul>
+<li><a href="https://meishizaolunzi.com/cmake-an-zhuang-zhi-nan/" target="_blank" rel="noopener">CMake 安装指南</a></li>
+<li></li>
+</ul>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://Dragonliu2018.github.io/2020/06/27/C++单元测试/" title="C++单元测试" target="_blank" rel="external">https://Dragonliu2018.github.io/2020/06/27/C++单元测试/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/dragonliu2018" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/dragonliu2018" target="_blank"><span class="text-dark">Melo&#39;s Blogs</span><small class="ml-1x">Nuaa CSer</small></a></h3>
+        <div>Life is painting a picture, not doing a sum.</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2020/07/07/RSA题型整理/" title="RSA题型整理"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2020/06/27/C++项目的全量覆盖率和增量覆盖率/" title="C++项目的全量覆盖率和增量覆盖率"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dragonliu2018" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'Pbjl2Wajl9och0xVbR5eqoH1-gzGzoHsz',
+    appKey: 'PgxFh1wV6pyMMllhxs7NJijb',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
