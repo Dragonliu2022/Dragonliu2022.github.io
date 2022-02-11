@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000">
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top">
+  
+  
+  <title>python模块graphviz使用教程 | Melo&#39;s Blogs</title>
+  <meta name="description" content="1 情景引入 前几个月师姐给了个任务——恶意样本行为可视化，输入为xml文件，一个文件代表一个恶意样本。请教学姐学长同学等，加上观看效果图，得出实现思路：python解析xml文件，使用python模块graphviz进行可视化；之后使用图数据库neo4j进行对比。  下面对graphviz进行整理。  2 Graphviz Graphviz 是一个自动排版的作图软件，可以生成 png pdf">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python模块graphviz使用教程">
+<meta property="og:url" content="https://Dragonliu2018.github.io/2022/02/03/python模块graphviz使用教程/index.html">
+<meta property="og:site_name" content="Dragon Liu">
+<meta property="og:description" content="1 情景引入 前几个月师姐给了个任务——恶意样本行为可视化，输入为xml文件，一个文件代表一个恶意样本。请教学姐学长同学等，加上观看效果图，得出实现思路：python解析xml文件，使用python模块graphviz进行可视化；之后使用图数据库neo4j进行对比。  下面对graphviz进行整理。  2 Graphviz Graphviz 是一个自动排版的作图软件，可以生成 png pdf">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://s2.loli.net/2022/02/10/jnNf9Xrms8CYgxz.png">
+<meta property="og:image" content="https://s2.loli.net/2022/02/10/mJkzIuyaMLCQbAS.png">
+<meta property="og:image" content="https://s2.loli.net/2022/02/10/Nbm9RlSDYFyxtZX.png">
+<meta property="og:image" content="https://s2.loli.net/2022/02/10/hID7tuFsmfijoQv.png">
+<meta property="og:updated_time" content="2022-02-10T13:56:56.815Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python模块graphviz使用教程">
+<meta name="twitter:description" content="1 情景引入 前几个月师姐给了个任务——恶意样本行为可视化，输入为xml文件，一个文件代表一个恶意样本。请教学姐学长同学等，加上观看效果图，得出实现思路：python解析xml文件，使用python模块graphviz进行可视化；之后使用图数据库neo4j进行对比。  下面对graphviz进行整理。  2 Graphviz Graphviz 是一个自动排版的作图软件，可以生成 png pdf">
+<meta name="twitter:image" content="https://s2.loli.net/2022/02/10/jnNf9Xrms8CYgxz.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://Dragonliu2018.github.io/2022/02/03/python模块graphviz使用教程/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Dragon Liu" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/dragonliu2018" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Melo&#39;s Blogs</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Nuaa CSer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Nanjing, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dragonliu2018" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/安全/">安全</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发/">开发</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/折腾/">折腾</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/旅行/">旅行</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/音乐/">音乐</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书评/">书评</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区块链/">区块链</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摘抄/">摘抄</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电视剧/">电视剧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/示例/">示例</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纪录片/">纪录片</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/C/" style="font-size: 13.33px;">C++</a> <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/Web/" style="font-size: 13.33px;">Web</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/书评/" style="font-size: 13px;">书评</a> <a href="/tags/区块链/" style="font-size: 13px;">区块链</a> <a href="/tags/摘抄/" style="font-size: 13px;">摘抄</a> <a href="/tags/电影/" style="font-size: 13px;">电影</a> <a href="/tags/电视剧/" style="font-size: 13px;">电视剧</a> <a href="/tags/示例/" style="font-size: 13.67px;">示例</a> <a href="/tags/纪录片/" style="font-size: 13px;">纪录片</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/开发/">开发</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/02/11/Python取整/" class="title">Python取整</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-11T08:25:36.000Z" itemprop="datePublished">2022-02-11</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/开发/">开发</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/02/11/Python中的类-class/" class="title">Python中的类(class)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-11T06:07:06.000Z" itemprop="datePublished">2022-02-11</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/开发/">开发</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/02/11/Python多线程、多进程编程/" class="title">Python多线程、多进程编程</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-11T06:05:20.000Z" itemprop="datePublished">2022-02-11</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/环境与工具/">环境与工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/02/11/Pycharm-IntelliJ-的Low-Memory问题/" class="title">Pycharm(IntelliJ系列)的Low Memory问题</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-11T03:22:48.000Z" itemprop="datePublished">2022-02-11</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/开发/">开发</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/02/10/Python集合-set-操作/" class="title">Python集合(set)操作</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-10T09:22:22.000Z" itemprop="datePublished">2022-02-10</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+  <aside class="sidebar sidebar-toc collapse   in  " id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-情景引入"><span class="toc-number">1.</span> <span class="toc-text"> 1 情景引入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-graphviz"><span class="toc-number">2.</span> <span class="toc-text"> 2 Graphviz</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-python-graphviz"><span class="toc-number">3.</span> <span class="toc-text"> 3 python graphviz</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#31-安装"><span class="toc-number">3.1.</span> <span class="toc-text"> 3.1 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#32-使用"><span class="toc-number">3.2.</span> <span class="toc-text"> 3.2 使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#33-中文乱码"><span class="toc-number">3.3.</span> <span class="toc-text"> 3.3 中文乱码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#34-端点-边-字体颜色"><span class="toc-number">3.4.</span> <span class="toc-text"> 3.4 端点、边、字体颜色</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#35-端点的形状"><span class="toc-number">3.5.</span> <span class="toc-text"> 3.5 端点的形状</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#36-rank"><span class="toc-number">3.6.</span> <span class="toc-text"> 3.6 Rank</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#37-排版"><span class="toc-number">3.7.</span> <span class="toc-text"> 3.7 排版</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#38-name参数中不能有英文冒号"><span class="toc-number">3.8.</span> <span class="toc-text"> 3.8 name参数中不能有英文冒号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#39-报错graphvizbackendexecutecalledprocesserror"><span class="toc-number">3.9.</span> <span class="toc-text"> 3.9 报错：graphviz.backend.execute.CalledProcessError</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#x-参考"><span class="toc-number">4.</span> <span class="toc-text"> X 参考</span></a></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-python模块graphviz使用教程" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      python模块graphviz使用教程
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/02/03/python模块graphviz使用教程/" class="article-date">
+	  <time datetime="2022-02-03T03:11:14.000Z" itemprop="datePublished">2022-02-03</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/开发/">开发</a>►<a class="article-category-link" href="/categories/环境与工具/">环境与工具</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/python/">python</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/02/03/python模块graphviz使用教程/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 930(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="1-情景引入"><a class="markdownIt-Anchor" href="#1-情景引入"></a> 1 情景引入</h1>
+<p>前几个月师姐给了个任务——恶意样本行为可视化，输入为xml文件，一个文件代表一个恶意样本。请教学姐学长同学等，加上观看效果图，得出实现思路：python解析xml文件，使用python模块graphviz进行可视化；之后使用图数据库neo4j进行对比。</p>
+<img src="https://s2.loli.net/2022/02/10/jnNf9Xrms8CYgxz.png" width="600" height="400" alt="图片名称" align="center" id="65">
+<p>下面对graphviz进行整理。</p>
+<h1 id="2-graphviz"><a class="markdownIt-Anchor" href="#2-graphviz"></a> 2 Graphviz</h1>
+<p>Graphviz 是一个自动排版的作图软件，可以生成 png pdf 等格式。</p>
+<ul>
+<li><a href="https://graphviz.org/documentation/" target="_blank" rel="noopener">Graphviz官网</a></li>
+<li><a href="https://www.cnblogs.com/shuqin/p/11897207.html" target="_blank" rel="noopener">Graphviz 画图的一些总结</a></li>
+</ul>
+<h1 id="3-python-graphviz"><a class="markdownIt-Anchor" href="#3-python-graphviz"></a> 3 python graphviz</h1>
+<p>python graphviz则是graphviz的python实现。我们可以通过python graphviz实现轻松完成各种流程图的绘制。</p>
+<ul>
+<li><a href="https://graphviz.readthedocs.io/en/stable/manual.html" target="_blank" rel="noopener">python graphviz官方文档</a></li>
+<li><a href="https://blog.csdn.net/LuohenYJ/article/details/106172201" target="_blank" rel="noopener">[python] python模块graphviz使用入门</a></li>
+</ul>
+<h2 id="31-安装"><a class="markdownIt-Anchor" href="#31-安装"></a> 3.1 安装</h2>
+<ol>
+<li>
+<p>安装python graphviz木块（本机使用的是python3.9）:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install graphviz</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>除了python安装外，本机还需要安装Graphviz<a href="https://www.graphviz.org/download/" target="_blank" rel="noopener">(下载页面)</a>，并确保包含dot可执行文件的目录在系统路径上。安装过程中需要添加PATH：</p>
+<img src="https://s2.loli.net/2022/02/10/mJkzIuyaMLCQbAS.png" width="400" height="300" alt="图片名称" align="center" id="35">
+<p>否则出现下面的报错：(重启Pycharm生效)</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">graphviz.backend.execute.ExecutableNotFound: failed to execute WindowsPath(<span class="string">'dot'</span>), make sure the Graphviz executables are on your systems<span class="string">' PATH</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://blog.csdn.net/lizzy05/article/details/88529030" target="_blank" rel="noopener">graphviz.backend.ExecutableNotFound: failed to execute [‘dot’, ‘-Tpng’, ‘-O’, ‘t est.gv’]问题解决方法</a></p>
+<p>解决报错：添加环境变量</p>
+<img src="https://s2.loli.net/2022/02/10/Nbm9RlSDYFyxtZX.png" width="800" height="400" alt="图片名称" align="center" id="66">
+</li>
+</ol>
+<h2 id="32-使用"><a class="markdownIt-Anchor" href="#32-使用"></a> 3.2 使用</h2>
+<p>该graphviz模块提供了两个类：Graph和 Digraph。它们分别以DOT语言为无向图和有向图创建图描述。它们具有相同的 API。示例如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> graphviz <span class="keyword">import</span> Digraph</span><br><span class="line"></span><br><span class="line">dot = Digraph(comment=<span class="string">'恶意样本行为可视化'</span>, format=<span class="string">'jpg'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化端点</span></span><br><span class="line">dot.node(name=<span class="string">'n1'</span>, label=<span class="string">'端点A'</span>, color=<span class="string">"#008000"</span>, fontcolor=<span class="string">"#000000"</span>, style=<span class="string">"filled"</span>, shape=<span class="string">"rectangle"</span>, fontname=<span class="string">"Microsoft YaHei"</span>)</span><br><span class="line">dot.node(name=<span class="string">'n2'</span>, label=<span class="string">'端点B'</span>, color=<span class="string">"#FFD700"</span>, fontcolor=<span class="string">"#000000"</span>, style=<span class="string">"filled"</span>, shape=<span class="string">"circle"</span>, fontname=<span class="string">"Microsoft YaHei"</span>)</span><br><span class="line">dot.node(name=<span class="string">'n3'</span>, label=<span class="string">'端点C'</span>, color=<span class="string">"#0000FF"</span>, fontcolor=<span class="string">"#FFFFFF"</span>, style=<span class="string">"filled"</span>, shape=<span class="string">"oval"</span>, fontname=<span class="string">"Microsoft YaHei"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 布局 L-左 R-右 T-上 B-下</span></span><br><span class="line">dot.attr(rankdir=<span class="string">'LR'</span>)  <span class="comment"># 自左向右</span></span><br><span class="line"><span class="comment"># dot.attr(rankdir='RL')</span></span><br><span class="line"><span class="comment"># dot.attr(rankdir='TB')  # 默认</span></span><br><span class="line"><span class="comment"># dot.attr(rankdir='BT')</span></span><br><span class="line"><span class="comment"># 初始化边</span></span><br><span class="line">dot.edge(<span class="string">'n1'</span>, <span class="string">'n2'</span>, label=<span class="string">"边1"</span>, color=<span class="string">"#000000"</span>, fontcolor=<span class="string">"#000000"</span>, style=<span class="string">""</span>, fontname=<span class="string">"Microsoft YaHei"</span>)</span><br><span class="line">dot.edge(<span class="string">'n1'</span>, <span class="string">'n3'</span>, label=<span class="string">"边2"</span>, color=<span class="string">"#FF0000"</span>, fontcolor=<span class="string">"#FF0000"</span>, style=<span class="string">"dashed"</span>, fontname=<span class="string">"Microsoft YaHei"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存文件，view=False时将不自动打开文件</span></span><br><span class="line"><span class="comment"># dot.render("test_graphviz.gv", format='jpg', view=True)</span></span><br><span class="line"><span class="comment"># 不保存文件，仅仅自动打开</span></span><br><span class="line">u = dot.unflatten(stagger=<span class="number">1</span>)</span><br><span class="line">u.view()</span><br></pre></td></tr></table></figure>
+<p>显示如下：</p>
+<img src="https://s2.loli.net/2022/02/10/hID7tuFsmfijoQv.png" width="400" height="300" alt="图片名称" align="center" id="67">
+<h2 id="33-中文乱码"><a class="markdownIt-Anchor" href="#33-中文乱码"></a> 3.3 中文乱码</h2>
+<p>如果出现中文乱码，多半是因为没有设置fontname为支持中文显示的字体，只需要在node或者edge中添加<code>fontname=&quot;Microsoft YaHei&quot;</code>，即可正常显示。</p>
+<ul>
+<li><a href="https://blog.csdn.net/MAILLIBIN/article/details/100581857" target="_blank" rel="noopener">参考</a></li>
+</ul>
+<h2 id="34-端点-边-字体颜色"><a class="markdownIt-Anchor" href="#34-端点-边-字体颜色"></a> 3.4 端点、边、字体颜色</h2>
+<p>在node或者edge中添加<code>color=&quot;#000000&quot;, fontcolor=&quot;#000000&quot;</code>即可，具体颜色可以参考：</p>
+<ul>
+<li><a href="https://graphviz.gitlab.io/doc/info/colors.html" target="_blank" rel="noopener">官网颜色</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E9%A1%B5%E9%A2%9C%E8%89%B2" target="_blank" rel="noopener">维基百科——X11名称编码</a></li>
+</ul>
+<h2 id="35-端点的形状"><a class="markdownIt-Anchor" href="#35-端点的形状"></a> 3.5 端点的形状</h2>
+<p>在node中添加<code>shape=&quot;xxx&quot;</code>即可，具体需要什么形状可以在<a href="https://graphviz.gitlab.io/doc/info/shapes.html" target="_blank" rel="noopener">官网</a>中查找。</p>
+<h2 id="36-rank"><a class="markdownIt-Anchor" href="#36-rank"></a> 3.6 Rank</h2>
+<p><a href="https://blog.csdn.net/youwen21/article/details/98397954" target="_blank" rel="noopener">GraphViz DOT有向图 (四)node节点布局控制之rank,group,subgraph</a></p>
+<h2 id="37-排版"><a class="markdownIt-Anchor" href="#37-排版"></a> 3.7 排版</h2>
+<p>如上面的示例，使用<code>dot.attr(rankdir='xx')</code>来确定排版，作用范围为使用该行代码之后，下一个<code>dot.attr(rankdir='xx')</code>代码之前。</p>
+<h2 id="38-name参数中不能有英文冒号"><a class="markdownIt-Anchor" href="#38-name参数中不能有英文冒号"></a> 3.8 name参数中不能有英文冒号</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dot.node(name=<span class="string">'n1'</span>, label=<span class="string">'n1'</span>)</span><br><span class="line">dot.node(name=<span class="string">'n2:3'</span>, label=<span class="string">'n2:3'</span>)</span><br><span class="line">dot.edge(<span class="string">'n1'</span>, <span class="string">'n2:3'</span>)</span><br></pre></td></tr></table></figure>
+<p><code>dot.node(name=&quot;xxx&quot;)</code> 如果name参数含有英文逗号，则会报错，导致画图错误：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Warning: node n2, port 3 unrecognized</span><br></pre></td></tr></table></figure>
+<p>常见的思路是使用python将name参数改成中文冒号，label参数是原来的英文冒号，达到正确显示的目的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string = <span class="string">"http://gsstudio.info/panel"</span></span><br><span class="line">label = repr(string)</span><br><span class="line">name = repr(string.replace(<span class="string">":"</span>, <span class="string">"："</span>))</span><br></pre></td></tr></table></figure>
+<p><code>repr</code>函数是防止字符串转义的，详细见<a href="dragonliu.tk/2022/02/09/python%E4%B8%AD%E9%98%B2%E6%AD%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E4%B9%89/">博客——python中防止字符串转义</a>。</p>
+<h2 id="39-报错graphvizbackendexecutecalledprocesserror"><a class="markdownIt-Anchor" href="#39-报错graphvizbackendexecutecalledprocesserror"></a> 3.9 报错：graphviz.backend.execute.CalledProcessError</h2>
+<p>具体报错：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">graphviz.backend.execute.CalledProcessError: Command <span class="string">'[WindowsPath('</span>dot<span class="string">'), '</span>-Kdot<span class="string">', '</span>-Tjpg<span class="string">', '</span>-O<span class="string">', '</span>57630-0.xml.gv<span class="string">']'</span> returned non-zero <span class="built_in">exit</span> status 3221225477. [stderr: b<span class="string">''</span>]</span><br></pre></td></tr></table></figure>
+<h1 id="x-参考"><a class="markdownIt-Anchor" href="#x-参考"></a> X 参考</h1>
+<ul>
+<li></li>
+</ul>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://Dragonliu2018.github.io/2022/02/03/python模块graphviz使用教程/" title="python模块graphviz使用教程" target="_blank" rel="external">https://Dragonliu2018.github.io/2022/02/03/python模块graphviz使用教程/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/dragonliu2018" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/dragonliu2018" target="_blank"><span class="text-dark">Melo&#39;s Blogs</span><small class="ml-1x">Nuaa CSer</small></a></h3>
+        <div>Life is painting a picture, not doing a sum.</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2022/02/09/python中防止字符串转义/" title="python中防止字符串转义"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2022/02/02/VMWare虚拟机Ubuntu20-04-LTS磁盘空间不足的解决方法整理/" title="VMWare虚拟机Ubuntu20.04 LTS磁盘空间不足的解决方法整理"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn " data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">    <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dragonliu2018" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'Pbjl2Wajl9och0xVbR5eqoH1-gzGzoHsz',
+    appKey: 'PgxFh1wV6pyMMllhxs7NJijb',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>

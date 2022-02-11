@@ -18,13 +18,13 @@
   
   
   <title>ARP攻击 | Melo&#39;s Blogs</title>
-  <meta name="description" content="1 理论1.1 原理 　　ARP攻击主要是通过伪造IP地址和MAC地址进行欺骗。假设A、B、C位于同一局域网内，A是PC主机，B是攻击主机，C是路由器。攻击过程如下：  A将包含目标IP地址(10.0.1.1)信息的ARP Request，广播到网络中的所有主机，源主机A的IP地址和MAC地址都包括在ARP请求中； C确定ARP请求中的IP地址与自己的IP地址匹配，则将主机A的IP地址和MAC地址">
+  <meta name="description" content="1 理论  1.1 原理  ARP攻击主要是通过伪造IP地址和MAC地址进行欺骗。假设A、B、C位于同一局域网内，A是PC主机，B是攻击主机，C是路由器。攻击过程如下：  A将包含目标IP地址(10.0.1.1)信息的ARP Request，广播到网络中的所有主机，源主机A的IP地址和MAC地址都包括在ARP请求中； C确定ARP请求中的IP地址与自己的IP地址匹配，则将主机A的IP地址和MAC">
 <meta name="keywords" content="Web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ARP攻击">
 <meta property="og:url" content="https://Dragonliu2018.github.io/2021/02/17/ARP欺骗-断网攻击/index.html">
 <meta property="og:site_name" content="Dragon Liu">
-<meta property="og:description" content="1 理论1.1 原理 　　ARP攻击主要是通过伪造IP地址和MAC地址进行欺骗。假设A、B、C位于同一局域网内，A是PC主机，B是攻击主机，C是路由器。攻击过程如下：  A将包含目标IP地址(10.0.1.1)信息的ARP Request，广播到网络中的所有主机，源主机A的IP地址和MAC地址都包括在ARP请求中； C确定ARP请求中的IP地址与自己的IP地址匹配，则将主机A的IP地址和MAC地址">
+<meta property="og:description" content="1 理论  1.1 原理  ARP攻击主要是通过伪造IP地址和MAC地址进行欺骗。假设A、B、C位于同一局域网内，A是PC主机，B是攻击主机，C是路由器。攻击过程如下：  A将包含目标IP地址(10.0.1.1)信息的ARP Request，广播到网络中的所有主机，源主机A的IP地址和MAC地址都包括在ARP请求中； C确定ARP请求中的IP地址与自己的IP地址匹配，则将主机A的IP地址和MAC">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/Snipaste_2021-02-18_14-20-42.jpg">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/v2-0e29e8f13495c269f3fdc723aa2255c2_r.jpg">
@@ -33,7 +33,7 @@
 <meta property="og:updated_time" content="2022-01-21T13:34:37.181Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ARP攻击">
-<meta name="twitter:description" content="1 理论1.1 原理 　　ARP攻击主要是通过伪造IP地址和MAC地址进行欺骗。假设A、B、C位于同一局域网内，A是PC主机，B是攻击主机，C是路由器。攻击过程如下：  A将包含目标IP地址(10.0.1.1)信息的ARP Request，广播到网络中的所有主机，源主机A的IP地址和MAC地址都包括在ARP请求中； C确定ARP请求中的IP地址与自己的IP地址匹配，则将主机A的IP地址和MAC地址">
+<meta name="twitter:description" content="1 理论  1.1 原理  ARP攻击主要是通过伪造IP地址和MAC地址进行欺骗。假设A、B、C位于同一局域网内，A是PC主机，B是攻击主机，C是路由器。攻击过程如下：  A将包含目标IP地址(10.0.1.1)信息的ARP Request，广播到网络中的所有主机，源主机A的IP地址和MAC地址都包括在ARP请求中； C确定ARP请求中的IP地址与自己的IP地址匹配，则将主机A的IP地址和MAC">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/Snipaste_2021-02-18_14-20-42.jpg">
   <!-- Canonical links -->
   <link rel="canonical" href="https://Dragonliu2018.github.io/2021/02/17/ARP欺骗-断网攻击/index.html">
@@ -196,7 +196,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/安全/">安全</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发/">开发</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/折腾/">折腾</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/旅行/">旅行</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/音乐/">音乐</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/安全/">安全</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发/">开发</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/折腾/">折腾</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/旅行/">旅行</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/音乐/">音乐</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -206,7 +206,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书评/">书评</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区块链/">区块链</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摘抄/">摘抄</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电视剧/">电视剧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/示例/">示例</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纪录片/">纪录片</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书评/">书评</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区块链/">区块链</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摘抄/">摘抄</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电视剧/">电视剧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/示例/">示例</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纪录片/">纪录片</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -216,7 +216,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/C/" style="font-size: 13.33px;">C++</a> <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/Web/" style="font-size: 13.33px;">Web</a> <a href="/tags/python/" style="font-size: 13.67px;">python</a> <a href="/tags/书评/" style="font-size: 13px;">书评</a> <a href="/tags/区块链/" style="font-size: 13px;">区块链</a> <a href="/tags/摘抄/" style="font-size: 13px;">摘抄</a> <a href="/tags/电影/" style="font-size: 13px;">电影</a> <a href="/tags/电视剧/" style="font-size: 13px;">电视剧</a> <a href="/tags/示例/" style="font-size: 14px;">示例</a> <a href="/tags/纪录片/" style="font-size: 13px;">纪录片</a>
+      <a href="/tags/C/" style="font-size: 13.33px;">C++</a> <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/Web/" style="font-size: 13.33px;">Web</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/书评/" style="font-size: 13px;">书评</a> <a href="/tags/区块链/" style="font-size: 13px;">区块链</a> <a href="/tags/摘抄/" style="font-size: 13px;">摘抄</a> <a href="/tags/电影/" style="font-size: 13px;">电影</a> <a href="/tags/电视剧/" style="font-size: 13px;">电视剧</a> <a href="/tags/示例/" style="font-size: 13.67px;">示例</a> <a href="/tags/纪录片/" style="font-size: 13px;">纪录片</a>
     </div>
   </div>
 
@@ -225,7 +225,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -241,13 +241,58 @@
             
             <div class="item-inner">
               <p class="item-category">
+                <a class="category-link" href="/categories/开发/">开发</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/02/11/Python取整/" class="title">Python取整</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-11T08:25:36.000Z" itemprop="datePublished">2022-02-11</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/开发/">开发</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/02/11/Python中的类-class/" class="title">Python中的类(class)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-11T06:07:06.000Z" itemprop="datePublished">2022-02-11</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/开发/">开发</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/02/11/Python多线程、多进程编程/" class="title">Python多线程、多进程编程</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-11T06:05:20.000Z" itemprop="datePublished">2022-02-11</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
                 <a class="category-link" href="/categories/环境与工具/">环境与工具</a>
               </p>
               <p class="item-title">
-                <a href="/2022/02/02/VMWare虚拟机Ubuntu20-04-LTS磁盘空间不足的解决方法整理/" class="title">VMWare虚拟机Ubuntu20.04 LTS磁盘空间不足的解决方法整理</a>
+                <a href="/2022/02/11/Pycharm-IntelliJ-的Low-Memory问题/" class="title">Pycharm(IntelliJ系列)的Low Memory问题</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-02-02T09:38:02.000Z" itemprop="datePublished">2022-02-02</time>
+                <time datetime="2022-02-11T03:22:48.000Z" itemprop="datePublished">2022-02-11</time>
               </p>
             </div>
           </li>
@@ -256,58 +301,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/安全/">安全</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/环境与工具/">环境与工具</a>
+                <a class="category-link" href="/categories/开发/">开发</a>
               </p>
               <p class="item-title">
-                <a href="/2022/01/30/Cuckoo-Sandbox-安装教程/" class="title">Cuckoo Sandbox 安装教程</a>
+                <a href="/2022/02/10/Python集合-set-操作/" class="title">Python集合(set)操作</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-01-30T13:56:31.000Z" itemprop="datePublished">2022-01-30</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/影视/">影视</a>
-              </p>
-              <p class="item-title">
-                <a href="/2022/01/21/示例-《xxx》纪录片/" class="title">示例-《xxx》纪录片</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-01-21T15:12:43.000Z" itemprop="datePublished">2022-01-21</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/影视/">影视</a>
-              </p>
-              <p class="item-title">
-                <a href="/2022/01/21/《乡村爱情系列》电视剧/" class="title">《乡村爱情系列》电视剧</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-01-21T15:11:41.000Z" itemprop="datePublished">2022-01-21</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/影视/">影视</a>
-              </p>
-              <p class="item-title">
-                <a href="/2022/01/21/示例-《城南旧事》电影/" class="title">示例-《城南旧事》电影</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-01-21T15:10:36.000Z" itemprop="datePublished">2022-01-21</time>
+                <time datetime="2022-02-10T09:22:22.000Z" itemprop="datePublished">2022-02-10</time>
               </p>
             </div>
           </li>
@@ -327,7 +327,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-理论"><span class="toc-number">1.</span> <span class="toc-text">1 理论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-原理"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-知识储备"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 知识储备</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-实战"><span class="toc-number">2.</span> <span class="toc-text">2 实战</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-断网攻击"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 断网攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-窃听"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 窃听</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-存在问题"><span class="toc-number">3.</span> <span class="toc-text">3 存在问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-参考"><span class="toc-number">4.</span> <span class="toc-text">4 参考</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-理论"><span class="toc-number">1.</span> <span class="toc-text"> 1 理论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#11-原理"><span class="toc-number">1.1.</span> <span class="toc-text"> 1.1 原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-知识储备"><span class="toc-number">1.2.</span> <span class="toc-text"> 1.2 知识储备</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-实战"><span class="toc-number">2.</span> <span class="toc-text"> 2 实战</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#21-断网攻击"><span class="toc-number">2.1.</span> <span class="toc-text"> 2.1 断网攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-窃听"><span class="toc-number">2.2.</span> <span class="toc-text"> 2.2 窃听</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-存在问题"><span class="toc-number">3.</span> <span class="toc-text"> 3 存在问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-参考"><span class="toc-number">4.</span> <span class="toc-text"> 4 参考</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -388,62 +388,89 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="1-理论"><a href="#1-理论" class="headerlink" title="1 理论"></a>1 理论</h1><h2 id="1-1-原理"><a href="#1-1-原理" class="headerlink" title="1.1 原理"></a>1.1 原理</h2><p><img src="https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/Snipaste_2021-02-18_14-20-42.jpg" width="600" height="400" alt="图片名称" align="center" id="25"></p>
-<p>　　ARP攻击主要是通过伪造IP地址和MAC地址进行欺骗。假设A、B、C位于<code>同一局域网</code>内，A是PC主机，B是攻击主机，C是路由器。攻击过程如下：</p>
+        <h1 id="1-理论"><a class="markdownIt-Anchor" href="#1-理论"></a> 1 理论</h1>
+<h2 id="11-原理"><a class="markdownIt-Anchor" href="#11-原理"></a> 1.1 原理</h2>
+<img src="https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/Snipaste_2021-02-18_14-20-42.jpg" width="600" height="400" alt="图片名称" align="center" id="25">
+<p>ARP攻击主要是通过伪造IP地址和MAC地址进行欺骗。假设A、B、C位于<code>同一局域网</code>内，A是PC主机，B是攻击主机，C是路由器。攻击过程如下：</p>
 <ol>
 <li>A将包含目标IP地址(10.0.1.1)信息的ARP Request，广播到网络中的所有主机，源主机A的IP地址和MAC地址都包括在ARP请求中；</li>
-<li>C确定ARP请求中的IP地址与自己的IP地址匹配，则将主机A的IP地址和MAC地址<a href="https://baike.baidu.com/item/映射" target="_blank" rel="noopener">映射</a>添加到本地ARP缓存中；并将包含其MAC地址的ARP回复消息直接发送回主机A；</li>
+<li>C确定ARP请求中的IP地址与自己的IP地址匹配，则将主机A的IP地址和MAC地址<a href="https://baike.baidu.com/item/%E6%98%A0%E5%B0%84" target="_blank" rel="noopener">映射</a>添加到本地ARP缓存中；并将包含其MAC地址的ARP回复消息直接发送回主机A；</li>
 <li>当主机A收到从C发来的ARP回复消息时，会用C的IP和MAC地址映射更新ARP缓存；</li>
 <li>攻击主机B向A发送伪造的ARP应答包，在这个伪造的应答包中，IP地址为C的IP地址，而MAC地址为B的MAC地址；</li>
 <li>A在接收到这个应答包后，会刷新它的ARP缓存，这样在A的ARP缓存表中就出现了IP-C与MAC-B的映射；</li>
 <li>攻击主机B向C发送伪造的ARP应答包，在这个伪造的应答包中，IP地址为A的IP地址，而MAC地址为B的MAC地址；</li>
 <li>C在接收到这个应答包后，会刷新它的ARP缓存，这样在C的ARP缓存表中就出现了IP-A与MAC-B的映射。</li>
 </ol>
-<p>　　这样一来，A与C之间的流量交换都会经过B，可以进行<code>监听、篡改信息、断网攻击</code>。</p>
-<h2 id="1-2-知识储备"><a href="#1-2-知识储备" class="headerlink" title="1.2 知识储备"></a>1.2 知识储备</h2><ul>
-<li><p><strong>网关</strong>：网关(Gateway)在网络层以上实现网络互连。由于历史的原因，许多有关TCP/IP的文献曾经把网络层使用的路由器称为网关，在今天很多局域网采用路由来接入网络，因此通常指的网关就是路由器的IP！</p>
+<p>这样一来，A与C之间的流量交换都会经过B，可以进行<code>监听、篡改信息、断网攻击</code>。</p>
+<h2 id="12-知识储备"><a class="markdownIt-Anchor" href="#12-知识储备"></a> 1.2 知识储备</h2>
+<ul>
+<li>
+<p><strong>网关</strong>：网关(Gateway)在网络层以上实现网络互连。由于历史的原因，许多有关TCP/IP的文献曾经把网络层使用的路由器称为网关，在今天很多局域网采用路由来接入网络，因此通常指的网关就是路由器的IP！</p>
 </li>
-<li><p><strong>Bridged(桥接模式)</strong>：将主机网卡与虚拟机虚拟的网卡利用虚拟网桥进行通信。其网络结构如下图所示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/v2-0e29e8f13495c269f3fdc723aa2255c2_r.jpg" width="800" height="600" alt="图片名称" align="center" id="26"></p>
+<li>
+<p><strong>Bridged(桥接模式)</strong>：将主机网卡与虚拟机虚拟的网卡利用虚拟网桥进行通信。其网络结构如下图所示：</p>
+<img src="https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/v2-0e29e8f13495c269f3fdc723aa2255c2_r.jpg" width="800" height="600" alt="图片名称" align="center" id="26">
 </li>
 </ul>
-<h1 id="2-实战"><a href="#2-实战" class="headerlink" title="2 实战"></a>2 实战</h1><h2 id="2-1-断网攻击"><a href="#2-1-断网攻击" class="headerlink" title="2.1 断网攻击"></a>2.1 断网攻击</h2><ol>
-<li><p><strong>准备</strong>：<code>kali</code>虚拟机，设置桥接模式，否则断网无效；</p>
+<h1 id="2-实战"><a class="markdownIt-Anchor" href="#2-实战"></a> 2 实战</h1>
+<h2 id="21-断网攻击"><a class="markdownIt-Anchor" href="#21-断网攻击"></a> 2.1 断网攻击</h2>
+<ol>
+<li>
+<p><strong>准备</strong>：<code>kali</code>虚拟机，设置桥接模式，否则断网无效；</p>
 </li>
-<li><p><strong>查看自己的网卡信息</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/Snipaste_2021-02-17_22-40-47.jpg" width="600" height="300" alt="图片名称" align="center" id="27"></p>
+<li>
+<p><strong>查看自己的网卡信息</strong></p>
+<img src="https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/Snipaste_2021-02-17_22-40-47.jpg" width="600" height="300" alt="图片名称" align="center" id="27">
 </li>
-<li><p><strong>找到目标IP</strong>：<code>nmap</code>扫描内网(命令<code>nmap -sP 192.168.1.*</code>)或使用安卓端的<code>Net Analyzer</code>进行<code>LAN Scan</code>；</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/Snipaste_2021-02-17_22-04-15.jpg" width="600" height="300" alt="图片名称" align="center" id="28"></p>
+<li>
+<p><strong>找到目标IP</strong>：<code>nmap</code>扫描内网(命令<code>nmap -sP 192.168.1.*</code>)或使用安卓端的<code>Net Analyzer</code>进行<code>LAN Scan</code>；</p>
+<img src="https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/Snipaste_2021-02-17_22-04-15.jpg" width="600" height="300" alt="图片名称" align="center" id="28">
 </li>
-<li><p><strong>arpspoof进行攻击</strong>：执行下面命令后目的主机无法上网；</p>
+<li>
+<p><strong>arpspoof进行攻击</strong>：执行下面命令后目的主机无法上网；</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arpspoof -i 自己网卡信息 -t 目标IP -r 网关</span><br><span class="line">例：arpspoof -i eth0  -t  192.168.1.7 -r 192.168.1.1</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="2-2-窃听"><a href="#2-2-窃听" class="headerlink" title="2.2 窃听"></a>2.2 窃听</h2><ol>
+<h2 id="22-窃听"><a class="markdownIt-Anchor" href="#22-窃听"></a> 2.2 窃听</h2>
+<ol>
 <li><strong>开启IP转发</strong>：<code>echo 1 &gt;/proc/sys/net/ipv4/ip_forward</code></li>
 <li><strong>arp攻击</strong>：<code>arpspoof -i eth0 -t targetIP -r gateway（具体参考上面）</code></li>
 <li><strong>窃听</strong>：<code>driftnet -i eth0（你的网卡）</code>或<code>wireshark</code></li>
 </ol>
-<h1 id="3-存在问题"><a href="#3-存在问题" class="headerlink" title="3 存在问题"></a>3 存在问题</h1><ul>
+<h1 id="3-存在问题"><a class="markdownIt-Anchor" href="#3-存在问题"></a> 3 存在问题</h1>
+<ul>
 <li>攻击局域网其他系统时，kali虚拟机可以上网，但是其宿主机(物理机win10)无法上网；<font color="#008000">开启IP转发可以解决</font></li>
 <li>窃听时目标主机虽然可以ping通，当时网速太慢且不稳定；driftnet无法正确抓取图片；</li>
 </ul>
-<h1 id="4-参考"><a href="#4-参考" class="headerlink" title="4 参考"></a>4 参考</h1><ul>
-<li><a href="https://baike.baidu.com/item/ARP/609343" target="_blank" rel="noopener">百度百科-ARP</a></li>
-<li><p><a href="https://baike.baidu.com/item/ARP%E6%94%BB%E5%87%BB#:~:text=ARP%20%E7%97%85%E6%AF%92%E6%94%BB%E5%87%BB%E6%98%AF%E5%B1%80%E5%9F%9F%E7%BD%91,%E6%AD%A3%E5%B8%B8%E4%B8%8A%E7%BD%91%E5%92%8C%E9%80%9A%E4%BF%A1%E5%AE%89%E5%85%A8%E3%80%82" target="_blank" rel="noopener">百度百科-ARP攻击</a></p>
+<h1 id="4-参考"><a class="markdownIt-Anchor" href="#4-参考"></a> 4 参考</h1>
+<ul>
+<li>
+<p><a href="https://baike.baidu.com/item/ARP/609343" target="_blank" rel="noopener">百度百科-ARP</a></p>
 </li>
-<li><p><a href="https://baike.baidu.com/item/ARP%E6%AC%BA%E9%AA%97" target="_blank" rel="noopener">百度百科-ARP欺骗</a></p>
+<li>
+<p><a href="https://baike.baidu.com/item/ARP%E6%94%BB%E5%87%BB#:~:text=ARP%20%E7%97%85%E6%AF%92%E6%94%BB%E5%87%BB%E6%98%AF%E5%B1%80%E5%9F%9F%E7%BD%91,%E6%AD%A3%E5%B8%B8%E4%B8%8A%E7%BD%91%E5%92%8C%E9%80%9A%E4%BF%A1%E5%AE%89%E5%85%A8%E3%80%82" target="_blank" rel="noopener">百度百科-ARP攻击</a></p>
 </li>
-<li><a href="https://baike.baidu.com/item/%E7%BD%91%E5%85%B3" target="_blank" rel="noopener">百度百科-网关</a></li>
-<li><p><a href="https://zhuanlan.zhihu.com/p/56658358#:~:text=%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F%E5%B0%B1%E6%98%AF%E5%B0%86%E4%B8%BB%E6%9C%BA,%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AE%E8%80%8C%E4%B8%8D%E5%B9%B2%E6%89%B0%E3%80%82" target="_blank" rel="noopener">vmware 虚拟机三种网络模式—“桥接、NAT 、仅主机”区别？</a></p>
+<li>
+<p><a href="https://baike.baidu.com/item/ARP%E6%AC%BA%E9%AA%97" target="_blank" rel="noopener">百度百科-ARP欺骗</a></p>
 </li>
-<li><p><a href="https://blog.csdn.net/weixin_43343144/article/details/102679135" target="_blank" rel="noopener">Kali Linux使用arpspoof命令进行断网攻击（ARP欺骗）【VMware一定要设置桥接模式，否则断网会无效】</a></p>
+<li>
+<p><a href="https://baike.baidu.com/item/%E7%BD%91%E5%85%B3" target="_blank" rel="noopener">百度百科-网关</a></p>
 </li>
-<li><p><a href="https://blog.csdn.net/weixin_44839457/article/details/108333653?utm_source=app&amp;app_version=4.5.2" target="_blank" rel="noopener">使用kali进行ARP攻击与欺骗</a></p>
+<li>
+<p><a href="https://zhuanlan.zhihu.com/p/56658358#:~:text=%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F%E5%B0%B1%E6%98%AF%E5%B0%86%E4%B8%BB%E6%9C%BA,%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AE%E8%80%8C%E4%B8%8D%E5%B9%B2%E6%89%B0%E3%80%82" target="_blank" rel="noopener">vmware 虚拟机三种网络模式—“桥接、NAT 、仅主机”区别？</a></p>
 </li>
-<li><a href="https://blog.csdn.net/qq_42039946/article/details/112968942?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control" target="_blank" rel="noopener">使用kali进行局域网ARP欺骗攻击与监听</a></li>
-<li><a href="https://www.youtube.com/watch?v=ko4VvZuO4rs" target="_blank" rel="noopener">秦柯-ARP攻击</a></li>
+<li>
+<p><a href="https://blog.csdn.net/weixin_43343144/article/details/102679135" target="_blank" rel="noopener">Kali Linux使用arpspoof命令进行断网攻击（ARP欺骗）【VMware一定要设置桥接模式，否则断网会无效】</a></p>
+</li>
+<li>
+<p><a href="https://blog.csdn.net/weixin_44839457/article/details/108333653?utm_source=app&amp;app_version=4.5.2" target="_blank" rel="noopener">使用kali进行ARP攻击与欺骗</a></p>
+</li>
+<li>
+<p><a href="https://blog.csdn.net/qq_42039946/article/details/112968942?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control" target="_blank" rel="noopener">使用kali进行局域网ARP欺骗攻击与监听</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=ko4VvZuO4rs" target="_blank" rel="noopener">秦柯-ARP攻击</a></p>
+</li>
 </ul>
 
       
