@@ -18,22 +18,23 @@
   
   
   <title>python模块graphviz使用教程 | Melo&#39;s Blogs</title>
-  <meta name="description" content="1 情景引入 前几个月师姐给了个任务——恶意样本行为可视化，输入为xml文件，一个文件代表一个恶意样本。请教学姐学长同学等，加上观看效果图，得出实现思路：python解析xml文件，使用python模块graphviz进行可视化；之后使用图数据库neo4j进行对比。  下面对graphviz进行整理。  2 Graphviz Graphviz 是一个自动排版的作图软件，可以生成 png pdf">
+  <meta name="description" content="1 情景引入 前几个月师姐给了个任务——恶意样本行为可视化，输入为xml文件，一个文件代表一个恶意样本。请教学姐学长同学等，加上观看效果图，得出实现思路：python解析xml文件，使用python模块graphviz进行可视化；之后使用图数据库neo4j进行对比。 之后发现neo4j创建多个图数据库比较麻烦，但是按照行为分类等都比较直观，所以做辅助作用应该不错。  下面对graphviz进行整">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python模块graphviz使用教程">
 <meta property="og:url" content="https://Dragonliu2018.github.io/2022/02/03/python模块graphviz使用教程/index.html">
 <meta property="og:site_name" content="Dragon Liu">
-<meta property="og:description" content="1 情景引入 前几个月师姐给了个任务——恶意样本行为可视化，输入为xml文件，一个文件代表一个恶意样本。请教学姐学长同学等，加上观看效果图，得出实现思路：python解析xml文件，使用python模块graphviz进行可视化；之后使用图数据库neo4j进行对比。  下面对graphviz进行整理。  2 Graphviz Graphviz 是一个自动排版的作图软件，可以生成 png pdf">
+<meta property="og:description" content="1 情景引入 前几个月师姐给了个任务——恶意样本行为可视化，输入为xml文件，一个文件代表一个恶意样本。请教学姐学长同学等，加上观看效果图，得出实现思路：python解析xml文件，使用python模块graphviz进行可视化；之后使用图数据库neo4j进行对比。 之后发现neo4j创建多个图数据库比较麻烦，但是按照行为分类等都比较直观，所以做辅助作用应该不错。  下面对graphviz进行整">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.loli.net/2022/02/10/jnNf9Xrms8CYgxz.png">
 <meta property="og:image" content="https://s2.loli.net/2022/02/10/mJkzIuyaMLCQbAS.png">
 <meta property="og:image" content="https://s2.loli.net/2022/02/10/Nbm9RlSDYFyxtZX.png">
 <meta property="og:image" content="https://s2.loli.net/2022/02/10/hID7tuFsmfijoQv.png">
-<meta property="og:updated_time" content="2022-02-10T13:56:56.815Z">
+<meta property="og:image" content="https://s2.loli.net/2022/02/12/59CK8EwoYSsyNiJ.png">
+<meta property="og:updated_time" content="2022-02-12T05:00:43.685Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python模块graphviz使用教程">
-<meta name="twitter:description" content="1 情景引入 前几个月师姐给了个任务——恶意样本行为可视化，输入为xml文件，一个文件代表一个恶意样本。请教学姐学长同学等，加上观看效果图，得出实现思路：python解析xml文件，使用python模块graphviz进行可视化；之后使用图数据库neo4j进行对比。  下面对graphviz进行整理。  2 Graphviz Graphviz 是一个自动排版的作图软件，可以生成 png pdf">
+<meta name="twitter:description" content="1 情景引入 前几个月师姐给了个任务——恶意样本行为可视化，输入为xml文件，一个文件代表一个恶意样本。请教学姐学长同学等，加上观看效果图，得出实现思路：python解析xml文件，使用python模块graphviz进行可视化；之后使用图数据库neo4j进行对比。 之后发现neo4j创建多个图数据库比较麻烦，但是按照行为分类等都比较直观，所以做辅助作用应该不错。  下面对graphviz进行整">
 <meta name="twitter:image" content="https://s2.loli.net/2022/02/10/jnNf9Xrms8CYgxz.png">
   <!-- Canonical links -->
   <link rel="canonical" href="https://Dragonliu2018.github.io/2022/02/03/python模块graphviz使用教程/index.html">
@@ -198,7 +199,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/安全/">安全</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发/">开发</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/折腾/">折腾</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/旅行/">旅行</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/音乐/">音乐</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/安全/">安全</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发/">开发</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/折腾/">折腾</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/旅行/">旅行</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/音乐/">音乐</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -208,7 +209,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书评/">书评</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区块链/">区块链</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摘抄/">摘抄</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电视剧/">电视剧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/示例/">示例</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纪录片/">纪录片</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书评/">书评</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区块链/">区块链</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摘抄/">摘抄</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电视剧/">电视剧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/示例/">示例</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纪录片/">纪录片</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -218,7 +219,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/C/" style="font-size: 13.33px;">C++</a> <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/Web/" style="font-size: 13.33px;">Web</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/书评/" style="font-size: 13px;">书评</a> <a href="/tags/区块链/" style="font-size: 13px;">区块链</a> <a href="/tags/摘抄/" style="font-size: 13px;">摘抄</a> <a href="/tags/电影/" style="font-size: 13px;">电影</a> <a href="/tags/电视剧/" style="font-size: 13px;">电视剧</a> <a href="/tags/示例/" style="font-size: 13.67px;">示例</a> <a href="/tags/纪录片/" style="font-size: 13px;">纪录片</a>
+      <a href="/tags/C/" style="font-size: 13.33px;">C++</a> <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/Web/" style="font-size: 13.33px;">Web</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/书评/" style="font-size: 13.33px;">书评</a> <a href="/tags/区块链/" style="font-size: 13px;">区块链</a> <a href="/tags/摘抄/" style="font-size: 13px;">摘抄</a> <a href="/tags/电影/" style="font-size: 13px;">电影</a> <a href="/tags/电视剧/" style="font-size: 13px;">电视剧</a> <a href="/tags/示例/" style="font-size: 13.67px;">示例</a> <a href="/tags/纪录片/" style="font-size: 13px;">纪录片</a>
     </div>
   </div>
 
@@ -227,7 +228,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -239,6 +240,21 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/阅读/">阅读</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/02/12/《能人》书籍/" class="title">《能人》书籍</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-12T05:25:48.000Z" itemprop="datePublished">2022-02-12</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -295,21 +311,6 @@
               </p>
               <p class="item-date">
                 <time datetime="2022-02-11T03:22:48.000Z" itemprop="datePublished">2022-02-11</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/开发/">开发</a>
-              </p>
-              <p class="item-title">
-                <a href="/2022/02/10/Python集合-set-操作/" class="title">Python集合(set)操作</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-02-10T09:22:22.000Z" itemprop="datePublished">2022-02-10</time>
               </p>
             </div>
           </li>
@@ -380,7 +381,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/02/03/python模块graphviz使用教程/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 930(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.1k(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4(分)</span>
@@ -392,6 +393,7 @@
       
         <h1 id="1-情景引入"><a class="markdownIt-Anchor" href="#1-情景引入"></a> 1 情景引入</h1>
 <p>前几个月师姐给了个任务——恶意样本行为可视化，输入为xml文件，一个文件代表一个恶意样本。请教学姐学长同学等，加上观看效果图，得出实现思路：python解析xml文件，使用python模块graphviz进行可视化；之后使用图数据库neo4j进行对比。</p>
+<p>之后发现neo4j创建多个图数据库比较麻烦，但是按照行为分类等都比较直观，所以做辅助作用应该不错。</p>
 <img src="https://s2.loli.net/2022/02/10/jnNf9Xrms8CYgxz.png" width="600" height="400" alt="图片名称" align="center" id="65">
 <p>下面对graphviz进行整理。</p>
 <h1 id="2-graphviz"><a class="markdownIt-Anchor" href="#2-graphviz"></a> 2 Graphviz</h1>
@@ -452,8 +454,17 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string = <span class="string">"http://gsstudio.info/panel"</span></span><br><span class="line">label = repr(string)</span><br><span class="line">name = repr(string.replace(<span class="string">":"</span>, <span class="string">"："</span>))</span><br></pre></td></tr></table></figure>
 <p><code>repr</code>函数是防止字符串转义的，详细见<a href="dragonliu.tk/2022/02/09/python%E4%B8%AD%E9%98%B2%E6%AD%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E4%B9%89/">博客——python中防止字符串转义</a>。</p>
 <h2 id="39-报错graphvizbackendexecutecalledprocesserror"><a class="markdownIt-Anchor" href="#39-报错graphvizbackendexecutecalledprocesserror"></a> 3.9 报错：graphviz.backend.execute.CalledProcessError</h2>
-<p>具体报错：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">graphviz.backend.execute.CalledProcessError: Command <span class="string">'[WindowsPath('</span>dot<span class="string">'), '</span>-Kdot<span class="string">', '</span>-Tjpg<span class="string">', '</span>-O<span class="string">', '</span>57630-0.xml.gv<span class="string">']'</span> returned non-zero <span class="built_in">exit</span> status 3221225477. [stderr: b<span class="string">''</span>]</span><br></pre></td></tr></table></figure>
+<p><strong>报错信息：</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">subprocess.CalledProcessError: Command <span class="string">'[WindowsPath('</span>dot<span class="string">'), '</span>-Kdot<span class="string">', '</span>-Tjpg<span class="string">', '</span>-O<span class="string">', '</span>57630-0.xml.gv<span class="string">']'</span> returned non-zero <span class="built_in">exit</span> status 3221225477.</span><br><span class="line">...</span><br><span class="line">graphviz.backend.execute.CalledProcessError: Command <span class="string">'[WindowsPath('</span>dot<span class="string">'), '</span>-Kdot<span class="string">', '</span>-Tjpg<span class="string">', '</span>-O<span class="string">', '</span>57630-0.xml.gv<span class="string">']'</span> returned non-zero <span class="built_in">exit</span> status 3221225477. [stderr: b<span class="string">'dot: graph is too large for cairo-renderer bitmaps. Scaling by 0.876568 to fit\r\n'</span>]</span><br></pre></td></tr></table></figure>
+<p><strong>现象：</strong></p>
+<p><code>.gv</code>文件可以正常生成，图片文件<code>.jpg</code>无法生成。</p>
+<p>定位报错语句：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dot = Digraph(comment=<span class="string">'恶意样本行为可视化'</span>, format=<span class="string">'jpg'</span>)</span><br><span class="line">...</span><br><span class="line">dot.render(output_dir + <span class="string">"\\"</span> + file_name + <span class="string">".gv"</span>, format=<span class="string">'jpg'</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>原因：</strong></p>
+<p>生成的graph太大，dot无法导出，换成<code>pdf</code>或<code>svg</code>就可以了，<code>png</code>和<code>jpg</code>都不行。</p>
+<p>最后选择pdf格式，因为导出的文件小。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dot = Digraph(comment=<span class="string">'恶意样本行为可视化'</span>, format=<span class="string">'pdf'</span>)</span><br><span class="line">...</span><br><span class="line">dot.render(output_dir + <span class="string">"\\"</span> + file_name + <span class="string">".gv"</span>, format=<span class="string">'pdf'</span>)</span><br></pre></td></tr></table></figure>
+<img src="https://s2.loli.net/2022/02/12/59CK8EwoYSsyNiJ.png" width="900" height="200" alt="图片名称" align="center" id="76">
 <h1 id="x-参考"><a class="markdownIt-Anchor" href="#x-参考"></a> X 参考</h1>
 <ul>
 <li></li>
