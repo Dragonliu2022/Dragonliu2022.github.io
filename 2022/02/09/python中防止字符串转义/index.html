@@ -26,7 +26,7 @@
 <meta property="og:site_name" content="Dragon Liu">
 <meta property="og:description" content="1 问题引入 最近在做xml解析、可视化时遇到一个问题：将字符串（文件路径）中的转义字符不进行转义123\tabc，正常print会将\t看作转义字符tab，需求是使字符串按原样输出。下面是不同场景下的解决方法：  2 字符串常量 如果是字符串常量，则在字符串前加r 即可： 1234print(&quot;123\tabc&quot;)# 123	abcprint(r&quot;123\tabc&quot;)  # test_str">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2022-02-10T05:50:31.471Z">
+<meta property="og:updated_time" content="2022-02-15T11:49:58.630Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python中防止字符串转义">
 <meta name="twitter:description" content="1 问题引入 最近在做xml解析、可视化时遇到一个问题：将字符串（文件路径）中的转义字符不进行转义123\tabc，正常print会将\t看作转义字符tab，需求是使字符串按原样输出。下面是不同场景下的解决方法：  2 字符串常量 如果是字符串常量，则在字符串前加r 即可： 1234print(&quot;123\tabc&quot;)# 123	abcprint(r&quot;123\tabc&quot;)  # test_str">
@@ -393,7 +393,7 @@
 <h1 id="3-字符串变量"><a class="markdownIt-Anchor" href="#3-字符串变量"></a> 3 字符串变量</h1>
 <p>如果字符串是变量，使用 <code>repr()</code> 方法：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">"123\tabc"</span></span><br><span class="line">str2 = repr(str1)</span><br><span class="line"></span><br><span class="line">print(str1)  <span class="comment"># 123	abc</span></span><br><span class="line">print(str2)  <span class="comment"># '123\tabc'</span></span><br><span class="line">print(str2.strip(<span class="string">"\'"</span>))  <span class="comment"># 123\tabc</span></span><br></pre></td></tr></table></figure>
-<p><font color="red"><strong>注意</strong></font>：字符串使用 <code>repr</code> 函数后输出是会在字符串前后自动加上单引号（见print第二行），print第三行是去掉了字符串首尾的单引号。关于<code>strip</code>函数，详见<a href="dragonliu.tk/2022/02/09/python%E5%8E%BB%E9%99%A4%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%A6%96%E5%B0%BE%E7%9A%84%E7%A9%BA%E6%A0%BC/">博客</a>。</p>
+<p><font color="red"><strong>注意</strong></font>：字符串使用 <code>repr</code> 函数后输出是会在字符串前后自动加上单引号（见print第二行），print第三行是去掉了字符串首尾的单引号。关于<code>strip</code>函数，详见<a href="https://dragonliu.tk/2022/02/09/python%E5%8E%BB%E9%99%A4%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%A6%96%E5%B0%BE%E7%9A%84%E7%A9%BA%E6%A0%BC/" target="_blank" rel="noopener">博客</a>。</p>
 <h1 id="4-文件读取"><a class="markdownIt-Anchor" href="#4-文件读取"></a> 4 文件读取</h1>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">file1 = open(<span class="string">"test.txt"</span>, <span class="string">"r"</span>)  <span class="comment"># 123\tabc</span></span><br><span class="line"></span><br><span class="line">print(file1.read())  <span class="comment"># 123\tabc</span></span><br></pre></td></tr></table></figure>
 <p>文本文件读取测试发现字符串未发生转义。</p>
