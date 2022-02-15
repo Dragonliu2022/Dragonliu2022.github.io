@@ -18,18 +18,18 @@
   
   
   <title>Python多线程、多进程编程 | Melo&#39;s Blogs</title>
-  <meta name="description" content="1 引言 最近在做恶意样本行为可视化，样本数量2w+，执行时间&amp;gt;24h，所以需要多任务处理来提高效率。  参考：Python多进程和多线程（跑满CPU）  任务可以理解为进程（process），如打开一个word就是启动一个word进程。在一个word进程之中不只是进行打字输入，还需要拼写检查、打印等子任务，我们可以把进程中的这些子任务称为线程（thread）。 同时执行多个任务通常各个任">
+  <meta name="description" content="1 引言最近在做恶意样本行为可视化，样本数量2w+，执行时间&amp;gt;24h，所以需要多任务处理来提高效率。  参考：Python多进程和多线程（跑满CPU）  任务可以理解为进程（process），如打开一个word就是启动一个word进程。在一个word进程之中不只是进行打字输入，还需要拼写检查、打印等子任务，我们可以把进程中的这些子任务称为线程（thread）。 同时执行多个任务通常各个任务之">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python多线程、多进程编程">
 <meta property="og:url" content="https://Dragonliu2018.github.io/2022/02/11/Python多线程、多进程编程/index.html">
 <meta property="og:site_name" content="Dragon Liu">
-<meta property="og:description" content="1 引言 最近在做恶意样本行为可视化，样本数量2w+，执行时间&amp;gt;24h，所以需要多任务处理来提高效率。  参考：Python多进程和多线程（跑满CPU）  任务可以理解为进程（process），如打开一个word就是启动一个word进程。在一个word进程之中不只是进行打字输入，还需要拼写检查、打印等子任务，我们可以把进程中的这些子任务称为线程（thread）。 同时执行多个任务通常各个任">
+<meta property="og:description" content="1 引言最近在做恶意样本行为可视化，样本数量2w+，执行时间&amp;gt;24h，所以需要多任务处理来提高效率。  参考：Python多进程和多线程（跑满CPU）  任务可以理解为进程（process），如打开一个word就是启动一个word进程。在一个word进程之中不只是进行打字输入，还需要拼写检查、打印等子任务，我们可以把进程中的这些子任务称为线程（thread）。 同时执行多个任务通常各个任务之">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2022-02-13T05:21:31.648Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python多线程、多进程编程">
-<meta name="twitter:description" content="1 引言 最近在做恶意样本行为可视化，样本数量2w+，执行时间&amp;gt;24h，所以需要多任务处理来提高效率。  参考：Python多进程和多线程（跑满CPU）  任务可以理解为进程（process），如打开一个word就是启动一个word进程。在一个word进程之中不只是进行打字输入，还需要拼写检查、打印等子任务，我们可以把进程中的这些子任务称为线程（thread）。 同时执行多个任务通常各个任">
+<meta name="twitter:description" content="1 引言最近在做恶意样本行为可视化，样本数量2w+，执行时间&amp;gt;24h，所以需要多任务处理来提高效率。  参考：Python多进程和多线程（跑满CPU）  任务可以理解为进程（process），如打开一个word就是启动一个word进程。在一个word进程之中不只是进行打字输入，还需要拼写检查、打印等子任务，我们可以把进程中的这些子任务称为线程（thread）。 同时执行多个任务通常各个任务之">
   <!-- Canonical links -->
   <link rel="canonical" href="https://Dragonliu2018.github.io/2022/02/11/Python多线程、多进程编程/index.html">
   
@@ -193,7 +193,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/安全/">安全</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发/">开发</a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/折腾/">折腾</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/旅行/">旅行</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/音乐/">音乐</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/安全/">安全</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发/">开发</a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/折腾/">折腾</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/旅行/">旅行</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/音乐/">音乐</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -203,7 +203,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书评/">书评</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区块链/">区块链</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摘抄/">摘抄</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电视剧/">电视剧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/示例/">示例</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纪录片/">纪录片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/若依/">若依</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书评/">书评</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区块链/">区块链</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摘抄/">摘抄</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电视剧/">电视剧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/示例/">示例</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纪录片/">纪录片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/若依/">若依</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -213,7 +213,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/C/" style="font-size: 13.25px;">C++</a> <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Hexo/" style="font-size: 13.25px;">Hexo</a> <a href="/tags/MySQL/" style="font-size: 13px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 13px;">Redis</a> <a href="/tags/Web/" style="font-size: 13.25px;">Web</a> <a href="/tags/git/" style="font-size: 13px;">git</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/书评/" style="font-size: 13.5px;">书评</a> <a href="/tags/区块链/" style="font-size: 13px;">区块链</a> <a href="/tags/摘抄/" style="font-size: 13px;">摘抄</a> <a href="/tags/电影/" style="font-size: 13.25px;">电影</a> <a href="/tags/电视剧/" style="font-size: 13px;">电视剧</a> <a href="/tags/示例/" style="font-size: 13.75px;">示例</a> <a href="/tags/纪录片/" style="font-size: 13px;">纪录片</a> <a href="/tags/若依/" style="font-size: 13px;">若依</a>
+      <a href="/tags/C/" style="font-size: 13.33px;">C++</a> <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/MySQL/" style="font-size: 13px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 13px;">Redis</a> <a href="/tags/Web/" style="font-size: 13.33px;">Web</a> <a href="/tags/git/" style="font-size: 13px;">git</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/书评/" style="font-size: 13.67px;">书评</a> <a href="/tags/区块链/" style="font-size: 13px;">区块链</a> <a href="/tags/摘抄/" style="font-size: 13px;">摘抄</a> <a href="/tags/电影/" style="font-size: 13.33px;">电影</a> <a href="/tags/电视剧/" style="font-size: 13px;">电视剧</a> <a href="/tags/示例/" style="font-size: 13.67px;">示例</a> <a href="/tags/纪录片/" style="font-size: 13px;">纪录片</a> <a href="/tags/若依/" style="font-size: 13px;">若依</a>
     </div>
   </div>
 
@@ -222,7 +222,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -234,6 +234,21 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/阅读/">阅读</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/02/15/《城南旧事》书籍/" class="title">《城南旧事》书籍</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-02-15T13:24:14.000Z" itemprop="datePublished">2022-02-15</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -294,21 +309,6 @@
             </div>
           </li>
           
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/影视/">影视</a>
-              </p>
-              <p class="item-title">
-                <a href="/2022/02/12/《神鞭》电影/" class="title">《神鞭》电影(1986)</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-02-12T07:19:03.000Z" itemprop="datePublished">2022-02-12</time>
-              </p>
-            </div>
-          </li>
-          
       </ul>
     </div>
   </div>
@@ -324,7 +324,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-引言"><span class="toc-number">1.</span> <span class="toc-text"> 1 引言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-多任务实现的3种方式"><span class="toc-number">2.</span> <span class="toc-text"> 2 多任务实现的3种方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#21-多进程模式"><span class="toc-number">2.1.</span> <span class="toc-text"> 2.1 多进程模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-多线程模式"><span class="toc-number">2.2.</span> <span class="toc-text"> 2.2 多线程模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23-多进程多线程模式"><span class="toc-number">2.3.</span> <span class="toc-text"> 2.3 多进程+多线程模式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-进程线程对比"><span class="toc-number">3.</span> <span class="toc-text"> 3 进程线程对比</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#31-关系对比"><span class="toc-number">3.1.</span> <span class="toc-text"> 3.1 关系对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#32-区别对比"><span class="toc-number">3.2.</span> <span class="toc-text"> 3.2 区别对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#33-优缺点对比"><span class="toc-number">3.3.</span> <span class="toc-text"> 3.3 优缺点对比</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#x-参考"><span class="toc-number">4.</span> <span class="toc-text"> X 参考</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-引言"><span class="toc-number">1.</span> <span class="toc-text">1 引言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-多任务实现的3种方式"><span class="toc-number">2.</span> <span class="toc-text">2 多任务实现的3种方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-多进程模式"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 多进程模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-多线程模式"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 多线程模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-多进程-多线程模式"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 多进程+多线程模式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-进程线程对比"><span class="toc-number">3.</span> <span class="toc-text">3 进程线程对比</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-关系对比"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 关系对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-区别对比"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 区别对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-优缺点对比"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 优缺点对比</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#X-参考"><span class="toc-number">4.</span> <span class="toc-text">X 参考</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -375,7 +375,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/02/11/Python多线程、多进程编程/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 773(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 772(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
@@ -385,17 +385,15 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="1-引言"><a class="markdownIt-Anchor" href="#1-引言"></a> 1 引言</h1>
-<p>最近在做恶意样本行为可视化，样本数量2w+，执行时间&gt;24h，所以需要多任务处理来提高效率。</p>
+        <h1 id="1-引言"><a href="#1-引言" class="headerlink" title="1 引言"></a>1 引言</h1><p>最近在做恶意样本行为可视化，样本数量2w+，执行时间&gt;24h，所以需要多任务处理来提高效率。</p>
 <blockquote>
 <p>参考：<a href="https://blog.csdn.net/qq_40317897/article/details/89921083" target="_blank" rel="noopener">Python多进程和多线程（跑满CPU）</a></p>
 </blockquote>
 <p>任务可以理解为进程（process），如打开一个word就是启动一个word进程。在一个word进程之中不只是进行打字输入，还需要拼写检查、打印等子任务，我们可以把进程中的这些子任务称为线程（thread）。</p>
 <p>同时执行多个任务通常各个任务之间并不是没有关联的，而是需要相互通信和协调，有时，任务1必须暂停等待任务2完成后才能继续执行，有时，任务3和任务4又不能同时执行，所以，多进程和多线程的程序的复杂度要远远高于我们前面写的单进程单线程的程序。</p>
-<h1 id="2-多任务实现的3种方式"><a class="markdownIt-Anchor" href="#2-多任务实现的3种方式"></a> 2 多任务实现的3种方式</h1>
-<h2 id="21-多进程模式"><a class="markdownIt-Anchor" href="#21-多进程模式"></a> 2.1 多进程模式</h2>
-<p>启动多个进程，每个进程虽然只有一个线程，但多个进程可以一块执行多个任务。<font color="red">多个CPU核心可以一起做多个任务。</font></p>
+<h1 id="2-多任务实现的3种方式"><a href="#2-多任务实现的3种方式" class="headerlink" title="2 多任务实现的3种方式"></a>2 多任务实现的3种方式</h1><h2 id="2-1-多进程模式"><a href="#2-1-多进程模式" class="headerlink" title="2.1 多进程模式"></a>2.1 多进程模式</h2><p>启动多个进程，每个进程虽然只有一个线程，但多个进程可以一块执行多个任务。<font color="red">多个CPU核心可以一起做多个任务。</font></p>
 <p>进程执行带有参数的任务：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -414,39 +412,31 @@
 </tr>
 </tbody>
 </table>
+</div>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> multiprocessing</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(data)</span>:</span></span><br><span class="line">    print(data, <span class="string">'进程PID'</span>, os.getpid())</span><br><span class="line">    print(data, <span class="string">'进程父进程编号'</span>, os.getppid())</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> data:</span><br><span class="line">        time.sleep(<span class="number">0.5</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_multiprocess</span><span class="params">()</span>:</span></span><br><span class="line">    data_list = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]</span><br><span class="line">    core = <span class="number">4</span>  <span class="comment"># 4进程并行</span></span><br><span class="line">    mod = math.ceil(len(data_list) / core)  <span class="comment"># 向上取整</span></span><br><span class="line">    group_data = [data_list[i:i + mod] <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, len(data_list), mod)]</span><br><span class="line">    <span class="keyword">for</span> data <span class="keyword">in</span> group_data:</span><br><span class="line">        <span class="comment"># process = multiprocessing.Process(target=func, args=(5,))</span></span><br><span class="line">        process = multiprocessing.Process(target=func, kwargs=&#123;<span class="string">'data'</span>: data&#125;)</span><br><span class="line">        process.start()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    test_multiprocess()</span><br></pre></td></tr></table></figure>
-<h2 id="22-多线程模式"><a class="markdownIt-Anchor" href="#22-多线程模式"></a> 2.2 多线程模式</h2>
-<p>启动一个进程，在一个进程内启动多个线程，这样，多个线程也可以一块执行多个任务。<font color="red">单个CPU核心可以同时做多个任务。</font></p>
+<h2 id="2-2-多线程模式"><a href="#2-2-多线程模式" class="headerlink" title="2.2 多线程模式"></a>2.2 多线程模式</h2><p>启动一个进程，在一个进程内启动多个线程，这样，多个线程也可以一块执行多个任务。<font color="red">单个CPU核心可以同时做多个任务。</font></p>
 <p><a href="https://www.runoob.com/python/python-multithreading.html" target="_blank" rel="noopener">菜鸟教程——多线程</a></p>
-<h2 id="23-多进程多线程模式"><a class="markdownIt-Anchor" href="#23-多进程多线程模式"></a> 2.3 多进程+多线程模式</h2>
-<p>启动多个进程，每个进程再启动多个线程，这样同时执行的任务就更多了，当然这种模型更复杂，实际很少采用。</p>
-<h1 id="3-进程线程对比"><a class="markdownIt-Anchor" href="#3-进程线程对比"></a> 3 进程线程对比</h1>
-<h2 id="31-关系对比"><a class="markdownIt-Anchor" href="#31-关系对比"></a> 3.1 关系对比</h2>
-<ol>
+<h2 id="2-3-多进程-多线程模式"><a href="#2-3-多进程-多线程模式" class="headerlink" title="2.3 多进程+多线程模式"></a>2.3 多进程+多线程模式</h2><p>启动多个进程，每个进程再启动多个线程，这样同时执行的任务就更多了，当然这种模型更复杂，实际很少采用。</p>
+<h1 id="3-进程线程对比"><a href="#3-进程线程对比" class="headerlink" title="3 进程线程对比"></a>3 进程线程对比</h1><h2 id="3-1-关系对比"><a href="#3-1-关系对比" class="headerlink" title="3.1 关系对比"></a>3.1 关系对比</h2><ol>
 <li>线程是依附在进程里边的, 没有进程就没有线程</li>
 <li>一个进程默认提供一条线程, 进程可以创建多个线程</li>
 </ol>
-<h2 id="32-区别对比"><a class="markdownIt-Anchor" href="#32-区别对比"></a> 3.2 区别对比</h2>
-<ol>
+<h2 id="3-2-区别对比"><a href="#3-2-区别对比" class="headerlink" title="3.2 区别对比"></a>3.2 区别对比</h2><ol>
 <li>进程创建的开销要比线程的开销要大</li>
 <li>进程是操作系统资源分配的基本单位, 线程是cpu 调度的基本单位</li>
 <li>线程不能独立执行, 必须依存进程</li>
 </ol>
-<h2 id="33-优缺点对比"><a class="markdownIt-Anchor" href="#33-优缺点对比"></a> 3.3 优缺点对比</h2>
-<ol>
-<li>
-<p>进程优缺点:</p>
+<h2 id="3-3-优缺点对比"><a href="#3-3-优缺点对比" class="headerlink" title="3.3 优缺点对比"></a>3.3 优缺点对比</h2><ol>
+<li><p>进程优缺点:</p>
 <p>优点：可以用多核</p>
 <p>缺点：资源开销大</p>
 </li>
-<li>
-<p>线程优缺点</p>
+<li><p>线程优缺点</p>
 <p>优点: 资源开销小</p>
 <p>缺点：不能使用多核</p>
 </li>
 </ol>
-<h1 id="x-参考"><a class="markdownIt-Anchor" href="#x-参考"></a> X 参考</h1>
-<ul>
+<h1 id="X-参考"><a href="#X-参考" class="headerlink" title="X 参考"></a>X 参考</h1><ul>
 <li><a href="https://zhuanlan.zhihu.com/p/340657122" target="_blank" rel="noopener">在Python中优雅地用多进程</a></li>
 <li><a href="https://blog.csdn.net/qq_43475705/article/details/115518463" target="_blank" rel="noopener">python多进程多线程,多个程序同时运行</a></li>
 </ul>
