@@ -18,19 +18,19 @@
   
   
   <title>C++项目的全量覆盖率和增量覆盖率 | Melo&#39;s Blogs</title>
-  <meta name="description" content="0 情景导入2021.09.26华为实习任务复现，要求实现多次SR合并后的增量覆盖率。 关于报错12###强制回滚到某版本git reset --hard 36409abd22dcc9f9252152b34fa9e929f7c883ec 123###解决：https://stackoverflow.com/questions/3411048/unexpected-operator-in-shell">
+  <meta name="description" content="0 情景导入 2021.09.26华为实习任务复现，要求实现多次SR合并后的增量覆盖率。  关于报错 12###强制回滚到某版本git reset --hard 36409abd22dcc9f9252152b34fa9e929f7c883ec 123###解决：https://stackoverflow.com/questions/3411048/unexpected-operator-in-s">
 <meta name="keywords" content="C++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++项目的全量覆盖率和增量覆盖率">
 <meta property="og:url" content="https://Dragonliu2018.github.io/2021/09/27/C++项目的全量覆盖率和增量覆盖率/index.html">
 <meta property="og:site_name" content="Dragon Liu">
-<meta property="og:description" content="0 情景导入2021.09.26华为实习任务复现，要求实现多次SR合并后的增量覆盖率。 关于报错12###强制回滚到某版本git reset --hard 36409abd22dcc9f9252152b34fa9e929f7c883ec 123###解决：https://stackoverflow.com/questions/3411048/unexpected-operator-in-shell">
+<meta property="og:description" content="0 情景导入 2021.09.26华为实习任务复现，要求实现多次SR合并后的增量覆盖率。  关于报错 12###强制回滚到某版本git reset --hard 36409abd22dcc9f9252152b34fa9e929f7c883ec 123###解决：https://stackoverflow.com/questions/3411048/unexpected-operator-in-s">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2021/09/26/aAG4BMTl2mjrIUZ.png">
 <meta property="og:updated_time" content="2022-01-21T13:24:36.167Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++项目的全量覆盖率和增量覆盖率">
-<meta name="twitter:description" content="0 情景导入2021.09.26华为实习任务复现，要求实现多次SR合并后的增量覆盖率。 关于报错12###强制回滚到某版本git reset --hard 36409abd22dcc9f9252152b34fa9e929f7c883ec 123###解决：https://stackoverflow.com/questions/3411048/unexpected-operator-in-shell">
+<meta name="twitter:description" content="0 情景导入 2021.09.26华为实习任务复现，要求实现多次SR合并后的增量覆盖率。  关于报错 12###强制回滚到某版本git reset --hard 36409abd22dcc9f9252152b34fa9e929f7c883ec 123###解决：https://stackoverflow.com/questions/3411048/unexpected-operator-in-s">
 <meta name="twitter:image" content="https://i.loli.net/2021/09/26/aAG4BMTl2mjrIUZ.png">
   <!-- Canonical links -->
   <link rel="canonical" href="https://Dragonliu2018.github.io/2021/09/27/C++项目的全量覆盖率和增量覆盖率/index.html">
@@ -324,7 +324,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-情景导入"><span class="toc-number">1.</span> <span class="toc-text">0 情景导入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于报错"><span class="toc-number">2.</span> <span class="toc-text">关于报错</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-思路"><span class="toc-number">3.</span> <span class="toc-text">1 思路</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-cherry-pick"><span class="toc-number">4.</span> <span class="toc-text">2 cherry-pick</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-生成增量覆盖率报告"><span class="toc-number">5.</span> <span class="toc-text">3 生成增量覆盖率报告</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-生成差异文件"><span class="toc-number">5.1.</span> <span class="toc-text">3.1 生成差异文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-生成v2版本的全量覆盖率报告"><span class="toc-number">5.2.</span> <span class="toc-text">3.2 生成v2版本的全量覆盖率报告</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-使用addlcov生成增量代码覆盖率文件"><span class="toc-number">5.3.</span> <span class="toc-text">3.3 使用addlcov生成增量代码覆盖率文件</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-情景导入"><span class="toc-number">1.</span> <span class="toc-text"> 0 情景导入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于报错"><span class="toc-number">2.</span> <span class="toc-text"> 关于报错</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-思路"><span class="toc-number">3.</span> <span class="toc-text"> 1 思路</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-cherry-pick"><span class="toc-number">4.</span> <span class="toc-text"> 2 cherry-pick</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-生成增量覆盖率报告"><span class="toc-number">5.</span> <span class="toc-text"> 3 生成增量覆盖率报告</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#31-生成差异文件"><span class="toc-number">5.1.</span> <span class="toc-text"> 3.1 生成差异文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#32-生成v2版本的全量覆盖率报告"><span class="toc-number">5.2.</span> <span class="toc-text"> 3.2 生成v2版本的全量覆盖率报告</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#33-使用addlcov生成增量代码覆盖率文件"><span class="toc-number">5.3.</span> <span class="toc-text"> 3.3 使用addlcov生成增量代码覆盖率文件</span></a></li></ol></li></ol>
     </nav>
   </div>
 </aside>
@@ -375,7 +375,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/09/27/C++项目的全量覆盖率和增量覆盖率/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 904(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 915(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4(分)</span>
@@ -385,22 +385,31 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="0-情景导入"><a href="#0-情景导入" class="headerlink" title="0 情景导入"></a>0 情景导入</h1><p>2021.09.26华为实习任务复现，要求实现多次SR合并后的增量覆盖率。</p>
-<h1 id="关于报错"><a href="#关于报错" class="headerlink" title="关于报错"></a>关于报错</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">###强制回滚到某版本</span></span><br><span class="line">git reset --hard 36409abd22dcc9f9252152b34fa9e929f7c883ec</span><br></pre></td></tr></table></figure>
+        <h1 id="0-情景导入"><a class="markdownIt-Anchor" href="#0-情景导入"></a> 0 情景导入</h1>
+<p>2021.09.26华为实习任务复现，要求实现多次SR合并后的增量覆盖率。</p>
+<h1 id="关于报错"><a class="markdownIt-Anchor" href="#关于报错"></a> 关于报错</h1>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">###强制回滚到某版本</span></span><br><span class="line">git reset --hard 36409abd22dcc9f9252152b34fa9e929f7c883ec</span><br></pre></td></tr></table></figure>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">###解决：https://stackoverflow.com/questions/3411048/unexpected-operator-in-shell-programming/3411061</span></span><br><span class="line">./srCover.sh: 17: [: h: unexpected operator </span><br><span class="line">./srCover.sh: 21: [: h: unexpected operator</span><br></pre></td></tr></table></figure>
-<h1 id="1-思路"><a href="#1-思路" class="headerlink" title="1 思路"></a>1 思路</h1><p>强行cherry-pick，可能存在冲突的情况：</p>
+<h1 id="1-思路"><a class="markdownIt-Anchor" href="#1-思路"></a> 1 思路</h1>
+<p>强行cherry-pick，可能存在冲突的情况：</p>
 <ol>
 <li>不冲突，是准确的</li>
 <li>冲突，使用指定版本的代码解决冲突，是不准确的</li>
 </ol>
-<h1 id="2-cherry-pick"><a href="#2-cherry-pick" class="headerlink" title="2 cherry-pick"></a>2 cherry-pick</h1><h1 id="3-生成增量覆盖率报告"><a href="#3-生成增量覆盖率报告" class="headerlink" title="3 生成增量覆盖率报告"></a>3 生成增量覆盖率报告</h1><h2 id="3-1-生成差异文件"><a href="#3-1-生成差异文件" class="headerlink" title="3.1 生成差异文件"></a>3.1 生成差异文件</h2><p>v1版本：dir1目录，</p>
+<h1 id="2-cherry-pick"><a class="markdownIt-Anchor" href="#2-cherry-pick"></a> 2 cherry-pick</h1>
+<h1 id="3-生成增量覆盖率报告"><a class="markdownIt-Anchor" href="#3-生成增量覆盖率报告"></a> 3 生成增量覆盖率报告</h1>
+<h2 id="31-生成差异文件"><a class="markdownIt-Anchor" href="#31-生成差异文件"></a> 3.1 生成差异文件</h2>
+<p>v1版本：dir1目录，</p>
 <p>v2版本：dir2目录，</p>
 <p>执行：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># diff -r  -N -x ".git" -x "*.gcov" -u &lt;old_src_path&gt; &lt;new_src_path&gt; &gt; diff.txt</span></span><br><span class="line">diff -r  -N -x <span class="string">".git"</span> -x <span class="string">"*.gc*"</span> -x <span class="string">"result"</span> -x <span class="string">"hello"</span> -x <span class="string">"hello.info"</span> -u dir1 dir2 &gt; diff.txt</span><br></pre></td></tr></table></figure>
-<h2 id="3-2-生成v2版本的全量覆盖率报告"><a href="#3-2-生成v2版本的全量覆盖率报告" class="headerlink" title="3.2 生成v2版本的全量覆盖率报告"></a>3.2 生成v2版本的全量覆盖率报告</h2><blockquote>
+<h2 id="32-生成v2版本的全量覆盖率报告"><a class="markdownIt-Anchor" href="#32-生成v2版本的全量覆盖率报告"></a> 3.2 生成v2版本的全量覆盖率报告</h2>
+<blockquote>
 <ul>
 <li><a href="https://www.cnblogs.com/fnlingnzb-learner/p/6943512.html" target="_blank" rel="noopener">代码覆盖工具(gcov、lcov)的使用</a></li>
 </ul>
+</blockquote>
+<blockquote>
 <p>gcov是Linux下GCC自带的一个C/C++代码覆盖率分析工具,因此只要安装了gcc，就不需要再次安装了。</p>
 <p>gcov能够生成代码覆盖信息，但是不够直观，因此需要借助lcov直观展示覆盖率，主要特点有：</p>
 <ul>
@@ -410,25 +419,30 @@
 </ul>
 </blockquote>
 <ol>
-<li><p>安装<a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_blank" rel="noopener">lcov</a>：</p>
+<li>
+<p>安装<a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_blank" rel="noopener">lcov</a>：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/linux-test-project/lcov.git</span><br><span class="line"><span class="comment"># 进入项目目录</span></span><br><span class="line"><span class="built_in">cd</span> lcov</span><br><span class="line"><span class="comment"># 编译</span></span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>以hello.c为例：</p>
+<li>
+<p>以hello.c为例：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> num = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (num == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"num is zero\n"</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (num == <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"num is one\n"</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"num is NAN\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"hello world\n"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>测试：</p>
+<li>
+<p>测试：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 编译时候加两个参数：-fprofile-arcs -ftest-coverage, 此时会生成：hello.gcno</span></span><br><span class="line">gcc -fprofile-arcs -ftest-coverage hello.c -o hello</span><br><span class="line"><span class="comment"># 此时会生成： hello.gcda, hello.gcno和hello.gcda是gcov引用的关键文件)</span></span><br><span class="line">./hello</span><br><span class="line"><span class="comment"># gcov根据上面的文件生成了：hello.c.gcov,就是代码覆盖信息，但看起来并不直观</span></span><br><span class="line">gcov hello.c</span><br><span class="line"><span class="comment">### 内容如下：</span></span><br><span class="line">➜  dir2 cat hello.c.gcov </span><br><span class="line">        -:    0:Source:hello.c</span><br><span class="line">        -:    0:Graph:hello.gcno</span><br><span class="line">        -:    0:Data:hello.gcda</span><br><span class="line">        -:    0:Runs:1</span><br><span class="line">        -:    0:Programs:1</span><br><span class="line">        -:    1:<span class="comment">#include&lt;stdio.h&gt;</span></span><br><span class="line">        -:    2:</span><br><span class="line">        1:    3:int main()</span><br><span class="line">        -:    4:&#123;</span><br><span class="line">        1:    5:        int num = 1;</span><br><span class="line">        1:    6:        <span class="keyword">if</span> (num == 0) &#123;</span><br><span class="line">    <span class="comment">#####:    7:                printf("num is zero\n");</span></span><br><span class="line">        1:    8:        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (num == 1) &#123;</span><br><span class="line">        1:    9:                <span class="built_in">printf</span>(<span class="string">"num is one\n"</span>);</span><br><span class="line">        -:   10:        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">#####:   11:                printf("num is NAN\n");</span></span><br><span class="line">        -:   12:        &#125;</span><br><span class="line">        1:   13:        <span class="built_in">printf</span>(<span class="string">"hello world\n"</span>);</span><br><span class="line">        1:   14:        <span class="built_in">return</span> 0;</span><br><span class="line">        -:   15:&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 借助lcov对hello.c.gcov进行改造，可以看见生成了hello.info</span></span><br><span class="line">lcov -d . -t <span class="string">'Hello test'</span> -o <span class="string">'hello.info'</span> -b . -c</span><br><span class="line"><span class="comment"># 生成了result文件夹，借助web服务器，我们就可以很直观的看到结果了</span></span><br><span class="line">genhtml -o result hello.info</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>查看生成的全量覆盖率报告，用浏览器打开result文件夹内的index.html：</p>
-<p><img src="https://i.loli.net/2021/09/26/aAG4BMTl2mjrIUZ.png" width="1000" height="250" alt="图片名称" align="center" id="31"></p>
+<li>
+<p>查看生成的全量覆盖率报告，用浏览器打开result文件夹内的index.html：</p>
+<img src="https://i.loli.net/2021/09/26/aAG4BMTl2mjrIUZ.png" width="1000" height="250" alt="图片名称" align="center" id="31">
 </li>
 </ol>
-<h2 id="3-3-使用addlcov生成增量代码覆盖率文件"><a href="#3-3-使用addlcov生成增量代码覆盖率文件" class="headerlink" title="3.3 使用addlcov生成增量代码覆盖率文件"></a>3.3 使用addlcov生成增量代码覆盖率文件</h2><p><code>addlcov --diff &lt;full_cov_file&gt; diff.txt -o &lt;add_cov_file&gt; --strip &lt;depth&gt; --path &lt;new_src_path&gt;</code></p>
+<h2 id="33-使用addlcov生成增量代码覆盖率文件"><a class="markdownIt-Anchor" href="#33-使用addlcov生成增量代码覆盖率文件"></a> 3.3 使用addlcov生成增量代码覆盖率文件</h2>
+<p><code>addlcov --diff &lt;full_cov_file&gt; diff.txt -o &lt;add_cov_file&gt; --strip &lt;depth&gt; --path &lt;new_src_path&gt;</code></p>
 <ul>
-<li><full_cov_file>为之前统计的v2版本上的全量覆盖率；</full_cov_file></li>
-<li><add_cov_file>为输出的增量覆盖率info文件；</add_cov_file></li>
+<li>&lt;full_cov_file&gt;为之前统计的v2版本上的全量覆盖率；</li>
+<li>&lt;add_cov_file&gt;为输出的增量覆盖率info文件；</li>
 <li><depth>是要截取的代码深度；</depth></li>
-<li><new_src_path>是v2版本源码</new_src_path></li>
+<li>&lt;new_src_path&gt;是v2版本源码</li>
 </ul>
 <p>执行：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">addlcov --diff  diff.txt -o &lt;add_cov_file&gt; --strip &lt;depth&gt; --path &lt;new_src_path&gt;</span><br></pre></td></tr></table></figure>
@@ -491,12 +505,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2021/09/27/C++单元测试/" title="C++单元测试"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2021/10/27/安装Ubuntu物理机(Win10+Ubuntu双系统)/" title="物理机安装Ubuntu+Win10双系统"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2021/09/21/Hexo迁移到新电脑/" title="Hexo迁移到新电脑"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2021/09/27/C++单元测试/" title="C++单元测试"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     

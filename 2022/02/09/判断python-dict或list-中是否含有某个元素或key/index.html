@@ -18,18 +18,18 @@
   
   
   <title>判断python dict或list 中是否含有某个元素或key | Melo&#39;s Blogs</title>
-  <meta name="description" content="1 自带函数has_key()在python的字典的属性方法里面有一个has_key()方法，这个方法使用起来非常简单。 Python 3.x不再支持 has_key() 函数，而被__contains__()所替代。 123d = &amp;#123;&apos;name&apos;: &amp;#123;&amp;#125;, &apos;age&apos;: &amp;#123;&amp;#125;, &apos;sex&apos;: &amp;#123;&amp;#125;&amp;#125;# print(d">
+  <meta name="description" content="1 自带函数has_key() 在python的字典的属性方法里面有一个has_key()方法，这个方法使用起来非常简单。 Python 3.x不再支持 has_key() 函数，而被__contains__()所替代。 123d = &amp;#123;&apos;name&apos;: &amp;#123;&amp;#125;, &apos;age&apos;: &amp;#123;&amp;#125;, &apos;sex&apos;: &amp;#123;&amp;#125;&amp;#125;# print">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="判断python dict或list 中是否含有某个元素或key">
 <meta property="og:url" content="https://Dragonliu2018.github.io/2022/02/09/判断python-dict或list-中是否含有某个元素或key/index.html">
 <meta property="og:site_name" content="Dragon Liu">
-<meta property="og:description" content="1 自带函数has_key()在python的字典的属性方法里面有一个has_key()方法，这个方法使用起来非常简单。 Python 3.x不再支持 has_key() 函数，而被__contains__()所替代。 123d = &amp;#123;&apos;name&apos;: &amp;#123;&amp;#125;, &apos;age&apos;: &amp;#123;&amp;#125;, &apos;sex&apos;: &amp;#123;&amp;#125;&amp;#125;# print(d">
+<meta property="og:description" content="1 自带函数has_key() 在python的字典的属性方法里面有一个has_key()方法，这个方法使用起来非常简单。 Python 3.x不再支持 has_key() 函数，而被__contains__()所替代。 123d = &amp;#123;&apos;name&apos;: &amp;#123;&amp;#125;, &apos;age&apos;: &amp;#123;&amp;#125;, &apos;sex&apos;: &amp;#123;&amp;#125;&amp;#125;# print">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2022-02-09T15:01:12.322Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="判断python dict或list 中是否含有某个元素或key">
-<meta name="twitter:description" content="1 自带函数has_key()在python的字典的属性方法里面有一个has_key()方法，这个方法使用起来非常简单。 Python 3.x不再支持 has_key() 函数，而被__contains__()所替代。 123d = &amp;#123;&apos;name&apos;: &amp;#123;&amp;#125;, &apos;age&apos;: &amp;#123;&amp;#125;, &apos;sex&apos;: &amp;#123;&amp;#125;&amp;#125;# print(d">
+<meta name="twitter:description" content="1 自带函数has_key() 在python的字典的属性方法里面有一个has_key()方法，这个方法使用起来非常简单。 Python 3.x不再支持 has_key() 函数，而被__contains__()所替代。 123d = &amp;#123;&apos;name&apos;: &amp;#123;&amp;#125;, &apos;age&apos;: &amp;#123;&amp;#125;, &apos;sex&apos;: &amp;#123;&amp;#125;&amp;#125;# print">
   <!-- Canonical links -->
   <link rel="canonical" href="https://Dragonliu2018.github.io/2022/02/09/判断python-dict或list-中是否含有某个元素或key/index.html">
   
@@ -324,7 +324,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-自带函数has-key"><span class="toc-number">1.</span> <span class="toc-text">1 自带函数has_key()</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-in-方法"><span class="toc-number">2.</span> <span class="toc-text">2 in 方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#X-参考"><span class="toc-number">3.</span> <span class="toc-text">X 参考</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-自带函数has_key"><span class="toc-number">1.</span> <span class="toc-text"> 1 自带函数has_key()</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-in-方法"><span class="toc-number">2.</span> <span class="toc-text"> 2 in 方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#x-参考"><span class="toc-number">3.</span> <span class="toc-text"> X 参考</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -385,11 +385,14 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="1-自带函数has-key"><a href="#1-自带函数has-key" class="headerlink" title="1 自带函数has_key()"></a>1 自带函数has_key()</h1><p>在python的字典的属性方法里面有一个<code>has_key()</code>方法，这个方法使用起来非常简单。</p>
+        <h1 id="1-自带函数has_key"><a class="markdownIt-Anchor" href="#1-自带函数has_key"></a> 1 自带函数has_key()</h1>
+<p>在python的字典的属性方法里面有一个<code>has_key()</code>方法，这个方法使用起来非常简单。</p>
 <p>Python 3.x不再支持 <code>has_key()</code> 函数，而被<code>__contains__()</code>所替代。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">'name'</span>: &#123;&#125;, <span class="string">'age'</span>: &#123;&#125;, <span class="string">'sex'</span>: &#123;&#125;&#125;</span><br><span class="line"><span class="comment"># print(d.has_key('name'))</span></span><br><span class="line">print(d.__contains__(<span class="string">'name'</span>))  <span class="comment"># True</span></span><br></pre></td></tr></table></figure>
-<h1 id="2-in-方法"><a href="#2-in-方法" class="headerlink" title="2 in 方法"></a>2 in 方法</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 字典是否含有key</span></span><br><span class="line">d = &#123;<span class="string">'name'</span>: &#123;&#125;, <span class="string">'age'</span>: &#123;&#125;, <span class="string">'sex'</span>: &#123;&#125;&#125;</span><br><span class="line">print(<span class="string">"name"</span> <span class="keyword">in</span> d.keys())  <span class="comment"># True</span></span><br><span class="line">print(<span class="string">"name"</span> <span class="keyword">not</span> <span class="keyword">in</span> d.keys())  <span class="comment"># False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 列表是否含有value</span></span><br><span class="line">l = [<span class="string">'name'</span>, <span class="string">'age'</span>, <span class="string">'sex'</span>]</span><br><span class="line">print(<span class="string">"name"</span> <span class="keyword">in</span> l)  <span class="comment"># True</span></span><br><span class="line">print(<span class="string">"name"</span> <span class="keyword">not</span> <span class="keyword">in</span> l)  <span class="comment"># False</span></span><br></pre></td></tr></table></figure>
-<h1 id="X-参考"><a href="#X-参考" class="headerlink" title="X 参考"></a>X 参考</h1><ul>
+<h1 id="2-in-方法"><a class="markdownIt-Anchor" href="#2-in-方法"></a> 2 in 方法</h1>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 字典是否含有key</span></span><br><span class="line">d = &#123;<span class="string">'name'</span>: &#123;&#125;, <span class="string">'age'</span>: &#123;&#125;, <span class="string">'sex'</span>: &#123;&#125;&#125;</span><br><span class="line">print(<span class="string">"name"</span> <span class="keyword">in</span> d.keys())  <span class="comment"># True</span></span><br><span class="line">print(<span class="string">"name"</span> <span class="keyword">not</span> <span class="keyword">in</span> d.keys())  <span class="comment"># False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 列表是否含有value</span></span><br><span class="line">l = [<span class="string">'name'</span>, <span class="string">'age'</span>, <span class="string">'sex'</span>]</span><br><span class="line">print(<span class="string">"name"</span> <span class="keyword">in</span> l)  <span class="comment"># True</span></span><br><span class="line">print(<span class="string">"name"</span> <span class="keyword">not</span> <span class="keyword">in</span> l)  <span class="comment"># False</span></span><br></pre></td></tr></table></figure>
+<h1 id="x-参考"><a class="markdownIt-Anchor" href="#x-参考"></a> X 参考</h1>
+<ul>
 <li><a href="https://blog.csdn.net/linjpg/article/details/82190565" target="_blank" rel="noopener">判断python字典或者列表中是否包含某个元素或者key</a></li>
 </ul>
 

@@ -18,18 +18,18 @@
   
   
   <title>git clone失败整理 | Melo&#39;s Blogs</title>
-  <meta name="description" content="1 errno 10054翻墙了，但是仍然出现下面的报错： 12Cloning into &apos;redash&apos;...fatal: unable to access &apos;https://github.com/getredash/redash.git/&apos;: OpenSSL SSL_read: Connection was reset, errno 10054 可能是因为代码库太大，调高 git buffer">
+  <meta name="description" content="1 errno 10054 翻墙了，但是仍然出现下面的报错： 12Cloning into &apos;redash&apos;...fatal: unable to access &apos;https://github.com/getredash/redash.git/&apos;: OpenSSL SSL_read: Connection was reset, errno 10054 可能是因为代码库太大，调高 git buff">
 <meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git clone失败整理">
 <meta property="og:url" content="https://Dragonliu2018.github.io/2022/02/14/git-clone失败整理/index.html">
 <meta property="og:site_name" content="Dragon Liu">
-<meta property="og:description" content="1 errno 10054翻墙了，但是仍然出现下面的报错： 12Cloning into &apos;redash&apos;...fatal: unable to access &apos;https://github.com/getredash/redash.git/&apos;: OpenSSL SSL_read: Connection was reset, errno 10054 可能是因为代码库太大，调高 git buffer">
+<meta property="og:description" content="1 errno 10054 翻墙了，但是仍然出现下面的报错： 12Cloning into &apos;redash&apos;...fatal: unable to access &apos;https://github.com/getredash/redash.git/&apos;: OpenSSL SSL_read: Connection was reset, errno 10054 可能是因为代码库太大，调高 git buff">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2022-02-15T11:43:42.733Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git clone失败整理">
-<meta name="twitter:description" content="1 errno 10054翻墙了，但是仍然出现下面的报错： 12Cloning into &apos;redash&apos;...fatal: unable to access &apos;https://github.com/getredash/redash.git/&apos;: OpenSSL SSL_read: Connection was reset, errno 10054 可能是因为代码库太大，调高 git buffer">
+<meta name="twitter:description" content="1 errno 10054 翻墙了，但是仍然出现下面的报错： 12Cloning into &apos;redash&apos;...fatal: unable to access &apos;https://github.com/getredash/redash.git/&apos;: OpenSSL SSL_read: Connection was reset, errno 10054 可能是因为代码库太大，调高 git buff">
   <!-- Canonical links -->
   <link rel="canonical" href="https://Dragonliu2018.github.io/2022/02/14/git-clone失败整理/index.html">
   
@@ -324,7 +324,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-errno-10054"><span class="toc-number">1.</span> <span class="toc-text">1 errno 10054</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-443：Timed-out"><span class="toc-number">2.</span> <span class="toc-text">2 443：Timed out</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-errno-10054"><span class="toc-number">1.</span> <span class="toc-text"> 1 errno 10054</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-443timed-out"><span class="toc-number">2.</span> <span class="toc-text"> 2 443：Timed out</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -375,7 +375,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/02/14/git-clone失败整理/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 151(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 152(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -385,7 +385,8 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="1-errno-10054"><a href="#1-errno-10054" class="headerlink" title="1 errno 10054"></a>1 errno 10054</h1><p>翻墙了，但是仍然出现下面的报错：</p>
+        <h1 id="1-errno-10054"><a class="markdownIt-Anchor" href="#1-errno-10054"></a> 1 errno 10054</h1>
+<p>翻墙了，但是仍然出现下面的报错：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Cloning into <span class="string">'redash'</span>...</span><br><span class="line">fatal: unable to access <span class="string">'https://github.com/getredash/redash.git/'</span>: OpenSSL SSL_read: Connection was reset, errno 10054</span><br></pre></td></tr></table></figure>
 <p>可能是因为代码库太大，调高 <code>git buffer size</code> 即可：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方法1 全局修改</span></span><br><span class="line">git config --global http.postBuffer 524288000</span><br><span class="line"></span><br><span class="line"><span class="comment"># 方法2 只针对当前仓库</span></span><br><span class="line">git init</span><br><span class="line">git config http.postBuffer 524288000</span><br><span class="line">git remote add origin &lt;REPO URL&gt;</span><br><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
@@ -393,7 +394,8 @@
 <ul>
 <li><a href="https://stackoverflow.com/questions/46232906/git-clone-error-rpc-failed-curl-56-openssl-ssl-read-ssl-error-syscall-errno" target="_blank" rel="noopener">stackoverflow问答</a></li>
 </ul>
-<h1 id="2-443：Timed-out"><a href="#2-443：Timed-out" class="headerlink" title="2 443：Timed out"></a>2 443：Timed out</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Cloning into <span class="string">'redash'</span>...</span><br><span class="line">fatal: unable to access <span class="string">'https://github.com/getredash/redash.git/'</span>: Failed to connect to github.com port 443: Timed out</span><br></pre></td></tr></table></figure>
+<h1 id="2-443timed-out"><a class="markdownIt-Anchor" href="#2-443timed-out"></a> 2 443：Timed out</h1>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Cloning into <span class="string">'redash'</span>...</span><br><span class="line">fatal: unable to access <span class="string">'https://github.com/getredash/redash.git/'</span>: Failed to connect to github.com port 443: Timed out</span><br></pre></td></tr></table></figure>
 <p>翻墙是一种方法，其他待整理</p>
 
       
