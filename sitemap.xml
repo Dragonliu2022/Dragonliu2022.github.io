@@ -596,14 +596,14 @@
 
   
   <url>
-    <loc>https://dragonliu2018.github.io/tags/Web/</loc>
+    <loc>https://dragonliu2018.github.io/tags/C/</loc>
     <lastmod>2022-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://dragonliu2018.github.io/tags/C/</loc>
+    <loc>https://dragonliu2018.github.io/tags/Web/</loc>
     <lastmod>2022-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -631,7 +631,7 @@
   </url>
   
   <url>
-    <loc>https://dragonliu2018.github.io/tags/Redis/</loc>
+    <loc>https://dragonliu2018.github.io/tags/git/</loc>
     <lastmod>2022-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -645,7 +645,7 @@
   </url>
   
   <url>
-    <loc>https://dragonliu2018.github.io/tags/git/</loc>
+    <loc>https://dragonliu2018.github.io/tags/Redis/</loc>
     <lastmod>2022-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -694,14 +694,14 @@
   </url>
   
   <url>
-    <loc>https://dragonliu2018.github.io/tags/%E7%BA%AA%E5%BD%95%E7%89%87/</loc>
+    <loc>https://dragonliu2018.github.io/tags/%E6%91%98%E6%8A%84/</loc>
     <lastmod>2022-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://dragonliu2018.github.io/tags/%E6%91%98%E6%8A%84/</loc>
+    <loc>https://dragonliu2018.github.io/tags/%E7%BA%AA%E5%BD%95%E7%89%87/</loc>
     <lastmod>2022-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -710,14 +710,14 @@
 
   
   <url>
-    <loc>https://dragonliu2018.github.io/categories/%E5%AE%89%E5%85%A8/</loc>
+    <loc>https://dragonliu2018.github.io/categories/%E7%8E%AF%E5%A2%83%E4%B8%8E%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2022-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://dragonliu2018.github.io/categories/%E7%8E%AF%E5%A2%83%E4%B8%8E%E5%B7%A5%E5%85%B7/</loc>
+    <loc>https://dragonliu2018.github.io/categories/%E5%AE%89%E5%85%A8/</loc>
     <lastmod>2022-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
