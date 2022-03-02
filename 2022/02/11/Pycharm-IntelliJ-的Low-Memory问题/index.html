@@ -18,13 +18,13 @@
   
   
   <title>Pycharm(IntelliJ系列)的Low Memory问题 | Melo&#39;s Blogs</title>
-  <meta name="description" content="1 问题引入 最近在跑恶意样本可视化的脚本，Pycharm出现： 12Low MemoryThe IDE is running low on memory and this might affect performance. Please consider increasing available heap. 原因是IDE内存不足（之前给pycharm设定了2048M，跑大项目会出现上述问题）。">
+  <meta name="description" content="1 问题引入最近在跑恶意样本可视化的脚本，Pycharm出现： 12Low MemoryThe IDE is running low on memory and this might affect performance. Please consider increasing available heap. 原因是IDE内存不足（之前给pycharm设定了2048M，跑大项目会出现上述问题）。 主">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Pycharm(IntelliJ系列)的Low Memory问题">
 <meta property="og:url" content="https://Dragonliu2018.github.io/2022/02/11/Pycharm-IntelliJ-的Low-Memory问题/index.html">
 <meta property="og:site_name" content="Dragon Liu">
-<meta property="og:description" content="1 问题引入 最近在跑恶意样本可视化的脚本，Pycharm出现： 12Low MemoryThe IDE is running low on memory and this might affect performance. Please consider increasing available heap. 原因是IDE内存不足（之前给pycharm设定了2048M，跑大项目会出现上述问题）。">
+<meta property="og:description" content="1 问题引入最近在跑恶意样本可视化的脚本，Pycharm出现： 12Low MemoryThe IDE is running low on memory and this might affect performance. Please consider increasing available heap. 原因是IDE内存不足（之前给pycharm设定了2048M，跑大项目会出现上述问题）。 主">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.loli.net/2022/02/11/ulXpqTxoQSt1mRB.png">
 <meta property="og:image" content="https://s2.loli.net/2022/02/11/luJ4ba1mBA3G2hE.png">
@@ -33,7 +33,7 @@
 <meta property="og:updated_time" content="2022-02-11T03:39:29.635Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Pycharm(IntelliJ系列)的Low Memory问题">
-<meta name="twitter:description" content="1 问题引入 最近在跑恶意样本可视化的脚本，Pycharm出现： 12Low MemoryThe IDE is running low on memory and this might affect performance. Please consider increasing available heap. 原因是IDE内存不足（之前给pycharm设定了2048M，跑大项目会出现上述问题）。">
+<meta name="twitter:description" content="1 问题引入最近在跑恶意样本可视化的脚本，Pycharm出现： 12Low MemoryThe IDE is running low on memory and this might affect performance. Please consider increasing available heap. 原因是IDE内存不足（之前给pycharm设定了2048M，跑大项目会出现上述问题）。 主">
 <meta name="twitter:image" content="https://s2.loli.net/2022/02/11/ulXpqTxoQSt1mRB.png">
   <!-- Canonical links -->
   <link rel="canonical" href="https://Dragonliu2018.github.io/2022/02/11/Pycharm-IntelliJ-的Low-Memory问题/index.html">
@@ -329,7 +329,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-问题引入"><span class="toc-number">1.</span> <span class="toc-text"> 1 问题引入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-解决方法"><span class="toc-number">2.</span> <span class="toc-text"> 2 解决方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#21-直接配置"><span class="toc-number">2.1.</span> <span class="toc-text"> 2.1 直接配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-通过help配置修改"><span class="toc-number">2.2.</span> <span class="toc-text"> 2.2 通过help配置修改</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-问题引入"><span class="toc-number">1.</span> <span class="toc-text">1 问题引入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-解决方法"><span class="toc-number">2.</span> <span class="toc-text">2 解决方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-直接配置"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 直接配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-通过help配置修改"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 通过help配置修改</span></a></li></ol></li></ol>
     </nav>
   </div>
 </aside>
@@ -390,23 +390,19 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="1-问题引入"><a class="markdownIt-Anchor" href="#1-问题引入"></a> 1 问题引入</h1>
-<p>最近在跑恶意样本可视化的脚本，Pycharm出现：</p>
+        <h1 id="1-问题引入"><a href="#1-问题引入" class="headerlink" title="1 问题引入"></a>1 问题引入</h1><p>最近在跑恶意样本可视化的脚本，Pycharm出现：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Low Memory</span><br><span class="line">The IDE is running low on memory and this might affect performance. Please consider increasing available heap.</span><br></pre></td></tr></table></figure>
 <p>原因是IDE内存不足（之前给pycharm设定了2048M，跑大项目会出现上述问题）。</p>
 <p>主要copy于 <a href="https://www.cnblogs.com/baby123/p/15626312.html" target="_blank" rel="noopener">idea 的Low Memory问题</a></p>
-<h1 id="2-解决方法"><a class="markdownIt-Anchor" href="#2-解决方法"></a> 2 解决方法</h1>
-<p>下面的方法适用于IntelliJ系列产品，如Pycharm、idea等。</p>
-<h2 id="21-直接配置"><a class="markdownIt-Anchor" href="#21-直接配置"></a> 2.1 直接配置</h2>
-<img src="https://s2.loli.net/2022/02/11/ulXpqTxoQSt1mRB.png" width="800" height="200" alt="图片名称" align="center" id="68">
+<h1 id="2-解决方法"><a href="#2-解决方法" class="headerlink" title="2 解决方法"></a>2 解决方法</h1><p>下面的方法适用于IntelliJ系列产品，如Pycharm、idea等。</p>
+<h2 id="2-1-直接配置"><a href="#2-1-直接配置" class="headerlink" title="2.1 直接配置"></a>2.1 直接配置</h2><p><img src="https://s2.loli.net/2022/02/11/ulXpqTxoQSt1mRB.png" width="800" height="200" alt="图片名称" align="center" id="68"></p>
 <p>选择上图里的 Configure，修改堆大小：</p>
-<img src="https://s2.loli.net/2022/02/11/luJ4ba1mBA3G2hE.png" width="300" height="200" alt="图片名称" align="center" id="69">
+<p><img src="https://s2.loli.net/2022/02/11/luJ4ba1mBA3G2hE.png" width="300" height="200" alt="图片名称" align="center" id="69"></p>
 <p>重启IDE生效。</p>
-<h2 id="22-通过help配置修改"><a class="markdownIt-Anchor" href="#22-通过help配置修改"></a> 2.2 通过help配置修改</h2>
-<p>菜单 Help -&gt; 选择 Edit Custom VM Options，会打开 pycharm64.exe.vmoptions文件，修改配置即可。</p>
-<img src="https://s2.loli.net/2022/02/11/EgGpOs8Miow1VSe.png" width="600" height="400" alt="图片名称" align="center" id="70">
+<h2 id="2-2-通过help配置修改"><a href="#2-2-通过help配置修改" class="headerlink" title="2.2 通过help配置修改"></a>2.2 通过help配置修改</h2><p> 菜单 Help -&gt; 选择 Edit Custom VM Options，会打开 pycharm64.exe.vmoptions文件，修改配置即可。</p>
+<p><img src="https://s2.loli.net/2022/02/11/EgGpOs8Miow1VSe.png" width="600" height="400" alt="图片名称" align="center" id="70"></p>
 <p>此时发现<code>Change Memory Settings</code>中已经发生了变化：</p>
-<img src="https://s2.loli.net/2022/02/11/KPSpc5fVvUZR7ON.png" width="600" height="400" alt="图片名称" align="center" id="71">
+<p><img src="https://s2.loli.net/2022/02/11/KPSpc5fVvUZR7ON.png" width="600" height="400" alt="图片名称" align="center" id="71"></p>
 <p>最后重启IDE生效。</p>
 
       

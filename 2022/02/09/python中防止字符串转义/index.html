@@ -18,18 +18,18 @@
   
   
   <title>python中防止字符串转义 | Melo&#39;s Blogs</title>
-  <meta name="description" content="1 问题引入 最近在做xml解析、可视化时遇到一个问题：将字符串（文件路径）中的转义字符不进行转义123\tabc，正常print会将\t看作转义字符tab，需求是使字符串按原样输出。下面是不同场景下的解决方法：  2 字符串常量 如果是字符串常量，则在字符串前加r 即可： 1234print(&quot;123\tabc&quot;)# 123	abcprint(r&quot;123\tabc&quot;)  # test_str">
+  <meta name="description" content="1 问题引入最近在做xml解析、可视化时遇到一个问题：将字符串（文件路径）中的转义字符不进行转义123\tabc，正常print会将\t看作转义字符tab，需求是使字符串按原样输出。下面是不同场景下的解决方法： 2 字符串常量如果是字符串常量，则在字符串前加r 即可： 1234print(&quot;123\tabc&quot;)# 123	abcprint(r&quot;123\tabc&quot;)  # test_str = r&quot;">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python中防止字符串转义">
 <meta property="og:url" content="https://Dragonliu2018.github.io/2022/02/09/python中防止字符串转义/index.html">
 <meta property="og:site_name" content="Dragon Liu">
-<meta property="og:description" content="1 问题引入 最近在做xml解析、可视化时遇到一个问题：将字符串（文件路径）中的转义字符不进行转义123\tabc，正常print会将\t看作转义字符tab，需求是使字符串按原样输出。下面是不同场景下的解决方法：  2 字符串常量 如果是字符串常量，则在字符串前加r 即可： 1234print(&quot;123\tabc&quot;)# 123	abcprint(r&quot;123\tabc&quot;)  # test_str">
+<meta property="og:description" content="1 问题引入最近在做xml解析、可视化时遇到一个问题：将字符串（文件路径）中的转义字符不进行转义123\tabc，正常print会将\t看作转义字符tab，需求是使字符串按原样输出。下面是不同场景下的解决方法： 2 字符串常量如果是字符串常量，则在字符串前加r 即可： 1234print(&quot;123\tabc&quot;)# 123	abcprint(r&quot;123\tabc&quot;)  # test_str = r&quot;">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2022-02-15T11:49:58.630Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python中防止字符串转义">
-<meta name="twitter:description" content="1 问题引入 最近在做xml解析、可视化时遇到一个问题：将字符串（文件路径）中的转义字符不进行转义123\tabc，正常print会将\t看作转义字符tab，需求是使字符串按原样输出。下面是不同场景下的解决方法：  2 字符串常量 如果是字符串常量，则在字符串前加r 即可： 1234print(&quot;123\tabc&quot;)# 123	abcprint(r&quot;123\tabc&quot;)  # test_str">
+<meta name="twitter:description" content="1 问题引入最近在做xml解析、可视化时遇到一个问题：将字符串（文件路径）中的转义字符不进行转义123\tabc，正常print会将\t看作转义字符tab，需求是使字符串按原样输出。下面是不同场景下的解决方法： 2 字符串常量如果是字符串常量，则在字符串前加r 即可： 1234print(&quot;123\tabc&quot;)# 123	abcprint(r&quot;123\tabc&quot;)  # test_str = r&quot;">
   <!-- Canonical links -->
   <link rel="canonical" href="https://Dragonliu2018.github.io/2022/02/09/python中防止字符串转义/index.html">
   
@@ -324,7 +324,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-问题引入"><span class="toc-number">1.</span> <span class="toc-text"> 1 问题引入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-字符串常量"><span class="toc-number">2.</span> <span class="toc-text"> 2 字符串常量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-字符串变量"><span class="toc-number">3.</span> <span class="toc-text"> 3 字符串变量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-文件读取"><span class="toc-number">4.</span> <span class="toc-text"> 4 文件读取</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#x-参考"><span class="toc-number">5.</span> <span class="toc-text"> X 参考</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-问题引入"><span class="toc-number">1.</span> <span class="toc-text">1 问题引入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-字符串常量"><span class="toc-number">2.</span> <span class="toc-text">2 字符串常量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-字符串变量"><span class="toc-number">3.</span> <span class="toc-text">3 字符串变量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-文件读取"><span class="toc-number">4.</span> <span class="toc-text">4 文件读取</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#X-参考"><span class="toc-number">5.</span> <span class="toc-text">X 参考</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -385,21 +385,16 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="1-问题引入"><a class="markdownIt-Anchor" href="#1-问题引入"></a> 1 问题引入</h1>
-<p>最近在做xml解析、可视化时遇到一个问题：将字符串（文件路径）中的转义字符不进行转义<code>123\tabc</code>，正常print会将<code>\t</code>看作转义字符tab，需求是使字符串按原样输出。下面是不同场景下的解决方法：</p>
-<h1 id="2-字符串常量"><a class="markdownIt-Anchor" href="#2-字符串常量"></a> 2 字符串常量</h1>
-<p>如果是字符串常量，则在字符串前加<code>r</code> 即可：</p>
+        <h1 id="1-问题引入"><a href="#1-问题引入" class="headerlink" title="1 问题引入"></a>1 问题引入</h1><p>最近在做xml解析、可视化时遇到一个问题：将字符串（文件路径）中的转义字符不进行转义<code>123\tabc</code>，正常print会将<code>\t</code>看作转义字符tab，需求是使字符串按原样输出。下面是不同场景下的解决方法：</p>
+<h1 id="2-字符串常量"><a href="#2-字符串常量" class="headerlink" title="2 字符串常量"></a>2 字符串常量</h1><p>如果是字符串常量，则在字符串前加<code>r</code> 即可：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"123\tabc"</span>)</span><br><span class="line"><span class="comment"># 123	abc</span></span><br><span class="line">print(<span class="string">r"123\tabc"</span>)  <span class="comment"># test_str = r"123\tabc"</span></span><br><span class="line"><span class="comment"># 123\tabc</span></span><br></pre></td></tr></table></figure>
-<h1 id="3-字符串变量"><a class="markdownIt-Anchor" href="#3-字符串变量"></a> 3 字符串变量</h1>
-<p>如果字符串是变量，使用 <code>repr()</code> 方法：</p>
+<h1 id="3-字符串变量"><a href="#3-字符串变量" class="headerlink" title="3 字符串变量"></a>3 字符串变量</h1><p>如果字符串是变量，使用 <code>repr()</code> 方法：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">"123\tabc"</span></span><br><span class="line">str2 = repr(str1)</span><br><span class="line"></span><br><span class="line">print(str1)  <span class="comment"># 123	abc</span></span><br><span class="line">print(str2)  <span class="comment"># '123\tabc'</span></span><br><span class="line">print(str2.strip(<span class="string">"\'"</span>))  <span class="comment"># 123\tabc</span></span><br></pre></td></tr></table></figure>
 <p><font color="red"><strong>注意</strong></font>：字符串使用 <code>repr</code> 函数后输出是会在字符串前后自动加上单引号（见print第二行），print第三行是去掉了字符串首尾的单引号。关于<code>strip</code>函数，详见<a href="https://dragonliu.tk/2022/02/09/python%E5%8E%BB%E9%99%A4%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%A6%96%E5%B0%BE%E7%9A%84%E7%A9%BA%E6%A0%BC/" target="_blank" rel="noopener">博客</a>。</p>
-<h1 id="4-文件读取"><a class="markdownIt-Anchor" href="#4-文件读取"></a> 4 文件读取</h1>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">file1 = open(<span class="string">"test.txt"</span>, <span class="string">"r"</span>)  <span class="comment"># 123\tabc</span></span><br><span class="line"></span><br><span class="line">print(file1.read())  <span class="comment"># 123\tabc</span></span><br></pre></td></tr></table></figure>
+<h1 id="4-文件读取"><a href="#4-文件读取" class="headerlink" title="4 文件读取"></a>4 文件读取</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">file1 = open(<span class="string">"test.txt"</span>, <span class="string">"r"</span>)  <span class="comment"># 123\tabc</span></span><br><span class="line"></span><br><span class="line">print(file1.read())  <span class="comment"># 123\tabc</span></span><br></pre></td></tr></table></figure>
 <p>文本文件读取测试发现字符串未发生转义。</p>
 <p>拓展阅读：<a href="https://blog.csdn.net/ahalearner/article/details/119777972" target="_blank" rel="noopener">关于python中open函数读取和写入windows记事本的换行问题研究</a></p>
-<h1 id="x-参考"><a class="markdownIt-Anchor" href="#x-参考"></a> X 参考</h1>
-<ul>
+<h1 id="X-参考"><a href="#X-参考" class="headerlink" title="X 参考"></a>X 参考</h1><ul>
 <li><a href="https://www.cnblogs.com/hellofengying/p/10183057.html" target="_blank" rel="noopener">python中防止字符串转义</a></li>
 <li><a href="https://blog.csdn.net/weixin_41813169/article/details/105702294" target="_blank" rel="noopener">python如何实现对变量的禁止转义操作</a></li>
 </ul>
