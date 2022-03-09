@@ -18,18 +18,18 @@
   
   
   <title>python解析xml文件 | Melo&#39;s Blogs</title>
-  <meta name="description" content="1 问题引入最近在做恶意样本行为可视化，样本的行为是xml文件形式给出，需要使用python对其解析。本次实验使用了dom进行的解析。  XML 指可扩展标记语言（eXtensible Markup Language），标准通用标记语言的子集，是一种用于标记电子文件使其具有结构性的标记语言。 XML 被设计用来传输和存储数据。 XML 是一套定义语义标记的规则，这些标记将文档分成许多部件并对这些部">
+  <meta name="description" content="1 问题引入 最近在做恶意样本行为可视化，样本的行为是xml文件形式给出，需要使用python对其解析。本次实验使用了dom进行的解析。  XML 指可扩展标记语言（eXtensible Markup Language），标准通用标记语言的子集，是一种用于标记电子文件使其具有结构性的标记语言。 XML 被设计用来传输和存储数据。 XML 是一套定义语义标记的规则，这些标记将文档分成许多部件并对这">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python解析xml文件">
 <meta property="og:url" content="https://Dragonliu2018.github.io/2022/02/09/python解析xml文件/index.html">
 <meta property="og:site_name" content="Dragon Liu">
-<meta property="og:description" content="1 问题引入最近在做恶意样本行为可视化，样本的行为是xml文件形式给出，需要使用python对其解析。本次实验使用了dom进行的解析。  XML 指可扩展标记语言（eXtensible Markup Language），标准通用标记语言的子集，是一种用于标记电子文件使其具有结构性的标记语言。 XML 被设计用来传输和存储数据。 XML 是一套定义语义标记的规则，这些标记将文档分成许多部件并对这些部">
+<meta property="og:description" content="1 问题引入 最近在做恶意样本行为可视化，样本的行为是xml文件形式给出，需要使用python对其解析。本次实验使用了dom进行的解析。  XML 指可扩展标记语言（eXtensible Markup Language），标准通用标记语言的子集，是一种用于标记电子文件使其具有结构性的标记语言。 XML 被设计用来传输和存储数据。 XML 是一套定义语义标记的规则，这些标记将文档分成许多部件并对这">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2022-02-09T11:17:05.862Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python解析xml文件">
-<meta name="twitter:description" content="1 问题引入最近在做恶意样本行为可视化，样本的行为是xml文件形式给出，需要使用python对其解析。本次实验使用了dom进行的解析。  XML 指可扩展标记语言（eXtensible Markup Language），标准通用标记语言的子集，是一种用于标记电子文件使其具有结构性的标记语言。 XML 被设计用来传输和存储数据。 XML 是一套定义语义标记的规则，这些标记将文档分成许多部件并对这些部">
+<meta name="twitter:description" content="1 问题引入 最近在做恶意样本行为可视化，样本的行为是xml文件形式给出，需要使用python对其解析。本次实验使用了dom进行的解析。  XML 指可扩展标记语言（eXtensible Markup Language），标准通用标记语言的子集，是一种用于标记电子文件使其具有结构性的标记语言。 XML 被设计用来传输和存储数据。 XML 是一套定义语义标记的规则，这些标记将文档分成许多部件并对这">
   <!-- Canonical links -->
   <link rel="canonical" href="https://Dragonliu2018.github.io/2022/02/09/python解析xml文件/index.html">
   
@@ -193,7 +193,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/安全/">安全</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发/">开发</a><span class="category-list-count">30</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/折腾/">折腾</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/旅行/">旅行</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/音乐/">音乐</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/安全/">安全</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发/">开发</a><span class="category-list-count">31</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/折腾/">折腾</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/旅行/">旅行</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/音乐/">音乐</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -203,7 +203,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Graphviz/">Graphviz</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/neo4j/">neo4j</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书评/">书评</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区块链/">区块链</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/待看/">待看</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摘抄/">摘抄</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电视剧/">电视剧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纪录片/">纪录片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/若依/">若依</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Graphviz/">Graphviz</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/neo4j/">neo4j</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">27</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书评/">书评</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区块链/">区块链</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/待看/">待看</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摘抄/">摘抄</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电视剧/">电视剧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纪录片/">纪录片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/若依/">若依</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -238,13 +238,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/环境与工具/">环境与工具</a>
+                <a class="category-link" href="/categories/开发/">开发</a>
               </p>
               <p class="item-title">
-                <a href="/2022/03/08/IDEA推荐插件/" class="title">IDEA推荐插件</a>
+                <a href="/2022/03/09/python解决循环引用问题/" class="title">python解决循环引用问题</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-03-08T07:27:11.000Z" itemprop="datePublished">2022-03-08</time>
+                <time datetime="2022-03-09T08:11:23.000Z" itemprop="datePublished">2022-03-09</time>
               </p>
             </div>
           </li>
@@ -324,7 +324,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-问题引入"><span class="toc-number">1.</span> <span class="toc-text">1 问题引入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-SAX"><span class="toc-number">2.</span> <span class="toc-text">2 SAX</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-DOM"><span class="toc-number">3.</span> <span class="toc-text">3 DOM</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-ElementTree"><span class="toc-number">4.</span> <span class="toc-text">4 ElementTree</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#X-参考"><span class="toc-number">5.</span> <span class="toc-text">X 参考</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-问题引入"><span class="toc-number">1.</span> <span class="toc-text"> 1 问题引入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-sax"><span class="toc-number">2.</span> <span class="toc-text"> 2 SAX</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-dom"><span class="toc-number">3.</span> <span class="toc-text"> 3 DOM</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-elementtree"><span class="toc-number">4.</span> <span class="toc-text"> 4 ElementTree</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#x-参考"><span class="toc-number">5.</span> <span class="toc-text"> X 参考</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -385,7 +385,8 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="1-问题引入"><a href="#1-问题引入" class="headerlink" title="1 问题引入"></a>1 问题引入</h1><p>最近在做恶意样本行为可视化，样本的行为是xml文件形式给出，需要使用python对其解析。本次实验使用了dom进行的解析。</p>
+        <h1 id="1-问题引入"><a class="markdownIt-Anchor" href="#1-问题引入"></a> 1 问题引入</h1>
+<p>最近在做恶意样本行为可视化，样本的行为是xml文件形式给出，需要使用python对其解析。本次实验使用了dom进行的解析。</p>
 <blockquote>
 <p>XML 指可扩展标记语言（e<strong>X</strong>tensible <strong>M</strong>arkup <strong>L</strong>anguage），标准通用标记语言的子集，是一种用于标记电子文件使其具有结构性的标记语言。</p>
 <p>XML 被设计用来传输和存储数据。</p>
@@ -395,8 +396,10 @@
 <p>Python 有三种方法解析 XML，SAX，DOM，以及 ElementTree</p>
 </blockquote>
 <p>主要参考：<a href="https://www.runoob.com/python3/python3-xml-processing.html" target="_blank" rel="noopener">菜鸟教程——Python3 XML 解析</a></p>
-<h1 id="2-SAX"><a href="#2-SAX" class="headerlink" title="2 SAX"></a>2 SAX</h1><p>待补充</p>
-<h1 id="3-DOM"><a href="#3-DOM" class="headerlink" title="3 DOM"></a>3 DOM</h1><p>文件对象模型（Document Object Model，简称DOM），是W3C组织推荐的处理可扩展置标语言的标准编程接口。</p>
+<h1 id="2-sax"><a class="markdownIt-Anchor" href="#2-sax"></a> 2 SAX</h1>
+<p>待补充</p>
+<h1 id="3-dom"><a class="markdownIt-Anchor" href="#3-dom"></a> 3 DOM</h1>
+<p>文件对象模型（Document Object Model，简称DOM），是W3C组织推荐的处理可扩展置标语言的标准编程接口。</p>
 <p>一个 DOM 的解析器在解析一个 XML 文档时，一次性读取整个文档，把文档中所有元素保存在内存中的一个树结构里，之后你可以利用DOM 提供的不同的函数来读取或修改文档的内容和结构，也可以把修改过的内容写入xml文件。</p>
 <p>xml文件 <code>movies.xml</code> 如下：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">collection</span> <span class="attr">shelf</span>=<span class="string">"New Arrivals"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">movie</span> <span class="attr">title</span>=<span class="string">"Enemy Behind"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">type</span>&gt;</span>War, Thriller<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">format</span>&gt;</span>DVD<span class="tag">&lt;/<span class="name">format</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">year</span>&gt;</span>2003<span class="tag">&lt;/<span class="name">year</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">rating</span>&gt;</span>PG<span class="tag">&lt;/<span class="name">rating</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">stars</span>&gt;</span>10<span class="tag">&lt;/<span class="name">stars</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">description</span>&gt;</span>Talk about a US-Japan war<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">movie</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">movie</span> <span class="attr">title</span>=<span class="string">"Transformers"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">type</span>&gt;</span>Anime, Science Fiction<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">format</span>&gt;</span>DVD<span class="tag">&lt;/<span class="name">format</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">year</span>&gt;</span>1989<span class="tag">&lt;/<span class="name">year</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">rating</span>&gt;</span>R<span class="tag">&lt;/<span class="name">rating</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">stars</span>&gt;</span>8<span class="tag">&lt;/<span class="name">stars</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">description</span>&gt;</span>A schientific fiction<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">movie</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">collection</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -405,8 +408,10 @@
 <p>输出如下：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Root element : New Arrivals</span><br><span class="line">*****Movie*****</span><br><span class="line">Title: Enemy Behind</span><br><span class="line">Type: War, Thriller</span><br><span class="line">Format: DVD</span><br><span class="line">Rating: PG</span><br><span class="line">Description: Talk about a US-Japan war</span><br><span class="line">*****Movie*****</span><br><span class="line">Title: Transformers</span><br><span class="line">Type: Anime, Science Fiction</span><br><span class="line">Format: DVD</span><br><span class="line">Rating: R</span><br><span class="line">Description: A schientific fiction</span><br><span class="line">*****Movie*****</span><br></pre></td></tr></table></figure>
 <p>完整的 DOM API 文档请查阅<a href="http://docs.python.org/library/xml.dom.html" target="_blank" rel="noopener">Python DOM APIs</a>。</p>
-<h1 id="4-ElementTree"><a href="#4-ElementTree" class="headerlink" title="4 ElementTree"></a>4 ElementTree</h1><p>待补充</p>
-<h1 id="X-参考"><a href="#X-参考" class="headerlink" title="X 参考"></a>X 参考</h1><ul>
+<h1 id="4-elementtree"><a class="markdownIt-Anchor" href="#4-elementtree"></a> 4 ElementTree</h1>
+<p>待补充</p>
+<h1 id="x-参考"><a class="markdownIt-Anchor" href="#x-参考"></a> X 参考</h1>
+<ul>
 <li></li>
 </ul>
 
