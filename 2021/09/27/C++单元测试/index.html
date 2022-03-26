@@ -18,20 +18,20 @@
   
   
   <title>C++单元测试 | Melo&#39;s Blogs</title>
-  <meta name="description" content="0 情景导入 在实习时，用到了C++中的单元测试，整理一下。分别在Windows和子系统（Ubuntu）中安装配置。  1 安装googletest  1.1 环境配置   下载gtest：git clone https://github.com/google/googletest.git   安装cmake：  CMake 是一个开源的跨平台的自动化构建系统，主要用于 C++ 的工程构建、测试">
+  <meta name="description" content="0 情景导入在实习时，用到了C++中的单元测试，整理一下。分别在Windows和子系统（Ubuntu）中安装配置。 1 安装googletest1.1 环境配置 下载gtest：git clone https://github.com/google/googletest.git  安装cmake：  CMake 是一个开源的跨平台的自动化构建系统，主要用于 C++ 的工程构建、测试以及打包等自动化">
 <meta name="keywords" content="C++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++单元测试">
 <meta property="og:url" content="https://Dragonliu2018.github.io/2021/09/27/C++单元测试/index.html">
 <meta property="og:site_name" content="Dragon Liu">
-<meta property="og:description" content="0 情景导入 在实习时，用到了C++中的单元测试，整理一下。分别在Windows和子系统（Ubuntu）中安装配置。  1 安装googletest  1.1 环境配置   下载gtest：git clone https://github.com/google/googletest.git   安装cmake：  CMake 是一个开源的跨平台的自动化构建系统，主要用于 C++ 的工程构建、测试">
+<meta property="og:description" content="0 情景导入在实习时，用到了C++中的单元测试，整理一下。分别在Windows和子系统（Ubuntu）中安装配置。 1 安装googletest1.1 环境配置 下载gtest：git clone https://github.com/google/googletest.git  安装cmake：  CMake 是一个开源的跨平台的自动化构建系统，主要用于 C++ 的工程构建、测试以及打包等自动化">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2021/10/06/quPZfVpBdWGCriI.png">
 <meta property="og:image" content="https://i.loli.net/2021/10/06/c2JyQ41X3nImkTK.png">
 <meta property="og:updated_time" content="2022-01-21T13:22:03.090Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++单元测试">
-<meta name="twitter:description" content="0 情景导入 在实习时，用到了C++中的单元测试，整理一下。分别在Windows和子系统（Ubuntu）中安装配置。  1 安装googletest  1.1 环境配置   下载gtest：git clone https://github.com/google/googletest.git   安装cmake：  CMake 是一个开源的跨平台的自动化构建系统，主要用于 C++ 的工程构建、测试">
+<meta name="twitter:description" content="0 情景导入在实习时，用到了C++中的单元测试，整理一下。分别在Windows和子系统（Ubuntu）中安装配置。 1 安装googletest1.1 环境配置 下载gtest：git clone https://github.com/google/googletest.git  安装cmake：  CMake 是一个开源的跨平台的自动化构建系统，主要用于 C++ 的工程构建、测试以及打包等自动化">
 <meta name="twitter:image" content="https://i.loli.net/2021/10/06/quPZfVpBdWGCriI.png">
   <!-- Canonical links -->
   <link rel="canonical" href="https://Dragonliu2018.github.io/2021/09/27/C++单元测试/index.html">
@@ -194,7 +194,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/安全/">安全</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发/">开发</a><span class="category-list-count">31</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/折腾/">折腾</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/旅行/">旅行</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/音乐/">音乐</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/安全/">安全</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发/">开发</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/折腾/">折腾</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/旅行/">旅行</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/音乐/">音乐</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -204,7 +204,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Graphviz/">Graphviz</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/neo4j/">neo4j</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">27</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书评/">书评</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区块链/">区块链</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/待看/">待看</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摘抄/">摘抄</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电视剧/">电视剧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纪录片/">纪录片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/若依/">若依</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Graphviz/">Graphviz</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/neo4j/">neo4j</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">31</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书评/">书评</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区块链/">区块链</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/待看/">待看</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摘抄/">摘抄</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电视剧/">电视剧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纪录片/">纪录片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/若依/">若依</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -214,7 +214,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/C/" style="font-size: 13.2px;">C++</a> <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Graphviz/" style="font-size: 13px;">Graphviz</a> <a href="/tags/Hexo/" style="font-size: 13.4px;">Hexo</a> <a href="/tags/MySQL/" style="font-size: 13.2px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 13px;">Redis</a> <a href="/tags/Web/" style="font-size: 13.2px;">Web</a> <a href="/tags/git/" style="font-size: 13px;">git</a> <a href="/tags/neo4j/" style="font-size: 13px;">neo4j</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/书评/" style="font-size: 13.8px;">书评</a> <a href="/tags/区块链/" style="font-size: 13px;">区块链</a> <a href="/tags/待看/" style="font-size: 13.6px;">待看</a> <a href="/tags/摘抄/" style="font-size: 13.2px;">摘抄</a> <a href="/tags/电影/" style="font-size: 13.4px;">电影</a> <a href="/tags/电视剧/" style="font-size: 13px;">电视剧</a> <a href="/tags/纪录片/" style="font-size: 13px;">纪录片</a> <a href="/tags/若依/" style="font-size: 13.2px;">若依</a>
+      <a href="/tags/C/" style="font-size: 13.17px;">C++</a> <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Graphviz/" style="font-size: 13px;">Graphviz</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/MySQL/" style="font-size: 13.67px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 13px;">Redis</a> <a href="/tags/Web/" style="font-size: 13.17px;">Web</a> <a href="/tags/git/" style="font-size: 13px;">git</a> <a href="/tags/neo4j/" style="font-size: 13px;">neo4j</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/书评/" style="font-size: 13.83px;">书评</a> <a href="/tags/区块链/" style="font-size: 13px;">区块链</a> <a href="/tags/待看/" style="font-size: 13.5px;">待看</a> <a href="/tags/摘抄/" style="font-size: 13.17px;">摘抄</a> <a href="/tags/电影/" style="font-size: 13.33px;">电影</a> <a href="/tags/电视剧/" style="font-size: 13px;">电视剧</a> <a href="/tags/纪录片/" style="font-size: 13px;">纪录片</a> <a href="/tags/若依/" style="font-size: 13.17px;">若依</a>
     </div>
   </div>
 
@@ -223,7 +223,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">34</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">34</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -239,13 +239,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/阅读/">阅读</a>
+                <a class="category-link" href="/categories/开发/">开发</a>
               </p>
               <p class="item-title">
-                <a href="/2022/03/10/《围城》书籍/" class="title">《围城》书籍</a>
+                <a href="/2022/03/26/sqlalchemy中的聚合函数/" class="title">sqlalchemy中的聚合函数</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-03-10T02:10:34.000Z" itemprop="datePublished">2022-03-10</time>
+                <time datetime="2022-03-26T04:10:12.000Z" itemprop="datePublished">2022-03-26</time>
               </p>
             </div>
           </li>
@@ -257,10 +257,10 @@
                 <a class="category-link" href="/categories/开发/">开发</a>
               </p>
               <p class="item-title">
-                <a href="/2022/03/09/python解决循环引用问题/" class="title">python解决循环引用问题</a>
+                <a href="/2022/03/26/MySQL错误1366：字段编码报错/" class="title">MySQL错误1366：字段编码报错</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-03-09T08:11:23.000Z" itemprop="datePublished">2022-03-09</time>
+                <time datetime="2022-03-26T03:32:44.000Z" itemprop="datePublished">2022-03-26</time>
               </p>
             </div>
           </li>
@@ -272,10 +272,10 @@
                 <a class="category-link" href="/categories/开发/">开发</a>
               </p>
               <p class="item-title">
-                <a href="/2022/03/08/python列表操作之遍历/" class="title">python列表操作之遍历</a>
+                <a href="/2022/03/25/MySQL错误1406：超长字符串/" class="title">MySQL错误1406：超长字符串</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-03-08T07:03:09.000Z" itemprop="datePublished">2022-03-08</time>
+                <time datetime="2022-03-25T15:52:12.000Z" itemprop="datePublished">2022-03-25</time>
               </p>
             </div>
           </li>
@@ -287,10 +287,10 @@
                 <a class="category-link" href="/categories/开发/">开发</a>
               </p>
               <p class="item-title">
-                <a href="/2022/03/08/python列表操作之排序/" class="title">python列表操作之排序</a>
+                <a href="/2022/03/25/MySQL数据类型以及sqlalchemy中的对应/" class="title">MySQL数据类型以及sqlalchemy中的对应</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-03-08T07:02:59.000Z" itemprop="datePublished">2022-03-08</time>
+                <time datetime="2022-03-25T13:17:46.000Z" itemprop="datePublished">2022-03-25</time>
               </p>
             </div>
           </li>
@@ -299,13 +299,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/开发/">开发</a>
+                <a class="category-link" href="/categories/环境与工具/">环境与工具</a>
               </p>
               <p class="item-title">
-                <a href="/2022/03/06/python列表操作之去重/" class="title">python列表操作之去重</a>
+                <a href="/2022/03/25/修复TortoiseGit文件夹和文件状态图标不显示问题/" class="title">修复TortoiseGit文件夹和文件状态图标不显示问题</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-03-06T12:37:31.000Z" itemprop="datePublished">2022-03-06</time>
+                <time datetime="2022-03-25T10:58:15.000Z" itemprop="datePublished">2022-03-25</time>
               </p>
             </div>
           </li>
@@ -325,7 +325,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-情景导入"><span class="toc-number">1.</span> <span class="toc-text"> 0 情景导入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-安装googletest"><span class="toc-number">2.</span> <span class="toc-text"> 1 安装googletest</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#11-环境配置"><span class="toc-number">2.1.</span> <span class="toc-text"> 1.1 环境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-编译gtest库"><span class="toc-number">2.2.</span> <span class="toc-text"> 1.2 编译gtest库</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-使用googletest"><span class="toc-number">3.</span> <span class="toc-text"> 2 使用googletest</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#21-引入库"><span class="toc-number">3.1.</span> <span class="toc-text"> 2.1 引入库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-引入头文件"><span class="toc-number">3.2.</span> <span class="toc-text"> 2.2 引入头文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23-测试"><span class="toc-number">3.3.</span> <span class="toc-text"> 2.3 测试</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-gtest的使用教程"><span class="toc-number">4.</span> <span class="toc-text"> 3 gtest的使用教程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-参考"><span class="toc-number">5.</span> <span class="toc-text"> 4 参考</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-情景导入"><span class="toc-number">1.</span> <span class="toc-text">0 情景导入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-安装googletest"><span class="toc-number">2.</span> <span class="toc-text">1 安装googletest</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-环境配置"><span class="toc-number">2.1.</span> <span class="toc-text">1.1 环境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-编译gtest库"><span class="toc-number">2.2.</span> <span class="toc-text">1.2 编译gtest库</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-使用googletest"><span class="toc-number">3.</span> <span class="toc-text">2 使用googletest</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-引入库"><span class="toc-number">3.1.</span> <span class="toc-text">2.1 引入库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-引入头文件"><span class="toc-number">3.2.</span> <span class="toc-text">2.2 引入头文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-测试"><span class="toc-number">3.3.</span> <span class="toc-text">2.3 测试</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-gtest的使用教程"><span class="toc-number">4.</span> <span class="toc-text">3 gtest的使用教程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-参考"><span class="toc-number">5.</span> <span class="toc-text">4 参考</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -376,7 +376,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/09/27/C++单元测试/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 566(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 564(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
@@ -386,16 +386,11 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="0-情景导入"><a class="markdownIt-Anchor" href="#0-情景导入"></a> 0 情景导入</h1>
-<p>在实习时，用到了C++中的单元测试，整理一下。分别在Windows和子系统（Ubuntu）中安装配置。</p>
-<h1 id="1-安装googletest"><a class="markdownIt-Anchor" href="#1-安装googletest"></a> 1 安装googletest</h1>
-<h2 id="11-环境配置"><a class="markdownIt-Anchor" href="#11-环境配置"></a> 1.1 环境配置</h2>
-<ol>
-<li>
-<p>下载gtest：<code>git clone https://github.com/google/googletest.git</code></p>
+        <h1 id="0-情景导入"><a href="#0-情景导入" class="headerlink" title="0 情景导入"></a>0 情景导入</h1><p>在实习时，用到了C++中的单元测试，整理一下。分别在Windows和子系统（Ubuntu）中安装配置。</p>
+<h1 id="1-安装googletest"><a href="#1-安装googletest" class="headerlink" title="1 安装googletest"></a>1 安装googletest</h1><h2 id="1-1-环境配置"><a href="#1-1-环境配置" class="headerlink" title="1.1 环境配置"></a>1.1 环境配置</h2><ol>
+<li><p>下载gtest：<code>git clone https://github.com/google/googletest.git</code></p>
 </li>
-<li>
-<p>安装cmake：</p>
+<li><p>安装cmake：</p>
 <blockquote>
 <p>CMake 是一个开源的跨平台的自动化构建系统，主要用于 C++ 的工程构建、测试以及打包等自动化操作。它能根据开发者编写的 CMakeLists.txt 规则文件，在不同的平台输出所需要的工程文件，然后开发者可以按照常见的构建方式使用生成的工程文件编译最终的程序。</p>
 <p>CMake 是 Cross platform Make 的缩写，虽然名字中含有“make”，但是 CMake 和 Linux 上常见的 make 系统有所区别，是更上一层的构建系统。</p>
@@ -405,37 +400,27 @@
 <li><strong>Ubuntu</strong>：<code>apt-get install cmake</code></li>
 </ul>
 </li>
-<li>
-<p>windows配置clion编译环境：<a href="https://www.jianshu.com/p/1aa989808e15" target="_blank" rel="noopener">Window10上CLion极简配置教程</a></p>
+<li><p>windows配置clion编译环境：<a href="https://www.jianshu.com/p/1aa989808e15" target="_blank" rel="noopener">Window10上CLion极简配置教程</a></p>
 </li>
 </ol>
-<h2 id="12-编译gtest库"><a class="markdownIt-Anchor" href="#12-编译gtest库"></a> 1.2 编译gtest库</h2>
-<ol>
-<li>
-<p>使用clion打开<code>googletest</code>代码目录，选择<code>gtest</code>项目编译生成：</p>
-<img src="https://i.loli.net/2021/10/06/quPZfVpBdWGCriI.png" width="800" height="300" alt="图片名称" align="center" id="29">
+<h2 id="1-2-编译gtest库"><a href="#1-2-编译gtest库" class="headerlink" title="1.2 编译gtest库"></a>1.2 编译gtest库</h2><ol>
+<li><p>使用clion打开<code>googletest</code>代码目录，选择<code>gtest</code>项目编译生成：</p>
+<p><img src="https://i.loli.net/2021/10/06/quPZfVpBdWGCriI.png" width="800" height="300" alt="图片名称" align="center" id="29"></p>
 </li>
-<li>
-<p>显示下面的信息表明编译成功（显示<code>Error running</code>，不用管他），生成的<code>libgtestd.a</code>即为gtest的库文件，项目中引用这个库文件就能使用gtest了。</p>
-<img src="https://i.loli.net/2021/10/06/c2JyQ41X3nImkTK.png" width="900" height="200" alt="图片名称" align="center" id="30">
+<li><p>显示下面的信息表明编译成功（显示<code>Error running</code>，不用管他），生成的<code>libgtestd.a</code>即为gtest的库文件，项目中引用这个库文件就能使用gtest了。</p>
+<p><img src="https://i.loli.net/2021/10/06/c2JyQ41X3nImkTK.png" width="900" height="200" alt="图片名称" align="center" id="30"></p>
 </li>
 </ol>
-<h1 id="2-使用googletest"><a class="markdownIt-Anchor" href="#2-使用googletest"></a> 2 使用googletest</h1>
-<h2 id="21-引入库"><a class="markdownIt-Anchor" href="#21-引入库"></a> 2.1 引入库</h2>
-<p>新建测试项目<code>cliontest</code>，将libgtestd.a文件拷贝到该代码根路径的lib路径下，在CMakeList.txt中加上以下内容：</p>
+<h1 id="2-使用googletest"><a href="#2-使用googletest" class="headerlink" title="2 使用googletest"></a>2 使用googletest</h1><h2 id="2-1-引入库"><a href="#2-1-引入库" class="headerlink" title="2.1 引入库"></a>2.1 引入库</h2><p>新建测试项目<code>cliontest</code>，将libgtestd.a文件拷贝到该代码根路径的lib路径下，在CMakeList.txt中加上以下内容：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加上库文件的路径，注意相对路径</span></span><br><span class="line"><span class="keyword">link_directories</span>(lib/)</span><br><span class="line"><span class="comment"># 添加可执行文件</span></span><br><span class="line"><span class="keyword">add_executable</span>(cliontest main.cpp)</span><br><span class="line"><span class="comment"># 链接gtest库文件</span></span><br><span class="line"><span class="keyword">target_link_libraries</span>(cliontest libgtestd.a)</span><br></pre></td></tr></table></figure>
-<h2 id="22-引入头文件"><a class="markdownIt-Anchor" href="#22-引入头文件"></a> 2.2 引入头文件</h2>
-<p>拷贝<code>googletest/include</code>下的<code>gtest</code>目录到项目下的<code>include</code>目录下，然后在CMakeList.txt中添加上对应的调用：</p>
+<h2 id="2-2-引入头文件"><a href="#2-2-引入头文件" class="headerlink" title="2.2 引入头文件"></a>2.2 引入头文件</h2><p>拷贝<code>googletest/include</code>下的<code>gtest</code>目录到项目下的<code>include</code>目录下，然后在CMakeList.txt中添加上对应的调用：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">include_directories</span>(</span><br><span class="line">    <span class="keyword">include</span>/</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <p>然后在代码中添加头文件gtest/gtest.h就可以使用了。</p>
-<h2 id="23-测试"><a class="markdownIt-Anchor" href="#23-测试"></a> 2.3 测试</h2>
-<p>修改<code>main.cpp</code>并运行：</p>
+<h2 id="2-3-测试"><a href="#2-3-测试" class="headerlink" title="2.3 测试"></a>2.3 测试</h2><p>修改<code>main.cpp</code>并运行：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"gtest/gtest.h"</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">TEST(add, zero) &#123;</span><br><span class="line">    EXPECT_EQ(<span class="number">0</span>, add(<span class="number">0</span>, <span class="number">0</span>));</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">TEST(add, positive_number) &#123;</span><br><span class="line">    EXPECT_EQ(<span class="number">3</span>, add(<span class="number">1</span>, <span class="number">2</span>));</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">TEST(add, negative_number) &#123;</span><br><span class="line">    EXPECT_EQ(<span class="number">-3</span>, add(<span class="number">-1</span>, <span class="number">-2</span>));</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ::testing::InitGoogleTest();</span><br><span class="line">    <span class="keyword">return</span> RUN_ALL_TESTS();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="3-gtest的使用教程"><a class="markdownIt-Anchor" href="#3-gtest的使用教程"></a> 3 gtest的使用教程</h1>
-<p>参考文档：<a href="https://github.com/google/googletest/blob/master/googletest/docs/primer.md" target="_blank" rel="noopener">Googletest Primer</a>，google官方出品。</p>
+<h1 id="3-gtest的使用教程"><a href="#3-gtest的使用教程" class="headerlink" title="3 gtest的使用教程"></a>3 gtest的使用教程</h1><p>参考文档：<a href="https://github.com/google/googletest/blob/master/googletest/docs/primer.md" target="_blank" rel="noopener">Googletest Primer</a>，google官方出品。</p>
 <p><a href="https://www.dyxmq.cn/program/usage-of-googletest.html" target="_blank" rel="noopener">https://www.dyxmq.cn/program/usage-of-googletest.html</a></p>
-<h1 id="4-参考"><a class="markdownIt-Anchor" href="#4-参考"></a> 4 参考</h1>
-<ul>
+<h1 id="4-参考"><a href="#4-参考" class="headerlink" title="4 参考"></a>4 参考</h1><ul>
 <li><a href="https://meishizaolunzi.com/cmake-an-zhuang-zhi-nan/" target="_blank" rel="noopener">CMake 安装指南</a></li>
 <li></li>
 </ul>
