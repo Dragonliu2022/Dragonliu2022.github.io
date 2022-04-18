@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000">
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top">
+  
+  
+  <title>2021年华为C++后端实习名词积累 | Melo&#39;s Blogs</title>
+  <meta name="description" content="1 Perl语言 本次实习主要成果：基于SR的全量/增量覆盖率统计。 部门之前的该部分脚本是使用Perl语言编写的，晦涩难懂，没有维护人员。 菜鸟教程——Perl语言教程  2 UT &amp;amp; IT &amp;amp; ST  2.1 UT（Unit Test）：单元测试    2.2 IT（Integration Test）：集成测试  2.3 ST（System Test）：系统测试   3 DT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2021年华为C++后端实习名词积累">
+<meta property="og:url" content="https://Dragonliu2018.github.io/2022/04/15/2021年华为C++后端实习名词积累/index.html">
+<meta property="og:site_name" content="Dragon Liu">
+<meta property="og:description" content="1 Perl语言 本次实习主要成果：基于SR的全量/增量覆盖率统计。 部门之前的该部分脚本是使用Perl语言编写的，晦涩难懂，没有维护人员。 菜鸟教程——Perl语言教程  2 UT &amp;amp; IT &amp;amp; ST  2.1 UT（Unit Test）：单元测试    2.2 IT（Integration Test）：集成测试  2.3 ST（System Test）：系统测试   3 DT">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://s2.loli.net/2022/04/15/zqP8duipHcGLo9A.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/15/1rNEqOydYzTGlM8.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/15/Pqu6ZcTo3V12Aki.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/15/LiBpyJIXtcT7Ehx.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/15/iYqjF5adrbM64yP.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/15/oOHX4u95I8UabyE.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/15/fJ74SagOE6NRM8e.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/15/qWpRhD3SQ7NltMX.png">
+<meta property="og:updated_time" content="2022-04-18T16:11:58.367Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2021年华为C++后端实习名词积累">
+<meta name="twitter:description" content="1 Perl语言 本次实习主要成果：基于SR的全量/增量覆盖率统计。 部门之前的该部分脚本是使用Perl语言编写的，晦涩难懂，没有维护人员。 菜鸟教程——Perl语言教程  2 UT &amp;amp; IT &amp;amp; ST  2.1 UT（Unit Test）：单元测试    2.2 IT（Integration Test）：集成测试  2.3 ST（System Test）：系统测试   3 DT">
+<meta name="twitter:image" content="https://s2.loli.net/2022/04/15/zqP8duipHcGLo9A.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://Dragonliu2018.github.io/2022/04/15/2021年华为C++后端实习名词积累/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Dragon Liu" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/dragonliu2018" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Melo&#39;s Blogs</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Nuaa CSer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Nanjing, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dragonliu2018" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</br>dragonliu2018@gmail.com</br>电脑端观看效果更佳！</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">37</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/安全/">安全</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/爬虫/">爬虫</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">26</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/音乐/">音乐</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Crypto/">Crypto</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Element/">Element</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT书籍/">IT书籍</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Boot/">Spring Boot</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WP/">WP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/neo4j/">neo4j</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书评/">书评</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区块链/">区块链</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/待补充/">待补充</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摘抄/">摘抄</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电视剧/">电视剧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纪录片/">纪录片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/重构/">重构</a><span class="tag-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Crypto/" style="font-size: 13.13px;">Crypto</a> <a href="/tags/Element/" style="font-size: 13.75px;">Element</a> <a href="/tags/Git/" style="font-size: 13.5px;">Git</a> <a href="/tags/Hexo/" style="font-size: 13.25px;">Hexo</a> <a href="/tags/IT书籍/" style="font-size: 13px;">IT书籍</a> <a href="/tags/MySQL/" style="font-size: 13.63px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 13px;">Redis</a> <a href="/tags/Spring-Boot/" style="font-size: 13.13px;">Spring Boot</a> <a href="/tags/Vue/" style="font-size: 13px;">Vue</a> <a href="/tags/WP/" style="font-size: 13.25px;">WP</a> <a href="/tags/Web/" style="font-size: 13.13px;">Web</a> <a href="/tags/neo4j/" style="font-size: 13px;">neo4j</a> <a href="/tags/selenium/" style="font-size: 13.13px;">selenium</a> <a href="/tags/书评/" style="font-size: 13.88px;">书评</a> <a href="/tags/区块链/" style="font-size: 13px;">区块链</a> <a href="/tags/待补充/" style="font-size: 14px;">待补充</a> <a href="/tags/摘抄/" style="font-size: 13.13px;">摘抄</a> <a href="/tags/电影/" style="font-size: 13.25px;">电影</a> <a href="/tags/电视剧/" style="font-size: 13px;">电视剧</a> <a href="/tags/纪录片/" style="font-size: 13px;">纪录片</a> <a href="/tags/重构/" style="font-size: 13.38px;">重构</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">34</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/未分类/">未分类</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/04/18/卫语句/" class="title">卫语句</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-04-18T08:32:06.000Z" itemprop="datePublished">2022-04-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/环境与工具/">环境与工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/04/18/git-vs-svn/" class="title">git vs svn</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-04-18T08:28:44.000Z" itemprop="datePublished">2022-04-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/C/">C++</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/04/18/指针-vs-引用-vs-指针引用/" class="title">指针 vs 引用 vs 指针引用</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-04-18T08:27:41.000Z" itemprop="datePublished">2022-04-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/未分类/">未分类</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/04/18/函数打桩/" class="title">函数打桩</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-04-18T08:11:30.000Z" itemprop="datePublished">2022-04-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/未分类/">未分类</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/04/18/华为实习任务-codecheck/" class="title">华为实习任务-codecheck</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-04-18T05:40:01.000Z" itemprop="datePublished">2022-04-18</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+  <aside class="sidebar sidebar-toc collapse   in  " id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-perl语言"><span class="toc-number">1.</span> <span class="toc-text"> 1 Perl语言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-ut-it-st"><span class="toc-number">2.</span> <span class="toc-text"> 2 UT &amp; IT &amp; ST</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#21-utunit-test单元测试"><span class="toc-number">2.1.</span> <span class="toc-text"> 2.1 UT（Unit Test）：单元测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-itintegration-test集成测试"><span class="toc-number">2.2.</span> <span class="toc-text"> 2.2 IT（Integration Test）：集成测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23-stsystem-test系统测试"><span class="toc-number">2.3.</span> <span class="toc-text"> 2.3 ST（System Test）：系统测试</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-dtdevelpor-test开发者测试"><span class="toc-number">3.</span> <span class="toc-text"> 3 DT（Develpor Test）：开发者测试</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-tddtest-driven-development测试驱动开发"><span class="toc-number">4.</span> <span class="toc-text"> 4 TDD（Test-Driven Development）：测试驱动开发</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-cleancode"><span class="toc-number">5.</span> <span class="toc-text"> 5 cleancode</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-sr-ar"><span class="toc-number">6.</span> <span class="toc-text"> 6 SR &amp; AR</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-敏捷开发"><span class="toc-number">7.</span> <span class="toc-text"> 7 敏捷开发</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-持续集成"><span class="toc-number">8.</span> <span class="toc-text"> 8 持续集成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-devops"><span class="toc-number">9.</span> <span class="toc-text"> 9 DevOps</span></a></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-2021年华为C++后端实习名词积累" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2021年华为C++后端实习名词积累
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/04/15/2021年华为C++后端实习名词积累/" class="article-date">
+	  <time datetime="2022-04-15T06:55:14.000Z" itemprop="datePublished">2022-04-15</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/未分类/">未分类</a>
+  </span>
+
+        
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/04/15/2021年华为C++后端实习名词积累/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 984(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="1-perl语言"><a class="markdownIt-Anchor" href="#1-perl语言"></a> 1 Perl语言</h1>
+<p>本次实习主要成果：基于SR的全量/增量覆盖率统计。</p>
+<p>部门之前的该部分脚本是使用Perl语言编写的，晦涩难懂，没有维护人员。</p>
+<p><a href="https://www.runoob.com/perl/perl-intro.html" target="_blank" rel="noopener">菜鸟教程——Perl语言教程</a></p>
+<h1 id="2-ut-it-st"><a class="markdownIt-Anchor" href="#2-ut-it-st"></a> 2 UT &amp; IT &amp; ST</h1>
+<h2 id="21-utunit-test单元测试"><a class="markdownIt-Anchor" href="#21-utunit-test单元测试"></a> 2.1 UT（Unit Test）：单元测试</h2>
+<img src="https://s2.loli.net/2022/04/15/zqP8duipHcGLo9A.png" width="800" height="450" alt="图片名称" align="center" id="142">
+<img src="https://s2.loli.net/2022/04/15/1rNEqOydYzTGlM8.png" width="800" height="450" alt="图片名称" align="center" id="143">
+<h2 id="22-itintegration-test集成测试"><a class="markdownIt-Anchor" href="#22-itintegration-test集成测试"></a> 2.2 IT（Integration Test）：集成测试</h2>
+<h2 id="23-stsystem-test系统测试"><a class="markdownIt-Anchor" href="#23-stsystem-test系统测试"></a> 2.3 ST（System Test）：系统测试</h2>
+<img src="https://s2.loli.net/2022/04/15/Pqu6ZcTo3V12Aki.png" width="800" height="450" alt="图片名称" align="center" id="144">
+<h1 id="3-dtdevelpor-test开发者测试"><a class="markdownIt-Anchor" href="#3-dtdevelpor-test开发者测试"></a> 3 DT（Develpor Test）：开发者测试</h1>
+<img src="https://s2.loli.net/2022/04/15/LiBpyJIXtcT7Ehx.png" width="800" height="450" alt="图片名称" align="center" id="145">
+<img src="https://s2.loli.net/2022/04/15/iYqjF5adrbM64yP.png" width="800" height="450" alt="图片名称" align="center" id="146">
+<img src="https://s2.loli.net/2022/04/15/oOHX4u95I8UabyE.png" width="800" height="450" alt="图片名称" align="center" id="147">
+<p><strong>参考</strong>：</p>
+<ul>
+<li><a href="https://developer.huaweiuniversity.com/courses/course-v1:HuaweiX+20210203+Self-paced/courseware/25e635447c474515909fd984d075dee7/5bfcf9c7a1dc4f3b8c0d78038bd21e36/" target="_blank" rel="noopener">华为课程学习</a></li>
+<li><a href="https://xie.infoq.cn/article/126ff8488cd203a65a60d9643" target="_blank" rel="noopener">开发者测试：你必须知道 7 件事</a></li>
+</ul>
+<h1 id="4-tddtest-driven-development测试驱动开发"><a class="markdownIt-Anchor" href="#4-tddtest-driven-development测试驱动开发"></a> 4 TDD（Test-Driven Development）：测试驱动开发</h1>
+<p>测试驱动开发，在开发功能代码之前，先编写单元测试用例代码，测试代码确定需要编写什么产品代码。</p>
+<h1 id="5-cleancode"><a class="markdownIt-Anchor" href="#5-cleancode"></a> 5 cleancode</h1>
+<blockquote>
+<p>详见博客<code>《代码整洁之道 clean code》笔记</code></p>
+</blockquote>
+<p>软件工程领域的大师级人物罗伯特·马丁(Robert C. Martin)所著的一本重量级经典图书《Clean Code》，中文译为代码整洁之道，书中提出代码质量与其整洁度成正比。 比如编程要遵守一些原则；命名、注释、函数。</p>
+<p><strong>参考</strong>：<a href="https://blog.csdn.net/nkGavinGuo/article/details/103752914" target="_blank" rel="noopener">浅谈Clean Code</a></p>
+<h1 id="6-sr-ar"><a class="markdownIt-Anchor" href="#6-sr-ar"></a> 6 SR &amp; AR</h1>
+<ul>
+<li><strong>IR（Initial Requirement）</strong>：初始需求</li>
+<li><strong>SR（System Requirement）</strong>：系统需要</li>
+<li><strong>AR（Allocation Requirement）</strong>：配置需求</li>
+<li><strong>SA（System Analyst）</strong>：系统分析师，</li>
+<li><strong>SE（System Engineer）</strong>：系统工程师</li>
+<li><strong>MDE（Module Design Engineer）</strong>：模块设计师，当SE把不同模块之间的接口大致画清晰后，模块内部的设计交给MDE来进行；<a href="https://blog.csdn.net/isscollege/article/details/75022142" target="_blank" rel="noopener">敏捷之MDE认知</a></li>
+<li><strong>User Story</strong>：用户故事； <a href="http://www.woshipm.com/user-research/1725827.html" target="_blank" rel="noopener">用户故事（一）：什么是用户故事？</a></li>
+</ul>
+<img src="https://s2.loli.net/2022/04/15/fJ74SagOE6NRM8e.png" width="800" height="450" alt="图片名称" align="center" id="148">
+<p><strong>步骤</strong>：</p>
+<ol>
+<li>
+<p><strong>需求经理</strong>：将用户需求（user story）转换成 客户能够接受的 初始需求 IR（Initial Requirement）</p>
+</li>
+<li>
+<p><strong>SA</strong>：IR 拆分为 SR</p>
+</li>
+<li>
+<p><strong>SE</strong>：SR 继续拆分 AR</p>
+</li>
+<li>
+<p><strong>MDE</strong>：当SE把不同模块之间的接口大致画清晰后，模块内部的设计交给MDE来进行；</p>
+</li>
+</ol>
+<p><strong>参考</strong>：<a href="https://blog.csdn.net/minminzhe520/article/details/52164752" target="_blank" rel="noopener">我从华为身上学到的项目管理经验 – 需求篇</a></p>
+<h1 id="7-敏捷开发"><a class="markdownIt-Anchor" href="#7-敏捷开发"></a> 7 敏捷开发</h1>
+<p>敏捷开发是一种项目管理和软件开发的迭代方法，侧重于协作、客户反馈和快速发布。</p>
+<p>敏捷开发以用户的需求进化为核心，采用迭代、循序渐进的方法进行软件开发，适用于竞争激烈，快速变化的市场。敏捷的客户协作观念，快速迭代能帮助团队以最小成本，最快速度满足客户真正的需求。</p>
+<p>其特点：“个体与交互”胜过“过程与工具”、“可以工作的软件”胜过“面面俱到的文挡”、“客户协作”胜过“合同谈判”、“响应变化”胜过“遵循计划”。</p>
+<p>敏捷开发迭代流程一般遵循以下五个步骤：需求分析（requirements analysis）、产品设计（design）、功能编码（coding）、功能测试（testing）、部署评估（deployment / evaluation）。流程图如下：</p>
+<img src="https://s2.loli.net/2022/04/15/qWpRhD3SQ7NltMX.png" width="800" height="450" alt="图片名称" align="center" id="149">
+<p><strong>参考</strong>：<a href="https://kknews.cc/news/5r38jvl.html" target="_blank" rel="noopener">四種軟體開發模式（瀑布、疊代、螺旋、敏捷），對比分析</a></p>
+<h1 id="8-持续集成"><a class="markdownIt-Anchor" href="#8-持续集成"></a> 8 持续集成</h1>
+<p>持续集成是一种软件开发实践，即团队开发成员经常集成他们的工作，通常每个成员每天至少集成一次，也就意味着每天可能会发生多次集成。每次集成都通过自动化的构建（包括编译，发布，自动化测试）来验证，从而尽早地发现集成错误。</p>
+<p>实习部门使用Jenkins自动化部署， Jenkins是一个开源软件项目，是基于Java开发的一种持续集成工具，用于监控持续重复的工作，旨在提供一个开放易用的软件平台，使软件的持续集成变成可能。</p>
+<h1 id="9-devops"><a class="markdownIt-Anchor" href="#9-devops"></a> 9 DevOps</h1>
+<p>DevOps（Development和Operations的组合词）是一种重视“软件开发人员（Dev）”和“IT运维技术人员（Ops）”之间沟通合作的文化、运动或惯例。通过自动化“软件交付”和“架构变更”的流程，来使得构建、测试、发布软件能够更加地快捷、频繁和可靠。</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://Dragonliu2018.github.io/2022/04/15/2021年华为C++后端实习名词积累/" title="2021年华为C++后端实习名词积累" target="_blank" rel="external">https://Dragonliu2018.github.io/2022/04/15/2021年华为C++后端实习名词积累/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/dragonliu2018" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/dragonliu2018" target="_blank"><span class="text-dark">Melo&#39;s Blogs</span><small class="ml-1x">Nuaa CSer</small></a></h3>
+        <div>Life is painting a picture, not doing a sum.</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2022/04/15/《代码整洁之道 clean code》笔记/" title="《代码整洁之道 clean code》笔记"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2022/04/13/i南航自动打卡/" title="i南航自动打卡"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn " data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">    <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dragonliu2018" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'Pbjl2Wajl9och0xVbR5eqoH1-gzGzoHsz',
+    appKey: 'PgxFh1wV6pyMMllhxs7NJijb',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000">
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top">
+  
+  
+  <title>圈复杂度 | Melo&#39;s Blogs</title>
+  <meta name="description" content="转载：详解圈复杂度   1 圈复杂度概念 圈复杂度（Cyclomatic complexity，简写CC）也称为条件复杂度，是一种代码复杂度的衡量标准。由托马斯·J·麦凯布（Thomas J. McCabe, Sr.）于1976年提出，用来表示程序的复杂度，其符号为VG或是M。它可以用来衡量一个模块判定结构的复杂程度，数量上表现为独立现行路径条数，也可理解为覆盖所有的可能情况最少使用的测试用例数">
+<meta name="keywords" content="待补充,重构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="圈复杂度">
+<meta property="og:url" content="https://Dragonliu2018.github.io/2022/04/15/圈复杂度/index.html">
+<meta property="og:site_name" content="Dragon Liu">
+<meta property="og:description" content="转载：详解圈复杂度   1 圈复杂度概念 圈复杂度（Cyclomatic complexity，简写CC）也称为条件复杂度，是一种代码复杂度的衡量标准。由托马斯·J·麦凯布（Thomas J. McCabe, Sr.）于1976年提出，用来表示程序的复杂度，其符号为VG或是M。它可以用来衡量一个模块判定结构的复杂程度，数量上表现为独立现行路径条数，也可理解为覆盖所有的可能情况最少使用的测试用例数">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://s2.loli.net/2022/04/16/BrNW3etERXLkhgD.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/04/16/g4uVjXO2MIixykz.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/16/12dtWP4XsOMEHjU.png">
+<meta property="og:updated_time" content="2022-04-18T16:10:02.076Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="圈复杂度">
+<meta name="twitter:description" content="转载：详解圈复杂度   1 圈复杂度概念 圈复杂度（Cyclomatic complexity，简写CC）也称为条件复杂度，是一种代码复杂度的衡量标准。由托马斯·J·麦凯布（Thomas J. McCabe, Sr.）于1976年提出，用来表示程序的复杂度，其符号为VG或是M。它可以用来衡量一个模块判定结构的复杂程度，数量上表现为独立现行路径条数，也可理解为覆盖所有的可能情况最少使用的测试用例数">
+<meta name="twitter:image" content="https://s2.loli.net/2022/04/16/BrNW3etERXLkhgD.jpg">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://Dragonliu2018.github.io/2022/04/15/圈复杂度/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Dragon Liu" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/dragonliu2018" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Melo&#39;s Blogs</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Nuaa CSer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Nanjing, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dragonliu2018" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</br>dragonliu2018@gmail.com</br>电脑端观看效果更佳！</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">37</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/安全/">安全</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/爬虫/">爬虫</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">26</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/音乐/">音乐</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Crypto/">Crypto</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Element/">Element</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT书籍/">IT书籍</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Boot/">Spring Boot</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WP/">WP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/neo4j/">neo4j</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书评/">书评</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区块链/">区块链</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/待补充/">待补充</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摘抄/">摘抄</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电视剧/">电视剧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纪录片/">纪录片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/重构/">重构</a><span class="tag-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Crypto/" style="font-size: 13.13px;">Crypto</a> <a href="/tags/Element/" style="font-size: 13.75px;">Element</a> <a href="/tags/Git/" style="font-size: 13.5px;">Git</a> <a href="/tags/Hexo/" style="font-size: 13.25px;">Hexo</a> <a href="/tags/IT书籍/" style="font-size: 13px;">IT书籍</a> <a href="/tags/MySQL/" style="font-size: 13.63px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 13px;">Redis</a> <a href="/tags/Spring-Boot/" style="font-size: 13.13px;">Spring Boot</a> <a href="/tags/Vue/" style="font-size: 13px;">Vue</a> <a href="/tags/WP/" style="font-size: 13.25px;">WP</a> <a href="/tags/Web/" style="font-size: 13.13px;">Web</a> <a href="/tags/neo4j/" style="font-size: 13px;">neo4j</a> <a href="/tags/selenium/" style="font-size: 13.13px;">selenium</a> <a href="/tags/书评/" style="font-size: 13.88px;">书评</a> <a href="/tags/区块链/" style="font-size: 13px;">区块链</a> <a href="/tags/待补充/" style="font-size: 14px;">待补充</a> <a href="/tags/摘抄/" style="font-size: 13.13px;">摘抄</a> <a href="/tags/电影/" style="font-size: 13.25px;">电影</a> <a href="/tags/电视剧/" style="font-size: 13px;">电视剧</a> <a href="/tags/纪录片/" style="font-size: 13px;">纪录片</a> <a href="/tags/重构/" style="font-size: 13.38px;">重构</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">34</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/未分类/">未分类</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/04/18/卫语句/" class="title">卫语句</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-04-18T08:32:06.000Z" itemprop="datePublished">2022-04-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/环境与工具/">环境与工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/04/18/git-vs-svn/" class="title">git vs svn</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-04-18T08:28:44.000Z" itemprop="datePublished">2022-04-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/C/">C++</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/04/18/指针-vs-引用-vs-指针引用/" class="title">指针 vs 引用 vs 指针引用</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-04-18T08:27:41.000Z" itemprop="datePublished">2022-04-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/未分类/">未分类</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/04/18/函数打桩/" class="title">函数打桩</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-04-18T08:11:30.000Z" itemprop="datePublished">2022-04-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/未分类/">未分类</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/04/18/华为实习任务-codecheck/" class="title">华为实习任务-codecheck</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-04-18T05:40:01.000Z" itemprop="datePublished">2022-04-18</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+  <aside class="sidebar sidebar-toc collapse   in  " id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-圈复杂度概念"><span class="toc-number">1.</span> <span class="toc-text"> 1 圈复杂度概念</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-圈复杂度计算方法"><span class="toc-number">2.</span> <span class="toc-text"> 2 圈复杂度计算方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#21-点边计算法"><span class="toc-number">2.1.</span> <span class="toc-text"> 2.1 点边计算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-节点判定法"><span class="toc-number">2.2.</span> <span class="toc-text"> 2.2 节点判定法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-圈复杂度计算练习"><span class="toc-number">3.</span> <span class="toc-text"> 3 圈复杂度计算练习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#31-练习1"><span class="toc-number">3.1.</span> <span class="toc-text"> 3.1 练习1：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#32-练习2"><span class="toc-number">3.2.</span> <span class="toc-text"> 3.2 练习2：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-圈复杂度的意义"><span class="toc-number">4.</span> <span class="toc-text"> 4 圈复杂度的意义</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#41-圈复杂度与缺陷"><span class="toc-number">4.1.</span> <span class="toc-text"> 4.1 圈复杂度与缺陷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#42-圈复杂度与结构化测试"><span class="toc-number">4.2.</span> <span class="toc-text"> 4.2 圈复杂度与结构化测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#43-圈复杂度与tdd"><span class="toc-number">4.3.</span> <span class="toc-text"> 4.3 圈复杂度与TDD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#44-圈复杂度与遗留代码"><span class="toc-number">4.4.</span> <span class="toc-text"> 4.4 圈复杂度与遗留代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#45-圈复杂度与ci"><span class="toc-number">4.5.</span> <span class="toc-text"> 4.5 圈复杂度与CI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#46-圈复杂度和软件质量"><span class="toc-number">4.6.</span> <span class="toc-text"> 4.6 圈复杂度和软件质量</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-降低圈复杂度的方法"><span class="toc-number">5.</span> <span class="toc-text"> 5 降低圈复杂度的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#51-重新组织你的函数"><span class="toc-number">5.1.</span> <span class="toc-text"> 5.1 重新组织你的函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#511-技巧1-提炼函数"><span class="toc-number">5.1.1.</span> <span class="toc-text"> 5.1.1 技巧1 提炼函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#512-技巧2-替换算法"><span class="toc-number">5.1.2.</span> <span class="toc-text"> 5.1.2 技巧2 替换算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#52-简化条件表达式"><span class="toc-number">5.2.</span> <span class="toc-text"> 5.2 简化条件表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#521-技巧3-逆向表达"><span class="toc-number">5.2.1.</span> <span class="toc-text"> 5.2.1 技巧3 逆向表达</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#522-技巧4-分解条件"><span class="toc-number">5.2.2.</span> <span class="toc-text"> 5.2.2 技巧4 分解条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#523-技巧5-合并条件"><span class="toc-number">5.2.3.</span> <span class="toc-text"> 5.2.3 技巧5 合并条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#524-技巧6-移除控制标记"><span class="toc-number">5.2.4.</span> <span class="toc-text"> 5.2.4 技巧6 移除控制标记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#525-技巧7-以多态取代条件式"><span class="toc-number">5.2.5.</span> <span class="toc-text"> 5.2.5 技巧7 以多态取代条件式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#53-简化函数调用"><span class="toc-number">5.3.</span> <span class="toc-text"> 5.3 简化函数调用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#531-技巧8-读写分离"><span class="toc-number">5.3.1.</span> <span class="toc-text"> 5.3.1 技巧8 读写分离</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#532-技巧9-参数化方法"><span class="toc-number">5.3.2.</span> <span class="toc-text"> 5.3.2 技巧9 参数化方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#533-技巧10-以明确函数取代参数"><span class="toc-number">5.3.3.</span> <span class="toc-text"> 5.3.3 技巧10 以明确函数取代参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#54-实战练习"><span class="toc-number">5.4.</span> <span class="toc-text"> 5.4 实战练习</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-圈复杂度思辨"><span class="toc-number">6.</span> <span class="toc-text"> 6 圈复杂度思辨</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#61-思辨1-高复杂度的代码是否可维护性差"><span class="toc-number">6.1.</span> <span class="toc-text"> 6.1 思辨1 高复杂度的代码是否可维护性差</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#62-思辨2-复杂度相同的代码是否是一致的"><span class="toc-number">6.2.</span> <span class="toc-text"> 6.2 思辨2 复杂度相同的代码是否是一致的</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-圈复杂度工具"><span class="toc-number">7.</span> <span class="toc-text"> 7 圈复杂度工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-参考资料"><span class="toc-number">8.</span> <span class="toc-text"> 8 参考资料</span></a></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-圈复杂度" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      圈复杂度
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/04/15/圈复杂度/" class="article-date">
+	  <time datetime="2022-04-15T12:03:41.000Z" itemprop="datePublished">2022-04-15</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/未分类/">未分类</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/待补充/">待补充</a>, <a class="article-tag-link" href="/tags/重构/">重构</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/04/15/圈复杂度/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 3.6k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 15(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p><strong>转载</strong>：<a href="http://kaelzhang81.github.io/2017/06/18/%E8%AF%A6%E8%A7%A3%E5%9C%88%E5%A4%8D%E6%9D%82%E5%BA%A6/#" target="_blank" rel="noopener">详解圈复杂度</a></p>
+</blockquote>
+<h1 id="1-圈复杂度概念"><a class="markdownIt-Anchor" href="#1-圈复杂度概念"></a> 1 圈复杂度概念</h1>
+<p>圈复杂度（Cyclomatic complexity，简写CC）也称为条件复杂度，是一种代码复杂度的衡量标准。由托马斯·J·麦凯布（Thomas J. McCabe, Sr.）于1976年提出，用来表示程序的复杂度，其符号为VG或是M。它可以用来衡量一个模块判定结构的复杂程度，数量上表现为独立现行路径条数，也可理解为覆盖所有的可能情况最少使用的测试用例数。圈复杂度大说明程序代码的判断逻辑复杂，可能质量低且难于测试和维护。程序的可能错误和高的圈复杂度有着很大关系。</p>
+<h1 id="2-圈复杂度计算方法"><a class="markdownIt-Anchor" href="#2-圈复杂度计算方法"></a> 2 圈复杂度计算方法</h1>
+<h2 id="21-点边计算法"><a class="markdownIt-Anchor" href="#21-点边计算法"></a> 2.1 点边计算法</h2>
+<img src="https://s2.loli.net/2022/04/16/BrNW3etERXLkhgD.jpg" width="400" height="300" alt="图片名称" align="center" id="154">
+<p>圈复杂度的计算方法很简单，计算公式为：</p>
+<blockquote>
+<p>V(G) = E - N + 2</p>
+</blockquote>
+<p>其中，e表示控制流图中边的数量，n表示控制流图中节点的数量。</p>
+<p>几个节点通过边连接。下面是典型的控制流程，如if-else，While，until和正常的流程顺序：</p>
+<img src="https://s2.loli.net/2022/04/16/g4uVjXO2MIixykz.png" width="400" height="300" alt="图片名称" align="center" id="155">
+<h2 id="22-节点判定法"><a class="markdownIt-Anchor" href="#22-节点判定法"></a> 2.2 节点判定法</h2>
+<p>其实，圈复杂度的计算还有更直观的方法，因为圈复杂度所反映的是“判定条件”的数量，所以圈复杂度实际上就是等于判定节点的数量再加上1，也即控制流图的区域数，对应的计算公式为：</p>
+<blockquote>
+<p>V (G) = P + 1</p>
+</blockquote>
+<p>其中P为判定节点数，判定节点举例：</p>
+<ol>
+<li>if语句</li>
+<li>while语句</li>
+<li>for语句</li>
+<li>case语句</li>
+<li>catch语句</li>
+<li>and和or布尔操作</li>
+<li>?:三元运算符</li>
+</ol>
+<p>对于多分支的CASE结构或IF-ELSEIF-ELSE结构，统计判定节点的个数时需要特别注意一点，要求必须统计全部实际的判定节点数，也即每个ELSEIF语句，以及每个CASE语句，都应该算为一个判定节点。</p>
+<p>判定节点在模块的控制流图中很容易被识别出来，所以，针对程序的控制流图计算圈复杂度V(G)时，一般采用点边计算法，也即V(G)=e-n+2；而针对模块的控制流图时，可以直接使用统计判定节点数，这样更为简单。</p>
+<h1 id="3-圈复杂度计算练习"><a class="markdownIt-Anchor" href="#3-圈复杂度计算练习"></a> 3 圈复杂度计算练习</h1>
+<h2 id="31-练习1"><a class="markdownIt-Anchor" href="#31-练习1"></a> 3.1 练习1：</h2>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span> * A)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> n=<span class="number">4</span>;</span><br><span class="line">    <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt; n<span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        j = i +<span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span>(j &lt; n)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (A[i] &lt; A[j])</span><br><span class="line">                 swap(A[i], A[j]);</span><br><span class="line">        &#125;</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用点边计算法绘出控制流图：</p>
+<img src="https://s2.loli.net/2022/04/16/12dtWP4XsOMEHjU.png" width="400" height="300" alt="图片名称" align="center" id="156">
+<p>其圈复杂度为：V(G) = 9 - 7 + 2 = 4</p>
+<h2 id="32-练习2"><a class="markdownIt-Anchor" href="#32-练习2"></a> 3.2 练习2：</h2>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">U32 <span class="title">find</span> <span class="params">(<span class="built_in">string</span> match)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> var : <span class="built_in">list</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(var == match &amp;&amp; from != INVALID_U32) <span class="keyword">return</span> INVALID_U32;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//match step1</span></span><br><span class="line">    <span class="keyword">if</span>(session == getName() &amp;&amp; key == <span class="built_in">getKey</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; kv : Map)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (kv.second == last &amp;&amp; match == kv.first)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> last;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//match step2</span></span><br><span class="line">    <span class="keyword">auto</span> var = Map.<span class="built_in">find</span>(match);</span><br><span class="line">    <span class="keyword">if</span>(var != Map.<span class="built_in">end</span>()&amp;&amp; (from != var-&gt;second)) <span class="keyword">return</span> var-&gt;second;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//match step3</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> var: Map)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>((var.first, match) &amp;&amp; from != var.second)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> var.second;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> INVALID_U32;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>其圈复杂度为：V(G) = 1(for) + 2(if) + 2(if) + 1(for) + 2(if) + 2(if) + 1(for) + 2(if) + 1= 14</p>
+<h1 id="4-圈复杂度的意义"><a class="markdownIt-Anchor" href="#4-圈复杂度的意义"></a> 4 圈复杂度的意义</h1>
+<p>在缺陷成为缺陷之前捕获它们。</p>
+<h2 id="41-圈复杂度与缺陷"><a class="markdownIt-Anchor" href="#41-圈复杂度与缺陷"></a> 4.1 圈复杂度与缺陷</h2>
+<p>一般来说圈复杂度大于10的方法存在很大的出错风险。圈复杂度和缺陷个数有高度的正相关：<strong>圈复杂度最高的模块和方法，其缺陷个数也可能最多。</strong></p>
+<h2 id="42-圈复杂度与结构化测试"><a class="markdownIt-Anchor" href="#42-圈复杂度与结构化测试"></a> 4.2 圈复杂度与结构化测试</h2>
+<p>此外，它还为测试设计提供很好的参考。一个好的用例设计经验是：**创建数量与被测代码圈复杂度值相等的测试用例，**以此提升用例对代码的分支覆盖率。</p>
+<h2 id="43-圈复杂度与tdd"><a class="markdownIt-Anchor" href="#43-圈复杂度与tdd"></a> 4.3 圈复杂度与TDD</h2>
+<p>TDD（测试驱动的开发，test-driven development)和低<strong>CC</strong>值之间存在着紧密联系。在编写测试时，开发人员会考虑代码的可测试性，倾向于编写简单的代码，因为复杂的代码难以测试。因此TDD的“代码、测试、代码、测试” 循环将导致频繁重构，驱使非复杂代码的开发。</p>
+<h2 id="44-圈复杂度与遗留代码"><a class="markdownIt-Anchor" href="#44-圈复杂度与遗留代码"></a> 4.4 圈复杂度与遗留代码</h2>
+<p>对于遗留代码的维护或重构，测量圈复杂度特别有价值。一般使用圈复杂度作为提升代码质量的切入点。</p>
+<h2 id="45-圈复杂度与ci"><a class="markdownIt-Anchor" href="#45-圈复杂度与ci"></a> 4.5 圈复杂度与CI</h2>
+<p>在持续集成环境中，可以基于时间变化维度来评估模块或函数的复杂度和增长值。如果<strong>CC</strong>值在不断增长，那么应该开展两项活动：</p>
+<ol>
+<li>确保相关测试的有效性，减少故障风险。</li>
+<li>评估重构必要性和具体方式，以降低出现代码维护问题的可能性。</li>
+</ol>
+<h2 id="46-圈复杂度和软件质量"><a class="markdownIt-Anchor" href="#46-圈复杂度和软件质量"></a> 4.6 圈复杂度和软件质量</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">圈复杂度</th>
+<th style="text-align:left">代码状况</th>
+<th style="text-align:left">可测性</th>
+<th style="text-align:left">维护成本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1-10</td>
+<td style="text-align:left">清晰、结构化</td>
+<td style="text-align:left">高</td>
+<td style="text-align:left">低</td>
+</tr>
+<tr>
+<td style="text-align:left">10-20</td>
+<td style="text-align:left">复杂</td>
+<td style="text-align:left">中</td>
+<td style="text-align:left">中</td>
+</tr>
+<tr>
+<td style="text-align:left">20-30</td>
+<td style="text-align:left">非常复杂</td>
+<td style="text-align:left">低</td>
+<td style="text-align:left">高</td>
+</tr>
+<tr>
+<td style="text-align:left">&gt;30</td>
+<td style="text-align:left">不可读</td>
+<td style="text-align:left">不可测</td>
+<td style="text-align:left">非常高</td>
+</tr>
+</tbody>
+</table>
+<h1 id="5-降低圈复杂度的方法"><a class="markdownIt-Anchor" href="#5-降低圈复杂度的方法"></a> 5 降低圈复杂度的方法</h1>
+<h2 id="51-重新组织你的函数"><a class="markdownIt-Anchor" href="#51-重新组织你的函数"></a> 5.1 重新组织你的函数</h2>
+<h3 id="511-技巧1-提炼函数"><a class="markdownIt-Anchor" href="#511-技巧1-提炼函数"></a> 5.1.1 技巧1 提炼函数</h3>
+<p>有一段代码可以被组织在一起并独立出来:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Example</span><span class="params">(<span class="keyword">int</span> val)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>( val &gt; MAX_VAL)</span><br><span class="line">	&#123;</span><br><span class="line">		val = MAX_VAL;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; val; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		doSomething(i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>将这段代码放进一个独立函数中，并让函数名称解释该函数的用途:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getValidVal</span><span class="params">(<span class="keyword">int</span> val)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   	<span class="keyword">if</span>( val &gt; MAX_VAL)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> MAX_VAL;</span><br><span class="line">	&#125; </span><br><span class="line">    <span class="keyword">return</span> val;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">doSomethings</span><span class="params">(<span class="keyword">int</span> val)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; val; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		doSomething(i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Example</span><span class="params">(<span class="keyword">int</span> val)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    doSomethings(getValidVal(val));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后还要重新审视函数内容是否在统一层次上。</p>
+<h3 id="512-技巧2-替换算法"><a class="markdownIt-Anchor" href="#512-技巧2-替换算法"></a> 5.1.2 技巧2 替换算法</h3>
+<p>把某个算法替换为另一个更清晰的算法：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">foundPerson</span><span class="params">(<span class="keyword">const</span> <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; peoples)</span></span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; people : peoples) </span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">if</span> (people == <span class="string">"Don"</span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"Don"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (people == <span class="string">"John"</span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"John"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (people == <span class="string">"Kent"</span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"Kent"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>将函数实现替换为另一个算法:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">foundPerson</span><span class="params">(<span class="keyword">const</span> <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; people)</span></span>&#123;</span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">map</span>&lt;<span class="built_in">string</span>,<span class="built_in">string</span>&gt;candidates&#123;</span><br><span class="line">    	&#123; <span class="string">"Don"</span>, <span class="string">"Don"</span>&#125;,</span><br><span class="line">    	&#123; <span class="string">"John"</span>, <span class="string">"John"</span>&#125;,</span><br><span class="line">    	&#123; <span class="string">"Kent"</span>, <span class="string">"Kent"</span>&#125;,</span><br><span class="line">       &#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; people : peoples) </span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">auto</span>&amp; it = candidates.<span class="built_in">find</span>(people);</span><br><span class="line">    <span class="keyword">if</span>(it != candidates.<span class="built_in">end</span>())</span><br><span class="line">        <span class="keyword">return</span> it-&gt;second;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>所谓的表驱动。</p>
+<h2 id="52-简化条件表达式"><a class="markdownIt-Anchor" href="#52-简化条件表达式"></a> 5.2 简化条件表达式</h2>
+<h3 id="521-技巧3-逆向表达"><a class="markdownIt-Anchor" href="#521-技巧3-逆向表达"></a> 5.2.1 技巧3 逆向表达</h3>
+<p>在代码中可能存在条件表达如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ((condition1() &amp;&amp; condition2()) || !condition1())</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>应用逆向表达调换表达顺序后效果如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(condition1() &amp;&amp; !condition2())</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="522-技巧4-分解条件"><a class="markdownIt-Anchor" href="#522-技巧4-分解条件"></a> 5.2.2 技巧4 分解条件</h3>
+<p>在代码中存在复杂的条件表达：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(date.before (SUMMER_START) || date.after(SUMMER_END))</span><br><span class="line">    charge = quantity * _winterRate + _winterServiceCharge;</span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">    charge = quantity * _summerRate;</span><br></pre></td></tr></table></figure>
+<p>从if、then、else三个段落中分别提炼出独立函数：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(notSummer(date))</span><br><span class="line">    charge = winterCharge(quantity);</span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">    charge = summerCharge (quantity);</span><br></pre></td></tr></table></figure>
+<h3 id="523-技巧5-合并条件"><a class="markdownIt-Anchor" href="#523-技巧5-合并条件"></a> 5.2.3 技巧5 合并条件</h3>
+<p>一系列条件判断，都得到相同结果:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">disabilityAmount</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (_seniority &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (_monthsDisabled &gt; <span class="number">12</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (_isPartTime) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// compute the disability amount</span></span><br><span class="line">    ......</span><br></pre></td></tr></table></figure>
+<p>将这些判断合并为一个条件式，并将这个条件式提炼成为一个独立函数:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">disabilityAmount</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (isNotEligableForDisability()) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// compute the disability amount</span></span><br><span class="line">    ......</span><br></pre></td></tr></table></figure>
+<h3 id="524-技巧6-移除控制标记"><a class="markdownIt-Anchor" href="#524-技巧6-移除控制标记"></a> 5.2.4 技巧6 移除控制标记</h3>
+<p>在代码逻辑中，有时候会使用bool类型作为逻辑控制标记：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">checkSecurity</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; peoples)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">bool</span> found = <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span>&amp; people : peoples) </span><br><span class="line">    &#123;</span><br><span class="line">		<span class="keyword">if</span> (! found) &#123;</span><br><span class="line">			<span class="keyword">if</span> (people == <span class="string">"Don"</span>)&#123;</span><br><span class="line">				sendAlert();</span><br><span class="line">				found = <span class="literal">true</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (people == <span class="string">"John"</span>)&#123;</span><br><span class="line">				   sendAlert();</span><br><span class="line">				   found = <span class="literal">true</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用break和return取代控制标记：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">checkSecurity</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; peoples)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span>&amp; people : peoples)</span><br><span class="line">	&#123;     </span><br><span class="line">		<span class="keyword">if</span> (people == <span class="string">"Don"</span> || people == <span class="string">"John"</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			sendAlert();</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="525-技巧7-以多态取代条件式"><a class="markdownIt-Anchor" href="#525-技巧7-以多态取代条件式"></a> 5.2.5 技巧7 以多态取代条件式</h3>
+<p>条件式根据对象类型的不同而选择不同的行为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">getSpeed</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">switch</span> (_type) &#123;</span><br><span class="line">        <span class="keyword">case</span> EUROPEAN:</span><br><span class="line">            <span class="keyword">return</span> getBaseSpeed();</span><br><span class="line">        <span class="keyword">case</span> AFRICAN:</span><br><span class="line">            <span class="keyword">return</span> getBaseSpeed() - getLoadFactor() *_numberOfCoconuts;</span><br><span class="line">        <span class="keyword">case</span> NORWEGIAN_BLUE:</span><br><span class="line">            <span class="keyword">return</span> (_isNailed) ? <span class="number">0</span> : getBaseSpeed(_voltage);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException (<span class="string">"Should be unreachable"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>将整个条件式的每个分支放进一个子类的重载方法中，然后将原始函数声明为抽象方法：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bird</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">double</span> <span class="title">getSpeed</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">getBaseSpeed</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">EuropeanBird</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">getSpeed</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getBaseSpeed();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AfricanBird</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">getSpeed</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getBaseSpeed() - getLoadFactor() *_numberOfCoconuts;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">getLoadFactor</span><span class="params">()</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">double</span> _numberOfCoconuts;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NorwegianBlueBird</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">getSpeed</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (_isNailed) ? <span class="number">0</span> : getBaseSpeed(_voltage);</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">bool</span> _isNailed;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="53-简化函数调用"><a class="markdownIt-Anchor" href="#53-简化函数调用"></a> 5.3 简化函数调用</h2>
+<h3 id="531-技巧8-读写分离"><a class="markdownIt-Anchor" href="#531-技巧8-读写分离"></a> 5.3.1 技巧8 读写分离</h3>
+<p>某个函数既返回对象状态值，又修改对象状态:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Customer</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">getTotalOutstandingAndSetReadyForSummaries</span><span class="params">(<span class="keyword">int</span> number)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>建立两个不同的函数，其中一个负责查询，另一个负责修改:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Customer</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getTotalOutstanding</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">SetReadyForSummaries</span><span class="params">(<span class="keyword">int</span> number)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="532-技巧9-参数化方法"><a class="markdownIt-Anchor" href="#532-技巧9-参数化方法"></a> 5.3.2 技巧9 参数化方法</h3>
+<p>若干函数做了类似的工作，但在函数本体中却 包含了不同的值:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Dollars <span class="title">baseCharge</span><span class="params">()</span></span></span><br><span class="line"><span class="function"> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> result = Math.<span class="built_in">min</span>(lastUsage(),<span class="number">100</span>) * <span class="number">0.03</span>;</span><br><span class="line">    <span class="keyword">if</span> (lastUsage() &gt; <span class="number">100</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        result += (Math.<span class="built_in">min</span> (lastUsage(),<span class="number">200</span>) - <span class="number">100</span>) * <span class="number">0.05</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (lastUsage() &gt; <span class="number">200</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        result += (lastUsage() - <span class="number">200</span>) * <span class="number">0.07</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Dollars (result);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>建立单一函数，以参数表达那些不同的值：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Dollars <span class="title">baseCharge</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> result = usageInRange(<span class="number">0</span>, <span class="number">100</span>) * <span class="number">0.03</span>;</span><br><span class="line">    result += usageInRange (<span class="number">100</span>,<span class="number">200</span>) * <span class="number">0.05</span>;</span><br><span class="line">    result += usageInRange (<span class="number">200</span>, Integer.MAX_VALUE) * <span class="number">0.07</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Dollars (result);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">usageInRange</span><span class="params">(<span class="keyword">int</span> start, <span class="keyword">int</span> <span class="built_in">end</span>)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (lastUsage() &gt; start) </span><br><span class="line">        <span class="keyword">return</span> Math.<span class="built_in">min</span>(lastUsage(),<span class="built_in">end</span>) -start;</span><br><span class="line">     </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="533-技巧10-以明确函数取代参数"><a class="markdownIt-Anchor" href="#533-技巧10-以明确函数取代参数"></a> 5.3.3 技巧10 以明确函数取代参数</h3>
+<p>函数实现完全取决于参数值而采取不同反应：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setValue</span> <span class="params">(<span class="built_in">string</span> name, <span class="keyword">int</span> value)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (name == <span class="string">"height"</span>)</span><br><span class="line">        _height = value;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (name == <span class="string">"width"</span>)</span><br><span class="line">        _width = value;</span><br><span class="line">    Assert.shouldNeverReachHere();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>针对该参数的每一个可能值，建立一个独立函数：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setHeight</span><span class="params">(<span class="keyword">int</span> arg)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    _height = arg;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setWidth</span> <span class="params">(<span class="keyword">int</span> arg)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    _width = arg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="54-实战练习"><a class="markdownIt-Anchor" href="#54-实战练习"></a> 5.4 实战练习</h2>
+<p>还是以之前统计<strong>CC</strong>值的例子：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">U32 <span class="title">find</span> <span class="params">(<span class="built_in">string</span> match)</span></span>&#123;</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">auto</span> var : List)</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">if</span>(var == match &amp;&amp; from != INVALID_U32) </span><br><span class="line">    	<span class="keyword">return</span> INVALID_U32;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//match step1</span></span><br><span class="line">       <span class="keyword">if</span>(session == getName() &amp;&amp; key == <span class="built_in">getKey</span>())</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; kv : Map)</span><br><span class="line">           &#123;</span><br><span class="line">               <span class="keyword">if</span> (kv.second == last &amp;&amp; match == kv.first)</span><br><span class="line">               &#123;</span><br><span class="line">                   <span class="keyword">return</span> last;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//match step2</span></span><br><span class="line">       <span class="keyword">auto</span> var = Map.<span class="built_in">find</span>(match);</span><br><span class="line">       <span class="keyword">if</span>(var != Map.<span class="built_in">end</span>()&amp;&amp; (from != var-&gt;second)) <span class="keyword">return</span> var-&gt;second;</span><br><span class="line"></span><br><span class="line">       <span class="comment">//match step3</span></span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">auto</span> var: Map)</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">if</span>((var.first, match) &amp;&amp; from != var.second)</span><br><span class="line">           &#123;</span><br><span class="line">               <span class="keyword">return</span> var.second;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> INVALID_U32;</span><br><span class="line">   &#125;;</span><br></pre></td></tr></table></figure>
+<p>综合运用降低CC值的技巧后：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Matcher</span></span></span><br><span class="line"><span class="class">    &#123;</span></span><br><span class="line">        Matcher(<span class="built_in">string</span> name, <span class="built_in">string</span> key);</span><br><span class="line">        <span class="function">U32 <span class="title">find</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        <span class="function"><span class="keyword">bool</span> <span class="title">except</span><span class="params">()</span></span>;</span><br><span class="line">        <span class="function">U32 <span class="title">matchStep1</span><span class="params">()</span></span>;</span><br><span class="line">        <span class="function">U32 <span class="title">matchStep2</span><span class="params">()</span></span>;</span><br><span class="line">        <span class="function">U32 <span class="title">matchStep3</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">bool</span> <span class="title">isTheSameMatch</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">string</span> match;</span><br><span class="line">        U32 from;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    Matcher::Matcher(<span class="built_in">string</span> name, <span class="built_in">string</span> key):</span><br><span class="line">        match(name + key)</span><br><span class="line">    &#123;</span><br><span class="line">        from = GetFrom();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">U32 <span class="title">Matcher::find</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (except())</span><br><span class="line">            <span class="keyword">return</span> INVALID_U32;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">auto</span> result = matchStep1();</span><br><span class="line">        <span class="keyword">if</span> (result != INVALID_U32)</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line"></span><br><span class="line">        result = matchStep2();</span><br><span class="line">        <span class="keyword">if</span> (result != INVALID_U32)</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> matchStep3();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">Matcher::except</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> var : List)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(var == match &amp;&amp; from != INVALID_U32)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">U32 <span class="title">Matcher::matchStep1</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!isTheSameMatch())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> INVALID_U32;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; kv : Map)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> ( last == kv.second &amp;&amp; match == kv.first)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> last;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> INVALID_U32;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">Matcher::isTheSameMatch</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> match == getName() + <span class="built_in">getKey</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">U32 <span class="title">Matcher::matchStep2</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> var = Map.<span class="built_in">find</span>(match);</span><br><span class="line">        <span class="keyword">if</span>(var != Map.<span class="built_in">end</span>()&amp;&amp; (from != var-&gt;second))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> var-&gt;second;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> INVALID_U32;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">U32 <span class="title">Matcher::matchStep3</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> var: Map)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(keyMatch(var.first, match) &amp;&amp; from != var.second)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> var.second;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> INVALID_U32;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">U32 <span class="title">find</span> <span class="params">(<span class="built_in">string</span> match)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Matcher matcher;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> matcher.<span class="built_in">find</span>(match);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该例子将匹配算法都封装到Matcher类中，并将原有逻辑通过提炼函数（技巧1）和合并条件（技巧6）将匹配逻辑抽象成能力查询、粘滞、精确匹配及模糊匹配四个步骤，这样将循环和条件分支封入小函数中，从而降低接口函数（findPno）的圈复杂度，函数职责也更加单一和清晰。整体圈复杂度从单个函数的14降到多个函数最高的5。</p>
+<h1 id="6-圈复杂度思辨"><a class="markdownIt-Anchor" href="#6-圈复杂度思辨"></a> 6 圈复杂度思辨</h1>
+<h2 id="61-思辨1-高复杂度的代码是否可维护性差"><a class="markdownIt-Anchor" href="#61-思辨1-高复杂度的代码是否可维护性差"></a> 6.1 思辨1 高复杂度的代码是否可维护性差</h2>
+<p>在实际项目中为了调试方便，经常会把消息号对应的名称打印出来：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">getMessageName</span><span class="params">(Message msg)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">switch</span>(msg)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">case</span> MSG_1:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"MSG_1"</span>;</span><br><span class="line">        <span class="keyword">case</span> MSG_2:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"MSG_2"</span>;</span><br><span class="line">        <span class="keyword">case</span> MSG_3:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"MSG_3"</span>;</span><br><span class="line">        <span class="keyword">case</span> MSG_4:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"MSG_4"</span>;</span><br><span class="line">        <span class="keyword">case</span> MSG_5:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"MSG_5"</span>;</span><br><span class="line">        <span class="keyword">case</span> MSG_6:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"MSG_6"</span>;</span><br><span class="line">        <span class="keyword">case</span> MSG_7:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"MSG_7"</span>;</span><br><span class="line">        <span class="keyword">case</span> MSG_8:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"MSG_8"</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"MSG_UNKNOWN"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段代码无论从可读性来说，还是从可维护性来说都是可以接收的。因此，当因为”高”复杂度就进行重构的话（例如：技巧2或技巧6），在降低圈复杂度的同时会带来不必要的逻辑复杂度。</p>
+<p>当然，如果出现下面的情况的话，还是有必要进一步降低圈复杂度的：</p>
+<ol>
+<li>消息数过多。</li>
+<li>switch…case…多处重复。 对于消息过多的情况，可以考虑将消息进行分类，然后采用技巧1进行重构。对于出现多处重复的情况，可以通过技巧6将同样case的内容内聚到一个具体的类的方法中，然后通过多态的方式来使用。</li>
+</ol>
+<h2 id="62-思辨2-复杂度相同的代码是否是一致的"><a class="markdownIt-Anchor" href="#62-思辨2-复杂度相同的代码是否是一致的"></a> 6.2 思辨2 复杂度相同的代码是否是一致的</h2>
+<p>例如下面两个代码片段的圈复杂度都是6。 代码片段1：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">getWeight</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (i &lt;= <span class="number">0</span>) </span><br><span class="line">        &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="string">"no weight"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; <span class="number">10</span>) </span><br><span class="line">        &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="string">"light"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; <span class="number">20</span>) </span><br><span class="line">        &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="string">"medium"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; <span class="number">30</span>) </span><br><span class="line">        &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="string">"heavy"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; <span class="number">40</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"very heavy"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="string">"super heavy"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码片段2</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sumOfNonPrimes</span><span class="params">(<span class="keyword">int</span> limit)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">bool</span> bAdd = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; limit; ++i) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i &lt;= <span class="number">2</span>) </span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">            </span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">2</span>; j &lt; i; ++j) </span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span> (i % j == <span class="number">0</span>) </span><br><span class="line">                    &#123;</span><br><span class="line">                            bAdd = <span class="literal">false</span>;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    bAdd = <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (bAdd)</span><br><span class="line">                    sum += i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是它们的代码无论从可读性上来说，还是从可维护性来说，代码片段1应该都优于代码片段2，代码片段2的坏味道更加浓郁。因此，圈复杂度还需要具体情况具体分析，其只能作为重构的一个度量指标，作为决策的一个参考依据。</p>
+<h1 id="7-圈复杂度工具"><a class="markdownIt-Anchor" href="#7-圈复杂度工具"></a> 7 圈复杂度工具</h1>
+<p>圈复杂度的工具有很多，大致有三类：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">专用工具（单语言）</td>
+<td style="text-align:left">OCLint</td>
+<td style="text-align:left">C语言相关</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">GMetrics</td>
+<td style="text-align:left">Java</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">PyMetrics</td>
+<td style="text-align:left">python</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">JSComplexity</td>
+<td style="text-align:left">js</td>
+</tr>
+<tr>
+<td style="text-align:left">通用工具（多语言）</td>
+<td style="text-align:left">lizard</td>
+<td style="text-align:left">支持多种语言：C/C++ (works with C++14)、Java、C#、JavaScript、Objective C、Swift、Python、Ruby、PHP、Scala等。</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">sourcemonitor</td>
+<td style="text-align:left">免费、Windows平台。支持语言包括C、C++、C#、Java、VB、Delphi和HTML。</td>
+</tr>
+<tr>
+<td style="text-align:left">通用平台</td>
+<td style="text-align:left">sonarqube</td>
+<td style="text-align:left">一个用于代码质量管理的开源平台，支持20多种语言。通过插件机制可集成不同的测试工具，代码分析工具及持续集成工具</td>
+</tr>
+</tbody>
+</table>
+<h1 id="8-参考资料"><a class="markdownIt-Anchor" href="#8-参考资料"></a> 8 参考资料</h1>
+<ol>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%BE%AA%E7%92%B0%E8%A4%87%E9%9B%9C%E5%BA%A6" target="_blank" rel="noopener">循環複雜度- 维基百科，自由的百科全书</a></li>
+<li><a href="http://www.guru99.com/cyclomatic-complexity.html" target="_blank" rel="noopener">Learn Mccabe’s Cyclomatic Complexity with Example</a></li>
+<li><a href="https://www.cqse.eu/en/blog/mccabe-cyclomatic-complexity/" target="_blank" rel="noopener">McCabe’s Cyclomatic Complexity and Why We Don’t Use It</a></li>
+</ol>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://Dragonliu2018.github.io/2022/04/15/圈复杂度/" title="圈复杂度" target="_blank" rel="external">https://Dragonliu2018.github.io/2022/04/15/圈复杂度/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/dragonliu2018" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/dragonliu2018" target="_blank"><span class="text-dark">Melo&#39;s Blogs</span><small class="ml-1x">Nuaa CSer</small></a></h3>
+        <div>Life is painting a picture, not doing a sum.</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2022/04/16/Jenkins配置定时发送邮件功能/" title="Jenkins配置定时发送邮件功能"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2022/04/15/代码覆盖率/" title="代码覆盖率"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn " data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">    <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dragonliu2018" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'Pbjl2Wajl9och0xVbR5eqoH1-gzGzoHsz',
+    appKey: 'PgxFh1wV6pyMMllhxs7NJijb',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>

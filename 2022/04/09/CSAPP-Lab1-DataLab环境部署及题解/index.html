@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000">
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top">
+  
+  
+  <title>CSAPP-Lab1-DataLab环境部署及题解 | Melo&#39;s Blogs</title>
+  <meta name="description" content="1 介绍 该实验是《深入理解计算机系统》（英文缩写CSAPP）课程附带实验——Lab1：Data Lab。 大四下学期在做计组助教，需要部署Lab1，期间遇到了不少的问题，多亏了舍友的帮助，记录下。（🥦）  2 环境部署 部署时阅读README文件，包括子目录下的；项目使用Perl语言编写。   2.1 网站运行 在项目主目录运行make start： 1234567891011[root@V">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSAPP-Lab1-DataLab环境部署及题解">
+<meta property="og:url" content="https://Dragonliu2018.github.io/2022/04/09/CSAPP-Lab1-DataLab环境部署及题解/index.html">
+<meta property="og:site_name" content="Dragon Liu">
+<meta property="og:description" content="1 介绍 该实验是《深入理解计算机系统》（英文缩写CSAPP）课程附带实验——Lab1：Data Lab。 大四下学期在做计组助教，需要部署Lab1，期间遇到了不少的问题，多亏了舍友的帮助，记录下。（🥦）  2 环境部署 部署时阅读README文件，包括子目录下的；项目使用Perl语言编写。   2.1 网站运行 在项目主目录运行make start： 1234567891011[root@V">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://s2.loli.net/2022/04/12/e1jI2T7b3QhiqyU.png">
+<meta property="og:updated_time" content="2022-04-18T11:35:07.253Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSAPP-Lab1-DataLab环境部署及题解">
+<meta name="twitter:description" content="1 介绍 该实验是《深入理解计算机系统》（英文缩写CSAPP）课程附带实验——Lab1：Data Lab。 大四下学期在做计组助教，需要部署Lab1，期间遇到了不少的问题，多亏了舍友的帮助，记录下。（🥦）  2 环境部署 部署时阅读README文件，包括子目录下的；项目使用Perl语言编写。   2.1 网站运行 在项目主目录运行make start： 1234567891011[root@V">
+<meta name="twitter:image" content="https://s2.loli.net/2022/04/12/e1jI2T7b3QhiqyU.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://Dragonliu2018.github.io/2022/04/09/CSAPP-Lab1-DataLab环境部署及题解/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Dragon Liu" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/dragonliu2018" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Melo&#39;s Blogs</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Nuaa CSer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Nanjing, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dragonliu2018" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</br>dragonliu2018@gmail.com</br>电脑端观看效果更佳！</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">37</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/安全/">安全</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/爬虫/">爬虫</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">26</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/音乐/">音乐</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Crypto/">Crypto</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Element/">Element</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT书籍/">IT书籍</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Boot/">Spring Boot</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WP/">WP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/neo4j/">neo4j</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书评/">书评</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区块链/">区块链</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/待补充/">待补充</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摘抄/">摘抄</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电视剧/">电视剧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纪录片/">纪录片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/重构/">重构</a><span class="tag-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Crypto/" style="font-size: 13.13px;">Crypto</a> <a href="/tags/Element/" style="font-size: 13.75px;">Element</a> <a href="/tags/Git/" style="font-size: 13.5px;">Git</a> <a href="/tags/Hexo/" style="font-size: 13.25px;">Hexo</a> <a href="/tags/IT书籍/" style="font-size: 13px;">IT书籍</a> <a href="/tags/MySQL/" style="font-size: 13.63px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 13px;">Redis</a> <a href="/tags/Spring-Boot/" style="font-size: 13.13px;">Spring Boot</a> <a href="/tags/Vue/" style="font-size: 13px;">Vue</a> <a href="/tags/WP/" style="font-size: 13.25px;">WP</a> <a href="/tags/Web/" style="font-size: 13.13px;">Web</a> <a href="/tags/neo4j/" style="font-size: 13px;">neo4j</a> <a href="/tags/selenium/" style="font-size: 13.13px;">selenium</a> <a href="/tags/书评/" style="font-size: 13.88px;">书评</a> <a href="/tags/区块链/" style="font-size: 13px;">区块链</a> <a href="/tags/待补充/" style="font-size: 14px;">待补充</a> <a href="/tags/摘抄/" style="font-size: 13.13px;">摘抄</a> <a href="/tags/电影/" style="font-size: 13.25px;">电影</a> <a href="/tags/电视剧/" style="font-size: 13px;">电视剧</a> <a href="/tags/纪录片/" style="font-size: 13px;">纪录片</a> <a href="/tags/重构/" style="font-size: 13.38px;">重构</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">34</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/未分类/">未分类</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/04/18/卫语句/" class="title">卫语句</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-04-18T08:32:06.000Z" itemprop="datePublished">2022-04-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/环境与工具/">环境与工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/04/18/git-vs-svn/" class="title">git vs svn</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-04-18T08:28:44.000Z" itemprop="datePublished">2022-04-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/C/">C++</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/04/18/指针-vs-引用-vs-指针引用/" class="title">指针 vs 引用 vs 指针引用</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-04-18T08:27:41.000Z" itemprop="datePublished">2022-04-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/未分类/">未分类</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/04/18/函数打桩/" class="title">函数打桩</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-04-18T08:11:30.000Z" itemprop="datePublished">2022-04-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/未分类/">未分类</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/04/18/华为实习任务-codecheck/" class="title">华为实习任务-codecheck</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-04-18T05:40:01.000Z" itemprop="datePublished">2022-04-18</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+  <aside class="sidebar sidebar-toc collapse   in  " id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-介绍"><span class="toc-number">1.</span> <span class="toc-text"> 1 介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-环境部署"><span class="toc-number">2.</span> <span class="toc-text"> 2 环境部署</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#21-网站运行"><span class="toc-number">2.1.</span> <span class="toc-text"> 2.1 网站运行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-出题"><span class="toc-number">2.2.</span> <span class="toc-text"> 2.2 出题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23-导出实验"><span class="toc-number">2.3.</span> <span class="toc-text"> 2.3 导出实验</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-题解"><span class="toc-number">3.</span> <span class="toc-text"> 3 题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#31-lsbzeroc"><span class="toc-number">3.1.</span> <span class="toc-text"> 3.1 lsbZero.c</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#32-bytenotc"><span class="toc-number">3.2.</span> <span class="toc-text"> 3.2 byteNot.c</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#33-bytexorc"><span class="toc-number">3.3.</span> <span class="toc-text"> 3.3 byteXor.c</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#34-logicaland"><span class="toc-number">3.4.</span> <span class="toc-text"> 3.4 logicalAnd</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#35-logicalor"><span class="toc-number">3.5.</span> <span class="toc-text"> 3.5 logicalOr</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#36-rotateleft"><span class="toc-number">3.6.</span> <span class="toc-text"> 3.6 rotateLeft</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#37-float_absc"><span class="toc-number">3.7.</span> <span class="toc-text"> 3.7 float_abs.c</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#38-float_f2i"><span class="toc-number">3.8.</span> <span class="toc-text"> 3.8 float_f2i</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-其他"><span class="toc-number">4.</span> <span class="toc-text"> 4 其他</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#x-参考"><span class="toc-number">5.</span> <span class="toc-text"> X 参考</span></a></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-CSAPP-Lab1-DataLab环境部署及题解" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSAPP-Lab1-DataLab环境部署及题解
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/04/09/CSAPP-Lab1-DataLab环境部署及题解/" class="article-date">
+	  <time datetime="2022-04-08T17:26:20.000Z" itemprop="datePublished">2022-04-09</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/计组/">计组</a>
+  </span>
+
+        
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/04/09/CSAPP-Lab1-DataLab环境部署及题解/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 3.6k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 17(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="1-介绍"><a class="markdownIt-Anchor" href="#1-介绍"></a> 1 介绍</h1>
+<p>该实验是《深入理解计算机系统》（英文缩写CSAPP）课程附带实验——Lab1：Data Lab。</p>
+<p>大四下学期在做计组助教，需要部署Lab1，期间遇到了不少的问题，多亏了舍友的帮助，记录下。（🥦）</p>
+<h1 id="2-环境部署"><a class="markdownIt-Anchor" href="#2-环境部署"></a> 2 环境部署</h1>
+<p>部署时阅读<code>README</code>文件，包括子目录下的；项目使用Perl语言编写。</p>
+<img src="https://s2.loli.net/2022/04/12/e1jI2T7b3QhiqyU.png" width="800" height="300" alt="图片名称" align="center" id="140">
+<h2 id="21-网站运行"><a class="markdownIt-Anchor" href="#21-网站运行"></a> 2.1 网站运行</h2>
+<p>在项目主目录运行<code>make start</code>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@VM-4-8-centos lab1]<span class="comment"># sudo make start</span></span><br><span class="line"><span class="comment">######################################</span></span><br><span class="line"><span class="comment"># start Data lab Online contest</span></span><br><span class="line"><span class="comment">######################################</span></span><br><span class="line">(<span class="built_in">cd</span> contest; make start)</span><br><span class="line">make[1]: Entering directory <span class="string">'/root/Lab/lab1/contest'</span></span><br><span class="line">/bin/sh: ./contest-timer.pl: Permission denied</span><br><span class="line">/bin/sh: ./contest.pl: Permission denied</span><br><span class="line">make[1]: *** [Makefile:13: start] Error 1</span><br><span class="line">make[1]: Leaving directory <span class="string">'/root/Lab/lab1/contest'</span></span><br><span class="line">make: *** [Makefile:15: start] Error 2</span><br></pre></td></tr></table></figure>
+<p>出现报错，是因为pl脚本无执行权限，需要加权限：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ./contest</span><br><span class="line">chmod +x *.pl</span><br></pre></td></tr></table></figure>
+<p>之后报错：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Can<span class="string">'t locate CGI.pm in @INC (you may need to install the CGI module)</span></span><br></pre></td></tr></table></figure>
+<p>原因是缺少CGI模块，<a href="https://blog.hostonnet.com/ah01215-cant-locate-cgi-pm-in-inc" target="_blank" rel="noopener">参考</a></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install perl-CGI</span><br></pre></td></tr></table></figure>
+<p>此时浏览器访问<code>http://服务器IP:8080/</code>，（<strong>注意服务器开启8080端口和8081端口</strong>)</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Scoreboard for the Data Lab "Beat the Prof" Contest</span><br><span class="line">Warning: The instructor (Tiger) must submit an entry before the results of the contest can be displayed.</span><br><span class="line"></span><br><span class="line">To submit your instructor's entry: linux&gt; ./src/driver.pl -u "The Prof"</span><br></pre></td></tr></table></figure>
+<p>这时候我们需要在后台执行提示的命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@VM-4-8-centos lab1]<span class="comment"># ./src/driver.pl -u "The Prof"</span></span><br><span class="line">-bash: ./src/driver.pl: Permission denied</span><br></pre></td></tr></table></figure>
+<p>报错显示需要加权限：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /root/Lab/lab1/src</span><br><span class="line">chmod +x *.pl</span><br></pre></td></tr></table></figure>
+<p>之后再次报错：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@VM-4-8-centos lab1]<span class="comment"># ./src/driver.pl -u "The Prof"</span></span><br><span class="line">Can<span class="string">'t locate Driverlib.pm in @INC (you may need to install the Driverlib module) (@INC contains: . /usr/local/lib64/perl5 /usr/local/share/perl5 /usr/lib64/perl5/vendor_perl /usr/share/perl5/vendor_perl /usr/lib64/perl5 /usr/share/perl5) at ./src/driver.pl line 19.</span></span><br><span class="line"><span class="string">BEGIN failed--compilation aborted at ./src/driver.pl line 19.</span></span><br></pre></td></tr></table></figure>
+<p>这里的显示<code>Driverlib.pm</code>不存在，将往年Lab中的该文件复制到<code>/usr/lib64/perl5</code>（可变，只要在报错提示中的<code>@INC</code>中即可），然后再次执行：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@VM-4-8-centos lab1]<span class="comment"># ./src/driver.pl -u "The Prof"</span></span><br><span class="line">Can<span class="string">'t locate Driverhdrs.pm in @INC (you may need to install the Driverhdrs module) (@INC contains: . /usr/local/lib64/perl5 /usr/local/share/perl5 /usr/lib64/perl5/vendor_perl /usr/share/perl5/vendor_perl /usr/lib64/perl5 /usr/share/perl5) at /usr/lib64/perl5/Driverlib.pm line 13.</span></span><br><span class="line"><span class="string">BEGIN failed--compilation aborted at /usr/lib64/perl5/Driverlib.pm line 13.</span></span><br><span class="line"><span class="string">Compilation failed in require at ./src/driver.pl line 20.</span></span><br><span class="line"><span class="string">BEGIN failed--compilation aborted at ./src/driver.pl line 20.</span></span><br></pre></td></tr></table></figure>
+<p><code>Driverhdrs.pm</code>文件与上面的<code>Driverlib.pm</code>文件同理，再次执行：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@VM-4-8-centos lab1]<span class="comment"># ./src/driver.pl -u "The Prof"</span></span><br><span class="line">./src/driver.pl: ERROR: No executable dlc binary.</span><br></pre></td></tr></table></figure>
+<p>进入<code>src</code>子目录下执行，出现报错：<a href="https://stackoverflow.com/questions/33059187/fatal-error-gnu-stubs-32-h-no-such-file-or-directory-but-stubs-64-h-is-prese" target="_blank" rel="noopener">参考</a></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@VM-4-8-centos src]<span class="comment"># ./driver.pl -u "The Prof"</span></span><br><span class="line">fatal error: gnu/stubs-32.h: No such file or directory<span class="string">" but stubs-64.h is present</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum -y install glibc-devel.i686 glibc-devel</span><br></pre></td></tr></table></figure>
+<p>之后就可以成功执行了，但是前端页面仍然不变，需要提交如下指令：（非常坑，还是看文档不仔细，🥦</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@VM-4-8-centos src]<span class="comment"># ./driver.pl -u "Tiger"</span></span><br></pre></td></tr></table></figure>
+<p>在配置文件<code>./contest/Contest.pm</code>中可以查看：</p>
+<figure class="highlight pm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$SERVER_NAME = <span class="string">"10.0.2.15"</span>;  <span class="comment"># 需要修改成自己的服务器</span></span><br><span class="line">$BASE_USERID = <span class="string">"Tiger"</span>;  <span class="comment"># 初始用户名</span></span><br><span class="line">$UPDATE_PERIOD = <span class="number">10</span>;  <span class="comment"># 每10s刷新数据</span></span><br><span class="line">$REQUESTD_PORT = <span class="number">8080</span>;  <span class="comment"># Request server's port</span></span><br><span class="line">$RESULTD_PORT = <span class="number">8081</span>;   <span class="comment"># Result server's port</span></span><br><span class="line"><span class="comment"># ... 还有好多其他配置信息</span></span><br></pre></td></tr></table></figure>
+<p>到此前端可以正常显示了。</p>
+<h2 id="22-出题"><a class="markdownIt-Anchor" href="#22-出题"></a> 2.2 出题</h2>
+<p>具体操作参考<code>./src/dlcdir/README</code></p>
+<ol>
+<li>
+<p><code>./src/puzzles</code>目录下存放试题，新出的题目需要放在此处，由于本次实验出题主要更改原试题的名称，比较简单，魔改即可（包括文件名、函数名、注释等）</p>
+</li>
+<li>
+<p>将新出的题目名称添加到<code>./src/dlcdir/legallist.c</code>中的<code>legallist</code>中，魔改：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;<span class="string">"isZero"</span>&#125;, <span class="number">0</span>, <span class="number">3</span>, &#123;<span class="string">'~'</span>, <span class="string">'&amp;'</span>, <span class="string">'!'</span>, <span class="string">'^'</span>, <span class="string">'|'</span>, <span class="string">'+'</span>, LS, RS, <span class="number">0</span>&#125;&#125;,</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>然后在<code>./src/dlcdir</code>目录下重新编译：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make superclean</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>此时如果成功执行，<code>./src/dlcdir</code>目录下会生成<code>dlc</code>可执行文件，并将其复制到上级目录中；</p>
+</li>
+<li>
+<p>在<code>./src/selections.c</code>文件中存有你要选择出题的题目列表，默认13个，根据需求进行修改。</p>
+</li>
+</ol>
+<p><strong>下面是make过程中出现的报错记录：</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@VM-4-8-centos dlcdir]<span class="comment"># make</span></span><br><span class="line">bison -y -dv ANSI-C.y</span><br><span class="line">make: bison: Command not found</span><br><span class="line">make: *** [Makefile:40: y.tab.h] Error 127</span><br></pre></td></tr></table></figure>
+<p>原因是未安装bison，进行安装：<a href="https://blog.csdn.net/weborn/article/details/6794671" target="_blank" rel="noopener">参考</a></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y bison</span><br></pre></td></tr></table></figure>
+<p>然后继续报错：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@VM-4-8-centos dlcdir]<span class="comment"># make</span></span><br><span class="line">bison -y -dv ANSI-C.y</span><br><span class="line">ANSI-C.y:653.15-16: error: $$ <span class="keyword">for</span> the midrule at <span class="variable">$4</span> of ‘declaring.list’ has no declared <span class="built_in">type</span></span><br><span class="line">              $$ = AppendDecl(<span class="variable">$1</span>, <span class="variable">$3</span>, Redecl);</span><br><span class="line">               ^^</span><br><span class="line">ANSI-C.y:708.15-16: error: $$ <span class="keyword">for</span> the midrule at <span class="variable">$4</span> of ‘default.declaring.list’ has no declared <span class="built_in">type</span></span><br><span class="line">             &#123; $$ = AppendDecl(<span class="variable">$1</span>, <span class="variable">$3</span>, NoRedecl); &#125;</span><br><span class="line">               ^^</span><br><span class="line">ANSI-C.y:1408.14-15: error: $$ <span class="keyword">for</span> the midrule at <span class="variable">$3</span> of ‘labeled.statement’ has no declared <span class="built_in">type</span></span><br><span class="line">            &#123; $$ = BuildLabel(<span class="variable">$1</span>, NULL); &#125;</span><br><span class="line">              ^^</span><br><span class="line">make: *** [Makefile:40: y.tab.h] Error 1</span><br></pre></td></tr></table></figure>
+<p>原因是bison版本太新，需要更换版本：<a href="https://lists.gnu.org/archive/html/help-bison/2009-03/msg00015.html" target="_blank" rel="noopener">参考</a></p>
+<p>查看版本：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@VM-4-8-centos dlcdir]<span class="comment"># bison -V</span></span><br><span class="line">bison (GNU Bison) 3.0.4</span><br><span class="line">Written by Robert Corbett and Richard Stallman.</span><br><span class="line"></span><br><span class="line">Copyright (C) 2015 Free Software Foundation, Inc.</span><br><span class="line">This is free software; see the <span class="built_in">source</span> <span class="keyword">for</span> copying conditions.  There is NO</span><br><span class="line">warranty; not even <span class="keyword">for</span> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</span><br></pre></td></tr></table></figure>
+<p>删除bison：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum remove bison.x86_64</span><br></pre></td></tr></table></figure>
+<p>下面更换bison版本：<a href="https://www.shuzhiduo.com/A/q4zVVOZWzK/" target="_blank" rel="noopener">参考</a></p>
+<ol>
+<li>
+<p>下载bison的压缩包，版本要<strong>低于1.75</strong>，<a href="http://ftp.gnu.org/gnu/bison/" target="_blank" rel="noopener">链接</a></p>
+</li>
+<li>
+<p>安装：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> bison-x.x</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<p>bison版本正确后，下面继续做make，但是报了一大堆warning，然后报错：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">heap.h:69:21: warning: inline <span class="keyword">function</span> ‘HeapAllocate’ declared but never defined</span><br><span class="line"> GLOBAL inline void *HeapAllocate(int number, int size);</span><br><span class="line">...</span><br><span class="line">/root/Lab/lab1/src/dlcdir/check.c:339: undefined reference to `MakeConstSlong<span class="string">'</span></span><br><span class="line"><span class="string">/root/Lab/lab1/src/dlcdir/check.c:339: undefined reference to `MakeReturnCoord'</span></span><br><span class="line">collect2: error: ld returned 1 <span class="built_in">exit</span> status</span><br><span class="line">make: *** [Makefile:36: dlc] Error 1</span><br></pre></td></tr></table></figure>
+<p>注意：这里搜索最后的报错部分无果，搜索warning部分可以解决。</p>
+<p>这是内联函数<code>inline</code>引发的warning，添加编译选项<code>-fgnu89-inline</code>来修复，修改<code>./src/Makefile</code>，<a href="https://stackoverflow.com/questions/13120633/how-to-deal-with-warning-inline-function-stat64-declared-but-never-defined" target="_blank" rel="noopener">参考</a></p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_CFLAGS = -g  -O2 -fgnu89-inline</span><br></pre></td></tr></table></figure>
+<p>下面继续编译，之前需要清理下：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make clean</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
+<p>现在就可以成功编译了，但是此时是<code>dlc</code>是64位可执行程序，在我们学生默认的32位debian虚拟机是无法运行的：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">liuzhenlong@debian:~/Lab_new/lab1-handout$ ./dlc bits.c</span><br><span class="line">-bash: ./dlc: cannot execute binary file: Exec format error</span><br><span class="line">liuzhenlong@debian:~/Lab_new/lab1-handout$ file dlc</span><br><span class="line">dlc: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, <span class="keyword">for</span> GNU/Linux 3.2.0, BuildID[sha1]=1dcd289bac34aee0dde34abd43a959588d79b382, with debug_info, not stripped</span><br></pre></td></tr></table></figure>
+<p>所以需要修改成32位编译：<a href="https://www.cnblogs.com/xuejianbest/p/10285173.html" target="_blank" rel="noopener">参考</a></p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_CFLAGS = -g  -O2 -fgnu89-inline -m32</span><br></pre></td></tr></table></figure>
+<p>下面继续编译，之前需要清理下：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">make clean</span><br><span class="line">make </span><br><span class="line">liuzhenlong@debian:~/Lab_new/lab1-handout$ file dlc</span><br><span class="line">dlc: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, <span class="keyword">for</span> GNU/Linux 3.2.0, BuildID[sha1]=ec898c28449afe1d16254e2cbe67617c1874b026, with debug_info, not stripped</span><br></pre></td></tr></table></figure>
+<p>现在<code>dlc</code>可执行程序已经生成。</p>
+<h2 id="23-导出实验"><a class="markdownIt-Anchor" href="#23-导出实验"></a> 2.3 导出实验</h2>
+<p>在项目主目录下执行：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@VM-4-8-centos lab1]<span class="comment"># make all</span></span><br><span class="line">[root@VM-4-8-centos lab1]<span class="comment"># ll</span></span><br><span class="line">total 1232</span><br><span class="line">drwxr-xr-x 2 root root    4096 Apr  9 22:20 contest</span><br><span class="line">drwxr-xr-x 4 root root    4096 Apr  8 10:58 grade</span><br><span class="line">drwxr-xr-x 2 root root    4096 Apr 13 00:13 lab1-handout</span><br><span class="line">-rw-r--r-- 1 root root 1228800 Apr 13 00:13 lab1-handout.tar</span><br><span class="line">-rw-r--r-- 1 root root    2436 Apr  7 23:06 Makefile</span><br><span class="line">-rw-r--r-- 1 root root    8097 Apr  7 23:06 README</span><br><span class="line">drwxr-xr-x 5 root root    4096 Apr 13 00:13 src</span><br><span class="line">drwxr-xr-x 2 root root    4096 Apr  7 23:04 writeup</span><br></pre></td></tr></table></figure>
+<p><code>lab1-handout.tar</code>是生成的实验，将其分发给同学们即可进行实验了。</p>
+<h1 id="3-题解"><a class="markdownIt-Anchor" href="#3-题解"></a> 3 题解</h1>
+<h2 id="31-lsbzeroc"><a class="markdownIt-Anchor" href="#31-lsbzeroc"></a> 3.1 lsbZero.c</h2>
+<p><strong>注释</strong>：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> *   lsbZero - set 0 to the least significant bit of x</span></span><br><span class="line"><span class="comment"> *   Example: lsbZero(0x87654321) = 0x87654320</span></span><br><span class="line"><span class="comment"> *   Legal ops: ! ~ &amp; ^ | + &lt;&lt; &gt;&gt;</span></span><br><span class="line"><span class="comment"> *   Max ops: 5</span></span><br><span class="line"><span class="comment"> *   Rating: 1</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<p><strong>题目</strong>：</p>
+<p>给定一个<code>int</code>型整数<code>x</code>，将其最低一位有效位置0。</p>
+<ul>
+<li>例如：<code>lsbZero(0x87654321) = 0x87654320</code></li>
+</ul>
+<p><strong>实现</strong>：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 法1（标准答案-3'）</span></span><br><span class="line"><span class="comment">/* */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lsbZero</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (x | <span class="number">1</span>) + ~<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 法2（目前最佳答案-2'）</span></span><br><span class="line"><span class="comment">/* 右移一位再左移一位实现把最低一位有效位置0 */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lsbZero</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x &gt;&gt; <span class="number">1</span> &lt;&lt; <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 法3（来自学生-2'）</span></span><br><span class="line"><span class="comment">/* 和 0xfffffffe 相与即可 */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lsbZero</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x &amp; (~<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="32-bytenotc"><a class="markdownIt-Anchor" href="#32-bytenotc"></a> 3.2 byteNot.c</h2>
+<p><strong>注释</strong>：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> *   byteNot.c - bit-inversion to byte n from word x</span></span><br><span class="line"><span class="comment"> *   Bytes numbered from 0 (LSB) to 3 (MSB)</span></span><br><span class="line"><span class="comment"> *   Examples: getByteNot(0x12345678,1) = 0x1234A978</span></span><br><span class="line"><span class="comment"> *   Legal ops: ! ~ &amp; ^ | + &lt;&lt; &gt;&gt;</span></span><br><span class="line"><span class="comment"> *   Max ops: 6</span></span><br><span class="line"><span class="comment"> *   Rating: 2</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<p><strong>题目</strong>：</p>
+<p>给定一个<code>int</code>型整数<code>x</code>，将其第<code>n</code>个字节实现取反。</p>
+<ul>
+<li>例如：<code>byteNot(0x12345678,1) = 0x1234A978</code></li>
+</ul>
+<p><strong>实现</strong>：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 法1（标准答案-3'）</span></span><br><span class="line"><span class="comment">/* 将0xFF移动到对应字节，然后取按位异或 */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">nuaa_question2</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="comment">/* Shift x n*8 positions right */</span></span><br><span class="line">  <span class="keyword">int</span> shift = n &lt;&lt; <span class="number">3</span>;</span><br><span class="line">  <span class="comment">/* Mask byte */</span></span><br><span class="line">  <span class="keyword">int</span> mask = <span class="number">0xFF</span> &lt;&lt; shift;</span><br><span class="line">  <span class="keyword">return</span> x ^ mask;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="33-bytexorc"><a class="markdownIt-Anchor" href="#33-bytexorc"></a> 3.3 byteXor.c</h2>
+<p><strong>注释</strong>：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> *   byteXor - compare the nth byte of x and y, if it is same, return 0, if not, return 1</span></span><br><span class="line"><span class="comment"> *   example: byteXor(0x12345678, 0x87654321, 1) = 1</span></span><br><span class="line"><span class="comment"> *            byteXor(0x12345678, 0x87344321, 2) = 0</span></span><br><span class="line"><span class="comment"> *   Legal ops: ! ~ &amp; ^ | + &lt;&lt; &gt;&gt;</span></span><br><span class="line"><span class="comment"> *   Max ops: 20</span></span><br><span class="line"><span class="comment"> *   Rating: 2</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<p><strong>题目</strong>：</p>
+<p>给定三个<code>int</code>整数 <code>x</code> 、 <code>y</code>和 <code>n</code> ，比较 <code>x</code> 和 <code>y</code> 的第 <code>n</code> 字节，如果相同则返回 <code>0</code> ，不同则返回 <code>1</code>。</p>
+<ul>
+<li>例如：<code>byteXor(0x12345678, 0x87654321, 1) = 1</code></li>
+<li>例如：<code>byteXor(0x12345678, 0x87344321, 2) = 0</code></li>
+</ul>
+<p><strong>实现</strong>：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 法1（标准答案-9'）</span></span><br><span class="line"><span class="comment">/* 移位取指定字节，异或，两次取逻辑非 */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">byteXor</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> shift = n &lt;&lt; <span class="number">3</span>;</span><br><span class="line">  <span class="keyword">int</span> xs = x &gt;&gt; shift;</span><br><span class="line">  <span class="keyword">int</span> ys = y &gt;&gt; shift;</span><br><span class="line">  <span class="keyword">int</span> cmp = (xs &amp; <span class="number">0xFF</span>) ^ (ys &amp; <span class="number">0xFF</span>);</span><br><span class="line">  <span class="keyword">return</span> !!cmp &amp; <span class="number">1</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 法2（目前最佳答案-8'）</span></span><br><span class="line"><span class="comment">/* 法1最后的&amp;1是多余的操作 */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">byteXor</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> shift = n &lt;&lt; <span class="number">3</span>;</span><br><span class="line">  <span class="keyword">int</span> xs = x &gt;&gt; shift;</span><br><span class="line">  <span class="keyword">int</span> ys = y &gt;&gt; shift;</span><br><span class="line">  <span class="keyword">int</span> cmp = (xs &amp; <span class="number">0xFF</span>) ^ (ys &amp; <span class="number">0xFF</span>);</span><br><span class="line">  <span class="keyword">return</span> !!cmp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 法3（来自学生-6'）</span></span><br><span class="line"><span class="comment">/* 把⽬标位移到最低位然后⽤异或⽐较⼀下是否相等即可 */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lsbZero</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    _ = n &lt;&lt; <span class="number">3</span>;</span><br><span class="line">  __ = ((x ^ y) &gt;&gt; _) &amp; <span class="number">0xff</span>;</span><br><span class="line">  <span class="keyword">return</span> !!(__);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="34-logicaland"><a class="markdownIt-Anchor" href="#34-logicaland"></a> 3.4 logicalAnd</h2>
+<p><strong>注释</strong>：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> *   logicalAnd - x &amp;&amp; y</span></span><br><span class="line"><span class="comment"> *   Legal ops: ! ~ &amp; ^ | + &lt;&lt; &gt;&gt;</span></span><br><span class="line"><span class="comment"> *   Max ops: 20</span></span><br><span class="line"><span class="comment"> *   Rating: 3</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<p><strong>题目</strong>：</p>
+<p>实现逻辑与<code>&amp;&amp;</code>，当两个操作数都是ture的时候，才返回true，否则返回false。</p>
+<ul>
+<li>例如：<code>logicalAnd(1, 0) = 0</code></li>
+<li>例如：<code>logicalAnd(2, 3) = 1</code></li>
+</ul>
+<p><strong>实现</strong>：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 法1（标准答案-8'）</span></span><br><span class="line"><span class="comment">/* */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">logicalAnd</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> z = ~!x &amp; ~!y;</span><br><span class="line">  <span class="keyword">return</span> ~(z + <span class="number">1</span>) &amp; <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 法2（其他思路-5'）</span></span><br><span class="line"><span class="comment">/* 把x和y分别转换为逻辑的0和1，再相与 */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">logicalAnd</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> (!(!x))&amp;(!(!y));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 法3（目前最佳答案-4'）</span></span><br><span class="line"><span class="comment">/* 把x和y分别取NOT，二者相或后再取NOT，即可得到逻辑与 */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">logicalAnd</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> !((!x)|(!y));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="35-logicalor"><a class="markdownIt-Anchor" href="#35-logicalor"></a> 3.5 logicalOr</h2>
+<p><strong>注释</strong>：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> *   logicalOr - x || y</span></span><br><span class="line"><span class="comment"> *   Legal ops: ! ~ &amp; ^ | + &lt;&lt; &gt;&gt;</span></span><br><span class="line"><span class="comment"> *   Max ops: 20</span></span><br><span class="line"><span class="comment"> *   Rating: 3</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<p><strong>题目</strong>：</p>
+<p>实现逻辑或<code>||</code>，当两个操作数有一个为ture的时候，就返回true。</p>
+<ul>
+<li>例如：<code>logicalOr(0, 0) = 0</code></li>
+<li>例如：<code>logicalOr(2, 0) = 1</code></li>
+</ul>
+<p><strong>实现</strong>：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 法1（标准答案）</span></span><br><span class="line"><span class="comment">/* */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">logicalOr</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> ~(!x &amp; !y) &amp; <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 法2（目前最佳答案）</span></span><br><span class="line"><span class="comment">/* 把x和y分别转换为逻辑的0和1，再相或 */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">logicalOr</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (!(!x))|(!(!y));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="36-rotateleft"><a class="markdownIt-Anchor" href="#36-rotateleft"></a> 3.6 rotateLeft</h2>
+<p><strong>注释</strong>：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> *   rotateLeft - Rotate x to the left by n</span></span><br><span class="line"><span class="comment"> *   Can assume that 0 &lt;= n &lt;= 31</span></span><br><span class="line"><span class="comment"> *   Examples: rotateLeft(0x87654321,4) = 0x76543218</span></span><br><span class="line"><span class="comment"> *   Legal ops: ~ &amp; ^ | + &lt;&lt; &gt;&gt; !</span></span><br><span class="line"><span class="comment"> *   Max ops: 25</span></span><br><span class="line"><span class="comment"> *   Rating: 3</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<p><strong>题目</strong>：</p>
+<p>给定一个<code>int</code>型整数<code>x</code>，实现循环左移，也就是把<code>x</code>的前<code>n</code>位移到末尾。</p>
+<ul>
+<li>例如：<code>rotateLeft(0x87654321,4) = 0x76543218</code></li>
+</ul>
+<p><strong>实现</strong>：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 法1（标准答案-16'）</span></span><br><span class="line"><span class="comment">/* */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">rotateLeft</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* Create mask for n = 0 */</span></span><br><span class="line">    <span class="keyword">int</span> zmask = (~!n)+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> left = x &lt;&lt; n;</span><br><span class="line">    <span class="comment">/* Arithmetic shift right by 32-n */</span></span><br><span class="line">    <span class="keyword">int</span> right = x &gt;&gt; (<span class="number">33</span> + ~n);</span><br><span class="line">    <span class="comment">/* Mask off upper 1's */</span></span><br><span class="line">    <span class="keyword">int</span> lmask = ~<span class="number">0</span> &lt;&lt; n;</span><br><span class="line">    right &amp;= ~lmask;</span><br><span class="line">    <span class="keyword">return</span> (zmask&amp;x) | (~zmask&amp;(left|right));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 法2(其他方法-10’)</span></span><br><span class="line"><span class="comment">/* 先构造y为高（32-n）位为0的y，再与x右移（32-n）的x相与，相当于储存了x的高n位数，最后再与x左移n位相加即可。 */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">rotateLeft</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> y;</span><br><span class="line">    y=~((~<span class="number">0</span>)&lt;&lt;n);</span><br><span class="line">    x=(x&lt;&lt;n)+((x&gt;&gt;(<span class="number">32</span>+(~n+<span class="number">1</span>)))&amp;y);</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="37-float_absc"><a class="markdownIt-Anchor" href="#37-float_absc"></a> 3.7 float_abs.c</h2>
+<p><strong>注释</strong>：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> *   float_abs - Return bit-level equivalent of absolute value of f for</span></span><br><span class="line"><span class="comment"> *   floating point argument f.</span></span><br><span class="line"><span class="comment"> *   Both the argument and result are passed as unsigned int's, but</span></span><br><span class="line"><span class="comment"> *   they are to be interpreted as the bit-level representations of</span></span><br><span class="line"><span class="comment"> *   single-precision floating point values.</span></span><br><span class="line"><span class="comment"> *   When argument is NaN, return argument..</span></span><br><span class="line"><span class="comment"> *   Legal ops: Any integer/unsigned operations incl. ||, &amp;&amp;. also if, while</span></span><br><span class="line"><span class="comment"> *   Max ops: 10</span></span><br><span class="line"><span class="comment"> *   Rating: 2</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<p><strong>题目</strong>：</p>
+<p>给予⼀个无符号整数表示的浮点数 <code>uf</code> (你可以认为 <code>uf</code> 具有浮点数的比特级结构) ，函数返回它的绝对值，即 <code>|uf|</code> (返回的结果也是⼀个无符号整数表示的浮点数)，如果这个数是 <code>NaN</code> ，请返回它本身。</p>
+<p><strong>实现</strong>：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 法1（标准答案）</span></span><br><span class="line"><span class="comment">/* */</span></span><br><span class="line"><span class="function"><span class="keyword">unsigned</span> <span class="title">float_abs</span><span class="params">(<span class="keyword">unsigned</span> uf)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">unsigned</span> mask = <span class="number">1</span> &lt;&lt; <span class="number">31</span>;</span><br><span class="line">  <span class="keyword">unsigned</span> <span class="built_in">abs</span> = uf &amp; ~mask;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">abs</span> &gt; <span class="number">0x7F800000</span>)</span><br><span class="line">    <span class="keyword">return</span> uf;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">abs</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 法2（目前最佳答案）</span></span><br><span class="line"><span class="comment">/* https://blog.csdn.net/qq_43544682/article/details/102874816 */</span></span><br><span class="line"><span class="function"><span class="keyword">unsigned</span> <span class="title">float_abs</span><span class="params">(<span class="keyword">unsigned</span> uf)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x=uf&amp;<span class="number">0x7fffffff</span>;</span><br><span class="line">    <span class="keyword">if</span>(x&gt;<span class="number">0x7f800000</span>)</span><br><span class="line">        <span class="keyword">return</span> uf;<span class="comment">//NaN</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="38-float_f2i"><a class="markdownIt-Anchor" href="#38-float_f2i"></a> 3.8 float_f2i</h2>
+<p><strong>注释</strong>：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> *   float_f2i - Return bit-level equivalent of expression (int) f</span></span><br><span class="line"><span class="comment"> *   for floating point argument f.</span></span><br><span class="line"><span class="comment"> *   Argument is passed as unsigned int, but</span></span><br><span class="line"><span class="comment"> *   it is to be interpreted as the bit-level representation of a</span></span><br><span class="line"><span class="comment"> *   single-precision floating point value.</span></span><br><span class="line"><span class="comment"> *   Anything out of range (including NaN and infinity) should return</span></span><br><span class="line"><span class="comment"> *   0x80000000u.</span></span><br><span class="line"><span class="comment"> *   Legal ops: Any integer/unsigned operations incl. ||, &amp;&amp;. also if, while</span></span><br><span class="line"><span class="comment"> *   Max ops: 30</span></span><br><span class="line"><span class="comment"> *   Rating: 4</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<p><strong>题目</strong>：</p>
+<p>给予⼀个无符号整数表示的浮点数 <code>uf</code> (你可以认为 <code>uf</code> 具有浮点数的比特级结构) ，函数返回它对应的强制类型转换后的整数（具有整数的比特级结构），即实现表达式 <code>(int)uf</code> ，如果这个数超过整数表示的范围（包括 <code>NaN</code> 和无穷），请返回 <code>0x80000000u</code>。</p>
+<p><strong>实现</strong>：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 法1（标准答案）</span></span><br><span class="line"><span class="comment">/* */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">float_f2i</span><span class="params">(<span class="keyword">unsigned</span> uf)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">unsigned</span> sign = uf &gt;&gt; <span class="number">31</span>;</span><br><span class="line">  <span class="keyword">unsigned</span> <span class="built_in">exp</span> = (uf &gt;&gt; <span class="number">23</span>) &amp; <span class="number">0xFF</span>;</span><br><span class="line">  <span class="keyword">unsigned</span> frac = uf &amp; <span class="number">0x7FFFFF</span>;</span><br><span class="line">  <span class="comment">/* Create normalized value with leading one inserted,</span></span><br><span class="line"><span class="comment">     and rest of significand in bits 8--30.</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  <span class="keyword">unsigned</span> val = <span class="number">0x80000000</span>u + (frac &lt;&lt; <span class="number">8</span>);</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">exp</span> &lt; <span class="number">127</span>) &#123;</span><br><span class="line">    <span class="comment">/* Absolute value is &lt; 1 */</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">exp</span> &gt; <span class="number">158</span>)</span><br><span class="line">    <span class="comment">/* Overflow */</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0x80000000</span>u;</span><br><span class="line">  <span class="comment">/* Shift val right */</span></span><br><span class="line">  val = val &gt;&gt; (<span class="number">158</span> - <span class="built_in">exp</span>);</span><br><span class="line">  <span class="comment">/* Check if out of range */</span></span><br><span class="line">  <span class="keyword">if</span> (sign) &#123;</span><br><span class="line">    <span class="comment">/* Negative */</span></span><br><span class="line">    <span class="keyword">return</span> val &gt; <span class="number">0x80000000</span>u ? <span class="number">0x80000000</span>u : -val;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">/* Positive */</span></span><br><span class="line">    <span class="keyword">return</span> val &gt; <span class="number">0x7FFFFFFF</span> ? <span class="number">0x80000000</span>u : val;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 法2（目前最佳答案）</span></span><br><span class="line"><span class="comment">/*  */</span></span><br></pre></td></tr></table></figure>
+<h1 id="4-其他"><a class="markdownIt-Anchor" href="#4-其他"></a> 4 其他</h1>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">liuzhenlong@debian:~/Lab_new/lab1-handout$ ./driver.pl</span><br><span class="line">1. Running <span class="string">'./dlc -z'</span> to identify coding rules violations.</span><br><span class="line"></span><br><span class="line">2. Compiling and running <span class="string">'./btest -g'</span> to determine correctness score.</span><br><span class="line">gcc -O -Wall -m32 -lm -o btest bits.c btest.c decl.c tests.c</span><br><span class="line">btest.c: In <span class="keyword">function</span> ‘test_function’:</span><br><span class="line">btest.c:332:23: warning: ‘arg_test_range[1]’ may be used uninitialized <span class="keyword">in</span> this <span class="keyword">function</span> [-Wmaybe-uninitialized]</span><br><span class="line">     <span class="keyword">if</span> (arg_test_range[1] &lt; 1)</span><br><span class="line">         ~~~~~~~~~~~~~~^~~</span><br><span class="line"></span><br><span class="line">3. Running <span class="string">'./dlc -Z'</span> to identify operator count violations.</span><br><span class="line"></span><br><span class="line">4. Compiling and running <span class="string">'./btest -g -r 2'</span> to determine performance score.</span><br><span class="line">gcc -O -Wall -m32 -lm -o btest bits.c btest.c decl.c tests.c</span><br><span class="line">btest.c: In <span class="keyword">function</span> ‘test_function’:</span><br><span class="line">btest.c:332:23: warning: ‘arg_test_range[1]’ may be used uninitialized <span class="keyword">in</span> this <span class="keyword">function</span> [-Wmaybe-uninitialized]</span><br><span class="line">     <span class="keyword">if</span> (arg_test_range[1] &lt; 1)</span><br><span class="line">         ~~~~~~~~~~~~~~^~~</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">5. Running <span class="string">'./dlc -e'</span> to get operator count of each <span class="keyword">function</span>.</span><br></pre></td></tr></table></figure>
+<p>运行<code>./driver.pl</code>会报warning，批改学生作业时，有一个同学提出了解答：👍</p>
+<blockquote>
+<p>关于 ./driver.pl 中的预警问题，是因为 ./btest.c 在299行申请的变量没有进行初始化赋值，后面的程序检测到这个位置可能会被访问而提出的预警，给其付个初始值即可解决</p>
+</blockquote>
+<h1 id="x-参考"><a class="markdownIt-Anchor" href="#x-参考"></a> X 参考</h1>
+<ul>
+<li><a href="https://blog.csdn.net/qq_43544682/article/details/102874816" target="_blank" rel="noopener">计算机系统基础 实验一 csapp date lab1</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/339047608" target="_blank" rel="noopener">CSAPP:Lab1 -DataLab 超详解</a></li>
+<li><a href="https://blog.csdn.net/qq_45677541/article/details/123955438" target="_blank" rel="noopener">CSAPP: Lab1:Data Lab 实验 （虚拟机安装+Lab环境配置+README及实验引导翻译+如何编译+函数实现）</a></li>
+</ul>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://Dragonliu2018.github.io/2022/04/09/CSAPP-Lab1-DataLab环境部署及题解/" title="CSAPP-Lab1-DataLab环境部署及题解" target="_blank" rel="external">https://Dragonliu2018.github.io/2022/04/09/CSAPP-Lab1-DataLab环境部署及题解/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/dragonliu2018" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/dragonliu2018" target="_blank"><span class="text-dark">Melo&#39;s Blogs</span><small class="ml-1x">Nuaa CSer</small></a></h3>
+        <div>Life is painting a picture, not doing a sum.</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2022/04/10/Dukou网站自动化签到/" title="Dukou网站自动化签到"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2022/04/04/Python-yield用法详解/" title="Python-yield用法详解"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn " data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">    <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dragonliu2018" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'Pbjl2Wajl9och0xVbR5eqoH1-gzGzoHsz',
+    appKey: 'PgxFh1wV6pyMMllhxs7NJijb',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
