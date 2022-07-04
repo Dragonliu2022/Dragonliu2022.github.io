@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000">
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top">
+  
+  
+  <title>Lab2实验总结 | Dragon&#39;s Blogs</title>
+  <meta name="description" content="1 准备  1.1 安装gdb-peda gdb-peda是gdb的插件，加强gdb调试能力。 安装方法如下： 12gdb-peda$ set disassembly-flavor att$ git clone htgdb-peda$ set disassembly-flavor atttps://github.com/longld/peda.git ~/peda$ echo &quot;source ~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lab2实验总结">
+<meta property="og:url" content="https://Dragonliu2018.github.io/2022/05/15/Lab2实验总结/index.html">
+<meta property="og:site_name" content="Dragon Liu">
+<meta property="og:description" content="1 准备  1.1 安装gdb-peda gdb-peda是gdb的插件，加强gdb调试能力。 安装方法如下： 12gdb-peda$ set disassembly-flavor att$ git clone htgdb-peda$ set disassembly-flavor atttps://github.com/longld/peda.git ~/peda$ echo &quot;source ~">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://s2.loli.net/2022/05/26/3jUNCrcuDWAf5Ms.png">
+<meta property="og:updated_time" content="2022-05-27T04:24:09.518Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Lab2实验总结">
+<meta name="twitter:description" content="1 准备  1.1 安装gdb-peda gdb-peda是gdb的插件，加强gdb调试能力。 安装方法如下： 12gdb-peda$ set disassembly-flavor att$ git clone htgdb-peda$ set disassembly-flavor atttps://github.com/longld/peda.git ~/peda$ echo &quot;source ~">
+<meta name="twitter:image" content="https://s2.loli.net/2022/05/26/3jUNCrcuDWAf5Ms.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://Dragonliu2018.github.io/2022/05/15/Lab2实验总结/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Dragon Liu" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/dragonliu2018" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Dragon&#39;s Blogs</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Nuaa CSer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Nanjing, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dragonliu2018" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</br>dragonliu2018@gmail.com</br>电脑端观看效果更佳！</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">41</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/安全/">安全</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/爬虫/">爬虫</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">34</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/音乐/">音乐</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Crypto/">Crypto</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Element/">Element</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT书籍/">IT书籍</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Boot/">Spring Boot</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WP/">WP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/neo4j/">neo4j</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书评/">书评</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区块链/">区块链</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/待补充/">待补充</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摘抄/">摘抄</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/深度学习/">深度学习</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电视剧/">电视剧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纪录片/">纪录片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/重构/">重构</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a><span class="tag-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Crypto/" style="font-size: 13.14px;">Crypto</a> <a href="/tags/Element/" style="font-size: 13.71px;">Element</a> <a href="/tags/Git/" style="font-size: 13.71px;">Git</a> <a href="/tags/Hexo/" style="font-size: 13.43px;">Hexo</a> <a href="/tags/IT书籍/" style="font-size: 13px;">IT书籍</a> <a href="/tags/MySQL/" style="font-size: 13.71px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 13px;">Redis</a> <a href="/tags/Spring-Boot/" style="font-size: 13.14px;">Spring Boot</a> <a href="/tags/Vue/" style="font-size: 13px;">Vue</a> <a href="/tags/WP/" style="font-size: 13.29px;">WP</a> <a href="/tags/Web/" style="font-size: 13.14px;">Web</a> <a href="/tags/neo4j/" style="font-size: 13px;">neo4j</a> <a href="/tags/selenium/" style="font-size: 13.14px;">selenium</a> <a href="/tags/书评/" style="font-size: 13.86px;">书评</a> <a href="/tags/区块链/" style="font-size: 13px;">区块链</a> <a href="/tags/待补充/" style="font-size: 14px;">待补充</a> <a href="/tags/摘抄/" style="font-size: 13.14px;">摘抄</a> <a href="/tags/深度学习/" style="font-size: 13.14px;">深度学习</a> <a href="/tags/电影/" style="font-size: 13.29px;">电影</a> <a href="/tags/电视剧/" style="font-size: 13px;">电视剧</a> <a href="/tags/纪录片/" style="font-size: 13px;">纪录片</a> <a href="/tags/重构/" style="font-size: 13.43px;">重构</a> <a href="/tags/面试/" style="font-size: 13.57px;">面试</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">43</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">34</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/计组/">计组</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/06/05/Lab3实验总结/" class="title">Lab3实验总结</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-05T12:52:07.000Z" itemprop="datePublished">2022-06-05</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/29/Java中调用Python程序/" class="title">Java中调用Python程序</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-29T14:28:07.000Z" itemprop="datePublished">2022-05-29</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/环境与工具/">环境与工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/27/gdb调试/" class="title">gdb调试</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-27T05:24:18.000Z" itemprop="datePublished">2022-05-27</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/计组/">计组</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/27/PA答疑之a4指令码报错/" class="title">PA答疑之a4指令码报错</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-27T05:06:36.000Z" itemprop="datePublished">2022-05-27</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/计组/">计组</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/26/64位Ubuntu运行32位程序/" class="title">64位Ubuntu运行或调试32位程序</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-26T05:20:32.000Z" itemprop="datePublished">2022-05-26</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+  <aside class="sidebar sidebar-toc collapse   in  " id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-准备"><span class="toc-number">1.</span> <span class="toc-text"> 1 准备</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#11-安装gdb-peda"><span class="toc-number">1.1.</span> <span class="toc-text"> 1.1 安装gdb-peda</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-gdbpeda使用"><span class="toc-number">1.2.</span> <span class="toc-text"> 1.2 gdb&amp;peda使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-计组知识"><span class="toc-number">1.3.</span> <span class="toc-text"> 1.3 计组知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-lab概览"><span class="toc-number">1.4.</span> <span class="toc-text"> 1.4 lab概览</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-phase_1"><span class="toc-number">2.</span> <span class="toc-text"> 2 phase_1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#21-解析"><span class="toc-number">2.1.</span> <span class="toc-text"> 2.1 解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-思路"><span class="toc-number">2.2.</span> <span class="toc-text"> 2.2 思路</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-phase_2"><span class="toc-number">3.</span> <span class="toc-text"> 3 phase_2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#31-解析"><span class="toc-number">3.1.</span> <span class="toc-text"> 3.1 解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#32-思路"><span class="toc-number">3.2.</span> <span class="toc-text"> 3.2 思路</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-phase_3"><span class="toc-number">4.</span> <span class="toc-text"> 4 phase_3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#41-解析"><span class="toc-number">4.1.</span> <span class="toc-text"> 4.1 解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#42-思路"><span class="toc-number">4.2.</span> <span class="toc-text"> 4.2 思路</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-phase_4"><span class="toc-number">5.</span> <span class="toc-text"> 5 phase_4</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#51-解析"><span class="toc-number">5.1.</span> <span class="toc-text"> 5.1 解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#52-思路"><span class="toc-number">5.2.</span> <span class="toc-text"> 5.2 思路</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-phase_5"><span class="toc-number">6.</span> <span class="toc-text"> 6 phase_5</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#61-解析"><span class="toc-number">6.1.</span> <span class="toc-text"> 6.1 解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#62-思路"><span class="toc-number">6.2.</span> <span class="toc-text"> 6.2 思路</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-phase_6"><span class="toc-number">7.</span> <span class="toc-text"> 7 phase_6</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#71-解析"><span class="toc-number">7.1.</span> <span class="toc-text"> 7.1 解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#72-思路"><span class="toc-number">7.2.</span> <span class="toc-text"> 7.2 思路</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-bomblab隐藏关卡"><span class="toc-number">8.</span> <span class="toc-text"> 8 bomblab隐藏关卡</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#81-解析"><span class="toc-number">8.1.</span> <span class="toc-text"> 8.1 解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#82-思路"><span class="toc-number">8.2.</span> <span class="toc-text"> 8.2 思路</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-最终答案"><span class="toc-number">9.</span> <span class="toc-text"> 9 最终答案</span></a></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Lab2实验总结" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Lab2实验总结
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/05/15/Lab2实验总结/" class="article-date">
+	  <time datetime="2022-05-15T13:58:16.000Z" itemprop="datePublished">2022-05-15</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/计组/">计组</a>
+  </span>
+
+        
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/15/Lab2实验总结/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 7.4k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 41(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="1-准备"><a class="markdownIt-Anchor" href="#1-准备"></a> 1 准备</h1>
+<h2 id="11-安装gdb-peda"><a class="markdownIt-Anchor" href="#11-安装gdb-peda"></a> 1.1 安装gdb-peda</h2>
+<p>gdb-peda是gdb的插件，加强gdb调试能力。</p>
+<p>安装方法如下：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gdb-peda$ <span class="built_in">set</span> disassembly-flavor att$ git <span class="built_in">clone</span> htgdb-peda$ <span class="built_in">set</span> disassembly-flavor atttps://github.com/longld/peda.git ~/peda</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">"source ~/peda/peda.py"</span> &gt;&gt; ~/.gdbinit</span><br></pre></td></tr></table></figure>
+<p>安装插件后汇编指令格式改为了intel模式，不太习惯，改变为AT&amp;T格式：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 改为AT&amp;T格式</span></span><br><span class="line">gdb-peda$ <span class="built_in">set</span> disassembly-flavor att</span><br><span class="line"></span><br><span class="line"><span class="comment"># 改为Intel格式</span></span><br><span class="line">gdb-peda$ <span class="built_in">set</span> disassembly-flavor intel</span><br></pre></td></tr></table></figure>
+<p><strong>参考</strong>：<a href="https://blog.csdn.net/counsellor/article/details/81290335" target="_blank" rel="noopener">gdb-peda安装</a></p>
+<h2 id="12-gdbpeda使用"><a class="markdownIt-Anchor" href="#12-gdbpeda使用"></a> 1.2 gdb&amp;peda使用</h2>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 载入可执行程序</span></span><br><span class="line">gdb &lt;file name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置断点</span></span><br><span class="line">b &lt;地址或函数名等&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># (重新)运行程序，若有断点，会卡在第一个断点</span></span><br><span class="line">r</span><br><span class="line"></span><br><span class="line"><span class="comment"># 继续执行程序至下一个断点</span></span><br><span class="line">c</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行一(n)条指令，进入call</span></span><br><span class="line">s &lt;n&gt;</span><br><span class="line"><span class="comment"># 执行一(n)条指令，不进入call</span></span><br><span class="line">n &lt;n&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看断点</span></span><br><span class="line">info b</span><br><span class="line">i b</span><br><span class="line"><span class="comment"># 删除断点 n为断点编号</span></span><br><span class="line">delete &lt;n&gt;</span><br><span class="line">d &lt;n&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 反汇编，func为某个函数</span></span><br><span class="line">disassemble &lt;func&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示addr处的内存信息</span></span><br><span class="line">x/nfu &lt;addr&gt;</span><br><span class="line"><span class="comment">#n表示输出单元的个数</span></span><br><span class="line"><span class="comment">#f是输出格式。比如x是以16进制形式输出，o是以8进制形式输出等等。</span></span><br><span class="line"><span class="comment">#u标明一个单元的长度。b是一个byte，h是两个byte（halfword），w是四个byte（word），g是八个byte（giant word）。</span></span><br></pre></td></tr></table></figure>
+<h2 id="13-计组知识"><a class="markdownIt-Anchor" href="#13-计组知识"></a> 1.3 计组知识</h2>
+<p><strong>汇编格式</strong>：</p>
+<ul>
+<li>Intel格式：目的操作数在左，MASM采用</li>
+<li>AT&amp;T格式：目的操作数在右，objdump和gcc默认格式</li>
+</ul>
+<p><strong>栈</strong>：</p>
+<ul>
+<li>先进后出</li>
+<li>从高地址向低地址增长</li>
+<li>ESP指向栈顶</li>
+<li>EBP指向栈底</li>
+</ul>
+<p><strong>大小端模式</strong>：</p>
+<ul>
+<li>大端（Big-Endian）：高字节存低地址，低字节存低高地址</li>
+<li>小端（Little-Endian）：低字节存低地址，高字节存高地址</li>
+</ul>
+<p><strong>常见指令</strong>：</p>
+<ul>
+<li><code>push</code>：R[sp] ← R[sp] - 2 或者  R[esp] ← R[esp] - 4，然后将一个字或双字从指定寄存器送到SP或者ESP指示的单元；</li>
+<li><code>pop</code>：然后将一个字或双字从SP或者ESP指示的单元送到指定寄存器，再执行R[sp] ← R[sp] + 2 或者  R[esp] ← R[esp] + 4</li>
+<li><code>call &lt;func_addr&gt;</code>：先push EIP（当前指令的第一条指令地址），再执行jmp &lt;func_addr&gt;</li>
+<li><code>ret</code>：pop EIP</li>
+<li><code>leave</code>：先执行mov %ebp %esp，再pop %ebp</li>
+</ul>
+<h2 id="14-lab概览"><a class="markdownIt-Anchor" href="#14-lab概览"></a> 1.4 lab概览</h2>
+<p>通过IDA打开bomb文件，找到主函数main，发现需要需要进行六次输入，对应phase_1到phase_6函数，每次输入需要躲开explode_bomb()函数，否则拆炸弹失败。</p>
+<h1 id="2-phase_1"><a class="markdownIt-Anchor" href="#2-phase_1"></a> 2 phase_1</h1>
+<h2 id="21-解析"><a class="markdownIt-Anchor" href="#21-解析"></a> 2.1 解析</h2>
+<p>IDA查看phase_1函数伪代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> __cdecl <span class="title">phase_1</span><span class="params">(<span class="keyword">int</span> a1)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> result; <span class="comment">// eax</span></span><br><span class="line"></span><br><span class="line">  result = strings_not_equal(a1, <span class="string">"And they have no disregard for human life."</span>);</span><br><span class="line">  <span class="keyword">if</span> ( result )</span><br><span class="line">    explode_bomb();</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>gdb查看phase_1函数汇编代码：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">gdb-peda$ disassemble phase_1</span><br><span class="line">Dump of assembler code <span class="keyword">for</span> <span class="keyword">function</span> phase_1:</span><br><span class="line">=&gt; 0x00401662 &lt;+0&gt;:     endbr32</span><br><span class="line">   0x00401666 &lt;+4&gt;:     push   ebp</span><br><span class="line">   0x00401667 &lt;+5&gt;:     mov    ebp,esp</span><br><span class="line">   0x00401669 &lt;+7&gt;:     push   ebx</span><br><span class="line">   0x0040166a &lt;+8&gt;:     sub    esp,0xc</span><br><span class="line">   0x0040166d &lt;+11&gt;:    call   0x4013d0 &lt;__x86.get_pc_thunk.bx&gt;</span><br><span class="line">   0x00401672 &lt;+16&gt;:    add    ebx,0x38f2</span><br><span class="line">   0x00401678 &lt;+22&gt;:    lea    eax,[ebx-0x1e20]</span><br><span class="line">   0x0040167e &lt;+28&gt;:    push   eax</span><br><span class="line">   0x0040167f &lt;+29&gt;:    push   DWORD PTR [ebp+0x8]</span><br><span class="line">   0x00401682 &lt;+32&gt;:    call   0x401bdf &lt;strings_not_equal&gt;</span><br><span class="line">   0x00401687 &lt;+37&gt;:    add    esp,0x10</span><br><span class="line">   0x0040168a &lt;+40&gt;:    <span class="built_in">test</span>   eax,eax</span><br><span class="line">   0x0040168c &lt;+42&gt;:    jne    0x401693 &lt;phase_1+49&gt;</span><br><span class="line">   0x0040168e &lt;+44&gt;:    mov    ebx,DWORD PTR [ebp-0x4]</span><br><span class="line">   0x00401691 &lt;+47&gt;:    leave</span><br><span class="line">   0x00401692 &lt;+48&gt;:    ret</span><br><span class="line">   0x00401693 &lt;+49&gt;:    call   0x401e64 &lt;explode_bomb&gt;</span><br><span class="line">   0x00401698 &lt;+54&gt;:    jmp    0x40168e &lt;phase_1+44&gt;</span><br><span class="line">End of assembler dump.</span><br></pre></td></tr></table></figure>
+<h2 id="22-思路"><a class="markdownIt-Anchor" href="#22-思路"></a> 2.2 思路</h2>
+<p>看伪代码直接得出答案，输入需要与给定字符串一致。</p>
+<hr>
+<p>如果不看伪代码，使用gdb动态调试则：</p>
+<ol>
+<li>
+<p>载入bomb：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$ gdb bomb</span><br><span class="line">GNU gdb (Debian 8.2.1-2+b3) 8.2.1</span><br><span class="line">Copyright (C) 2018 Free Software Foundation, Inc.</span><br><span class="line">License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;</span><br><span class="line">This is free software: you are free to change and redistribute it.</span><br><span class="line">There is NO WARRANTY, to the extent permitted by law.</span><br><span class="line">Type <span class="string">"show copying"</span> and <span class="string">"show warranty"</span> <span class="keyword">for</span> details.</span><br><span class="line">This GDB was configured as <span class="string">"i686-linux-gnu"</span>.</span><br><span class="line">Type <span class="string">"show configuration"</span> <span class="keyword">for</span> configuration details.</span><br><span class="line">For bug reporting instructions, please see:</span><br><span class="line">&lt;http://www.gnu.org/software/gdb/bugs/&gt;.</span><br><span class="line">Find the GDB manual and other documentation resources online at:</span><br><span class="line">    &lt;http://www.gnu.org/software/gdb/documentation/&gt;.</span><br><span class="line"></span><br><span class="line">For <span class="built_in">help</span>, <span class="built_in">type</span> <span class="string">"help"</span>.</span><br><span class="line">Type <span class="string">"apropos word"</span> to search <span class="keyword">for</span> commands related to <span class="string">"word"</span>...</span><br><span class="line"></span><br><span class="line">warning: build/bdist.linux-i686/wheel/peda/peda.py: No such file or directory</span><br><span class="line">Reading symbols from bomb...done.</span><br><span class="line">gdb-peda$</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>在main函数处打断点，并执行到该断点：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gdb-peda$ b main</span><br><span class="line">Breakpoint 1 at 0x14cd: file bomb.c, line 37.</span><br><span class="line">gdb-peda$ r</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>在phase_1函数处打断点，并执行到该断点：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">gdb-peda$ b phase_1</span><br><span class="line">Breakpoint 2 at 0x401662</span><br><span class="line">gdb-peda$ c</span><br><span class="line">Continuing.</span><br><span class="line">Welcome to my fiendish little bomb. You have 6 phases with</span><br><span class="line"><span class="built_in">which</span> to blow yourself up. Have a nice day!</span><br><span class="line">[-------------------------------------code-------------------------------------]</span><br><span class="line">   0x401651 &lt;main+388&gt;: call   0x401300 &lt;__printf_chk@plt&gt;</span><br><span class="line">   0x401656 &lt;main+393&gt;: mov    DWORD PTR [esp],0x8</span><br><span class="line">   0x40165d &lt;main+400&gt;: call   0x4012a0 &lt;<span class="built_in">exit</span>@plt&gt;</span><br><span class="line">=&gt; 0x401662 &lt;phase_1&gt;:  endbr32</span><br><span class="line">   0x401666 &lt;phase_1+4&gt;:        push   ebp</span><br><span class="line">   0x401667 &lt;phase_1+5&gt;:        mov    ebp,esp</span><br><span class="line">   0x401669 &lt;phase_1+7&gt;:        push   ebx</span><br><span class="line">   0x40166a &lt;phase_1+8&gt;:        sub    esp,0xc</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>执行8步到<code>0x0040167e &lt;+28&gt;: push eax</code>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">gdb-peda$ n 8</span><br><span class="line">[----------------------------------registers-----------------------------------]</span><br><span class="line">EAX: 0x403144 (<span class="string">"And they have no disregard for human life."</span>)</span><br><span class="line">EBX: 0x404f64 --&gt; 0x4e6c (<span class="string">'lN'</span>)</span><br><span class="line">ECX: 0x2b (<span class="string">'+'</span>)</span><br><span class="line">EDX: 0x1</span><br><span class="line">ESI: 0xbffff574 --&gt; 0xbffff6bf (<span class="string">"/home/liuzhenlong/lab_debug/bomb_162020203/bomb95/bomb"</span>)</span><br><span class="line">EDI: 0xb7fbc000 --&gt; 0x1d9d6c</span><br><span class="line">EBP: 0xbffff498 --&gt; 0xbffff4c8 --&gt; 0x0</span><br><span class="line">ESP: 0xbffff488 --&gt; 0xb7e13cb9 (&lt;__new_exitfn+9&gt;:       add    ebx,0x1a8347)</span><br><span class="line">EIP: 0x40167e (&lt;phase_1+28&gt;:    push   eax)</span><br><span class="line">EFLAGS: 0x202 (carry parity adjust zero sign <span class="built_in">trap</span> INTERRUPT direction overflow)</span><br><span class="line">[-------------------------------------code-------------------------------------]</span><br><span class="line">   0x40166d &lt;phase_1+11&gt;:       call   0x4013d0 &lt;__x86.get_pc_thunk.bx&gt;</span><br><span class="line">   0x401672 &lt;phase_1+16&gt;:       add    ebx,0x38f2</span><br><span class="line">   0x401678 &lt;phase_1+22&gt;:       lea    eax,[ebx-0x1e20]</span><br><span class="line">=&gt; 0x40167e &lt;phase_1+28&gt;:       push   eax</span><br><span class="line">   0x40167f &lt;phase_1+29&gt;:       push   DWORD PTR [ebp+0x8]</span><br><span class="line">   0x401682 &lt;phase_1+32&gt;:       call   0x401bdf &lt;strings_not_equal&gt;</span><br><span class="line">   0x401687 &lt;phase_1+37&gt;:       add    esp,0x10</span><br><span class="line">   0x40168a &lt;phase_1+40&gt;:       <span class="built_in">test</span>   eax,eax</span><br><span class="line">[------------------------------------stack-------------------------------------]</span><br><span class="line">0000| 0xbffff488 --&gt; 0xb7e13cb9 (&lt;__new_exitfn+9&gt;:      add    ebx,0x1a8347)</span><br><span class="line">0004| 0xbffff48c --&gt; 0x404f64 --&gt; 0x4e6c (<span class="string">'lN'</span>)</span><br><span class="line">0008| 0xbffff490 --&gt; 0xbffff574 --&gt; 0xbffff6bf (<span class="string">"/home/liuzhenlong/lab_debug/bomb_162020203/bomb95/bomb"</span>)</span><br><span class="line">0012| 0xbffff494 --&gt; 0x404f64 --&gt; 0x4e6c (<span class="string">'lN'</span>)</span><br><span class="line">0016| 0xbffff498 --&gt; 0xbffff4c8 --&gt; 0x0</span><br><span class="line">0020| 0xbffff49c --&gt; 0x40155a (&lt;main+141&gt;:      call   0x40203c &lt;phase_defused&gt;)</span><br><span class="line">0024| 0xbffff4a0 --&gt; 0x405760 (<span class="string">"And they have no disregard for human life."</span>)</span><br><span class="line">0028| 0xbffff4a4 --&gt; 0x404f64 --&gt; 0x4e6c (<span class="string">'lN'</span>)</span><br><span class="line">[------------------------------------------------------------------------------]</span><br><span class="line">Legend: code, data, rodata, value</span><br><span class="line">0x0040167e <span class="keyword">in</span> phase_1 ()</span><br></pre></td></tr></table></figure>
+<p>此时可以看到EAX中所指向的字符串，也就是答案。</p>
+</li>
+</ol>
+<p><strong>答案</strong>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">And they have no disregard <span class="keyword">for</span> human life.</span><br></pre></td></tr></table></figure>
+<h1 id="3-phase_2"><a class="markdownIt-Anchor" href="#3-phase_2"></a> 3 phase_2</h1>
+<h2 id="31-解析"><a class="markdownIt-Anchor" href="#31-解析"></a> 3.1 解析</h2>
+<p>IDA查看phase_2函数伪代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> __cdecl <span class="title">read_six_numbers</span><span class="params">(<span class="keyword">int</span> a1, <span class="keyword">int</span> a2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> result; <span class="comment">// eax</span></span><br><span class="line"></span><br><span class="line">  result = __isoc99_sscanf(a1, &amp;unk_33A1, a2, a2 + <span class="number">4</span>, a2 + <span class="number">8</span>);</span><br><span class="line">  <span class="keyword">if</span> ( result &lt;= <span class="number">5</span> )</span><br><span class="line">    explode_bomb();</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">unsigned</span> <span class="keyword">int</span> __cdecl <span class="title">phase_2</span><span class="params">(<span class="keyword">int</span> a1)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> *v1; <span class="comment">// esi</span></span><br><span class="line">  <span class="keyword">int</span> v3[<span class="number">5</span>]; <span class="comment">// [esp+Ch] [ebp-34h] BYREF</span></span><br><span class="line">  <span class="keyword">char</span> v4; <span class="comment">// [esp+20h] [ebp-20h] BYREF</span></span><br><span class="line">  <span class="keyword">unsigned</span> <span class="keyword">int</span> v5; <span class="comment">// [esp+24h] [ebp-1Ch]</span></span><br><span class="line"></span><br><span class="line">  v5 = __readgsdword(<span class="number">0x14</span>u);</span><br><span class="line">  read_six_numbers(a1, v3);</span><br><span class="line">  <span class="keyword">if</span> ( v3[<span class="number">0</span>] != <span class="number">1</span> )</span><br><span class="line">    explode_bomb();</span><br><span class="line">  v1 = v3;</span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">if</span> ( v1[<span class="number">1</span>] != <span class="number">2</span> * *v1 )</span><br><span class="line">      explode_bomb();</span><br><span class="line">    ++v1;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> ( v1 != (<span class="keyword">int</span> *)&amp;v4 );</span><br><span class="line">  <span class="keyword">return</span> __readgsdword(<span class="number">0x14</span>u) ^ v5;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>gdb查看phase_2函数汇编代码：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">gdb-peda$ disassemble phase_2</span><br><span class="line">Dump of assembler code <span class="keyword">for</span> <span class="keyword">function</span> phase_2:</span><br><span class="line">   0x0040169a &lt;+0&gt;:     endbr32</span><br><span class="line">   0x0040169e &lt;+4&gt;:     push   ebp</span><br><span class="line">   0x0040169f &lt;+5&gt;:     mov    ebp,esp</span><br><span class="line">   0x004016a1 &lt;+7&gt;:     push   edi</span><br><span class="line">   0x004016a2 &lt;+8&gt;:     push   esi</span><br><span class="line">   0x004016a3 &lt;+9&gt;:     push   ebx</span><br><span class="line">   0x004016a4 &lt;+10&gt;:    sub    esp,0x34</span><br><span class="line">   0x004016a7 &lt;+13&gt;:    call   0x4013d0 &lt;__x86.get_pc_thunk.bx&gt;</span><br><span class="line">   0x004016ac &lt;+18&gt;:    add    ebx,0x38b8</span><br><span class="line">   0x004016b2 &lt;+24&gt;:    mov    eax,gs:0x14</span><br><span class="line">   0x004016b8 &lt;+30&gt;:    mov    DWORD PTR [ebp-0x1c],eax</span><br><span class="line">   0x004016bb &lt;+33&gt;:    xor    eax,eax</span><br><span class="line">   0x004016bd &lt;+35&gt;:    lea    eax,[ebp-0x34]</span><br><span class="line">   0x004016c0 &lt;+38&gt;:    push   eax</span><br><span class="line">   0x004016c1 &lt;+39&gt;:    push   DWORD PTR [ebp+0x8]</span><br><span class="line">   0x004016c4 &lt;+42&gt;:    call   0x401eba &lt;read_six_numbers&gt;</span><br><span class="line">   0x004016c9 &lt;+47&gt;:    add    esp,0x10</span><br><span class="line">   0x004016cc &lt;+50&gt;:    cmp    DWORD PTR [ebp-0x34],0x1</span><br><span class="line">   0x004016d0 &lt;+54&gt;:    jne    0x4016da &lt;phase_2+64&gt;</span><br><span class="line">   0x004016d2 &lt;+56&gt;:    lea    esi,[ebp-0x34]</span><br><span class="line">   0x004016d5 &lt;+59&gt;:    lea    edi,[ebp-0x20]</span><br><span class="line">   0x004016d8 &lt;+62&gt;:    jmp    0x4016ed &lt;phase_2+83&gt;</span><br><span class="line">   0x004016da &lt;+64&gt;:    call   0x401e64 &lt;explode_bomb&gt;</span><br><span class="line">   0x004016df &lt;+69&gt;:    jmp    0x4016d2 &lt;phase_2+56&gt;</span><br><span class="line">   0x004016e1 &lt;+71&gt;:    call   0x401e64 &lt;explode_bomb&gt;</span><br><span class="line">   0x004016e6 &lt;+76&gt;:    add    esi,0x4</span><br><span class="line">   0x004016e9 &lt;+79&gt;:    cmp    esi,edi</span><br><span class="line">   0x004016eb &lt;+81&gt;:    je     0x4016f8 &lt;phase_2+94&gt;</span><br><span class="line">   0x004016ed &lt;+83&gt;:    mov    eax,DWORD PTR [esi]</span><br><span class="line">   0x004016ef &lt;+85&gt;:    add    eax,eax</span><br><span class="line">   0x004016f1 &lt;+87&gt;:    cmp    DWORD PTR [esi+0x4],eax</span><br><span class="line">   0x004016f4 &lt;+90&gt;:    je     0x4016e6 &lt;phase_2+76&gt;</span><br><span class="line">   0x004016f6 &lt;+92&gt;:    jmp    0x4016e1 &lt;phase_2+71&gt;</span><br><span class="line">   0x004016f8 &lt;+94&gt;:    mov    eax,DWORD PTR [ebp-0x1c]</span><br><span class="line">   0x004016fb &lt;+97&gt;:    xor    eax,DWORD PTR gs:0x14</span><br><span class="line">   0x00401702 &lt;+104&gt;:   jne    0x40170c &lt;phase_2+114&gt;</span><br><span class="line">   0x00401704 &lt;+106&gt;:   lea    esp,[ebp-0xc]</span><br><span class="line">   0x00401707 &lt;+109&gt;:   pop    ebx</span><br><span class="line">   0x00401708 &lt;+110&gt;:   pop    esi</span><br><span class="line">   0x00401709 &lt;+111&gt;:   pop    edi</span><br><span class="line">   0x0040170a &lt;+112&gt;:   pop    ebp</span><br><span class="line">   0x0040170b &lt;+113&gt;:   ret</span><br><span class="line">   0x0040170c &lt;+114&gt;:   call   0x402e00 &lt;__stack_chk_fail_local&gt;</span><br><span class="line">End of assembler dump.</span><br></pre></td></tr></table></figure>
+<h2 id="32-思路"><a class="markdownIt-Anchor" href="#32-思路"></a> 3.2 思路</h2>
+<p>从伪代码看：需要输入6个数字，而且第一个数字为1，后面的数字是前面的两倍。</p>
+<p><strong>答案</strong>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 2 4 8 16 32</span><br></pre></td></tr></table></figure>
+<h1 id="4-phase_3"><a class="markdownIt-Anchor" href="#4-phase_3"></a> 4 phase_3</h1>
+<h2 id="41-解析"><a class="markdownIt-Anchor" href="#41-解析"></a> 4.1 解析</h2>
+<p>IDA查看phase_3函数伪代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> __cdecl <span class="title">phase_3</span><span class="params">(<span class="keyword">int</span> a1)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">unsigned</span> <span class="keyword">int</span> v1; <span class="comment">// [esp+4h] [ebp-14h] BYREF</span></span><br><span class="line">  <span class="keyword">int</span> v2[<span class="number">3</span>]; <span class="comment">// [esp+8h] [ebp-10h] BYREF</span></span><br><span class="line"></span><br><span class="line">  v2[<span class="number">1</span>] = __readgsdword(<span class="number">0x14</span>u);</span><br><span class="line">  <span class="keyword">if</span> ( __isoc99_sscanf(a1, <span class="string">"%d %d"</span>, &amp;v1, v2) &gt; <span class="number">1</span> )</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">if</span> ( v1 &lt;= <span class="number">7</span> )</span><br><span class="line">      __asm &#123; jmp     edx &#125;</span><br><span class="line">    explode_bomb();</span><br><span class="line">  &#125;</span><br><span class="line">  explode_bomb();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>gdb查看phase_3函数汇编代码：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">gdb-peda$ disassemble phase_3</span><br><span class="line">Dump of assembler code <span class="keyword">for</span> <span class="keyword">function</span> phase_3:</span><br><span class="line">=&gt; 0x00401711 &lt;+0&gt;:     endbr32</span><br><span class="line">   0x00401715 &lt;+4&gt;:     push   ebp</span><br><span class="line">   0x00401716 &lt;+5&gt;:     mov    ebp,esp</span><br><span class="line">   0x00401718 &lt;+7&gt;:     push   ebx</span><br><span class="line">   0x00401719 &lt;+8&gt;:     sub    esp,0x14</span><br><span class="line">   0x0040171c &lt;+11&gt;:    call   0x4013d0 &lt;__x86.get_pc_thunk.bx&gt;</span><br><span class="line">   0x00401721 &lt;+16&gt;:    add    ebx,0x3843</span><br><span class="line">   0x00401727 &lt;+22&gt;:    mov    eax,gs:0x14</span><br><span class="line">   0x0040172d &lt;+28&gt;:    mov    DWORD PTR [ebp-0xc],eax</span><br><span class="line">   0x00401730 &lt;+31&gt;:    xor    eax,eax</span><br><span class="line">   0x00401732 &lt;+33&gt;:    lea    eax,[ebp-0x10]</span><br><span class="line">   0x00401735 &lt;+36&gt;:    push   eax</span><br><span class="line">   0x00401736 &lt;+37&gt;:    lea    eax,[ebp-0x14]</span><br><span class="line">   0x00401739 &lt;+40&gt;:    push   eax</span><br><span class="line">   0x0040173a &lt;+41&gt;:    lea    eax,[ebx-0x1bb7]</span><br><span class="line">   0x00401740 &lt;+47&gt;:    push   eax</span><br><span class="line">   0x00401741 &lt;+48&gt;:    push   DWORD PTR [ebp+0x8]</span><br><span class="line">   0x00401744 &lt;+51&gt;:    call   0x4012d0 &lt;__isoc99_sscanf@plt&gt;</span><br><span class="line">   0x00401749 &lt;+56&gt;:    add    esp,0x10</span><br><span class="line">   0x0040174c &lt;+59&gt;:    cmp    eax,0x1</span><br><span class="line">   0x0040174f &lt;+62&gt;:    jle    0x40176a &lt;phase_3+89&gt;</span><br><span class="line">   0x00401751 &lt;+64&gt;:    cmp    DWORD PTR [ebp-0x14],0x7</span><br><span class="line">   0x00401755 &lt;+68&gt;:    ja     0x4017e1 &lt;phase_3+208&gt;</span><br><span class="line">   0x0040175b &lt;+74&gt;:    mov    eax,DWORD PTR [ebp-0x14]</span><br><span class="line">   0x0040175e &lt;+77&gt;:    mov    edx,ebx</span><br><span class="line">   0x00401760 &lt;+79&gt;:    add    edx,DWORD PTR [ebx+eax*4-0x1dc4]</span><br><span class="line">   0x00401767 &lt;+86&gt;:    notrack jmp edx</span><br><span class="line">   0x0040176a &lt;+89&gt;:    call   0x401e64 &lt;explode_bomb&gt;</span><br><span class="line">   0x0040176f &lt;+94&gt;:    jmp    0x401751 &lt;phase_3+64&gt;</span><br><span class="line">   0x00401771 &lt;+96&gt;:    mov    eax,0x398</span><br><span class="line">   0x00401776 &lt;+101&gt;:   sub    eax,0xd8</span><br><span class="line">   0x0040177b &lt;+106&gt;:   add    eax,0x1ad</span><br><span class="line">   0x00401780 &lt;+111&gt;:   sub    eax,0x3e</span><br><span class="line">   0x00401783 &lt;+114&gt;:   add    eax,0x3e</span><br><span class="line">   0x00401786 &lt;+117&gt;:   sub    eax,0x3e</span><br><span class="line">   0x00401789 &lt;+120&gt;:   add    eax,0x3e</span><br><span class="line">   0x0040178c &lt;+123&gt;:   sub    eax,0x3e</span><br><span class="line">   0x0040178f &lt;+126&gt;:   cmp    DWORD PTR [ebp-0x14],0x5</span><br><span class="line">   0x00401793 &lt;+130&gt;:   jg     0x40179a &lt;phase_3+137&gt;</span><br><span class="line">   0x00401795 &lt;+132&gt;:   cmp    DWORD PTR [ebp-0x10],eax</span><br><span class="line">   0x00401798 &lt;+135&gt;:   je     0x40179f &lt;phase_3+142&gt;</span><br><span class="line">   0x0040179a &lt;+137&gt;:   call   0x401e64 &lt;explode_bomb&gt;</span><br><span class="line">   0x0040179f &lt;+142&gt;:   mov    eax,DWORD PTR [ebp-0xc]</span><br><span class="line">   0x004017a2 &lt;+145&gt;:   xor    eax,DWORD PTR gs:0x14</span><br><span class="line">   0x004017a9 &lt;+152&gt;:   jne    0x4017ed &lt;phase_3+220&gt;</span><br><span class="line">   0x004017ab &lt;+154&gt;:   mov    ebx,DWORD PTR [ebp-0x4]</span><br><span class="line">   0x004017ae &lt;+157&gt;:   leave</span><br><span class="line">   0x004017af &lt;+158&gt;:   ret</span><br><span class="line">   0x004017b0 &lt;+159&gt;:   mov    eax,0x0</span><br><span class="line">   0x004017b5 &lt;+164&gt;:   jmp    0x401776 &lt;phase_3+101&gt;</span><br><span class="line">   0x004017b7 &lt;+166&gt;:   mov    eax,0x0</span><br><span class="line">   0x004017bc &lt;+171&gt;:   jmp    0x40177b &lt;phase_3+106&gt;</span><br><span class="line">   0x004017be &lt;+173&gt;:   mov    eax,0x0</span><br><span class="line">   0x004017c3 &lt;+178&gt;:   jmp    0x401780 &lt;phase_3+111&gt;</span><br><span class="line">   0x004017c5 &lt;+180&gt;:   mov    eax,0x0</span><br><span class="line">   0x004017ca &lt;+185&gt;:   jmp    0x401783 &lt;phase_3+114&gt;</span><br><span class="line">   0x004017cc &lt;+187&gt;:   mov    eax,0x0</span><br><span class="line">   0x004017d1 &lt;+192&gt;:   jmp    0x401786 &lt;phase_3+117&gt;</span><br><span class="line">   0x004017d3 &lt;+194&gt;:   mov    eax,0x0</span><br><span class="line">   0x004017d8 &lt;+199&gt;:   jmp    0x401789 &lt;phase_3+120&gt;</span><br><span class="line">   0x004017da &lt;+201&gt;:   mov    eax,0x0</span><br><span class="line">   0x004017df &lt;+206&gt;:   jmp    0x40178c &lt;phase_3+123&gt;</span><br><span class="line">   0x004017e1 &lt;+208&gt;:   call   0x401e64 &lt;explode_bomb&gt;</span><br><span class="line">   0x004017e6 &lt;+213&gt;:   mov    eax,0x0</span><br><span class="line">   0x004017eb &lt;+218&gt;:   jmp    0x40178f &lt;phase_3+126&gt;</span><br><span class="line">   0x004017ed &lt;+220&gt;:   call   0x402e00 &lt;__stack_chk_fail_local&gt;</span><br><span class="line">End of assembler dump.</span><br></pre></td></tr></table></figure>
+<h2 id="42-思路"><a class="markdownIt-Anchor" href="#42-思路"></a> 4.2 思路</h2>
+<p>从伪代码看，phase_3需要输入两个整数，第一个整数需要小于等于7，然后跳转到EDX，其他信息无法获取，需要gdb调试。</p>
+<p>假设第一个数为0，进行动态调试：</p>
+<ol>
+<li>
+<p>运行到<code>&lt;+79&gt;</code>，此时EDX=0x401771 (<code>&lt;phase_3+96&gt;: mov eax,0x398</code>)</p>
+</li>
+<li>
+<p><code>&lt;+86&gt;</code>表示跳转到EDX对应的指令地址，也就是<code>&lt;+96&gt;</code></p>
+</li>
+<li>
+<p><code>&lt;+126&gt;</code>和<code>&lt;+130&gt;</code>表示<strong>第一个数还需要小于等于5</strong>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0x0040178f &lt;+126&gt;:   cmp    DWORD PTR [ebp-0x14],0x5</span><br><span class="line">0x00401793 &lt;+130&gt;:   jg     0x40179a &lt;phase_3+137&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p><code>&lt;+132&gt;</code>表示第二个数需要等于EAX，此时的EAX为0x42f：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gdb-peda$ p <span class="variable">$eax</span></span><br><span class="line"><span class="variable">$24</span> = 0x42f</span><br><span class="line">gdb-peda$ d <span class="variable">$24</span></span><br><span class="line">No breakpoint number 1071.</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>此时可以得到一组答案<code>0 1071</code>，答案不唯一。</p>
+</li>
+</ol>
+<p><strong>答案</strong>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 1071</span><br></pre></td></tr></table></figure>
+<h1 id="5-phase_4"><a class="markdownIt-Anchor" href="#5-phase_4"></a> 5 phase_4</h1>
+<h2 id="51-解析"><a class="markdownIt-Anchor" href="#51-解析"></a> 5.1 解析</h2>
+<p>IDA查看phase_4函数伪代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> __cdecl <span class="title">func4</span><span class="params">(<span class="keyword">int</span> a1, <span class="keyword">int</span> a2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> result; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> v3; <span class="comment">// ebx</span></span><br><span class="line"></span><br><span class="line">  result = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">if</span> ( a1 &gt; <span class="number">0</span> )</span><br><span class="line">  &#123;</span><br><span class="line">    result = a2;</span><br><span class="line">    <span class="keyword">if</span> ( a1 != <span class="number">1</span> )</span><br><span class="line">    &#123;</span><br><span class="line">      v3 = func4(a1 - <span class="number">1</span>, a2) + a2;</span><br><span class="line">      result = v3 + func4(a1 - <span class="number">2</span>, a2);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">unsigned</span> <span class="keyword">int</span> __cdecl <span class="title">phase_4</span><span class="params">(<span class="keyword">int</span> a1)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> v1; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> v3; <span class="comment">// [esp+4h] [ebp-14h] BYREF</span></span><br><span class="line">  <span class="keyword">int</span> v4; <span class="comment">// [esp+8h] [ebp-10h] BYREF</span></span><br><span class="line">  <span class="keyword">unsigned</span> <span class="keyword">int</span> v5; <span class="comment">// [esp+Ch] [ebp-Ch]</span></span><br><span class="line"></span><br><span class="line">  v5 = __readgsdword(<span class="number">0x14</span>u);</span><br><span class="line">  <span class="keyword">if</span> ( __isoc99_sscanf(a1, <span class="string">"%d %d"</span>, &amp;v4, &amp;v3) != <span class="number">2</span> || (<span class="keyword">unsigned</span> <span class="keyword">int</span>)(v3 - <span class="number">2</span>) &gt; <span class="number">2</span> )</span><br><span class="line">    explode_bomb();</span><br><span class="line">  v1 = func4(<span class="number">5</span>, v3);</span><br><span class="line">  <span class="keyword">if</span> ( v4 != v1 )</span><br><span class="line">    explode_bomb();</span><br><span class="line">  <span class="keyword">return</span> __readgsdword(<span class="number">0x14</span>u) ^ v5;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>gdb查看phase_4函数汇编代码：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">gdb-peda$ disassemble phase_4</span><br><span class="line">Dump of assembler code <span class="keyword">for</span> <span class="keyword">function</span> phase_4:</span><br><span class="line">   0x0040183f &lt;+0&gt;:     endbr32</span><br><span class="line">   0x00401843 &lt;+4&gt;:     push   ebp</span><br><span class="line">   0x00401844 &lt;+5&gt;:     mov    ebp,esp</span><br><span class="line">   0x00401846 &lt;+7&gt;:     push   ebx</span><br><span class="line">   0x00401847 &lt;+8&gt;:     sub    esp,0x14</span><br><span class="line">   0x0040184a &lt;+11&gt;:    call   0x4013d0 &lt;__x86.get_pc_thunk.bx&gt;</span><br><span class="line">   0x0040184f &lt;+16&gt;:    add    ebx,0x3715</span><br><span class="line">   0x00401855 &lt;+22&gt;:    mov    eax,gs:0x14</span><br><span class="line">   0x0040185b &lt;+28&gt;:    mov    DWORD PTR [ebp-0xc],eax</span><br><span class="line">   0x0040185e &lt;+31&gt;:    xor    eax,eax</span><br><span class="line">   0x00401860 &lt;+33&gt;:    lea    eax,[ebp-0x14]</span><br><span class="line">   0x00401863 &lt;+36&gt;:    push   eax</span><br><span class="line">   0x00401864 &lt;+37&gt;:    lea    eax,[ebp-0x10]</span><br><span class="line">   0x00401867 &lt;+40&gt;:    push   eax</span><br><span class="line">   0x00401868 &lt;+41&gt;:    lea    eax,[ebx-0x1bb7]</span><br><span class="line">   0x0040186e &lt;+47&gt;:    push   eax</span><br><span class="line">   0x0040186f &lt;+48&gt;:    push   DWORD PTR [ebp+0x8]</span><br><span class="line">   0x00401872 &lt;+51&gt;:    call   0x4012d0 &lt;__isoc99_sscanf@plt&gt;</span><br><span class="line">   0x00401877 &lt;+56&gt;:    add    esp,0x10</span><br><span class="line">   0x0040187a &lt;+59&gt;:    cmp    eax,0x2</span><br><span class="line">   0x0040187d &lt;+62&gt;:    jne    0x40188a &lt;phase_4+75&gt;</span><br><span class="line">   0x0040187f &lt;+64&gt;:    mov    eax,DWORD PTR [ebp-0x14]</span><br><span class="line">   0x00401882 &lt;+67&gt;:    sub    eax,0x2</span><br><span class="line">   0x00401885 &lt;+70&gt;:    cmp    eax,0x2</span><br><span class="line">   0x00401888 &lt;+73&gt;:    jbe    0x40188f &lt;phase_4+80&gt;</span><br><span class="line">   0x0040188a &lt;+75&gt;:    call   0x401e64 &lt;explode_bomb&gt;</span><br><span class="line">   0x0040188f &lt;+80&gt;:    sub    esp,0x8</span><br><span class="line">   0x00401892 &lt;+83&gt;:    push   DWORD PTR [ebp-0x14]</span><br><span class="line">   0x00401895 &lt;+86&gt;:    push   0x5</span><br><span class="line">   0x00401897 &lt;+88&gt;:    call   0x4017f2 &lt;func4&gt;</span><br><span class="line">   0x0040189c &lt;+93&gt;:    add    esp,0x10</span><br><span class="line">   0x0040189f &lt;+96&gt;:    cmp    DWORD PTR [ebp-0x10],eax</span><br><span class="line">   0x004018a2 &lt;+99&gt;:    jne    0x4018b5 &lt;phase_4+118&gt;</span><br><span class="line">   0x004018a4 &lt;+101&gt;:   mov    eax,DWORD PTR [ebp-0xc]</span><br><span class="line">   0x004018a7 &lt;+104&gt;:   xor    eax,DWORD PTR gs:0x14</span><br><span class="line">   0x004018ae &lt;+111&gt;:   jne    0x4018bc &lt;phase_4+125&gt;</span><br><span class="line">   0x004018b0 &lt;+113&gt;:   mov    ebx,DWORD PTR [ebp-0x4]</span><br><span class="line">   0x004018b3 &lt;+116&gt;:   leave</span><br><span class="line">   0x004018b4 &lt;+117&gt;:   ret</span><br><span class="line">   0x004018b5 &lt;+118&gt;:   call   0x401e64 &lt;explode_bomb&gt;</span><br><span class="line">   0x004018ba &lt;+123&gt;:   jmp    0x4018a4 &lt;phase_4+101&gt;</span><br><span class="line">   0x004018bc &lt;+125&gt;:   call   0x402e00 &lt;__stack_chk_fail_local&gt;</span><br><span class="line">End of assembler dump.</span><br></pre></td></tr></table></figure>
+<h2 id="52-思路"><a class="markdownIt-Anchor" href="#52-思路"></a> 5.2 思路</h2>
+<p>从伪代码来看，phase_4需要输入两个整数，第二个可能是2、3、4，第一个需要满足一定的条件。</p>
+<ol>
+<li>
+<p>假设第二个为2，进入gdb动态调试；</p>
+</li>
+<li>
+<p>执行到<code>&lt;+96&gt;</code>，第一个值需要等于此时的EAX，查看EAX的值：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gdb-peda$ p <span class="variable">$eax</span></span><br><span class="line"><span class="variable">$28</span> = 0x18</span><br><span class="line">gdb-peda$ d <span class="variable">$28</span></span><br><span class="line">No breakpoint number 24.</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>所以其中一个答案是<code>24 2</code></p>
+</li>
+</ol>
+<p><strong>答案</strong>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">24 2</span><br></pre></td></tr></table></figure>
+<h1 id="6-phase_5"><a class="markdownIt-Anchor" href="#6-phase_5"></a> 6 phase_5</h1>
+<h2 id="61-解析"><a class="markdownIt-Anchor" href="#61-解析"></a> 6.1 解析</h2>
+<p>IDA查看phase_5函数伪代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">_BYTE *__cdecl <span class="title">phase_5</span><span class="params">(_BYTE *a1)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  _BYTE *result; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> v2; <span class="comment">// ecx</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> ( string_length(a1) != <span class="number">6</span> )</span><br><span class="line">    explode_bomb();</span><br><span class="line">  result = a1;</span><br><span class="line">  v2 = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">    v2 += array_3066[*result++ &amp; <span class="number">0xF</span>];</span><br><span class="line">  <span class="keyword">while</span> ( result != a1 + <span class="number">6</span> );</span><br><span class="line">  <span class="keyword">if</span> ( v2 != <span class="number">44</span> )</span><br><span class="line">    explode_bomb();</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>gdb查看phase_5函数汇编代码：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">gdb-peda$ disassemble phase_5</span><br><span class="line">Dump of assembler code <span class="keyword">for</span> <span class="keyword">function</span> phase_5:</span><br><span class="line">=&gt; 0x004018c1 &lt;+0&gt;:     endbr32</span><br><span class="line">   0x004018c5 &lt;+4&gt;:     push   ebp</span><br><span class="line">   0x004018c6 &lt;+5&gt;:     mov    ebp,esp</span><br><span class="line">   0x004018c8 &lt;+7&gt;:     push   edi</span><br><span class="line">   0x004018c9 &lt;+8&gt;:     push   esi</span><br><span class="line">   0x004018ca &lt;+9&gt;:     push   ebx</span><br><span class="line">   0x004018cb &lt;+10&gt;:    sub    esp,0x18</span><br><span class="line">   0x004018ce &lt;+13&gt;:    call   0x4013d0 &lt;__x86.get_pc_thunk.bx&gt;</span><br><span class="line">   0x004018d3 &lt;+18&gt;:    add    ebx,0x3691</span><br><span class="line">   0x004018d9 &lt;+24&gt;:    mov    esi,DWORD PTR [ebp+0x8]</span><br><span class="line">   0x004018dc &lt;+27&gt;:    push   esi</span><br><span class="line">   0x004018dd &lt;+28&gt;:    call   0x401bb9 &lt;string_length&gt;</span><br><span class="line">   0x004018e2 &lt;+33&gt;:    add    esp,0x10</span><br><span class="line">   0x004018e5 &lt;+36&gt;:    cmp    eax,0x6</span><br><span class="line">   0x004018e8 &lt;+39&gt;:    jne    0x401917 &lt;phase_5+86&gt;</span><br><span class="line">   0x004018ea &lt;+41&gt;:    mov    eax,esi</span><br><span class="line">   0x004018ec &lt;+43&gt;:    add    esi,0x6</span><br><span class="line">   0x004018ef &lt;+46&gt;:    mov    ecx,0x0</span><br><span class="line">   0x004018f4 &lt;+51&gt;:    lea    edi,[ebx-0x1da4]</span><br><span class="line">   0x004018fa &lt;+57&gt;:    movzx  edx,BYTE PTR [eax]</span><br><span class="line">   0x004018fd &lt;+60&gt;:    and    edx,0xf</span><br><span class="line">   0x00401900 &lt;+63&gt;:    add    ecx,DWORD PTR [edi+edx*4]</span><br><span class="line">   0x00401903 &lt;+66&gt;:    add    eax,0x1</span><br><span class="line">   0x00401906 &lt;+69&gt;:    cmp    eax,esi</span><br><span class="line">   0x00401908 &lt;+71&gt;:    jne    0x4018fa &lt;phase_5+57&gt;</span><br><span class="line">   0x0040190a &lt;+73&gt;:    cmp    ecx,0x2c</span><br><span class="line">   0x0040190d &lt;+76&gt;:    jne    0x40191e &lt;phase_5+93&gt;</span><br><span class="line">   0x0040190f &lt;+78&gt;:    lea    esp,[ebp-0xc]</span><br><span class="line">   0x00401912 &lt;+81&gt;:    pop    ebx</span><br><span class="line">   0x00401913 &lt;+82&gt;:    pop    esi</span><br><span class="line">   0x00401914 &lt;+83&gt;:    pop    edi</span><br><span class="line">   0x00401915 &lt;+84&gt;:    pop    ebp</span><br><span class="line">   0x00401916 &lt;+85&gt;:    ret</span><br><span class="line">   0x00401917 &lt;+86&gt;:    call   0x401e64 &lt;explode_bomb&gt;</span><br><span class="line">   0x0040191c &lt;+91&gt;:    jmp    0x4018ea &lt;phase_5+41&gt;</span><br><span class="line">   0x0040191e &lt;+93&gt;:    call   0x401e64 &lt;explode_bomb&gt;</span><br><span class="line">   0x00401923 &lt;+98&gt;:    jmp    0x40190f &lt;phase_5+78&gt;</span><br><span class="line">End of assembler dump.</span><br></pre></td></tr></table></figure>
+<h2 id="62-思路"><a class="markdownIt-Anchor" href="#62-思路"></a> 6.2 思路</h2>
+<p>观察伪代码发现，输入是一段长度为6的字符串，而且需要满足一定的条件。</p>
+<p>在IDA中双击<code>array_3066</code>查看该数组的值：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array_3066      dd 2, 0Ah, 6, 1, 0Ch, 10h, 9, 3, 4, 7, 0Eh, 5, 0Bh, 8</span><br></pre></td></tr></table></figure>
+<p>或者在gdb中查看，运行至<code>&lt;+51&gt;</code>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">gdb-peda$ x/20x <span class="variable">$ebx</span>-0x1da4</span><br><span class="line">0x4031c0 &lt;array.3066&gt;:  0x00000002      0x0000000a      0x00000006      0x00000001</span><br><span class="line">0x4031d0 &lt;array.3066+16&gt;:       0x0000000c      0x00000010      0x00000009      0x00000003</span><br><span class="line">0x4031e0 &lt;array.3066+32&gt;:       0x00000004      0x00000007      0x0000000e      0x00000005</span><br><span class="line">0x4031f0 &lt;array.3066+48&gt;:       0x0000000b      0x00000008      0x0000000f      0x0000000d</span><br><span class="line">0x403200:       0x79206f53      0x7420756f      0x6b6e6968      0x756f7920</span><br></pre></td></tr></table></figure>
+<p>下标可以这样组合：1 1 1 1 0 0 （也就是10+10+10+10+2+2=44，满足条件）</p>
+<p>对应到字符串是：<code>111100</code> 或 <code>AAAA@@</code>等。</p>
+<p><strong>答案</strong>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">111100</span><br></pre></td></tr></table></figure>
+<h1 id="7-phase_6"><a class="markdownIt-Anchor" href="#7-phase_6"></a> 7 phase_6</h1>
+<h2 id="71-解析"><a class="markdownIt-Anchor" href="#71-解析"></a> 7.1 解析</h2>
+<p>IDA查看phase_6函数伪代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">unsigned</span> <span class="keyword">int</span> __cdecl <span class="title">phase_6</span><span class="params">(<span class="keyword">int</span> a1)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> *v1; <span class="comment">// esi</span></span><br><span class="line">  <span class="keyword">int</span> i; <span class="comment">// esi</span></span><br><span class="line">  <span class="keyword">int</span> v3; <span class="comment">// ecx</span></span><br><span class="line">  <span class="keyword">int</span> v4; <span class="comment">// eax</span></span><br><span class="line">  _DWORD *v5; <span class="comment">// edx</span></span><br><span class="line">  <span class="keyword">int</span> v6; <span class="comment">// esi</span></span><br><span class="line">  <span class="keyword">int</span> v7; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> v8; <span class="comment">// edx</span></span><br><span class="line">  <span class="keyword">int</span> v9; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> v10; <span class="comment">// edx</span></span><br><span class="line">  <span class="keyword">int</span> v11; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> v12; <span class="comment">// edi</span></span><br><span class="line">  <span class="keyword">char</span> *v14; <span class="comment">// [esp+Ch] [ebp-64h]</span></span><br><span class="line">  <span class="keyword">int</span> v15; <span class="comment">// [esp+10h] [ebp-60h]</span></span><br><span class="line">  <span class="keyword">int</span> v16; <span class="comment">// [esp+24h] [ebp-4Ch] BYREF</span></span><br><span class="line">  <span class="keyword">char</span> v17; <span class="comment">// [esp+28h] [ebp-48h] BYREF</span></span><br><span class="line">  <span class="keyword">int</span> v18; <span class="comment">// [esp+3Ch] [ebp-34h] BYREF</span></span><br><span class="line">  <span class="keyword">int</span> v19; <span class="comment">// [esp+40h] [ebp-30h]</span></span><br><span class="line">  <span class="keyword">int</span> v20; <span class="comment">// [esp+44h] [ebp-2Ch]</span></span><br><span class="line">  <span class="keyword">int</span> v21; <span class="comment">// [esp+48h] [ebp-28h]</span></span><br><span class="line">  <span class="keyword">int</span> v22; <span class="comment">// [esp+4Ch] [ebp-24h]</span></span><br><span class="line">  <span class="keyword">int</span> v23; <span class="comment">// [esp+50h] [ebp-20h]</span></span><br><span class="line">  <span class="keyword">unsigned</span> <span class="keyword">int</span> v24; <span class="comment">// [esp+54h] [ebp-1Ch]</span></span><br><span class="line"></span><br><span class="line">  v24 = __readgsdword(<span class="number">0x14</span>u);</span><br><span class="line">  read_six_numbers(a1, (<span class="keyword">int</span>)&amp;v16);</span><br><span class="line">  v14 = &amp;v17;</span><br><span class="line">  v15 = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> ( <span class="number">1</span> )</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">if</span> ( (<span class="keyword">unsigned</span> <span class="keyword">int</span>)(*((_DWORD *)v14 - <span class="number">1</span>) - <span class="number">1</span>) &gt; <span class="number">5</span> )</span><br><span class="line">      explode_bomb();</span><br><span class="line">    <span class="keyword">if</span> ( ++v15 &gt; <span class="number">5</span> )</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    v1 = (<span class="keyword">int</span> *)v14;</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">if</span> ( *((_DWORD *)v14 - <span class="number">1</span>) == *v1 )</span><br><span class="line">        explode_bomb();</span><br><span class="line">      ++v1;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> ( &amp;v18 != v1 );</span><br><span class="line">    v14 += <span class="number">4</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> ( i = <span class="number">0</span>; i != <span class="number">6</span>; ++i )</span><br><span class="line">  &#123;</span><br><span class="line">    v3 = *(&amp;v16 + i);</span><br><span class="line">    v4 = <span class="number">1</span>;</span><br><span class="line">    v5 = &amp;node1;</span><br><span class="line">    <span class="keyword">if</span> ( v3 &gt; <span class="number">1</span> )</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">do</span></span><br><span class="line">      &#123;</span><br><span class="line">        v5 = (_DWORD *)v5[<span class="number">2</span>];</span><br><span class="line">        ++v4;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">while</span> ( v4 != v3 );</span><br><span class="line">    &#125;</span><br><span class="line">    *(&amp;v18 + i) = (<span class="keyword">int</span>)v5;</span><br><span class="line">  &#125;</span><br><span class="line">  v6 = v18;</span><br><span class="line">  v7 = v19;</span><br><span class="line">  *(_DWORD *)(v18 + <span class="number">8</span>) = v19;</span><br><span class="line">  v8 = v20;</span><br><span class="line">  *(_DWORD *)(v7 + <span class="number">8</span>) = v20;</span><br><span class="line">  v9 = v21;</span><br><span class="line">  *(_DWORD *)(v8 + <span class="number">8</span>) = v21;</span><br><span class="line">  v10 = v22;</span><br><span class="line">  *(_DWORD *)(v9 + <span class="number">8</span>) = v22;</span><br><span class="line">  v11 = v23;</span><br><span class="line">  *(_DWORD *)(v10 + <span class="number">8</span>) = v23;</span><br><span class="line">  *(_DWORD *)(v11 + <span class="number">8</span>) = <span class="number">0</span>;</span><br><span class="line">  v12 = <span class="number">5</span>;</span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">if</span> ( *(_DWORD *)v6 &gt; **(_DWORD **)(v6 + <span class="number">8</span>) )</span><br><span class="line">      explode_bomb();</span><br><span class="line">    v6 = *(_DWORD *)(v6 + <span class="number">8</span>);</span><br><span class="line">    --v12;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> ( v12 );</span><br><span class="line">  <span class="keyword">return</span> __readgsdword(<span class="number">0x14</span>u) ^ v24;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>gdb查看phase_6函数汇编代码：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line">gdb-peda$ disassemble phase_6</span><br><span class="line">Dump of assembler code <span class="keyword">for</span> <span class="keyword">function</span> phase_6:</span><br><span class="line">=&gt; 0x00401925 &lt;+0&gt;:     endbr32</span><br><span class="line">   0x00401929 &lt;+4&gt;:     push   ebp</span><br><span class="line">   0x0040192a &lt;+5&gt;:     mov    ebp,esp</span><br><span class="line">   0x0040192c &lt;+7&gt;:     push   edi</span><br><span class="line">   0x0040192d &lt;+8&gt;:     push   esi</span><br><span class="line">   0x0040192e &lt;+9&gt;:     push   ebx</span><br><span class="line">   0x0040192f &lt;+10&gt;:    sub    esp,0x64</span><br><span class="line">   0x00401932 &lt;+13&gt;:    call   0x4013d0 &lt;__x86.get_pc_thunk.bx&gt;</span><br><span class="line">   0x00401937 &lt;+18&gt;:    add    ebx,0x362d</span><br><span class="line">   0x0040193d &lt;+24&gt;:    mov    eax,gs:0x14</span><br><span class="line">   0x00401943 &lt;+30&gt;:    mov    DWORD PTR [ebp-0x1c],eax</span><br><span class="line">   0x00401946 &lt;+33&gt;:    xor    eax,eax</span><br><span class="line">   0x00401948 &lt;+35&gt;:    lea    eax,[ebp-0x4c]</span><br><span class="line">   0x0040194b &lt;+38&gt;:    push   eax</span><br><span class="line">   0x0040194c &lt;+39&gt;:    push   DWORD PTR [ebp+0x8]</span><br><span class="line">   0x0040194f &lt;+42&gt;:    call   0x401eba &lt;read_six_numbers&gt;</span><br><span class="line">   0x00401954 &lt;+47&gt;:    lea    eax,[ebp-0x48]</span><br><span class="line">   0x00401957 &lt;+50&gt;:    mov    DWORD PTR [ebp-0x64],eax</span><br><span class="line">   0x0040195a &lt;+53&gt;:    add    esp,0x10</span><br><span class="line">   0x0040195d &lt;+56&gt;:    mov    DWORD PTR [ebp-0x60],0x0</span><br><span class="line">   0x00401964 &lt;+63&gt;:    lea    eax,[ebp-0x34]</span><br><span class="line">   0x00401967 &lt;+66&gt;:    mov    DWORD PTR [ebp-0x5c],eax</span><br><span class="line">   0x0040196a &lt;+69&gt;:    jmp    0x40198d &lt;phase_6+104&gt;</span><br><span class="line">   0x0040196c &lt;+71&gt;:    call   0x401e64 &lt;explode_bomb&gt;</span><br><span class="line">   0x00401971 &lt;+76&gt;:    jmp    0x4019a0 &lt;phase_6+123&gt;</span><br><span class="line">   0x00401973 &lt;+78&gt;:    add    esi,0x4</span><br><span class="line">   0x00401976 &lt;+81&gt;:    cmp    DWORD PTR [ebp-0x5c],esi</span><br><span class="line">   0x00401979 &lt;+84&gt;:    je     0x401989 &lt;phase_6+100&gt;</span><br><span class="line">   0x0040197b &lt;+86&gt;:    mov    eax,DWORD PTR [esi]</span><br><span class="line">   0x0040197d &lt;+88&gt;:    cmp    DWORD PTR [edi-0x4],eax</span><br><span class="line">   0x00401980 &lt;+91&gt;:    jne    0x401973 &lt;phase_6+78&gt;</span><br><span class="line">   0x00401982 &lt;+93&gt;:    call   0x401e64 &lt;explode_bomb&gt;</span><br><span class="line">   0x00401987 &lt;+98&gt;:    jmp    0x401973 &lt;phase_6+78&gt;</span><br><span class="line">   0x00401989 &lt;+100&gt;:   add    DWORD PTR [ebp-0x64],0x4</span><br><span class="line">   0x0040198d &lt;+104&gt;:   mov    eax,DWORD PTR [ebp-0x64]</span><br><span class="line">   0x00401990 &lt;+107&gt;:   mov    edi,eax</span><br><span class="line">   0x00401992 &lt;+109&gt;:   mov    eax,DWORD PTR [eax-0x4]</span><br><span class="line">   0x00401995 &lt;+112&gt;:   mov    DWORD PTR [ebp-0x68],eax</span><br><span class="line">   0x00401998 &lt;+115&gt;:   sub    eax,0x1</span><br><span class="line">   0x0040199b &lt;+118&gt;:   cmp    eax,0x5</span><br><span class="line">   0x0040199e &lt;+121&gt;:   ja     0x40196c &lt;phase_6+71&gt;</span><br><span class="line">   0x004019a0 &lt;+123&gt;:   add    DWORD PTR [ebp-0x60],0x1</span><br><span class="line">   0x004019a4 &lt;+127&gt;:   mov    eax,DWORD PTR [ebp-0x60]</span><br><span class="line">   0x004019a7 &lt;+130&gt;:   cmp    eax,0x5</span><br><span class="line">   0x004019aa &lt;+133&gt;:   jg     0x4019b1 &lt;phase_6+140&gt;</span><br><span class="line">   0x004019ac &lt;+135&gt;:   mov    esi,DWORD PTR [ebp-0x64]</span><br><span class="line">   0x004019af &lt;+138&gt;:   jmp    0x40197b &lt;phase_6+86&gt;</span><br><span class="line">   0x004019b1 &lt;+140&gt;:   mov    esi,0x0</span><br><span class="line">   0x004019b6 &lt;+145&gt;:   mov    edi,esi</span><br><span class="line">   0x004019b8 &lt;+147&gt;:   mov    ecx,DWORD PTR [ebp+esi*4-0x4c]</span><br><span class="line">   0x004019bc &lt;+151&gt;:   mov    eax,0x1</span><br><span class="line">   0x004019c1 &lt;+156&gt;:   lea    edx,[ebx+0x594]</span><br><span class="line">   0x004019c7 &lt;+162&gt;:   cmp    ecx,0x1</span><br><span class="line">   0x004019ca &lt;+165&gt;:   jle    0x4019d6 &lt;phase_6+177&gt;</span><br><span class="line">   0x004019cc &lt;+167&gt;:   mov    edx,DWORD PTR [edx+0x8]</span><br><span class="line">   0x004019cf &lt;+170&gt;:   add    eax,0x1</span><br><span class="line">   0x004019d2 &lt;+173&gt;:   cmp    eax,ecx</span><br><span class="line">   0x004019d4 &lt;+175&gt;:   jne    0x4019cc &lt;phase_6+167&gt;</span><br><span class="line">   0x004019d6 &lt;+177&gt;:   mov    DWORD PTR [ebp+edi*4-0x34],edx</span><br><span class="line">   0x004019da &lt;+181&gt;:   add    esi,0x1</span><br><span class="line">   0x004019dd &lt;+184&gt;:   cmp    esi,0x6</span><br><span class="line">   0x004019e0 &lt;+187&gt;:   jne    0x4019b6 &lt;phase_6+145&gt;</span><br><span class="line">   0x004019e2 &lt;+189&gt;:   mov    esi,DWORD PTR [ebp-0x34]</span><br><span class="line">   0x004019e5 &lt;+192&gt;:   mov    eax,DWORD PTR [ebp-0x30]</span><br><span class="line">   0x004019e8 &lt;+195&gt;:   mov    DWORD PTR [esi+0x8],eax</span><br><span class="line">   0x004019eb &lt;+198&gt;:   mov    edx,DWORD PTR [ebp-0x2c]</span><br><span class="line">   0x004019ee &lt;+201&gt;:   mov    DWORD PTR [eax+0x8],edx</span><br><span class="line">   0x004019f1 &lt;+204&gt;:   mov    eax,DWORD PTR [ebp-0x28]</span><br><span class="line">   0x004019f4 &lt;+207&gt;:   mov    DWORD PTR [edx+0x8],eax</span><br><span class="line">   0x004019f7 &lt;+210&gt;:   mov    edx,DWORD PTR [ebp-0x24]</span><br><span class="line">   0x004019fa &lt;+213&gt;:   mov    DWORD PTR [eax+0x8],edx</span><br><span class="line">   0x004019fd &lt;+216&gt;:   mov    eax,DWORD PTR [ebp-0x20]</span><br><span class="line">   0x00401a00 &lt;+219&gt;:   mov    DWORD PTR [edx+0x8],eax</span><br><span class="line">   0x00401a03 &lt;+222&gt;:   mov    DWORD PTR [eax+0x8],0x0</span><br><span class="line">   0x00401a0a &lt;+229&gt;:   mov    edi,0x5</span><br><span class="line">   0x00401a0f &lt;+234&gt;:   jmp    0x401a19 &lt;phase_6+244&gt;</span><br><span class="line">   0x00401a11 &lt;+236&gt;:   mov    esi,DWORD PTR [esi+0x8]</span><br><span class="line">   0x00401a14 &lt;+239&gt;:   sub    edi,0x1</span><br><span class="line">   0x00401a17 &lt;+242&gt;:   je     0x401a29 &lt;phase_6+260&gt;</span><br><span class="line">   0x00401a19 &lt;+244&gt;:   mov    eax,DWORD PTR [esi+0x8]</span><br><span class="line">   0x00401a1c &lt;+247&gt;:   mov    eax,DWORD PTR [eax]</span><br><span class="line">   0x00401a1e &lt;+249&gt;:   cmp    DWORD PTR [esi],eax</span><br><span class="line">   0x00401a20 &lt;+251&gt;:   jle    0x401a11 &lt;phase_6+236&gt;</span><br><span class="line">   0x00401a22 &lt;+253&gt;:   call   0x401e64 &lt;explode_bomb&gt;</span><br><span class="line">   0x00401a27 &lt;+258&gt;:   jmp    0x401a11 &lt;phase_6+236&gt;</span><br><span class="line">   0x00401a29 &lt;+260&gt;:   mov    eax,DWORD PTR [ebp-0x1c]</span><br><span class="line">   0x00401a2c &lt;+263&gt;:   xor    eax,DWORD PTR gs:0x14</span><br><span class="line">   0x00401a33 &lt;+270&gt;:   jne    0x401a3d &lt;phase_6+280&gt;</span><br><span class="line">   0x00401a35 &lt;+272&gt;:   lea    esp,[ebp-0xc]</span><br><span class="line">   0x00401a38 &lt;+275&gt;:   pop    ebx</span><br><span class="line">   0x00401a39 &lt;+276&gt;:   pop    esi</span><br><span class="line">   0x00401a3a &lt;+277&gt;:   pop    edi</span><br><span class="line">   0x00401a3b &lt;+278&gt;:   pop    ebp</span><br><span class="line">   0x00401a3c &lt;+279&gt;:   ret</span><br><span class="line">   0x00401a3d &lt;+280&gt;:   call   0x402e00 &lt;__stack_chk_fail_local&gt;</span><br><span class="line">End of assembler dump.</span><br></pre></td></tr></table></figure>
+<h2 id="72-思路"><a class="markdownIt-Anchor" href="#72-思路"></a> 7.2 思路</h2>
+<ol>
+<li>
+<p>查看伪代码需要输入六个数字；</p>
+</li>
+<li>
+<p>观察这部分代码块（对应汇编代码<code>&lt;+47&gt;</code>到<code>&lt;+98&gt;</code>）可得，这六个数字必须从<code>1 2 3 4 5 6</code>中选，而且互不相同；</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> ( <span class="number">1</span> )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> ( (<span class="keyword">unsigned</span> <span class="keyword">int</span>)(*((_DWORD *)v14 - <span class="number">1</span>) - <span class="number">1</span>) &gt; <span class="number">5</span> )</span><br><span class="line">        explode_bomb();</span><br><span class="line">    <span class="keyword">if</span> ( ++v15 &gt; <span class="number">5</span> )</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    v1 = (<span class="keyword">int</span> *)v14;</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> ( *((_DWORD *)v14 - <span class="number">1</span>) == *v1 )</span><br><span class="line">            explode_bomb();</span><br><span class="line">        ++v1;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> ( &amp;v18 != v1 );</span><br><span class="line">    v14 += <span class="number">4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>查看这部分代码块可得，是根据输入的六个数字对node链表进行排序，node链表最后要升序排列（可以有相等的）；</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> ( i = <span class="number">0</span>; i != <span class="number">6</span>; ++i )</span><br><span class="line">&#123;</span><br><span class="line">    v3 = *(&amp;v16 + i);</span><br><span class="line">    v4 = <span class="number">1</span>;</span><br><span class="line">    v5 = &amp;node1;</span><br><span class="line">    <span class="keyword">if</span> ( v3 &gt; <span class="number">1</span> )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">do</span></span><br><span class="line">        &#123;</span><br><span class="line">            v5 = (_DWORD *)v5[<span class="number">2</span>];</span><br><span class="line">            ++v4;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> ( v4 != v3 );</span><br><span class="line">    &#125;</span><br><span class="line">    *(&amp;v18 + i) = (<span class="keyword">int</span>)v5;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> ( *(_DWORD *)v6 &gt; **(_DWORD **)(v6 + <span class="number">8</span>) )</span><br><span class="line">        explode_bomb();</span><br><span class="line">    v6 = *(_DWORD *)(v6 + <span class="number">8</span>);</span><br><span class="line">    --v12;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">while</span> ( v12 );</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>运行至<code>&lt;+156&gt; lea edx,[ebx+0x594]</code>，查看各个node结点的数值：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">[----------------------------------registers-----------------------------------]</span><br><span class="line">EAX: 0x1</span><br><span class="line">EBX: 0x404f64 --&gt; 0x4e6c (<span class="string">'lN'</span>)</span><br><span class="line">ECX: 0x4</span><br><span class="line">EDX: 0x4054f8 --&gt; 0x2a0</span><br><span class="line">ESI: 0x1</span><br><span class="line">EDI: 0x1</span><br><span class="line">EBP: 0xbffff498 --&gt; 0xbffff4c8 --&gt; 0x0</span><br><span class="line">ESP: 0xbffff430 --&gt; 0x3</span><br><span class="line">EIP: 0x4019c7 (&lt;phase_6+162&gt;:   cmp    ecx,0x1)</span><br><span class="line">EFLAGS: 0x293 (CARRY parity ADJUST zero SIGN <span class="built_in">trap</span> INTERRUPT direction overflow)</span><br><span class="line">[-------------------------------------code-------------------------------------]</span><br><span class="line">   0x4019b8 &lt;phase_6+147&gt;:      mov    ecx,DWORD PTR [ebp+esi*4-0x4c]</span><br><span class="line">   0x4019bc &lt;phase_6+151&gt;:      mov    eax,0x1</span><br><span class="line">   0x4019c1 &lt;phase_6+156&gt;:      lea    edx,[ebx+0x594]</span><br><span class="line">=&gt; 0x4019c7 &lt;phase_6+162&gt;:      cmp    ecx,0x1</span><br><span class="line">   0x4019ca &lt;phase_6+165&gt;:      jle    0x4019d6 &lt;phase_6+177&gt;</span><br><span class="line">   0x4019cc &lt;phase_6+167&gt;:      mov    edx,DWORD PTR [edx+0x8]</span><br><span class="line">   0x4019cf &lt;phase_6+170&gt;:      add    eax,0x1</span><br><span class="line">   0x4019d2 &lt;phase_6+173&gt;:      cmp    eax,ecx</span><br><span class="line">[------------------------------------stack-------------------------------------]</span><br><span class="line">0000| 0xbffff430 --&gt; 0x3</span><br><span class="line">0004| 0xbffff434 --&gt; 0xbffff464 --&gt; 0x405528 --&gt; 0x133</span><br><span class="line">0008| 0xbffff438 --&gt; 0x6</span><br><span class="line">0012| 0xbffff43c --&gt; 0xbffff464 --&gt; 0x405528 --&gt; 0x133</span><br><span class="line">0016| 0xbffff440 --&gt; 0x4058f0 (<span class="string">"5 4 2 1 6 3"</span>)</span><br><span class="line">0020| 0xbffff444 --&gt; 0x50 (<span class="string">'P'</span>)</span><br><span class="line">0024| 0xbffff448 --&gt; 0xb7fbc5c0 --&gt; 0xfbad2288</span><br><span class="line">0028| 0xbffff44c --&gt; 0x5</span><br><span class="line">[------------------------------------------------------------------------------]</span><br><span class="line">Legend: code, data, rodata, value</span><br><span class="line">0x004019c7 <span class="keyword">in</span> phase_6 ()</span><br><span class="line">gdb-peda$ x/21x <span class="variable">$ebx</span>+0x594</span><br><span class="line">0x4054f8 &lt;node1&gt;:       0x000002a0      0x00000001      0x00405504      0x0000026d</span><br><span class="line">0x405508 &lt;node2+4&gt;:     0x00000002      0x00405510      0x000001ea      0x00000003</span><br><span class="line">0x405518 &lt;node3+8&gt;:     0x0040551c      0x00000038      0x00000004      0x00405528</span><br><span class="line">0x405528 &lt;node5&gt;:       0x00000133      0x00000005      0x00405080      0x00000000</span><br><span class="line">0x405538:       0x00000000      0x00000000      0x00403417      0x00000000</span><br><span class="line">0x405548 &lt;host_table+8&gt;:        0x00000000</span><br><span class="line">gdb-peda$ x 0x00405080</span><br><span class="line">0x405080 &lt;node6&gt;:       0x000000ca</span><br><span class="line">gdb-peda$ x/3x 0x00405080</span><br><span class="line">0x405080 &lt;node6&gt;:       0x000000ca      0x00000006      0x00000000</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong>：在IDA中查看注意截断</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">.data:000054F8                 public node1</span><br><span class="line">.data:000054F8 node1           db 0A0h                 ; DATA XREF: phase_6+9C↑o</span><br><span class="line">.data:000054F9                 db    2</span><br><span class="line">.data:000054FA                 db    0</span><br><span class="line">.data:000054FB                 db    0</span><br><span class="line">.data:000054FC                 db    1</span><br><span class="line">.data:000054FD                 db    0</span><br><span class="line">.data:000054FE                 db    0</span><br><span class="line">.data:000054FF                 db    0</span><br><span class="line">.data:00005500                 dd offset node2</span><br><span class="line">.data:00005504                 public node2</span><br><span class="line">.data:00005504 node2           db  6Dh ; m             ; DATA XREF: .data:00005500↑o</span><br><span class="line">.data:00005505                 db    2</span><br><span class="line">.data:00005506                 db    0</span><br><span class="line">.data:00005507                 db    0</span><br><span class="line">.data:00005508                 db    2</span><br><span class="line">.data:00005509                 db    0</span><br><span class="line">.data:0000550A                 db    0</span><br><span class="line">.data:0000550B                 db    0</span><br><span class="line">.data:0000550C                 dd offset node3</span><br></pre></td></tr></table></figure>
+<p>可以得出：</p>
+<ul>
+<li>
+<p>node结点的结构：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    <span class="keyword">int</span> index;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> * <span class="title">next</span>;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>node排列：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">|node1=0x2a0| -&gt; |node2=0x260| -&gt; |node3=0x1ea| -&gt; |node4=0x038| -&gt; |node5=0x133| -&gt; |node6=0x0ca|</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>所以应输入从小到大排列序号为：4 6 5 3 2 1</p>
+</li>
+</ol>
+<p><strong>答案</strong>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4 6 5 3 2 1</span><br></pre></td></tr></table></figure>
+<h1 id="8-bomblab隐藏关卡"><a class="markdownIt-Anchor" href="#8-bomblab隐藏关卡"></a> 8 bomblab隐藏关卡</h1>
+<h2 id="81-解析"><a class="markdownIt-Anchor" href="#81-解析"></a> 8.1 解析</h2>
+<p>在bomb的伪代码内找到调用 secret_phase 的函数-- phase_defused ，研究phase_defused 汇编代码：首先调用 sscanf ，要求输入 %d %d %s ，而且调用strings_not_equal 函数，只有第三个输入是 <code>DrEvil</code> 时触发 secret_phase() 函数。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">unsigned</span> <span class="keyword">int</span> <span class="title">phase_defused</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">char</span> v1[<span class="number">4</span>]; <span class="comment">// [esp+10h] [ebp-64h] BYREF</span></span><br><span class="line">  <span class="keyword">char</span> v2[<span class="number">4</span>]; <span class="comment">// [esp+14h] [ebp-60h] BYREF</span></span><br><span class="line">  <span class="keyword">char</span> v3[<span class="number">80</span>]; <span class="comment">// [esp+18h] [ebp-5Ch] BYREF</span></span><br><span class="line">  <span class="keyword">unsigned</span> <span class="keyword">int</span> v4; <span class="comment">// [esp+68h] [ebp-Ch]</span></span><br><span class="line"></span><br><span class="line">  v4 = __readgsdword(<span class="number">0x14</span>u);</span><br><span class="line">  send_msg(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">if</span> ( num_input_strings == <span class="number">6</span> )</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">if</span> ( __isoc99_sscanf(&amp;input_strings[<span class="number">240</span>], <span class="string">"%d %d %s"</span>, v1, v2) == <span class="number">3</span> &amp;&amp; !strings_not_equal(v3, <span class="string">"DrEvil"</span>) )</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="built_in">puts</span>(<span class="string">"Curses, you've found the secret phase!"</span>);</span><br><span class="line">      <span class="built_in">puts</span>(<span class="string">"But finding it and solving it are quite different..."</span>);</span><br><span class="line">      secret_phase();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"Congratulations! You've defused the bomb!"</span>);</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"Your instructor has been notified and will verify your solution."</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> __readgsdword(<span class="number">0x14</span>u) ^ v4;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>将已经解决的问题答案放到txt文件中，便于操作；找到一个输入是两个整数的阶段，这里选择了phase_4，成功触发隐藏关卡；（第三阶段无法触发，不知为何？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">And they have no disregard for human life.</span><br><span class="line">1 2 4 8 16 32</span><br><span class="line">0 1071 </span><br><span class="line">24 2 DrEvil</span><br><span class="line">111100</span><br><span class="line">4 6 5 3 2 1</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ ./bomb flag.txt</span><br><span class="line">Welcome to my fiendish little bomb. You have 6 phases with</span><br><span class="line"><span class="built_in">which</span> to blow yourself up. Have a nice day!</span><br><span class="line">Phase 1 defused. How about the next one?</span><br><span class="line">That<span class="string">'s number 2.  Keep going!</span></span><br><span class="line"><span class="string">Halfway there!</span></span><br><span class="line"><span class="string">So you got that one.  Try this one.</span></span><br><span class="line"><span class="string">Good work!  On to the next...</span></span><br><span class="line"><span class="string">Curses, you'</span>ve found the secret phase!</span><br><span class="line">But finding it and solving it are quite different...</span><br></pre></td></tr></table></figure>
+<p>secret_phase伪代码 ：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">unsigned</span> <span class="keyword">int</span> <span class="title">secret_phase</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">const</span> <span class="keyword">char</span> *v0; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> v1; <span class="comment">// esi</span></span><br><span class="line"></span><br><span class="line">  v0 = read_line();</span><br><span class="line">  v1 = strtol(v0, <span class="number">0</span>, <span class="number">10</span>);</span><br><span class="line">  <span class="keyword">if</span> ( (<span class="keyword">unsigned</span> <span class="keyword">int</span>)(v1 - <span class="number">1</span>) &gt; <span class="number">0x3E8</span> )</span><br><span class="line">    explode_bomb();</span><br><span class="line">  <span class="keyword">if</span> ( fun7(n1, v1) != <span class="number">3</span> )</span><br><span class="line">    explode_bomb();</span><br><span class="line">  <span class="built_in">puts</span>(<span class="string">"Wow! You've defused the secret stage!"</span>);</span><br><span class="line">  <span class="keyword">return</span> phase_defused();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>fun7伪代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> __cdecl <span class="title">fun7</span><span class="params">(_DWORD *a1, <span class="keyword">int</span> a2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> result; <span class="comment">// eax</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> ( !a1 )</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">  <span class="keyword">if</span> ( *a1 &gt; a2 )</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * fun7(a1[<span class="number">1</span>], a2);</span><br><span class="line">  result = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">if</span> ( *a1 != a2 )</span><br><span class="line">    result = <span class="number">2</span> * fun7(a1[<span class="number">2</span>], a2) + <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="82-思路"><a class="markdownIt-Anchor" href="#82-思路"></a> 8.2 思路</h2>
+<ol>
+<li>
+<p>进入 secret_phase：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">gdb-peda$ disassemble secret_phase</span><br><span class="line">Dump of assembler code <span class="keyword">for</span> <span class="keyword">function</span> secret_phase:</span><br><span class="line">   0x00401a98 &lt;+0&gt;:     endbr32</span><br><span class="line">   0x00401a9c &lt;+4&gt;:     push   ebp</span><br><span class="line">   0x00401a9d &lt;+5&gt;:     mov    ebp,esp</span><br><span class="line">   0x00401a9f &lt;+7&gt;:     push   esi</span><br><span class="line">   0x00401aa0 &lt;+8&gt;:     push   ebx</span><br><span class="line">   0x00401aa1 &lt;+9&gt;:     call   0x4013d0 &lt;__x86.get_pc_thunk.bx&gt;</span><br><span class="line">   0x00401aa6 &lt;+14&gt;:    add    ebx,0x34be</span><br><span class="line">   0x00401aac &lt;+20&gt;:    call   0x401f09 &lt;read_line&gt;</span><br><span class="line">   0x00401ab1 &lt;+25&gt;:    sub    esp,0x4</span><br><span class="line">   0x00401ab4 &lt;+28&gt;:    push   0xa</span><br><span class="line">   0x00401ab6 &lt;+30&gt;:    push   0x0</span><br><span class="line">   0x00401ab8 &lt;+32&gt;:    push   eax</span><br><span class="line">   0x00401ab9 &lt;+33&gt;:    call   0x401340 &lt;strtol@plt&gt;</span><br><span class="line">   0x00401abe &lt;+38&gt;:    mov    esi,eax</span><br><span class="line">   0x00401ac0 &lt;+40&gt;:    lea    eax,[eax-0x1]</span><br><span class="line">   0x00401ac3 &lt;+43&gt;:    add    esp,0x10</span><br><span class="line">   0x00401ac6 &lt;+46&gt;:    cmp    eax,0x3e8</span><br><span class="line">   0x00401acb &lt;+51&gt;:    ja     0x401b03 &lt;secret_phase+107&gt;</span><br><span class="line">   0x00401acd &lt;+53&gt;:    sub    esp,0x8</span><br><span class="line">   0x00401ad0 &lt;+56&gt;:    push   esi</span><br><span class="line">   0x00401ad1 &lt;+57&gt;:    lea    eax,[ebx+0x540]</span><br><span class="line">   0x00401ad7 &lt;+63&gt;:    push   eax</span><br><span class="line">   0x00401ad8 &lt;+64&gt;:    call   0x401a42 &lt;fun7&gt;</span><br><span class="line">   0x00401add &lt;+69&gt;:    add    esp,0x10</span><br><span class="line">   0x00401ae0 &lt;+72&gt;:    cmp    eax,0x3</span><br><span class="line">   0x00401ae3 &lt;+75&gt;:    jne    0x401b0a &lt;secret_phase+114&gt;</span><br><span class="line">   0x00401ae5 &lt;+77&gt;:    sub    esp,0xc</span><br><span class="line">   0x00401ae8 &lt;+80&gt;:    lea    eax,[ebx-0x1df4]</span><br><span class="line">   0x00401aee &lt;+86&gt;:    push   eax</span><br><span class="line">   0x00401aef &lt;+87&gt;:    call   0x401280 &lt;puts@plt&gt;</span><br><span class="line">   0x00401af4 &lt;+92&gt;:    call   0x40203c &lt;phase_defused&gt;</span><br><span class="line">   0x00401af9 &lt;+97&gt;:    add    esp,0x10</span><br><span class="line">   0x00401afc &lt;+100&gt;:   lea    esp,[ebp-0x8]</span><br><span class="line">   0x00401aff &lt;+103&gt;:   pop    ebx</span><br><span class="line">   0x00401b00 &lt;+104&gt;:   pop    esi</span><br><span class="line">   0x00401b01 &lt;+105&gt;:   pop    ebp</span><br><span class="line">   0x00401b02 &lt;+106&gt;:   ret</span><br><span class="line">   0x00401b03 &lt;+107&gt;:   call   0x401e64 &lt;explode_bomb&gt;</span><br><span class="line">   0x00401b08 &lt;+112&gt;:   jmp    0x401acd &lt;secret_phase+53&gt;</span><br><span class="line">   0x00401b0a &lt;+114&gt;:   call   0x401e64 &lt;explode_bomb&gt;</span><br><span class="line">   0x00401b0f &lt;+119&gt;:   jmp    0x401ae5 &lt;secret_phase+77&gt;</span><br><span class="line">End of assembler dump.</span><br></pre></td></tr></table></figure>
+<p>可以看到<code>&lt;+20&gt;</code>调用了read_line函数，接着把read_line的返回值赋给了eax，并调用了strtol函数，这个标准库函数的作用是把一个字符串转换成对应的长整型数值。返回值还是存放在eax中，<code>&lt;+38&gt;</code>将eax赋值给了esi，<code>&lt;+40&gt;</code>将eax减1赋给eax，<code>&lt;+46&gt;</code>与1000(0x3e8)进行比较，如果这个值小于等于0x3e8就跳过引爆代码。看到这里可以知道我们需要再加入一行数据，它应该是一个小于等于1001的数值。</p>
+</li>
+<li>
+<p><code>&lt;+53&gt;</code>将 esi 赋给了 M[esp + 4] ，也就是一开始输入的 eax 值。<code>&lt;+57&gt;</code>将ebx+0x540赋给了 M[esp] ，<code>&lt;+64&gt;</code>调用了 fun7 函数。函数返回后令返回值 eax 与 0x3 做了一个比较，如果相等则跳过引爆代码。所以fun7函数需要返回3；</p>
+</li>
+<li>
+<p>查看 fun7 函数：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">gdb-peda$ disassemble fun7</span><br><span class="line">Dump of assembler code <span class="keyword">for</span> <span class="keyword">function</span> fun7:</span><br><span class="line">   0x00401a42 &lt;+0&gt;:     endbr32</span><br><span class="line">   0x00401a46 &lt;+4&gt;:     push   ebp</span><br><span class="line">   0x00401a47 &lt;+5&gt;:     mov    ebp,esp</span><br><span class="line">   0x00401a49 &lt;+7&gt;:     push   ebx</span><br><span class="line">   0x00401a4a &lt;+8&gt;:     sub    esp,0x4</span><br><span class="line">   0x00401a4d &lt;+11&gt;:    mov    edx,DWORD PTR [ebp+0x8]</span><br><span class="line">   0x00401a50 &lt;+14&gt;:    mov    ecx,DWORD PTR [ebp+0xc]</span><br><span class="line">   0x00401a53 &lt;+17&gt;:    <span class="built_in">test</span>   edx,edx</span><br><span class="line">   0x00401a55 &lt;+19&gt;:    je     0x401a91 &lt;fun7+79&gt;</span><br><span class="line">   0x00401a57 &lt;+21&gt;:    mov    ebx,DWORD PTR [edx]</span><br><span class="line">   0x00401a59 &lt;+23&gt;:    cmp    ebx,ecx</span><br><span class="line">   0x00401a5b &lt;+25&gt;:    jg     0x401a69 &lt;fun7+39&gt;</span><br><span class="line">   0x00401a5d &lt;+27&gt;:    mov    eax,0x0</span><br><span class="line">   0x00401a62 &lt;+32&gt;:    jne    0x401a7c &lt;fun7+58&gt;</span><br><span class="line">   0x00401a64 &lt;+34&gt;:    mov    ebx,DWORD PTR [ebp-0x4]</span><br><span class="line">   0x00401a67 &lt;+37&gt;:    leave</span><br><span class="line">   0x00401a68 &lt;+38&gt;:    ret</span><br><span class="line">   0x00401a69 &lt;+39&gt;:    sub    esp,0x8</span><br><span class="line">   0x00401a6c &lt;+42&gt;:    push   ecx</span><br><span class="line">   0x00401a6d &lt;+43&gt;:    push   DWORD PTR [edx+0x4]</span><br><span class="line">   0x00401a70 &lt;+46&gt;:    call   0x401a42 &lt;fun7&gt;</span><br><span class="line">   0x00401a75 &lt;+51&gt;:    add    esp,0x10</span><br><span class="line">   0x00401a78 &lt;+54&gt;:    add    eax,eax</span><br><span class="line">   0x00401a7a &lt;+56&gt;:    jmp    0x401a64 &lt;fun7+34&gt;</span><br><span class="line">   0x00401a7c &lt;+58&gt;:    sub    esp,0x8</span><br><span class="line">   0x00401a7f &lt;+61&gt;:    push   ecx</span><br><span class="line">   0x00401a80 &lt;+62&gt;:    push   DWORD PTR [edx+0x8]</span><br><span class="line">   0x00401a83 &lt;+65&gt;:    call   0x401a42 &lt;fun7&gt;</span><br><span class="line">   0x00401a88 &lt;+70&gt;:    add    esp,0x10</span><br><span class="line">   0x00401a8b &lt;+73&gt;:    lea    eax,[eax+eax*1+0x1]</span><br><span class="line">   0x00401a8f &lt;+77&gt;:    jmp    0x401a64 &lt;fun7+34&gt;</span><br><span class="line">   0x00401a91 &lt;+79&gt;:    mov    eax,0xffffffff</span><br><span class="line">   0x00401a96 &lt;+84&gt;:    jmp    0x401a64 &lt;fun7+34&gt;</span><br><span class="line">End of assembler dump.</span><br></pre></td></tr></table></figure>
+<p>查看一下 M[esp] 这个地址里存放的什么数据结构：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">gdb-peda$ b *0x00401ad8  <span class="comment">#打断点至&lt;+64&gt;</span></span><br><span class="line">gdb-peda$ x/24xw <span class="variable">$eax</span></span><br><span class="line">0x4054a4 &lt;n1&gt;:  0x00000024      0x004054b0      0x004054bc      0x00000008</span><br><span class="line">0x4054b4 &lt;n21+4&gt;:       0x004054e0      0x004054c8      0x00000032      0x004054d4</span><br><span class="line">0x4054c4 &lt;n22+8&gt;:       0x004054ec      0x00000016      0x0040505c      0x00405044</span><br><span class="line">0x4054d4 &lt;n33&gt;: 0x0000002d      0x00405020      0x00405068      0x00000006</span><br><span class="line">0x4054e4 &lt;n31+4&gt;:       0x0040502c      0x00405050      0x0000006b      0x00405038</span><br><span class="line">0x4054f4 &lt;n34+8&gt;:       0x00405074      0x000002a0      0x00000001      0x00000000</span><br></pre></td></tr></table></figure>
+<p>仔细观察可以发现这是一个二叉树的结构，每个节点第1个4字节存放数据，第2个4字节存放左子树地址，第3个4字节存放右子树位置。并且命名也有规律，<code>nab</code>，<code>a</code> 代表层数，<code>b</code> 代表从左至右第b个节点。整理可得：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">0x4054a4 &lt;n1&gt;:  0x00000024      0x004054b0      0x004054bc</span><br><span class="line">0x4054b0 &lt;n21&gt;: 0x00000008      0x004054e0      0x004054c8</span><br><span class="line">0x4054bc &lt;n22&gt;: 0x00000032      0x004054d4      0x004054ec</span><br><span class="line">0x4054e0 &lt;n31&gt;: 0x00000006      0x0040502c      0x00405050</span><br><span class="line">0x4054c8 &lt;n32&gt;: 0x00000016      0x0040505c      0x00405044</span><br><span class="line">0x4054d4 &lt;n33&gt;: 0x0000002d      0x00405020      0x00405068</span><br><span class="line">0x4054ec &lt;n34&gt;: 0x0000006b      0x00405038      0x00405074</span><br><span class="line">0x40502c &lt;n41&gt;: 0x00000001      0x00000000      0x00000000</span><br><span class="line">0x405050 &lt;n42&gt;: 0x00000007      0x00000000      0x00000000</span><br><span class="line">0x40505c &lt;n43&gt;: 0x00000014      0x00000000      0x00000000</span><br><span class="line">0x405044 &lt;n44&gt;: 0x00000023      0x00000000      0x00000000</span><br><span class="line">0x405020 &lt;n45&gt;: 0x00000028      0x00000000      0x00000000</span><br><span class="line">0x405068 &lt;n46&gt;: 0x0000002f      0x00000000      0x00000000</span><br><span class="line">0x405038 &lt;n47&gt;: 0x00000063      0x00000000      0x00000000</span><br><span class="line">0x405074 &lt;n48&gt;: 0x000003e9      0x00000000      0x00000000</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">  0x24 --&gt; 0x08</span><br><span class="line">  0x24 --&gt; 0x32</span><br><span class="line">  0x08 --&gt; 0x06</span><br><span class="line">  0x08 --&gt; 0x16</span><br><span class="line">  0x32 --&gt; 0x2d</span><br><span class="line">  0x32 --&gt; 0x6b</span><br><span class="line">  0x06 --&gt; 0x01</span><br><span class="line">  0x06 --&gt; 0x07</span><br><span class="line">  0x2d --&gt; 0x28</span><br><span class="line">  0x2d --&gt; 0x2f</span><br><span class="line">  0x6b --&gt; 0x63</span><br><span class="line">  0x6b --&gt; 0x3e9</span><br><span class="line">  0x16 --&gt; 0x14</span><br><span class="line">  0x16 --&gt; 0x23</span><br></pre></td></tr></table></figure>
+<img src="https://s2.loli.net/2022/05/26/3jUNCrcuDWAf5Ms.png" width="600" height="300" alt="图片名称" align="center" id="201">
+</li>
+<li>
+<p>总结上面的过程： M[esp] 指向树的一个节点，令节点的值与读入的值进行比较。</p>
+<ul>
+<li>如果前者大于后者： M[esp] 移至左子树，返回 2 * eax ；</li>
+<li>如果前者不等于后者： M[esp] 移至右子树，返回 2 * eax + 1 ；</li>
+<li>如果前者等于后者：返回0</li>
+</ul>
+</li>
+<li>
+<p>那么我们需要返回3，根据递归可得当输入是 0x63（99）时返回3。</p>
+</li>
+</ol>
+<p><strong>答案</strong>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">99</span><br></pre></td></tr></table></figure>
+<h1 id="9-最终答案"><a class="markdownIt-Anchor" href="#9-最终答案"></a> 9 最终答案</h1>
+<p><code>flag.txt</code>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">And they have no disregard <span class="keyword">for</span> human life.</span><br><span class="line">1 2 4 8 16 32</span><br><span class="line">0 1071 </span><br><span class="line">24 2 DrEvil</span><br><span class="line">111100</span><br><span class="line">4 6 5 3 2 1</span><br><span class="line">99</span><br></pre></td></tr></table></figure>
+<p>运行：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ ./bomb flag.txt</span><br><span class="line">Welcome to my fiendish little bomb. You have 6 phases with</span><br><span class="line"><span class="built_in">which</span> to blow yourself up. Have a nice day!</span><br><span class="line">Phase 1 defused. How about the next one?</span><br><span class="line">That<span class="string">'s number 2.  Keep going!</span></span><br><span class="line"><span class="string">Halfway there!</span></span><br><span class="line"><span class="string">So you got that one.  Try this one.</span></span><br><span class="line"><span class="string">Good work!  On to the next...</span></span><br><span class="line"><span class="string">Curses, you'</span>ve found the secret phase!</span><br><span class="line">But finding it and solving it are quite different...</span><br><span class="line">Wow! You<span class="string">'ve defused the secret stage!</span></span><br><span class="line"><span class="string">Congratulations! You'</span>ve defused the bomb!</span><br><span class="line">Your instructor has been notified and will verify your solution.</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://Dragonliu2018.github.io/2022/05/15/Lab2实验总结/" title="Lab2实验总结" target="_blank" rel="external">https://Dragonliu2018.github.io/2022/05/15/Lab2实验总结/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/dragonliu2018" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/dragonliu2018" target="_blank"><span class="text-dark">Dragon&#39;s Blogs</span><small class="ml-1x">Nuaa CSer</small></a></h3>
+        <div>Life is painting a picture, not doing a sum.</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2022/05/16/sklean常见分类器/" title="sklean常见机器学习分类器"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2022/05/12/Python-列表-生成列表/" title="Python-列表-生成列表"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn " data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">    <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dragonliu2018" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'Pbjl2Wajl9och0xVbR5eqoH1-gzGzoHsz',
+    appKey: 'PgxFh1wV6pyMMllhxs7NJijb',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>

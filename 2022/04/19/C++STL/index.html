@@ -18,18 +18,18 @@
   
   
   <title>C++STL | Dragon&#39;s Blogs</title>
-  <meta name="description" content="《面向对象C++程序设计》皮德常 编著 清华大学出版社 2017 《C++ Primer Plus (第6版)中文版》Stephen Prata 著 张海龙 袁国忠 译 人民邮电出版社 2012   1 C++容器类的底层实现以下分别用K、T指代泛型参数。     C++ 特点 底层数据结构     T 变量名[数值]、array&amp;lt;T,数值&amp;gt; 固定大小数组。支持快速随机访问，不能添">
+  <meta name="description" content="《面向对象C++程序设计》皮德常 编著 清华大学出版社 2017 《C++ Primer Plus (第6版)中文版》Stephen Prata 著 张海龙 袁国忠 译 人民邮电出版社 2012    1 C++容器类的底层实现 以下分别用K、T指代泛型参数。    C++ 特点 底层数据结构     T 变量名[数值]、array&amp;lt;T,数值&amp;gt; 固定大小数组。支持快速随机访问，不能">
 <meta name="keywords" content="面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++STL">
 <meta property="og:url" content="https://Dragonliu2018.github.io/2022/04/19/C++STL/index.html">
 <meta property="og:site_name" content="Dragon Liu">
-<meta property="og:description" content="《面向对象C++程序设计》皮德常 编著 清华大学出版社 2017 《C++ Primer Plus (第6版)中文版》Stephen Prata 著 张海龙 袁国忠 译 人民邮电出版社 2012   1 C++容器类的底层实现以下分别用K、T指代泛型参数。     C++ 特点 底层数据结构     T 变量名[数值]、array&amp;lt;T,数值&amp;gt; 固定大小数组。支持快速随机访问，不能添">
+<meta property="og:description" content="《面向对象C++程序设计》皮德常 编著 清华大学出版社 2017 《C++ Primer Plus (第6版)中文版》Stephen Prata 著 张海龙 袁国忠 译 人民邮电出版社 2012    1 C++容器类的底层实现 以下分别用K、T指代泛型参数。    C++ 特点 底层数据结构     T 变量名[数值]、array&amp;lt;T,数值&amp;gt; 固定大小数组。支持快速随机访问，不能">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2022-04-19T06:04:03.386Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++STL">
-<meta name="twitter:description" content="《面向对象C++程序设计》皮德常 编著 清华大学出版社 2017 《C++ Primer Plus (第6版)中文版》Stephen Prata 著 张海龙 袁国忠 译 人民邮电出版社 2012   1 C++容器类的底层实现以下分别用K、T指代泛型参数。     C++ 特点 底层数据结构     T 变量名[数值]、array&amp;lt;T,数值&amp;gt; 固定大小数组。支持快速随机访问，不能添">
+<meta name="twitter:description" content="《面向对象C++程序设计》皮德常 编著 清华大学出版社 2017 《C++ Primer Plus (第6版)中文版》Stephen Prata 著 张海龙 袁国忠 译 人民邮电出版社 2012    1 C++容器类的底层实现 以下分别用K、T指代泛型参数。    C++ 特点 底层数据结构     T 变量名[数值]、array&amp;lt;T,数值&amp;gt; 固定大小数组。支持快速随机访问，不能">
   <!-- Canonical links -->
   <link rel="canonical" href="https://Dragonliu2018.github.io/2022/04/19/C++STL/index.html">
   
@@ -193,7 +193,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">37</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/安全/">安全</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/爬虫/">爬虫</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/音乐/">音乐</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">41</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/安全/">安全</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/爬虫/">爬虫</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">34</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/音乐/">音乐</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -203,7 +203,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Crypto/">Crypto</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Element/">Element</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT书籍/">IT书籍</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Boot/">Spring Boot</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WP/">WP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/neo4j/">neo4j</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书评/">书评</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区块链/">区块链</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/待补充/">待补充</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摘抄/">摘抄</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电视剧/">电视剧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纪录片/">纪录片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/重构/">重构</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a><span class="tag-list-count">6</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Crypto/">Crypto</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Element/">Element</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT书籍/">IT书籍</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Boot/">Spring Boot</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WP/">WP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/neo4j/">neo4j</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书评/">书评</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区块链/">区块链</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/待补充/">待补充</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摘抄/">摘抄</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/深度学习/">深度学习</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电视剧/">电视剧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纪录片/">纪录片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/重构/">重构</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a><span class="tag-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -213,7 +213,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Crypto/" style="font-size: 13.13px;">Crypto</a> <a href="/tags/Element/" style="font-size: 13.75px;">Element</a> <a href="/tags/Git/" style="font-size: 13.5px;">Git</a> <a href="/tags/Hexo/" style="font-size: 13.38px;">Hexo</a> <a href="/tags/IT书籍/" style="font-size: 13px;">IT书籍</a> <a href="/tags/MySQL/" style="font-size: 13.63px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 13px;">Redis</a> <a href="/tags/Spring-Boot/" style="font-size: 13.13px;">Spring Boot</a> <a href="/tags/Vue/" style="font-size: 13px;">Vue</a> <a href="/tags/WP/" style="font-size: 13.25px;">WP</a> <a href="/tags/Web/" style="font-size: 13.13px;">Web</a> <a href="/tags/neo4j/" style="font-size: 13px;">neo4j</a> <a href="/tags/selenium/" style="font-size: 13.13px;">selenium</a> <a href="/tags/书评/" style="font-size: 13.88px;">书评</a> <a href="/tags/区块链/" style="font-size: 13px;">区块链</a> <a href="/tags/待补充/" style="font-size: 14px;">待补充</a> <a href="/tags/摘抄/" style="font-size: 13.13px;">摘抄</a> <a href="/tags/电影/" style="font-size: 13.25px;">电影</a> <a href="/tags/电视剧/" style="font-size: 13px;">电视剧</a> <a href="/tags/纪录片/" style="font-size: 13px;">纪录片</a> <a href="/tags/重构/" style="font-size: 13.38px;">重构</a> <a href="/tags/面试/" style="font-size: 13.63px;">面试</a>
+      <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Crypto/" style="font-size: 13.14px;">Crypto</a> <a href="/tags/Element/" style="font-size: 13.71px;">Element</a> <a href="/tags/Git/" style="font-size: 13.71px;">Git</a> <a href="/tags/Hexo/" style="font-size: 13.43px;">Hexo</a> <a href="/tags/IT书籍/" style="font-size: 13px;">IT书籍</a> <a href="/tags/MySQL/" style="font-size: 13.71px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 13px;">Redis</a> <a href="/tags/Spring-Boot/" style="font-size: 13.14px;">Spring Boot</a> <a href="/tags/Vue/" style="font-size: 13px;">Vue</a> <a href="/tags/WP/" style="font-size: 13.29px;">WP</a> <a href="/tags/Web/" style="font-size: 13.14px;">Web</a> <a href="/tags/neo4j/" style="font-size: 13px;">neo4j</a> <a href="/tags/selenium/" style="font-size: 13.14px;">selenium</a> <a href="/tags/书评/" style="font-size: 13.86px;">书评</a> <a href="/tags/区块链/" style="font-size: 13px;">区块链</a> <a href="/tags/待补充/" style="font-size: 14px;">待补充</a> <a href="/tags/摘抄/" style="font-size: 13.14px;">摘抄</a> <a href="/tags/深度学习/" style="font-size: 13.14px;">深度学习</a> <a href="/tags/电影/" style="font-size: 13.29px;">电影</a> <a href="/tags/电视剧/" style="font-size: 13px;">电视剧</a> <a href="/tags/纪录片/" style="font-size: 13px;">纪录片</a> <a href="/tags/重构/" style="font-size: 13.43px;">重构</a> <a href="/tags/面试/" style="font-size: 13.57px;">面试</a>
     </div>
   </div>
 
@@ -222,7 +222,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">35</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">34</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">43</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">34</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -238,13 +238,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/C/">C++</a>
+                <a class="category-link" href="/categories/计组/">计组</a>
               </p>
               <p class="item-title">
-                <a href="/2022/04/19/C++新标准/" class="title">C++新标准</a>
+                <a href="/2022/06/05/Lab3实验总结/" class="title">Lab3实验总结</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-04-19T05:58:58.000Z" itemprop="datePublished">2022-04-19</time>
+                <time datetime="2022-06-05T12:52:07.000Z" itemprop="datePublished">2022-06-05</time>
               </p>
             </div>
           </li>
@@ -253,13 +253,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/C/">C++</a>
+                
               </p>
               <p class="item-title">
-                <a href="/2022/04/19/C++编译与底层/" class="title">C++编译与底层</a>
+                <a href="/2022/05/29/Java中调用Python程序/" class="title">Java中调用Python程序</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-04-19T05:58:45.000Z" itemprop="datePublished">2022-04-19</time>
+                <time datetime="2022-05-29T14:28:07.000Z" itemprop="datePublished">2022-05-29</time>
               </p>
             </div>
           </li>
@@ -268,13 +268,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/C/">C++</a>
+                <a class="category-link" href="/categories/环境与工具/">环境与工具</a>
               </p>
               <p class="item-title">
-                <a href="/2022/04/19/C++STL/" class="title">C++STL</a>
+                <a href="/2022/05/27/gdb调试/" class="title">gdb调试</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-04-19T05:58:31.000Z" itemprop="datePublished">2022-04-19</time>
+                <time datetime="2022-05-27T05:24:18.000Z" itemprop="datePublished">2022-05-27</time>
               </p>
             </div>
           </li>
@@ -283,13 +283,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/C/">C++</a>
+                <a class="category-link" href="/categories/计组/">计组</a>
               </p>
               <p class="item-title">
-                <a href="/2022/04/19/C++模板/" class="title">C++模板</a>
+                <a href="/2022/05/27/PA答疑之a4指令码报错/" class="title">PA答疑之a4指令码报错</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-04-19T05:58:21.000Z" itemprop="datePublished">2022-04-19</time>
+                <time datetime="2022-05-27T05:06:36.000Z" itemprop="datePublished">2022-05-27</time>
               </p>
             </div>
           </li>
@@ -298,13 +298,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/C/">C++</a>
+                <a class="category-link" href="/categories/计组/">计组</a>
               </p>
               <p class="item-title">
-                <a href="/2022/04/19/C++类/" class="title">C++类</a>
+                <a href="/2022/05/26/64位Ubuntu运行32位程序/" class="title">64位Ubuntu运行或调试32位程序</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-04-19T05:57:56.000Z" itemprop="datePublished">2022-04-19</time>
+                <time datetime="2022-05-26T05:20:32.000Z" itemprop="datePublished">2022-05-26</time>
               </p>
             </div>
           </li>
@@ -324,7 +324,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-C-容器类的底层实现"><span class="toc-number">1.</span> <span class="toc-text">1 C++容器类的底层实现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-unordered-map-和-map-区别"><span class="toc-number">2.</span> <span class="toc-text">2 unordered_map 和 map 区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-红黑树"><span class="toc-number">3.</span> <span class="toc-text">3 红黑树</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-vector-和-list-区别"><span class="toc-number">4.</span> <span class="toc-text">4 vector 和 list 区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-vector-扩容原理"><span class="toc-number">5.</span> <span class="toc-text">5 vector 扩容原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-迭代器失效问题"><span class="toc-number">6.</span> <span class="toc-text">6 迭代器失效问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-使用-map-的使用不是基础数据类型需要重载什么运算符"><span class="toc-number">7.</span> <span class="toc-text">7 使用 map 的使用不是基础数据类型需要重载什么运算符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-list-和-map-的区别"><span class="toc-number">8.</span> <span class="toc-text">8 list 和 map 的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-二叉搜索树、平衡二叉树和红黑树的区别"><span class="toc-number">9.</span> <span class="toc-text">9 二叉搜索树、平衡二叉树和红黑树的区别</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-c容器类的底层实现"><span class="toc-number">1.</span> <span class="toc-text"> 1 C++容器类的底层实现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-unordered_map-和-map-区别"><span class="toc-number">2.</span> <span class="toc-text"> 2 unordered_map 和 map 区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-红黑树"><span class="toc-number">3.</span> <span class="toc-text"> 3 红黑树</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-vector-和-list-区别"><span class="toc-number">4.</span> <span class="toc-text"> 4 vector 和 list 区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-vector-扩容原理"><span class="toc-number">5.</span> <span class="toc-text"> 5 vector 扩容原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-迭代器失效问题"><span class="toc-number">6.</span> <span class="toc-text"> 6 迭代器失效问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-使用-map-的使用不是基础数据类型需要重载什么运算符"><span class="toc-number">7.</span> <span class="toc-text"> 7 使用 map 的使用不是基础数据类型需要重载什么运算符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-list-和-map-的区别"><span class="toc-number">8.</span> <span class="toc-text"> 8 list 和 map 的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-二叉搜索树-平衡二叉树和红黑树的区别"><span class="toc-number">9.</span> <span class="toc-text"> 9 二叉搜索树、平衡二叉树和红黑树的区别</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -391,8 +391,8 @@
 <li>《C++ Primer Plus (第6版)中文版》Stephen Prata 著 张海龙 袁国忠 译 人民邮电出版社 2012</li>
 </ul>
 </blockquote>
-<h1 id="1-C-容器类的底层实现"><a href="#1-C-容器类的底层实现" class="headerlink" title="1 C++容器类的底层实现"></a>1 C++容器类的底层实现</h1><p><strong>以下分别用<code>K</code>、<code>T</code>指代泛型参数</strong>。</p>
-<div class="table-container">
+<h1 id="1-c容器类的底层实现"><a class="markdownIt-Anchor" href="#1-c容器类的底层实现"></a> 1 C++容器类的底层实现</h1>
+<p><strong>以下分别用<code>K</code>、<code>T</code>指代泛型参数</strong>。</p>
 <table>
 <thead>
 <tr>
@@ -464,13 +464,14 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p>注意 stack、queue、priority_queue 均为容器适配器。stack 和 queue 底层一般用 list 或 deque 实现，不用 vector 的原因应该是容量大小有限制，扩容耗时。priority_queue 一般用 vector 作底层容器。</p>
-<h1 id="2-unordered-map-和-map-区别"><a href="#2-unordered-map-和-map-区别" class="headerlink" title="2 unordered_map 和 map 区别"></a>2 unordered_map 和 map 区别</h1><ol>
+<h1 id="2-unordered_map-和-map-区别"><a class="markdownIt-Anchor" href="#2-unordered_map-和-map-区别"></a> 2 unordered_map 和 map 区别</h1>
+<ol>
 <li>map 内部实现了一个红黑树（红黑树是非严格平衡二叉搜索树，而 AVL 是严格平衡二叉搜索树），因此 map 内部的所有元素都是有序的，存取一个元素时间复杂度是 O(logn)</li>
 <li>unordered_map 内部实现了一个哈希表，其元素的排列顺序是无序的，取一个元素时间复杂度是 O(1)</li>
 </ol>
-<h1 id="3-红黑树"><a href="#3-红黑树" class="headerlink" title="3 红黑树"></a>3 红黑树</h1><p>红黑树是一颗满足如下性质的二叉查找树：</p>
+<h1 id="3-红黑树"><a class="markdownIt-Anchor" href="#3-红黑树"></a> 3 红黑树</h1>
+<p>红黑树是一颗满足如下性质的二叉查找树：</p>
 <ol>
 <li>每个结点或者为黑色或者为红色；</li>
 <li>根结点为黑色；</li>
@@ -480,7 +481,13 @@
 </ol>
 <p>红黑树的每个结点的属性除了有一个key、3个指针(parent、lchild、rchild)以外，还有个color属性。</p>
 <p>通过对任何一条从根到叶子的路径上各个节点着色的方式的限制，<strong>红黑树确保没有一条路径会比其它路径长出两倍</strong>。</p>
-<h1 id="4-vector-和-list-区别"><a href="#4-vector-和-list-区别" class="headerlink" title="4 vector 和 list 区别"></a>4 vector 和 list 区别</h1><h1 id="5-vector-扩容原理"><a href="#5-vector-扩容原理" class="headerlink" title="5 vector 扩容原理"></a>5 vector 扩容原理</h1><h1 id="6-迭代器失效问题"><a href="#6-迭代器失效问题" class="headerlink" title="6 迭代器失效问题"></a>6 迭代器失效问题</h1><h1 id="7-使用-map-的使用不是基础数据类型需要重载什么运算符"><a href="#7-使用-map-的使用不是基础数据类型需要重载什么运算符" class="headerlink" title="7 使用 map 的使用不是基础数据类型需要重载什么运算符"></a>7 使用 map 的使用不是基础数据类型需要重载什么运算符</h1><h1 id="8-list-和-map-的区别"><a href="#8-list-和-map-的区别" class="headerlink" title="8 list 和 map 的区别"></a>8 list 和 map 的区别</h1><h1 id="9-二叉搜索树、平衡二叉树和红黑树的区别"><a href="#9-二叉搜索树、平衡二叉树和红黑树的区别" class="headerlink" title="9 二叉搜索树、平衡二叉树和红黑树的区别"></a>9 二叉搜索树、平衡二叉树和红黑树的区别</h1><p><a href="https://zhuanlan.zhihu.com/p/258078863" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/258078863</a></p>
+<h1 id="4-vector-和-list-区别"><a class="markdownIt-Anchor" href="#4-vector-和-list-区别"></a> 4 vector 和 list 区别</h1>
+<h1 id="5-vector-扩容原理"><a class="markdownIt-Anchor" href="#5-vector-扩容原理"></a> 5 vector 扩容原理</h1>
+<h1 id="6-迭代器失效问题"><a class="markdownIt-Anchor" href="#6-迭代器失效问题"></a> 6 迭代器失效问题</h1>
+<h1 id="7-使用-map-的使用不是基础数据类型需要重载什么运算符"><a class="markdownIt-Anchor" href="#7-使用-map-的使用不是基础数据类型需要重载什么运算符"></a> 7 使用 map 的使用不是基础数据类型需要重载什么运算符</h1>
+<h1 id="8-list-和-map-的区别"><a class="markdownIt-Anchor" href="#8-list-和-map-的区别"></a> 8 list 和 map 的区别</h1>
+<h1 id="9-二叉搜索树-平衡二叉树和红黑树的区别"><a class="markdownIt-Anchor" href="#9-二叉搜索树-平衡二叉树和红黑树的区别"></a> 9 二叉搜索树、平衡二叉树和红黑树的区别</h1>
+<p><a href="https://zhuanlan.zhihu.com/p/258078863" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/258078863</a></p>
 
       
     </div>

@@ -18,13 +18,13 @@
   
   
   <title>Windows下安装与使用neo4j | Dragon&#39;s Blogs</title>
-  <meta name="description" content="1 引言最近在实现恶意样本行为可视化，使用 python模块graphviz使用教程 可以达到既定要求；但是图数据库neo4j理论上也是个不错的选择，所以整理下。 思路：安装Neo4j数据库，python语言使用py2neo库进行使用。 2 安装Neo4j主要copy于 图数据库neo4j的安装与基本使用(一) 2.1 安装JDKNeo4j是基于Java的图形数据库，运行Neo4j需要启动JVM进">
+  <meta name="description" content="1 引言 最近在实现恶意样本行为可视化，使用 python模块graphviz使用教程 可以达到既定要求；但是图数据库neo4j理论上也是个不错的选择，所以整理下。 思路：安装Neo4j数据库，python语言使用py2neo库进行使用。  2 安装Neo4j 主要copy于 图数据库neo4j的安装与基本使用(一)  2.1 安装JDK Neo4j是基于Java的图形数据库，运行Neo4j需要">
 <meta name="keywords" content="neo4j">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows下安装与使用neo4j">
 <meta property="og:url" content="https://Dragonliu2018.github.io/2022/02/10/Windows下安装与使用neo4j/index.html">
 <meta property="og:site_name" content="Dragon Liu">
-<meta property="og:description" content="1 引言最近在实现恶意样本行为可视化，使用 python模块graphviz使用教程 可以达到既定要求；但是图数据库neo4j理论上也是个不错的选择，所以整理下。 思路：安装Neo4j数据库，python语言使用py2neo库进行使用。 2 安装Neo4j主要copy于 图数据库neo4j的安装与基本使用(一) 2.1 安装JDKNeo4j是基于Java的图形数据库，运行Neo4j需要启动JVM进">
+<meta property="og:description" content="1 引言 最近在实现恶意样本行为可视化，使用 python模块graphviz使用教程 可以达到既定要求；但是图数据库neo4j理论上也是个不错的选择，所以整理下。 思路：安装Neo4j数据库，python语言使用py2neo库进行使用。  2 安装Neo4j 主要copy于 图数据库neo4j的安装与基本使用(一)  2.1 安装JDK Neo4j是基于Java的图形数据库，运行Neo4j需要">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.loli.net/2022/02/11/lkopux9h8Zn7PeE.png">
 <meta property="og:image" content="https://s2.loli.net/2022/02/11/3d7LJMoKpr2WxNC.png">
@@ -33,7 +33,7 @@
 <meta property="og:updated_time" content="2022-04-18T09:59:20.659Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows下安装与使用neo4j">
-<meta name="twitter:description" content="1 引言最近在实现恶意样本行为可视化，使用 python模块graphviz使用教程 可以达到既定要求；但是图数据库neo4j理论上也是个不错的选择，所以整理下。 思路：安装Neo4j数据库，python语言使用py2neo库进行使用。 2 安装Neo4j主要copy于 图数据库neo4j的安装与基本使用(一) 2.1 安装JDKNeo4j是基于Java的图形数据库，运行Neo4j需要启动JVM进">
+<meta name="twitter:description" content="1 引言 最近在实现恶意样本行为可视化，使用 python模块graphviz使用教程 可以达到既定要求；但是图数据库neo4j理论上也是个不错的选择，所以整理下。 思路：安装Neo4j数据库，python语言使用py2neo库进行使用。  2 安装Neo4j 主要copy于 图数据库neo4j的安装与基本使用(一)  2.1 安装JDK Neo4j是基于Java的图形数据库，运行Neo4j需要">
 <meta name="twitter:image" content="https://s2.loli.net/2022/02/11/lkopux9h8Zn7PeE.png">
   <!-- Canonical links -->
   <link rel="canonical" href="https://Dragonliu2018.github.io/2022/02/10/Windows下安装与使用neo4j/index.html">
@@ -198,7 +198,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">37</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/安全/">安全</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/爬虫/">爬虫</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/音乐/">音乐</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">41</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/安全/">安全</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/爬虫/">爬虫</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">34</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/音乐/">音乐</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -208,7 +208,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Crypto/">Crypto</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Element/">Element</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT书籍/">IT书籍</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Boot/">Spring Boot</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WP/">WP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/neo4j/">neo4j</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书评/">书评</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区块链/">区块链</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/待补充/">待补充</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摘抄/">摘抄</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电视剧/">电视剧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纪录片/">纪录片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/重构/">重构</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a><span class="tag-list-count">6</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Crypto/">Crypto</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Element/">Element</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT书籍/">IT书籍</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Boot/">Spring Boot</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WP/">WP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/neo4j/">neo4j</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书评/">书评</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区块链/">区块链</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/待补充/">待补充</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摘抄/">摘抄</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/深度学习/">深度学习</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电视剧/">电视剧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纪录片/">纪录片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/重构/">重构</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a><span class="tag-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -218,7 +218,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Crypto/" style="font-size: 13.13px;">Crypto</a> <a href="/tags/Element/" style="font-size: 13.75px;">Element</a> <a href="/tags/Git/" style="font-size: 13.5px;">Git</a> <a href="/tags/Hexo/" style="font-size: 13.38px;">Hexo</a> <a href="/tags/IT书籍/" style="font-size: 13px;">IT书籍</a> <a href="/tags/MySQL/" style="font-size: 13.63px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 13px;">Redis</a> <a href="/tags/Spring-Boot/" style="font-size: 13.13px;">Spring Boot</a> <a href="/tags/Vue/" style="font-size: 13px;">Vue</a> <a href="/tags/WP/" style="font-size: 13.25px;">WP</a> <a href="/tags/Web/" style="font-size: 13.13px;">Web</a> <a href="/tags/neo4j/" style="font-size: 13px;">neo4j</a> <a href="/tags/selenium/" style="font-size: 13.13px;">selenium</a> <a href="/tags/书评/" style="font-size: 13.88px;">书评</a> <a href="/tags/区块链/" style="font-size: 13px;">区块链</a> <a href="/tags/待补充/" style="font-size: 14px;">待补充</a> <a href="/tags/摘抄/" style="font-size: 13.13px;">摘抄</a> <a href="/tags/电影/" style="font-size: 13.25px;">电影</a> <a href="/tags/电视剧/" style="font-size: 13px;">电视剧</a> <a href="/tags/纪录片/" style="font-size: 13px;">纪录片</a> <a href="/tags/重构/" style="font-size: 13.38px;">重构</a> <a href="/tags/面试/" style="font-size: 13.63px;">面试</a>
+      <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Crypto/" style="font-size: 13.14px;">Crypto</a> <a href="/tags/Element/" style="font-size: 13.71px;">Element</a> <a href="/tags/Git/" style="font-size: 13.71px;">Git</a> <a href="/tags/Hexo/" style="font-size: 13.43px;">Hexo</a> <a href="/tags/IT书籍/" style="font-size: 13px;">IT书籍</a> <a href="/tags/MySQL/" style="font-size: 13.71px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 13px;">Redis</a> <a href="/tags/Spring-Boot/" style="font-size: 13.14px;">Spring Boot</a> <a href="/tags/Vue/" style="font-size: 13px;">Vue</a> <a href="/tags/WP/" style="font-size: 13.29px;">WP</a> <a href="/tags/Web/" style="font-size: 13.14px;">Web</a> <a href="/tags/neo4j/" style="font-size: 13px;">neo4j</a> <a href="/tags/selenium/" style="font-size: 13.14px;">selenium</a> <a href="/tags/书评/" style="font-size: 13.86px;">书评</a> <a href="/tags/区块链/" style="font-size: 13px;">区块链</a> <a href="/tags/待补充/" style="font-size: 14px;">待补充</a> <a href="/tags/摘抄/" style="font-size: 13.14px;">摘抄</a> <a href="/tags/深度学习/" style="font-size: 13.14px;">深度学习</a> <a href="/tags/电影/" style="font-size: 13.29px;">电影</a> <a href="/tags/电视剧/" style="font-size: 13px;">电视剧</a> <a href="/tags/纪录片/" style="font-size: 13px;">纪录片</a> <a href="/tags/重构/" style="font-size: 13.43px;">重构</a> <a href="/tags/面试/" style="font-size: 13.57px;">面试</a>
     </div>
   </div>
 
@@ -227,7 +227,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">35</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">34</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">43</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">34</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -243,13 +243,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/C/">C++</a>
+                <a class="category-link" href="/categories/计组/">计组</a>
               </p>
               <p class="item-title">
-                <a href="/2022/04/19/C++新标准/" class="title">C++新标准</a>
+                <a href="/2022/06/05/Lab3实验总结/" class="title">Lab3实验总结</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-04-19T05:58:58.000Z" itemprop="datePublished">2022-04-19</time>
+                <time datetime="2022-06-05T12:52:07.000Z" itemprop="datePublished">2022-06-05</time>
               </p>
             </div>
           </li>
@@ -258,13 +258,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/C/">C++</a>
+                
               </p>
               <p class="item-title">
-                <a href="/2022/04/19/C++编译与底层/" class="title">C++编译与底层</a>
+                <a href="/2022/05/29/Java中调用Python程序/" class="title">Java中调用Python程序</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-04-19T05:58:45.000Z" itemprop="datePublished">2022-04-19</time>
+                <time datetime="2022-05-29T14:28:07.000Z" itemprop="datePublished">2022-05-29</time>
               </p>
             </div>
           </li>
@@ -273,13 +273,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/C/">C++</a>
+                <a class="category-link" href="/categories/环境与工具/">环境与工具</a>
               </p>
               <p class="item-title">
-                <a href="/2022/04/19/C++STL/" class="title">C++STL</a>
+                <a href="/2022/05/27/gdb调试/" class="title">gdb调试</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-04-19T05:58:31.000Z" itemprop="datePublished">2022-04-19</time>
+                <time datetime="2022-05-27T05:24:18.000Z" itemprop="datePublished">2022-05-27</time>
               </p>
             </div>
           </li>
@@ -288,13 +288,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/C/">C++</a>
+                <a class="category-link" href="/categories/计组/">计组</a>
               </p>
               <p class="item-title">
-                <a href="/2022/04/19/C++模板/" class="title">C++模板</a>
+                <a href="/2022/05/27/PA答疑之a4指令码报错/" class="title">PA答疑之a4指令码报错</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-04-19T05:58:21.000Z" itemprop="datePublished">2022-04-19</time>
+                <time datetime="2022-05-27T05:06:36.000Z" itemprop="datePublished">2022-05-27</time>
               </p>
             </div>
           </li>
@@ -303,13 +303,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/C/">C++</a>
+                <a class="category-link" href="/categories/计组/">计组</a>
               </p>
               <p class="item-title">
-                <a href="/2022/04/19/C++类/" class="title">C++类</a>
+                <a href="/2022/05/26/64位Ubuntu运行32位程序/" class="title">64位Ubuntu运行或调试32位程序</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-04-19T05:57:56.000Z" itemprop="datePublished">2022-04-19</time>
+                <time datetime="2022-05-26T05:20:32.000Z" itemprop="datePublished">2022-05-26</time>
               </p>
             </div>
           </li>
@@ -329,7 +329,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-引言"><span class="toc-number">1.</span> <span class="toc-text">1 引言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-安装Neo4j"><span class="toc-number">2.</span> <span class="toc-text">2 安装Neo4j</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-安装JDK"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 安装JDK</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-安装Neo4j"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 安装Neo4j</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-配置环境变量"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 配置环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-启动neo4j"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 启动neo4j</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-1-通过控制台启动Neo4j程序"><span class="toc-number">2.4.1.</span> <span class="toc-text">2.4.1 通过控制台启动Neo4j程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-2-把Neo4j安装为服务（Windows-Services）"><span class="toc-number">2.4.2.</span> <span class="toc-text">2.4.2 把Neo4j安装为服务（Windows Services）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-python使用"><span class="toc-number">3.</span> <span class="toc-text">3 python使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-连接数据库"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 连接数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-基本操作"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 基本操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-拓展——SPADE"><span class="toc-number">4.</span> <span class="toc-text">4 拓展——SPADE</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#X-参考"><span class="toc-number">5.</span> <span class="toc-text">X 参考</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-引言"><span class="toc-number">1.</span> <span class="toc-text"> 1 引言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-安装neo4j"><span class="toc-number">2.</span> <span class="toc-text"> 2 安装Neo4j</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#21-安装jdk"><span class="toc-number">2.1.</span> <span class="toc-text"> 2.1 安装JDK</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-安装neo4j"><span class="toc-number">2.2.</span> <span class="toc-text"> 2.2 安装Neo4j</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23-配置环境变量"><span class="toc-number">2.3.</span> <span class="toc-text"> 2.3 配置环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#24-启动neo4j"><span class="toc-number">2.4.</span> <span class="toc-text"> 2.4 启动neo4j</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#241-通过控制台启动neo4j程序"><span class="toc-number">2.4.1.</span> <span class="toc-text"> 2.4.1 通过控制台启动Neo4j程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#242-把neo4j安装为服务windows-services"><span class="toc-number">2.4.2.</span> <span class="toc-text"> 2.4.2 把Neo4j安装为服务（Windows Services）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-python使用"><span class="toc-number">3.</span> <span class="toc-text"> 3 python使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#31-连接数据库"><span class="toc-number">3.1.</span> <span class="toc-text"> 3.1 连接数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#32-基本操作"><span class="toc-number">3.2.</span> <span class="toc-text"> 3.2 基本操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-拓展spade"><span class="toc-number">4.</span> <span class="toc-text"> 4 拓展——SPADE</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#x-参考"><span class="toc-number">5.</span> <span class="toc-text"> X 参考</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -380,7 +380,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/02/10/Windows下安装与使用neo4j/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 836(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 843(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
@@ -390,47 +390,63 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="1-引言"><a href="#1-引言" class="headerlink" title="1 引言"></a>1 引言</h1><p>最近在实现恶意样本行为可视化，使用 <a href="dragonliu.tk/2022/02/03/python模块graphviz使用教程/">python模块graphviz使用教程</a> 可以达到既定要求；但是图数据库neo4j理论上也是个不错的选择，所以整理下。</p>
+        <h1 id="1-引言"><a class="markdownIt-Anchor" href="#1-引言"></a> 1 引言</h1>
+<p>最近在实现恶意样本行为可视化，使用 <a href="dragonliu.tk/2022/02/03/python%E6%A8%A1%E5%9D%97graphviz%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">python模块graphviz使用教程</a> 可以达到既定要求；但是图数据库neo4j理论上也是个不错的选择，所以整理下。</p>
 <p>思路：安装Neo4j数据库，python语言使用py2neo库进行使用。</p>
-<h1 id="2-安装Neo4j"><a href="#2-安装Neo4j" class="headerlink" title="2 安装Neo4j"></a>2 安装Neo4j</h1><p>主要copy于 <a href="https://cloud.tencent.com/developer/article/1387732" target="_blank" rel="noopener">图数据库neo4j的安装与基本使用(一)</a></p>
-<h2 id="2-1-安装JDK"><a href="#2-1-安装JDK" class="headerlink" title="2.1 安装JDK"></a>2.1 安装JDK</h2><p>Neo4j是基于Java的图形<a href="https://cloud.tencent.com/solution/database?from=10680" target="_blank" rel="noopener">数据库</a>，运行Neo4j需要启动JVM进程，因此必须安装JAVA SE的JDK。从Oracle官方网站下载 <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">Java SE JDK</a>，当前的版本是JDK8。<font color="red">java版本的高低决定了Neo4j的版本</font></p>
-<h2 id="2-2-安装Neo4j"><a href="#2-2-安装Neo4j" class="headerlink" title="2.2 安装Neo4j"></a>2.2 安装Neo4j</h2><p>官网下载最新版本<a href="https://neo4j.com/download/other-releases/" target="_blank" rel="noopener">Neo4j</a></p>
+<h1 id="2-安装neo4j"><a class="markdownIt-Anchor" href="#2-安装neo4j"></a> 2 安装Neo4j</h1>
+<p>主要copy于 <a href="https://cloud.tencent.com/developer/article/1387732" target="_blank" rel="noopener">图数据库neo4j的安装与基本使用(一)</a></p>
+<h2 id="21-安装jdk"><a class="markdownIt-Anchor" href="#21-安装jdk"></a> 2.1 安装JDK</h2>
+<p>Neo4j是基于Java的图形<a href="https://cloud.tencent.com/solution/database?from=10680" target="_blank" rel="noopener">数据库</a>，运行Neo4j需要启动JVM进程，因此必须安装JAVA SE的JDK。从Oracle官方网站下载 <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">Java SE JDK</a>，当前的版本是JDK8。<font color="red">java版本的高低决定了Neo4j的版本</font></p>
+<h2 id="22-安装neo4j"><a class="markdownIt-Anchor" href="#22-安装neo4j"></a> 2.2 安装Neo4j</h2>
+<p>官网下载最新版本<a href="https://neo4j.com/download/other-releases/" target="_blank" rel="noopener">Neo4j</a></p>
 <p>Neo4j应用程序有如下主要的目录结构：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">bin目录：用于存储Neo4j的可执行程序；</span><br><span class="line">conf目录：用于控制Neo4j启动的配置文件；</span><br><span class="line">data目录：用于存储核心数据库文件；</span><br><span class="line">plugins目录：用于存储Neo4j的插件；</span><br></pre></td></tr></table></figure>
-<h2 id="2-3-配置环境变量"><a href="#2-3-配置环境变量" class="headerlink" title="2.3 配置环境变量"></a>2.3 配置环境变量</h2><p>创建主目录环境变量NEO4J_HOME，并把主目录设置为变量值。</p>
-<p><img src="https://s2.loli.net/2022/02/11/lkopux9h8Zn7PeE.png" width="600" height="200" alt="图片名称" align="center" id="72"></p>
-<h2 id="2-4-启动neo4j"><a href="#2-4-启动neo4j" class="headerlink" title="2.4 启动neo4j"></a>2.4 启动neo4j</h2><h3 id="2-4-1-通过控制台启动Neo4j程序"><a href="#2-4-1-通过控制台启动Neo4j程序" class="headerlink" title="2.4.1 通过控制台启动Neo4j程序"></a>2.4.1 通过控制台启动Neo4j程序</h3><p>打开cmd，切换到Neo4j主目录下的<code>bin</code>目录，运行下面命令即可：</p>
+<h2 id="23-配置环境变量"><a class="markdownIt-Anchor" href="#23-配置环境变量"></a> 2.3 配置环境变量</h2>
+<p>创建主目录环境变量NEO4J_HOME，并把主目录设置为变量值。</p>
+<img src="https://s2.loli.net/2022/02/11/lkopux9h8Zn7PeE.png" width="600" height="200" alt="图片名称" align="center" id="72">
+<h2 id="24-启动neo4j"><a class="markdownIt-Anchor" href="#24-启动neo4j"></a> 2.4 启动neo4j</h2>
+<h3 id="241-通过控制台启动neo4j程序"><a class="markdownIt-Anchor" href="#241-通过控制台启动neo4j程序"></a> 2.4.1 通过控制台启动Neo4j程序</h3>
+<p>打开cmd，切换到Neo4j主目录下的<code>bin</code>目录，运行下面命令即可：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">neo4j.bat console</span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.loli.net/2022/02/11/3d7LJMoKpr2WxNC.png" width="800" height="200" alt="图片名称" align="center" id="73"></p>
-<p><img src="https://s2.loli.net/2022/02/11/nFHPDW9Tfxz6LXY.png" width="600" height="300" alt="图片名称" align="center" id="74"></p>
+<img src="https://s2.loli.net/2022/02/11/3d7LJMoKpr2WxNC.png" width="800" height="200" alt="图片名称" align="center" id="73">
+<img src="https://s2.loli.net/2022/02/11/nFHPDW9Tfxz6LXY.png" width="600" height="300" alt="图片名称" align="center" id="74">
 <p>用户名和密码默认为<code>neo4j</code>，首次登陆需要修改密码(Neo4j)</p>
-<font color="red">java与neo4j版本不对应的报错：</font>
-
+<p><font color="red">java与neo4j版本不对应的报错：</font></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">警告: ERROR! Neo4j cannot be started using java version <span class="number">1.8</span><span class="number">.0</span>_301</span><br><span class="line">警告: * Please use Oracle(R) Java(TM) <span class="number">11</span>, OpenJDK(TM) <span class="number">11</span> to run Neo4j Server.</span><br><span class="line">* Please see https://neo4j.com/docs/ <span class="keyword">for</span> Neo4j installation instructions.</span><br><span class="line">Invoke-Neo4j : This instance of Java <span class="keyword">is</span> <span class="keyword">not</span> supported</span><br><span class="line">所在位置 D:\developer\neo4j\neo4j-community<span class="number">-4.4</span><span class="number">.3</span>\bin\neo4j.ps1:<span class="number">21</span> 字符: <span class="number">7</span></span><br><span class="line">+ Exit (Invoke-Neo4j -Verbose:$Arguments.Verbose -CommandArgs $Argument ...</span><br><span class="line">+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span><br><span class="line">    + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException</span><br><span class="line">    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException,Invoke-Neo4j</span><br></pre></td></tr></table></figure>
 <p>当时我测试的版本(JDK8+Neo4j4.4.4)出现上面的报错，该换JDK8+Neo4j3.5.30后成功运行。</p>
-<h3 id="2-4-2-把Neo4j安装为服务（Windows-Services）"><a href="#2-4-2-把Neo4j安装为服务（Windows-Services）" class="headerlink" title="2.4.2 把Neo4j安装为服务（Windows Services）"></a>2.4.2 把Neo4j安装为服务（Windows Services）</h3><p>请查阅  <a href="https://cloud.tencent.com/developer/article/1387732" target="_blank" rel="noopener">图数据库neo4j的安装与基本使用(一)</a></p>
-<h1 id="3-python使用"><a href="#3-python使用" class="headerlink" title="3 python使用"></a>3 python使用</h1><p>python通过调用<code>py2neo</code> 库实现对数据库的操作。</p>
+<h3 id="242-把neo4j安装为服务windows-services"><a class="markdownIt-Anchor" href="#242-把neo4j安装为服务windows-services"></a> 2.4.2 把Neo4j安装为服务（Windows Services）</h3>
+<p>请查阅  <a href="https://cloud.tencent.com/developer/article/1387732" target="_blank" rel="noopener">图数据库neo4j的安装与基本使用(一)</a></p>
+<h1 id="3-python使用"><a class="markdownIt-Anchor" href="#3-python使用"></a> 3 python使用</h1>
+<p>python通过调用<code>py2neo</code> 库实现对数据库的操作。</p>
 <ul>
-<li><p><a href="https://py2neo.org/v4/data.html#node-and-relationship-objects" target="_blank" rel="noopener">py2neo官网</a></p>
+<li>
+<p><a href="https://py2neo.org/v4/data.html#node-and-relationship-objects" target="_blank" rel="noopener">py2neo官网</a></p>
 </li>
-<li><p><a href="https://www.jianshu.com/p/a2497a33390f" target="_blank" rel="noopener">py2neo——Neo4j&amp;python的配合使用</a></p>
+<li>
+<p><a href="https://www.jianshu.com/p/a2497a33390f" target="_blank" rel="noopener">py2neo——Neo4j&amp;python的配合使用</a></p>
 </li>
-<li><a href="https://cloud.tencent.com/developer/article/1693445" target="_blank" rel="noopener">用Python中的py2neo库调用neo4j，搭建简单关联图谱</a></li>
+<li>
+<p><a href="https://cloud.tencent.com/developer/article/1693445" target="_blank" rel="noopener">用Python中的py2neo库调用neo4j，搭建简单关联图谱</a></p>
+</li>
 </ul>
-<h2 id="3-1-连接数据库"><a href="#3-1-连接数据库" class="headerlink" title="3.1 连接数据库"></a>3.1 连接数据库</h2><p>安装py2neo库：<code>pip install py2neo</code></p>
+<h2 id="31-连接数据库"><a class="markdownIt-Anchor" href="#31-连接数据库"></a> 3.1 连接数据库</h2>
+<p>安装py2neo库：<code>pip install py2neo</code></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> py2neo <span class="keyword">import</span> Graph</span><br><span class="line"></span><br><span class="line">test_graph = Graph(</span><br><span class="line">    <span class="string">"http://localhost:7474"</span>,</span><br><span class="line">    username=<span class="string">"neo4j"</span>,</span><br><span class="line">    password=<span class="string">"Neo4j"</span>  <span class="comment">#修改后的密码</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <p>测试时出现报错：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ValueError: The following settings are not supported: &#123;<span class="string">'username'</span>: <span class="string">'neo4j'</span>&#125;</span><br></pre></td></tr></table></figure>
 <p>因为py2neo版本问题，需要做出以下修改：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> py2neo <span class="keyword">import</span> Graph</span><br><span class="line"></span><br><span class="line">test_graph = Graph(<span class="string">"http://localhost:7474"</span>, auth=(<span class="string">"neo4j"</span>, <span class="string">"Neo4j"</span>))</span><br></pre></td></tr></table></figure>
 <p>详见 <a href="https://blog.csdn.net/u010785550/article/details/116856031" target="_blank" rel="noopener">关于使用Py2neo连接Neo4j图数据库出现“ValueError: The following settings are not supported”报错的解决方案</a></p>
-<h2 id="3-2-基本操作"><a href="#3-2-基本操作" class="headerlink" title="3.2 基本操作"></a>3.2 基本操作</h2><p>参考：<a href="https://blog.csdn.net/michaelguangg/article/details/100704303" target="_blank" rel="noopener">py2neo在已有节点上批量创建关系</a></p>
+<h2 id="32-基本操作"><a class="markdownIt-Anchor" href="#32-基本操作"></a> 3.2 基本操作</h2>
+<p>参考：<a href="https://blog.csdn.net/michaelguangg/article/details/100704303" target="_blank" rel="noopener">py2neo在已有节点上批量创建关系</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> py2neo <span class="keyword">import</span> Graph, Node, Relationship, Subgraph</span><br><span class="line"></span><br><span class="line">test_graph = Graph(<span class="string">"http://localhost:7474"</span>, auth=(<span class="string">"neo4j"</span>, <span class="string">"Neo4j"</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除数据库中以往的图，确保在一个空白的环境中进行操作</span></span><br><span class="line">test_graph.delete_all()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建顶点</span></span><br><span class="line">node_list = []</span><br><span class="line">node_list.append(Node(<span class="string">"Teacher"</span>, name=<span class="string">"Alice"</span>))  <span class="comment"># label(type) name(显示值)</span></span><br><span class="line">node_list.append(Node(<span class="string">"Student"</span>, name=<span class="string">"Bob"</span>))</span><br><span class="line">node_list.append(Node(<span class="string">"Student"</span>, name=<span class="string">"Dragon"</span>))</span><br><span class="line">node_list.append(Node(<span class="string">"Student"</span>, name=<span class="string">"Pig"</span>))</span><br><span class="line"><span class="comment">##subgraph加快导入速度</span></span><br><span class="line">nodes = Subgraph(node_list)</span><br><span class="line">test_graph.create(nodes)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建边</span></span><br><span class="line">edge_list = []</span><br><span class="line"><span class="comment">##找到对应节点</span></span><br><span class="line">node1 = test_graph.nodes.match(name=<span class="string">"Alice"</span>).first()</span><br><span class="line">node2 = test_graph.nodes.match(name=<span class="string">"Bob"</span>).first()</span><br><span class="line">edge_list.append(Relationship(node1, <span class="string">"teach"</span>, node2))</span><br><span class="line">node1 = test_graph.nodes.match(name=<span class="string">"Alice"</span>).first()</span><br><span class="line">node2 = test_graph.nodes.match(name=<span class="string">"Dragon"</span>).first()</span><br><span class="line">edge_list.append(Relationship(node1, <span class="string">"teach"</span>, node2))</span><br><span class="line">edges = Subgraph(relationships=edge_list)</span><br><span class="line">test_graph.create(edges)</span><br></pre></td></tr></table></figure>
 <p>效果图如下：</p>
-<p><img src="https://s2.loli.net/2022/02/11/4Li9RKwmuN7t6kV.png" width="700" height="400" alt="图片名称" align="center" id="75"></p>
-<h1 id="4-拓展——SPADE"><a href="#4-拓展——SPADE" class="headerlink" title="4 拓展——SPADE"></a>4 拓展——SPADE</h1><p>当时参加A-ST竞赛时使用过，本次测试没进行。</p>
+<img src="https://s2.loli.net/2022/02/11/4Li9RKwmuN7t6kV.png" width="700" height="400" alt="图片名称" align="center" id="75">
+<h1 id="4-拓展spade"><a class="markdownIt-Anchor" href="#4-拓展spade"></a> 4 拓展——SPADE</h1>
+<p>当时参加A-ST竞赛时使用过，本次测试没进行。</p>
 <p><a href="https://github.com/ashish-gehani/SPADE" target="_blank" rel="noopener">Github-Spade</a></p>
-<h1 id="X-参考"><a href="#X-参考" class="headerlink" title="X 参考"></a>X 参考</h1><ul>
+<h1 id="x-参考"><a class="markdownIt-Anchor" href="#x-参考"></a> X 参考</h1>
+<ul>
 <li></li>
 </ul>
 

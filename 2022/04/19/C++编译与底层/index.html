@@ -18,19 +18,19 @@
   
   
   <title>C++编译与底层 | Dragon&#39;s Blogs</title>
-  <meta name="description" content="《面向对象C++程序设计》皮德常 编著 清华大学出版社 2017 《C++ Primer Plus (第6版)中文版》Stephen Prata 著 张海龙 袁国忠 译 人民邮电出版社 2012   1 栈区和堆区的区别 申请方式  栈区：由编译器自动分配释放，存放函数的参数值，局部变量值等； 堆区：一般由程序员分配释放（使用new/delete或malloc/free），若程序员不释放，程序">
+  <meta name="description" content="《面向对象C++程序设计》皮德常 编著 清华大学出版社 2017 《C++ Primer Plus (第6版)中文版》Stephen Prata 著 张海龙 袁国忠 译 人民邮电出版社 2012    1 栈区和堆区的区别   申请方式  栈区：由编译器自动分配释放，存放函数的参数值，局部变量值等； 堆区：一般由程序员分配释放（使用new/delete或malloc/free），若程序员不释放">
 <meta name="keywords" content="面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++编译与底层">
 <meta property="og:url" content="https://Dragonliu2018.github.io/2022/04/19/C++编译与底层/index.html">
 <meta property="og:site_name" content="Dragon Liu">
-<meta property="og:description" content="《面向对象C++程序设计》皮德常 编著 清华大学出版社 2017 《C++ Primer Plus (第6版)中文版》Stephen Prata 著 张海龙 袁国忠 译 人民邮电出版社 2012   1 栈区和堆区的区别 申请方式  栈区：由编译器自动分配释放，存放函数的参数值，局部变量值等； 堆区：一般由程序员分配释放（使用new/delete或malloc/free），若程序员不释放，程序">
+<meta property="og:description" content="《面向对象C++程序设计》皮德常 编著 清华大学出版社 2017 《C++ Primer Plus (第6版)中文版》Stephen Prata 著 张海龙 袁国忠 译 人民邮电出版社 2012    1 栈区和堆区的区别   申请方式  栈区：由编译器自动分配释放，存放函数的参数值，局部变量值等； 堆区：一般由程序员分配释放（使用new/delete或malloc/free），若程序员不释放">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/24708340_1325647816h2y2.jpg">
 <meta property="og:updated_time" content="2022-04-19T06:03:35.217Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++编译与底层">
-<meta name="twitter:description" content="《面向对象C++程序设计》皮德常 编著 清华大学出版社 2017 《C++ Primer Plus (第6版)中文版》Stephen Prata 著 张海龙 袁国忠 译 人民邮电出版社 2012   1 栈区和堆区的区别 申请方式  栈区：由编译器自动分配释放，存放函数的参数值，局部变量值等； 堆区：一般由程序员分配释放（使用new/delete或malloc/free），若程序员不释放，程序">
+<meta name="twitter:description" content="《面向对象C++程序设计》皮德常 编著 清华大学出版社 2017 《C++ Primer Plus (第6版)中文版》Stephen Prata 著 张海龙 袁国忠 译 人民邮电出版社 2012    1 栈区和堆区的区别   申请方式  栈区：由编译器自动分配释放，存放函数的参数值，局部变量值等； 堆区：一般由程序员分配释放（使用new/delete或malloc/free），若程序员不释放">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/24708340_1325647816h2y2.jpg">
   <!-- Canonical links -->
   <link rel="canonical" href="https://Dragonliu2018.github.io/2022/04/19/C++编译与底层/index.html">
@@ -195,7 +195,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">37</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/安全/">安全</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/爬虫/">爬虫</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/音乐/">音乐</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">41</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/安全/">安全</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/影视/">影视</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/爬虫/">爬虫</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">34</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/音乐/">音乐</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -205,7 +205,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Crypto/">Crypto</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Element/">Element</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT书籍/">IT书籍</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Boot/">Spring Boot</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WP/">WP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/neo4j/">neo4j</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书评/">书评</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区块链/">区块链</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/待补充/">待补充</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摘抄/">摘抄</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电视剧/">电视剧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纪录片/">纪录片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/重构/">重构</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a><span class="tag-list-count">6</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Crypto/">Crypto</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Element/">Element</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT书籍/">IT书籍</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Boot/">Spring Boot</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WP/">WP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/neo4j/">neo4j</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书评/">书评</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/区块链/">区块链</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/待补充/">待补充</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/摘抄/">摘抄</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/深度学习/">深度学习</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电影/">电影</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电视剧/">电视剧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/纪录片/">纪录片</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/重构/">重构</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a><span class="tag-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -215,7 +215,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Crypto/" style="font-size: 13.13px;">Crypto</a> <a href="/tags/Element/" style="font-size: 13.75px;">Element</a> <a href="/tags/Git/" style="font-size: 13.5px;">Git</a> <a href="/tags/Hexo/" style="font-size: 13.38px;">Hexo</a> <a href="/tags/IT书籍/" style="font-size: 13px;">IT书籍</a> <a href="/tags/MySQL/" style="font-size: 13.63px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 13px;">Redis</a> <a href="/tags/Spring-Boot/" style="font-size: 13.13px;">Spring Boot</a> <a href="/tags/Vue/" style="font-size: 13px;">Vue</a> <a href="/tags/WP/" style="font-size: 13.25px;">WP</a> <a href="/tags/Web/" style="font-size: 13.13px;">Web</a> <a href="/tags/neo4j/" style="font-size: 13px;">neo4j</a> <a href="/tags/selenium/" style="font-size: 13.13px;">selenium</a> <a href="/tags/书评/" style="font-size: 13.88px;">书评</a> <a href="/tags/区块链/" style="font-size: 13px;">区块链</a> <a href="/tags/待补充/" style="font-size: 14px;">待补充</a> <a href="/tags/摘抄/" style="font-size: 13.13px;">摘抄</a> <a href="/tags/电影/" style="font-size: 13.25px;">电影</a> <a href="/tags/电视剧/" style="font-size: 13px;">电视剧</a> <a href="/tags/纪录片/" style="font-size: 13px;">纪录片</a> <a href="/tags/重构/" style="font-size: 13.38px;">重构</a> <a href="/tags/面试/" style="font-size: 13.63px;">面试</a>
+      <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Crypto/" style="font-size: 13.14px;">Crypto</a> <a href="/tags/Element/" style="font-size: 13.71px;">Element</a> <a href="/tags/Git/" style="font-size: 13.71px;">Git</a> <a href="/tags/Hexo/" style="font-size: 13.43px;">Hexo</a> <a href="/tags/IT书籍/" style="font-size: 13px;">IT书籍</a> <a href="/tags/MySQL/" style="font-size: 13.71px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 13px;">Redis</a> <a href="/tags/Spring-Boot/" style="font-size: 13.14px;">Spring Boot</a> <a href="/tags/Vue/" style="font-size: 13px;">Vue</a> <a href="/tags/WP/" style="font-size: 13.29px;">WP</a> <a href="/tags/Web/" style="font-size: 13.14px;">Web</a> <a href="/tags/neo4j/" style="font-size: 13px;">neo4j</a> <a href="/tags/selenium/" style="font-size: 13.14px;">selenium</a> <a href="/tags/书评/" style="font-size: 13.86px;">书评</a> <a href="/tags/区块链/" style="font-size: 13px;">区块链</a> <a href="/tags/待补充/" style="font-size: 14px;">待补充</a> <a href="/tags/摘抄/" style="font-size: 13.14px;">摘抄</a> <a href="/tags/深度学习/" style="font-size: 13.14px;">深度学习</a> <a href="/tags/电影/" style="font-size: 13.29px;">电影</a> <a href="/tags/电视剧/" style="font-size: 13px;">电视剧</a> <a href="/tags/纪录片/" style="font-size: 13px;">纪录片</a> <a href="/tags/重构/" style="font-size: 13.43px;">重构</a> <a href="/tags/面试/" style="font-size: 13.57px;">面试</a>
     </div>
   </div>
 
@@ -224,7 +224,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">35</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">34</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">43</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">34</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -240,13 +240,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/C/">C++</a>
+                <a class="category-link" href="/categories/计组/">计组</a>
               </p>
               <p class="item-title">
-                <a href="/2022/04/19/C++新标准/" class="title">C++新标准</a>
+                <a href="/2022/06/05/Lab3实验总结/" class="title">Lab3实验总结</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-04-19T05:58:58.000Z" itemprop="datePublished">2022-04-19</time>
+                <time datetime="2022-06-05T12:52:07.000Z" itemprop="datePublished">2022-06-05</time>
               </p>
             </div>
           </li>
@@ -255,13 +255,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/C/">C++</a>
+                
               </p>
               <p class="item-title">
-                <a href="/2022/04/19/C++编译与底层/" class="title">C++编译与底层</a>
+                <a href="/2022/05/29/Java中调用Python程序/" class="title">Java中调用Python程序</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-04-19T05:58:45.000Z" itemprop="datePublished">2022-04-19</time>
+                <time datetime="2022-05-29T14:28:07.000Z" itemprop="datePublished">2022-05-29</time>
               </p>
             </div>
           </li>
@@ -270,13 +270,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/C/">C++</a>
+                <a class="category-link" href="/categories/环境与工具/">环境与工具</a>
               </p>
               <p class="item-title">
-                <a href="/2022/04/19/C++STL/" class="title">C++STL</a>
+                <a href="/2022/05/27/gdb调试/" class="title">gdb调试</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-04-19T05:58:31.000Z" itemprop="datePublished">2022-04-19</time>
+                <time datetime="2022-05-27T05:24:18.000Z" itemprop="datePublished">2022-05-27</time>
               </p>
             </div>
           </li>
@@ -285,13 +285,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/C/">C++</a>
+                <a class="category-link" href="/categories/计组/">计组</a>
               </p>
               <p class="item-title">
-                <a href="/2022/04/19/C++模板/" class="title">C++模板</a>
+                <a href="/2022/05/27/PA答疑之a4指令码报错/" class="title">PA答疑之a4指令码报错</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-04-19T05:58:21.000Z" itemprop="datePublished">2022-04-19</time>
+                <time datetime="2022-05-27T05:06:36.000Z" itemprop="datePublished">2022-05-27</time>
               </p>
             </div>
           </li>
@@ -300,13 +300,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/C/">C++</a>
+                <a class="category-link" href="/categories/计组/">计组</a>
               </p>
               <p class="item-title">
-                <a href="/2022/04/19/C++类/" class="title">C++类</a>
+                <a href="/2022/05/26/64位Ubuntu运行32位程序/" class="title">64位Ubuntu运行或调试32位程序</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-04-19T05:57:56.000Z" itemprop="datePublished">2022-04-19</time>
+                <time datetime="2022-05-26T05:20:32.000Z" itemprop="datePublished">2022-05-26</time>
               </p>
             </div>
           </li>
@@ -326,7 +326,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-栈区和堆区的区别"><span class="toc-number">1.</span> <span class="toc-text">1 栈区和堆区的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-C语言程序从源代码到二进制行程序都经历了那些过程？"><span class="toc-number">2.</span> <span class="toc-text">2 C语言程序从源代码到二进制行程序都经历了那些过程？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-C-C-的内存分配方式"><span class="toc-number">3.</span> <span class="toc-text">3 C/C++的内存分配方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-C"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 C</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-C"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 C++</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-int-有几个字节？"><span class="toc-number">4.</span> <span class="toc-text">4 int 有几个字节？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-内存对齐的原则"><span class="toc-number">5.</span> <span class="toc-text">5 内存对齐的原则</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-main-函数执行以前，还会执行什么代码？"><span class="toc-number">6.</span> <span class="toc-text">6 main 函数执行以前，还会执行什么代码？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-空类编译器会自动生成哪些函数"><span class="toc-number">7.</span> <span class="toc-text">7 空类编译器会自动生成哪些函数</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-栈区和堆区的区别"><span class="toc-number">1.</span> <span class="toc-text"> 1 栈区和堆区的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-c语言程序从源代码到二进制行程序都经历了那些过程"><span class="toc-number">2.</span> <span class="toc-text"> 2 C语言程序从源代码到二进制行程序都经历了那些过程？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-cc的内存分配方式"><span class="toc-number">3.</span> <span class="toc-text"> 3 C/C++的内存分配方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#31-c"><span class="toc-number">3.1.</span> <span class="toc-text"> 3.1 C</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#32-c"><span class="toc-number">3.2.</span> <span class="toc-text"> 3.2 C++</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-int-有几个字节"><span class="toc-number">4.</span> <span class="toc-text"> 4 int 有几个字节？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-内存对齐的原则"><span class="toc-number">5.</span> <span class="toc-text"> 5 内存对齐的原则</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-main-函数执行以前还会执行什么代码"><span class="toc-number">6.</span> <span class="toc-text"> 6 main 函数执行以前，还会执行什么代码？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-空类编译器会自动生成哪些函数"><span class="toc-number">7.</span> <span class="toc-text"> 7 空类编译器会自动生成哪些函数</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -393,40 +393,49 @@
 <li>《C++ Primer Plus (第6版)中文版》Stephen Prata 著 张海龙 袁国忠 译 人民邮电出版社 2012</li>
 </ul>
 </blockquote>
-<h1 id="1-栈区和堆区的区别"><a href="#1-栈区和堆区的区别" class="headerlink" title="1 栈区和堆区的区别"></a>1 栈区和堆区的区别</h1><ol>
-<li><p><strong>申请方式</strong></p>
+<h1 id="1-栈区和堆区的区别"><a class="markdownIt-Anchor" href="#1-栈区和堆区的区别"></a> 1 栈区和堆区的区别</h1>
+<ol>
+<li>
+<p><strong>申请方式</strong></p>
 <ul>
 <li>栈区：由编译器自动分配释放，存放函数的参数值，局部变量值等；</li>
 <li>堆区：一般由程序员分配释放（使用new/delete或malloc/free），若程序员不释放，程序结束时可能由OS回收。</li>
 </ul>
 </li>
-<li><p><strong>操作方式</strong></p>
+<li>
+<p><strong>操作方式</strong></p>
 <ul>
 <li>栈区：操作方式类似于数据结构中的栈；</li>
 <li>堆区：不同于数据结构中的堆，分配方式类似于链表。</li>
 </ul>
 </li>
-<li><p><strong>申请后系统的响应</strong> </p>
+<li>
+<p><strong>申请后系统的响应</strong></p>
 <ul>
 <li>栈区：只要栈的剩余空间大于所申请空间，系统将为程序提供内存，否则将报异常提示栈溢出；</li>
-<li>堆区：操作系统有一个记录空闲内存地址的链表，当系统收到程序的申请时，会遍历该链表，寻找第一个空间大于所申请空间的堆结点，然后将该结点从空闲结点链表中删除，并将该结点的空间分配给程序，另外，对于大多数系统，会在这块内存空间中的首地址处记录本次分配的大小，这样，代码中的delete语句才能正确的释放本内存空间。另外，由于找到的堆结点的大小不一定正好等于申请的大小，系统会自动的将多余的那部分重新放入空闲链表中。 </li>
+<li>堆区：操作系统有一个记录空闲内存地址的链表，当系统收到程序的申请时，会遍历该链表，寻找第一个空间大于所申请空间的堆结点，然后将该结点从空闲结点链表中删除，并将该结点的空间分配给程序，另外，对于大多数系统，会在这块内存空间中的首地址处记录本次分配的大小，这样，代码中的delete语句才能正确的释放本内存空间。另外，由于找到的堆结点的大小不一定正好等于申请的大小，系统会自动的将多余的那部分重新放入空闲链表中。</li>
 </ul>
 </li>
-<li><p><strong>申请大小的限制</strong></p>
+<li>
+<p><strong>申请大小的限制</strong></p>
 <ul>
 <li>栈区：在Windows下，栈是向低地址扩展的数据结构，是一块连续的内存的区域。这句话的意思是栈顶的地址和栈的最大容量是系统预先规定好的，在WINDOWS下，栈的大小是2M（也有的说是1M，总之是一个编译时就确定的常数），如果申请的空间超过栈的剩余空间时，将提示overflow。因此，能从栈获得的空间较小。</li>
 <li>堆区：堆是向高地址扩展的数据结构，是不连续的内存区域。这是由于系统是用链表来存储的空闲内存地址的，自然是不连续的，而链表的遍历方向是由低地址向高地址。堆的大小受限于计算机系统中有效的虚拟内存。由此可见，堆获得的空间比较灵活，也比较大。</li>
 </ul>
 </li>
-<li><p><strong>申请效率的比较</strong></p>
+<li>
+<p><strong>申请效率的比较</strong></p>
 <ul>
-<li><p>栈区：系统自动分配，速度较快。但程序员是无法控制的。</p>
+<li>
+<p>栈区：系统自动分配，速度较快。但程序员是无法控制的。</p>
 </li>
-<li><p>堆区：由new分配的内存，一般速度比较慢，而且容易产生内存碎片，不过用起来最方便. </p>
+<li>
+<p>堆区：由new分配的内存，一般速度比较慢，而且容易产生内存碎片，不过用起来最方便.</p>
 </li>
 </ul>
 </li>
-<li><p><strong>堆和栈中的存储内容</strong></p>
+<li>
+<p><strong>堆和栈中的存储内容</strong></p>
 <ul>
 <li>栈区：在函数调用时，第一个进栈的是主函数中后的下一条指令（函数调用语句的下一条可执行语句）的地址，然后是函数的各个参数，在大多数的C编译器中，参数是由右往左入栈的，然后是函数中的局部变量。注意静态变量是不入栈的。当本次函数调用结束后，局部变量先出栈，然后是参数，最后栈顶指针指向最开始存的地址，也就是主函数中的下一条指令，程序由该点继续运行。</li>
 </ul>
@@ -435,15 +444,17 @@
 <ul>
 <li>堆区：一般是在堆的头部用一个字节存放堆的大小。堆中的具体内容有程序员安排。</li>
 </ul>
-<h1 id="2-C语言程序从源代码到二进制行程序都经历了那些过程？"><a href="#2-C语言程序从源代码到二进制行程序都经历了那些过程？" class="headerlink" title="2 C语言程序从源代码到二进制行程序都经历了那些过程？"></a>2 C语言程序从源代码到二进制行程序都经历了那些过程？</h1><p><a href="https://www.cnblogs.com/CarpenterLee/p/5994681.html" target="_blank" rel="noopener">https://www.cnblogs.com/CarpenterLee/p/5994681.html</a></p>
+<h1 id="2-c语言程序从源代码到二进制行程序都经历了那些过程"><a class="markdownIt-Anchor" href="#2-c语言程序从源代码到二进制行程序都经历了那些过程"></a> 2 C语言程序从源代码到二进制行程序都经历了那些过程？</h1>
+<p><a href="https://www.cnblogs.com/CarpenterLee/p/5994681.html" target="_blank" rel="noopener">https://www.cnblogs.com/CarpenterLee/p/5994681.html</a></p>
 <ol>
 <li>预处理(Preprocessing)：预处理用于将所有的#include头文件以及宏定义替换成其真正的内容，预处理之后得到的仍然是文本文件，但文件体积会大很多。gcc的预处理是预处理器cpp来完成的；</li>
 <li>编译(Compilation)：将经过预处理之后的程序转换成特定汇编代码(assembly code)的过程；命令中<code>-S</code>让编译器在编译之后停止，不进行后续过程。</li>
 <li>汇编(Assemble)：将上一步的汇编代码转换成机器码(machine code)，这一步产生的文件叫做目标文件，是二进制格式。gcc汇编过程通过as命令完成。</li>
 <li>链接(Linking)：链接过程将多个目标文以及所需的库文件(.so等)链接成最终的可执行文件(executable file)。</li>
 </ol>
-<h1 id="3-C-C-的内存分配方式"><a href="#3-C-C-的内存分配方式" class="headerlink" title="3 C/C++的内存分配方式"></a>3 <strong>C/C++的内存分配方式</strong></h1><h2 id="3-1-C"><a href="#3-1-C" class="headerlink" title="3.1 C"></a>3.1 C</h2><p><img src="https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/24708340_1325647816h2y2.jpg" width="400" height="400" alt="图片名称" align="center" id="190"></p>
-<div class="table-container">
+<h1 id="3-cc的内存分配方式"><a class="markdownIt-Anchor" href="#3-cc的内存分配方式"></a> 3 <strong>C/C++的内存分配方式</strong></h1>
+<h2 id="31-c"><a class="markdownIt-Anchor" href="#31-c"></a> 3.1 C</h2>
+<img src="https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/24708340_1325647816h2y2.jpg" width="400" height="400" alt="图片名称" align="center" id="190">
 <table>
 <thead>
 <tr>
@@ -470,25 +481,29 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h2 id="3-2-C"><a href="#3-2-C" class="headerlink" title="3.2 C++"></a>3.2 C++</h2><ol>
+<h2 id="32-c"><a class="markdownIt-Anchor" href="#32-c"></a> 3.2 C++</h2>
+<ol>
 <li>栈</li>
 <li>堆</li>
 <li>全局/静态存储区</li>
 <li>常量存储区</li>
 <li>程序代码区</li>
 </ol>
-<h1 id="4-int-有几个字节？"><a href="#4-int-有几个字节？" class="headerlink" title="4 int 有几个字节？"></a>4 <strong>int 有几个字节？</strong></h1><p>C语言标准规定了每种数据类型的最小取值范围，例如int类型至少应为16位(2字节)，int类型数据具体的取值范围则由ABI规范规定。通常，int型在16位机器中为16位，在32位和64位机器中都为32位。(计组课本P42)</p>
+<h1 id="4-int-有几个字节"><a class="markdownIt-Anchor" href="#4-int-有几个字节"></a> 4 <strong>int 有几个字节？</strong></h1>
+<p>C语言标准规定了每种数据类型的最小取值范围，例如int类型至少应为16位(2字节)，int类型数据具体的取值范围则由ABI规范规定。通常，int型在16位机器中为16位，在32位和64位机器中都为32位。(计组课本P42)</p>
 <p>ABI指应用二进制接口，规定了二进制程序两个模块之间或者二进制程序与操作系统之间的接口。</p>
 <p>2 或 4 个字节，具体取决于编译器。<strong>千万不要直接答4个字节</strong></p>
-<h1 id="5-内存对齐的原则"><a href="#5-内存对齐的原则" class="headerlink" title="5 内存对齐的原则"></a>5 内存对齐的原则</h1><p>从0位置开始存储；变量存储的起始位置是该变量大小的整数倍；结构体总的大小是其最大元素的整数倍，不足的后面要补齐。</p>
+<h1 id="5-内存对齐的原则"><a class="markdownIt-Anchor" href="#5-内存对齐的原则"></a> 5 内存对齐的原则</h1>
+<p>从0位置开始存储；变量存储的起始位置是该变量大小的整数倍；结构体总的大小是其最大元素的整数倍，不足的后面要补齐。</p>
 <ol>
 <li>数据成员对齐规则：结构体的数据成员，第一个数据成员放在offset为0的地方，之后的每个数据成员存储的起始位置要从该成员大小的整数倍开始（比如int在32位机子上为4字节，所以要从4的整数倍地址开始存储）。</li>
 <li>结构体作为成员：如果一个结构体里同时包含结构体成员，则结构体成员要从其内部最大元素大小的整数倍地址开始存储（如struct a里有struct b，b里有char,int,double等元素，那么b应该从8(即double类型的大小)的整数倍开始存储）。</li>
 <li>结构体的总大小：即sizeof的结果。在按之前的对齐原则计算出来的大小的基础上，必须还得是其内部最大成员的整数倍，不足的要补齐（如struct里最大为double，现在计算得到的已经是11，则总大小为16）。</li>
 </ol>
-<h1 id="6-main-函数执行以前，还会执行什么代码？"><a href="#6-main-函数执行以前，还会执行什么代码？" class="headerlink" title="6 main 函数执行以前，还会执行什么代码？"></a>6 <strong>main 函数执行以前，还会执行什么代码？</strong></h1><p>全局对象的构造函数会在 main 函数之前执行。</p>
-<h1 id="7-空类编译器会自动生成哪些函数"><a href="#7-空类编译器会自动生成哪些函数" class="headerlink" title="7 空类编译器会自动生成哪些函数"></a>7 <strong>空类编译器会自动生成哪些函数</strong></h1><p>默认构造函数、析构函数、拷贝构造函数、赋值函数。</p>
+<h1 id="6-main-函数执行以前还会执行什么代码"><a class="markdownIt-Anchor" href="#6-main-函数执行以前还会执行什么代码"></a> 6 <strong>main 函数执行以前，还会执行什么代码？</strong></h1>
+<p>全局对象的构造函数会在 main 函数之前执行。</p>
+<h1 id="7-空类编译器会自动生成哪些函数"><a class="markdownIt-Anchor" href="#7-空类编译器会自动生成哪些函数"></a> 7 <strong>空类编译器会自动生成哪些函数</strong></h1>
+<p>默认构造函数、析构函数、拷贝构造函数、赋值函数。</p>
 
       
     </div>
