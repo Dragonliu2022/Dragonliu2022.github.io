@@ -3,11 +3,11 @@
   <title>Dragon Liu</title>
   
   
-  <link href="https://dragonliu2018.github.io/atom.xml" rel="self"/>
+  <link href="https://dragonliu2022.github.io/atom.xml" rel="self"/>
   
-  <link href="https://dragonliu2018.github.io/"/>
+  <link href="https://dragonliu2022.github.io/"/>
   <updated>2022-06-05T15:46:39.668Z</updated>
-  <id>https://dragonliu2018.github.io/</id>
+  <id>https://dragonliu2022.github.io/</id>
   
   <author>
     <name>Dragon Liu</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Lab3实验总结</title>
-    <link href="https://dragonliu2018.github.io/2022/06/05/Lab3%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/"/>
-    <id>https://dragonliu2018.github.io/2022/06/05/Lab3%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/</id>
+    <link href="https://dragonliu2022.github.io/2022/06/05/Lab3%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/"/>
+    <id>https://dragonliu2022.github.io/2022/06/05/Lab3%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/</id>
     <published>2022-06-05T12:52:07.000Z</published>
     <updated>2022-06-05T15:46:39.668Z</updated>
     
@@ -33,35 +33,15 @@
     
     
     
-    <category term="计组" scheme="https://Dragonliu2018.github.io/categories/计组/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Java中调用Python程序</title>
-    <link href="https://dragonliu2018.github.io/2022/05/29/Java%E4%B8%AD%E8%B0%83%E7%94%A8Python%E7%A8%8B%E5%BA%8F/"/>
-    <id>https://dragonliu2018.github.io/2022/05/29/Java%E4%B8%AD%E8%B0%83%E7%94%A8Python%E7%A8%8B%E5%BA%8F/</id>
-    <published>2022-05-29T14:28:07.000Z</published>
-    <updated>2022-05-29T14:28:07.991Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
-      
-    
-    
+    <category term="计组" scheme="https://Dragonliu2022.github.io/categories/计组/"/>
     
     
   </entry>
   
   <entry>
     <title>gdb调试</title>
-    <link href="https://dragonliu2018.github.io/2022/05/27/gdb%E8%B0%83%E8%AF%95/"/>
-    <id>https://dragonliu2018.github.io/2022/05/27/gdb%E8%B0%83%E8%AF%95/</id>
+    <link href="https://dragonliu2022.github.io/2022/05/27/gdb%E8%B0%83%E8%AF%95/"/>
+    <id>https://dragonliu2022.github.io/2022/05/27/gdb%E8%B0%83%E8%AF%95/</id>
     <published>2022-05-27T05:24:18.000Z</published>
     <updated>2022-05-27T05:47:04.178Z</updated>
     
@@ -75,15 +55,15 @@
     
     
     
-    <category term="环境与工具" scheme="https://Dragonliu2018.github.io/categories/环境与工具/"/>
+    <category term="环境与工具" scheme="https://Dragonliu2022.github.io/categories/环境与工具/"/>
     
     
   </entry>
   
   <entry>
     <title>PA答疑之a4指令码报错</title>
-    <link href="https://dragonliu2018.github.io/2022/05/27/PA%E7%AD%94%E7%96%91%E4%B9%8Ba4%E6%8C%87%E4%BB%A4%E7%A0%81%E6%8A%A5%E9%94%99/"/>
-    <id>https://dragonliu2018.github.io/2022/05/27/PA%E7%AD%94%E7%96%91%E4%B9%8Ba4%E6%8C%87%E4%BB%A4%E7%A0%81%E6%8A%A5%E9%94%99/</id>
+    <link href="https://dragonliu2022.github.io/2022/05/27/PA%E7%AD%94%E7%96%91%E4%B9%8Ba4%E6%8C%87%E4%BB%A4%E7%A0%81%E6%8A%A5%E9%94%99/"/>
+    <id>https://dragonliu2022.github.io/2022/05/27/PA%E7%AD%94%E7%96%91%E4%B9%8Ba4%E6%8C%87%E4%BB%A4%E7%A0%81%E6%8A%A5%E9%94%99/</id>
     <published>2022-05-27T05:06:36.000Z</published>
     <updated>2022-05-27T05:22:15.890Z</updated>
     
@@ -97,15 +77,15 @@
     
     
     
-    <category term="计组" scheme="https://Dragonliu2018.github.io/categories/计组/"/>
+    <category term="计组" scheme="https://Dragonliu2022.github.io/categories/计组/"/>
     
     
   </entry>
   
   <entry>
     <title>64位Ubuntu运行或调试32位程序</title>
-    <link href="https://dragonliu2018.github.io/2022/05/26/64%E4%BD%8DUbuntu%E8%BF%90%E8%A1%8C32%E4%BD%8D%E7%A8%8B%E5%BA%8F/"/>
-    <id>https://dragonliu2018.github.io/2022/05/26/64%E4%BD%8DUbuntu%E8%BF%90%E8%A1%8C32%E4%BD%8D%E7%A8%8B%E5%BA%8F/</id>
+    <link href="https://dragonliu2022.github.io/2022/05/26/64%E4%BD%8DUbuntu%E8%BF%90%E8%A1%8C32%E4%BD%8D%E7%A8%8B%E5%BA%8F/"/>
+    <id>https://dragonliu2022.github.io/2022/05/26/64%E4%BD%8DUbuntu%E8%BF%90%E8%A1%8C32%E4%BD%8D%E7%A8%8B%E5%BA%8F/</id>
     <published>2022-05-26T05:20:32.000Z</published>
     <updated>2022-05-26T05:42:45.714Z</updated>
     
@@ -119,15 +99,15 @@
     
     
     
-    <category term="计组" scheme="https://Dragonliu2018.github.io/categories/计组/"/>
+    <category term="计组" scheme="https://Dragonliu2022.github.io/categories/计组/"/>
     
     
   </entry>
   
   <entry>
     <title>MLP的pytorch实现</title>
-    <link href="https://dragonliu2018.github.io/2022/05/16/MLP%E7%9A%84pytorch%E5%AE%9E%E7%8E%B0/"/>
-    <id>https://dragonliu2018.github.io/2022/05/16/MLP%E7%9A%84pytorch%E5%AE%9E%E7%8E%B0/</id>
+    <link href="https://dragonliu2022.github.io/2022/05/16/MLP%E7%9A%84pytorch%E5%AE%9E%E7%8E%B0/"/>
+    <id>https://dragonliu2022.github.io/2022/05/16/MLP%E7%9A%84pytorch%E5%AE%9E%E7%8E%B0/</id>
     <published>2022-05-16T13:40:45.000Z</published>
     <updated>2022-05-16T16:24:02.585Z</updated>
     
@@ -141,15 +121,15 @@
     
     
     
-    <category term="AI" scheme="https://Dragonliu2018.github.io/categories/AI/"/>
+    <category term="AI" scheme="https://Dragonliu2022.github.io/categories/AI/"/>
     
     
   </entry>
   
   <entry>
     <title>sklean常见机器学习分类器</title>
-    <link href="https://dragonliu2018.github.io/2022/05/16/sklean%E5%B8%B8%E8%A7%81%E5%88%86%E7%B1%BB%E5%99%A8/"/>
-    <id>https://dragonliu2018.github.io/2022/05/16/sklean%E5%B8%B8%E8%A7%81%E5%88%86%E7%B1%BB%E5%99%A8/</id>
+    <link href="https://dragonliu2022.github.io/2022/05/16/sklean%E5%B8%B8%E8%A7%81%E5%88%86%E7%B1%BB%E5%99%A8/"/>
+    <id>https://dragonliu2022.github.io/2022/05/16/sklean%E5%B8%B8%E8%A7%81%E5%88%86%E7%B1%BB%E5%99%A8/</id>
     <published>2022-05-16T12:28:16.000Z</published>
     <updated>2022-05-16T13:39:46.135Z</updated>
     
@@ -163,15 +143,15 @@
     
     
     
-    <category term="AI" scheme="https://Dragonliu2018.github.io/categories/AI/"/>
+    <category term="AI" scheme="https://Dragonliu2022.github.io/categories/AI/"/>
     
     
   </entry>
   
   <entry>
     <title>Lab2实验总结</title>
-    <link href="https://dragonliu2018.github.io/2022/05/15/Lab2%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/"/>
-    <id>https://dragonliu2018.github.io/2022/05/15/Lab2%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/</id>
+    <link href="https://dragonliu2022.github.io/2022/05/15/Lab2%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/"/>
+    <id>https://dragonliu2022.github.io/2022/05/15/Lab2%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/</id>
     <published>2022-05-15T13:58:16.000Z</published>
     <updated>2022-05-27T04:24:09.518Z</updated>
     
@@ -185,61 +165,15 @@
     
     
     
-    <category term="计组" scheme="https://Dragonliu2018.github.io/categories/计组/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Python-列表-生成列表</title>
-    <link href="https://dragonliu2018.github.io/2022/05/12/Python-%E5%88%97%E8%A1%A8-%E7%94%9F%E6%88%90%E5%88%97%E8%A1%A8/"/>
-    <id>https://dragonliu2018.github.io/2022/05/12/Python-%E5%88%97%E8%A1%A8-%E7%94%9F%E6%88%90%E5%88%97%E8%A1%A8/</id>
-    <published>2022-05-12T14:39:10.000Z</published>
-    <updated>2022-05-12T16:59:20.484Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="1-问题"><a class="markdownIt-Anchor" href="#1-问题"></a> 1 问题</h1><p>需求：生成1-10的列表；生成10个0的列表</p><h1 id="2-解决"><a class="markdownIt-Anchor" href="#2-解决"></a> 2 解决</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># list方法</span></span><br><span class="line">init_list = list(range(<span class="number">1</span>, <span class="number">10</span>+<span class="number">1</span>))  <span class="comment"># [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># []方法</span></span><br><span class="line">init_list = [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">10</span>+<span class="number">1</span>)]  <span class="comment"># [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 循环方法</span></span><br><span class="line">init_list = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">10</span>+<span class="number">1</span>):</span><br><span class="line">    init_list.append(i)</span><br><span class="line">print(init_list)  <span class="comment"># [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 乘法</span></span><br><span class="line">init_list = [<span class="number">0</span>] * <span class="number">10</span>  <span class="comment"># [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]</span></span><br></pre></td></tr></table></figure><h1 id="x-参考"><a class="markdownIt-Anchor" href="#x-参考"></a> X 参考</h1><ul><li><a href="https://blog.csdn.net/QQ18180564/article/details/105839040" target="_blank" rel="noopener">python------用多种方法生成1到100的列表并打印</a></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
-      
-    
-    
-    
-    <category term="Python" scheme="https://Dragonliu2018.github.io/categories/Python/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>matplotlib画图出现中文乱码</title>
-    <link href="https://dragonliu2018.github.io/2022/05/12/matplotlib%E7%94%BB%E5%9B%BE%E5%87%BA%E7%8E%B0%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/"/>
-    <id>https://dragonliu2018.github.io/2022/05/12/matplotlib%E7%94%BB%E5%9B%BE%E5%87%BA%E7%8E%B0%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</id>
-    <published>2022-05-12T14:32:27.000Z</published>
-    <updated>2022-05-12T14:35:01.118Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="1-问题描述"><a class="markdownIt-Anchor" href="#1-问题描述"></a> 1 问题描述</h1><p>使用matplotlib画图，其中x和y轴标题中出现中文乱码。</p><h1 id="2-解决"><a class="markdownIt-Anchor" href="#2-解决"></a> 2 解决</h1><p>在代码前面加入：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pylab <span class="keyword">import</span> *</span><br><span class="line">mpl.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'SimHei'</span>]</span><br><span class="line">mpl.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="literal">False</span></span><br></pre></td></tr></table></figure><h1 id="3-参考"><a class="markdownIt-Anchor" href="#3-参考"></a> 3 参考</h1><ul><li><a href="https://blog.csdn.net/xjh163/article/details/101076551" target="_blank" rel="noopener">python中画图显示中文乱码</a></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
-      
-    
-    
-    
-    <category term="环境与工具" scheme="https://Dragonliu2018.github.io/categories/环境与工具/"/>
-    
-    <category term="Python" scheme="https://Dragonliu2018.github.io/categories/Python/"/>
+    <category term="计组" scheme="https://Dragonliu2022.github.io/categories/计组/"/>
     
     
   </entry>
   
   <entry>
     <title>Linux查看系统信息</title>
-    <link href="https://dragonliu2018.github.io/2022/05/11/Linux%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF/"/>
-    <id>https://dragonliu2018.github.io/2022/05/11/Linux%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF/</id>
+    <link href="https://dragonliu2022.github.io/2022/05/11/Linux%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF/"/>
+    <id>https://dragonliu2022.github.io/2022/05/11/Linux%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF/</id>
     <published>2022-05-10T16:43:44.000Z</published>
     <updated>2022-05-10T16:52:12.494Z</updated>
     
@@ -253,63 +187,15 @@
     
     
     
-    <category term="环境与工具" scheme="https://Dragonliu2018.github.io/categories/环境与工具/"/>
+    <category term="环境与工具" scheme="https://Dragonliu2022.github.io/categories/环境与工具/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>git报错之error: object file .git/objects/31/65329bb680e30595f242b7c4d8406ca63eeab0 is empty</title>
-    <link href="https://dragonliu2018.github.io/2022/05/11/git%E6%8A%A5%E9%94%99%E4%B9%8Berror-object-file-git-objects-31-65329bb680e30595f242b7c4d8406ca63eeab0-is-empty/"/>
-    <id>https://dragonliu2018.github.io/2022/05/11/git%E6%8A%A5%E9%94%99%E4%B9%8Berror-object-file-git-objects-31-65329bb680e30595f242b7c4d8406ca63eeab0-is-empty/</id>
-    <published>2022-05-10T16:34:25.000Z</published>
-    <updated>2022-05-12T14:29:06.771Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="1-问题"><a class="markdownIt-Anchor" href="#1-问题"></a> 1 问题</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">error: object file .git/objects/31/65329bb680e30595f242b7c4d8406ca63eeab0 is empty</span><br><span class="line">fatal: loose object 3165329bb680e30595f242b7c4d8406ca63eeab0 (stored <span class="keyword">in</span> .git/objects/31/65329bb680e30595f242b7c4d8406ca63eeab0) is corrupt</span><br></pre></td></tr></table></figure><h1 id="2-解决"><a class="markdownIt-Anchor" href="#2-解决"></a> 2 解决</h1><h1 id="3-参考"><a class="markdownIt-Anchor" href="#3-参考"></a> 3 参考</h1><ul><li><a href="https://segmentfault.com/a/1190000008734662" target="_blank" rel="noopener">git错误：对象文件为空（object-file-is-empty）解决方案</a></li><li><a href="https://stackoverflow.com/questions/11706215/how-can-i-fix-the-git-error-object-file-is-empty" target="_blank" rel="noopener">How can I fix the Git error “object file … is empty”?</a></li><li><a href="https://localcoder.org/git-status-shows-fatal-bad-object-head" target="_blank" rel="noopener">git status shows fatal: bad object HEAD</a></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
-      
-    
-    
-    
-    <category term="环境与工具" scheme="https://Dragonliu2018.github.io/categories/环境与工具/"/>
-    
-    
-    <category term="Git" scheme="https://Dragonliu2018.github.io/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git报错之error: refs/heads/pa2 does not point to a valid object</title>
-    <link href="https://dragonliu2018.github.io/2022/05/10/git%E6%8A%A5%E9%94%99%E4%B9%8Berror-refs-heads-pa2-does-not-point-to-a-valid-object/"/>
-    <id>https://dragonliu2018.github.io/2022/05/10/git%E6%8A%A5%E9%94%99%E4%B9%8Berror-refs-heads-pa2-does-not-point-to-a-valid-object/</id>
-    <published>2022-05-10T15:31:38.000Z</published>
-    <updated>2022-05-12T14:35:27.373Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="1-问题引入"><a class="markdownIt-Anchor" href="#1-问题引入"></a> 1 问题引入</h1><p>目前项目有两个分支：pa1和pa2。pa1分支没有更新到云端，需要更新；pa2分支出现问题。</p><p><strong>目标</strong>：删除pa2分支，将pa1 push到云端。</p><h1 id="2-解决"><a class="markdownIt-Anchor" href="#2-解决"></a> 2 解决</h1><ol><li><p>切换到pa1分支，<code>git checkout pa1</code></p><img src="https://s2.loli.net/2022/05/10/FZmLMNhPlxiUCd1.png" width="550" height="300" alt="图片名称" align="center" id="199"></li><li><p>提交本地pa2修改的代码，出现如下报错：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add .</span><br><span class="line">$ git commit</span><br><span class="line">fatal: could not parse HEAD</span><br></pre></td></tr></table></figure></li><li><p>强制切换pa1分支：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -f pa1</span><br></pre></td></tr></table></figure></li><li><p>将pa1分支push到云端，出现报错：</p><img src="https://s2.loli.net/2022/05/10/iNlGDgz2kVKxjoW.png" width="650" height="100" alt="图片名称" align="center" id="200"></li><li><p>执行下面的操作再进行push操作，成功执行</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm .git/refs/heads/pa2</span><br></pre></td></tr></table></figure></li></ol><h1 id="3-参考"><a class="markdownIt-Anchor" href="#3-参考"></a> 3 参考</h1><ul><li><a href="https://stackoverflow.com/questions/20694882/how-do-i-delete-a-local-git-branch-when-it-cant-look-up-commit-object-in-refs" target="_blank" rel="noopener">How do I delete a local git branch when it can’t look up commit object in ‘refs/heads’?</a></li><li><a href="https://zhuanlan.zhihu.com/p/426003354" target="_blank" rel="noopener">解决git报错fatal: could not parse HEAD</a></li><li><a href="https://blog.csdn.net/SMonkeyKing/article/details/89850416" target="_blank" rel="noopener">【git操作】强制切换到本地某个分支</a></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
-      
-    
-    
-    
-    <category term="环境与工具" scheme="https://Dragonliu2018.github.io/categories/环境与工具/"/>
-    
-    
-    <category term="Git" scheme="https://Dragonliu2018.github.io/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>PA报错之qemu: could not load PC BIOS &#39;bios-256k.bin&#39;</title>
-    <link href="https://dragonliu2018.github.io/2022/05/10/PA%E6%8A%A5%E9%94%99%E4%B9%8Bqemu-could-not-load-PC-BIOS-bios-256k-bin/"/>
-    <id>https://dragonliu2018.github.io/2022/05/10/PA%E6%8A%A5%E9%94%99%E4%B9%8Bqemu-could-not-load-PC-BIOS-bios-256k-bin/</id>
+    <link href="https://dragonliu2022.github.io/2022/05/10/PA%E6%8A%A5%E9%94%99%E4%B9%8Bqemu-could-not-load-PC-BIOS-bios-256k-bin/"/>
+    <id>https://dragonliu2022.github.io/2022/05/10/PA%E6%8A%A5%E9%94%99%E4%B9%8Bqemu-could-not-load-PC-BIOS-bios-256k-bin/</id>
     <published>2022-05-10T14:24:04.000Z</published>
     <updated>2022-05-10T14:38:10.136Z</updated>
     
@@ -323,15 +209,15 @@
     
     
     
-    <category term="计组" scheme="https://Dragonliu2018.github.io/categories/计组/"/>
+    <category term="计组" scheme="https://Dragonliu2022.github.io/categories/计组/"/>
     
     
   </entry>
   
   <entry>
     <title>模型的评价指标</title>
-    <link href="https://dragonliu2018.github.io/2022/04/26/%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/"/>
-    <id>https://dragonliu2018.github.io/2022/04/26/%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</id>
+    <link href="https://dragonliu2022.github.io/2022/04/26/%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/"/>
+    <id>https://dragonliu2022.github.io/2022/04/26/%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</id>
     <published>2022-04-26T06:59:37.000Z</published>
     <updated>2022-05-05T13:00:59.539Z</updated>
     
@@ -345,39 +231,17 @@
     
     
     
-    <category term="AI" scheme="https://Dragonliu2018.github.io/categories/AI/"/>
+    <category term="AI" scheme="https://Dragonliu2022.github.io/categories/AI/"/>
     
     
-    <category term="深度学习" scheme="https://Dragonliu2018.github.io/tags/深度学习/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python-os模块-文件(夹)操作</title>
-    <link href="https://dragonliu2018.github.io/2022/04/23/Python-os%E6%A8%A1%E5%9D%97-%E6%96%87%E4%BB%B6-%E5%A4%B9-%E6%93%8D%E4%BD%9C/"/>
-    <id>https://dragonliu2018.github.io/2022/04/23/Python-os%E6%A8%A1%E5%9D%97-%E6%96%87%E4%BB%B6-%E5%A4%B9-%E6%93%8D%E4%BD%9C/</id>
-    <published>2022-04-23T08:47:23.000Z</published>
-    <updated>2022-04-24T14:31:58.911Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="1-判断文件夹是否存在"><a class="markdownIt-Anchor" href="#1-判断文件夹是否存在"></a> 1 判断文件(夹)是否存在</h1><p><strong>参考</strong>：<a href="https://www.cnblogs.com/jhao/p/7243043.html" target="_blank" rel="noopener">Python判断文件是否存在的三种方法</a></p><p><code>os</code>模块中的<code>os.path.exists()</code>方法用于检验文件是否存在。</p><p>判断文件(夹)是否存在：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.path.exists(path)</span><br><span class="line"><span class="comment">#True</span></span><br><span class="line"></span><br><span class="line">os.path.exists(path)</span><br><span class="line"><span class="comment">#False</span></span><br></pre></td></tr></table></figure><p><strong>问题</strong>：如果文件夹和文件同路径+同名会出现bug。</p><p>只检查文件：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.path.isfile(<span class="string">"test-data"</span>)</span><br></pre></td></tr></table></figure><h1 id="2-创建目录"><a class="markdownIt-Anchor" href="#2-创建目录"></a> 2 创建目录</h1><p><strong>参考</strong>：<a href="https://blog.csdn.net/MuWinter/article/details/77215768" target="_blank" rel="noopener">python创建目录（文件夹）</a></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">os.path.exists(path) <span class="comment"># 判断一个目录是否存在</span></span><br><span class="line"></span><br><span class="line">os.makedirs(path) <span class="comment"># 创建多级目录</span></span><br><span class="line"></span><br><span class="line">os.mkdir(path) <span class="comment"># 创建单级目录</span></span><br></pre></td></tr></table></figure><h1 id="3-复制文件"><a class="markdownIt-Anchor" href="#3-复制文件"></a> 3 复制文件</h1><p><strong>参考</strong>：<a href="https://zhuanlan.zhihu.com/p/35725217" target="_blank" rel="noopener">用Python复制文件的9个方法</a></p><p>这是运行任何系统命令的最常用方式。使用 system() 方法，你可以调用 subshell 中的任何命令。在内部，该方法将调用 C 语言的标准库函数。该方法返回该命令的退出状态。</p><p>对于 Windows 系统：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">os.system(<span class="string">'copy 1.txt.py 2.txt.py'</span>)</span><br><span class="line">os.system(<span class="string">f'copy <span class="subst">&#123;source&#125;</span> <span class="subst">&#123;target&#125;</span>'</span>)</span><br></pre></td></tr></table></figure><p>对于 Liunx 系统：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">os.system(<span class="string">'cp 1.txt.py 2.txt.py'</span>)</span><br></pre></td></tr></table></figure><p>速度较慢，大量文件复制效果不佳。</p><h1 id="4-路径拼接"><a class="markdownIt-Anchor" href="#4-路径拼接"></a> 4 路径拼接</h1><p>os.path.join()函数用于路径拼接文件路径：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">dir = <span class="string">"xxx"</span></span><br><span class="line">file_name = <span class="string">"xxx"</span></span><br><span class="line"></span><br><span class="line">path = os.path.join(dir, file_name)</span><br></pre></td></tr></table></figure><h1 id="5-删除文件夹"><a class="markdownIt-Anchor" href="#5-删除文件夹"></a> 5 删除文件(夹)</h1><p><strong>参考</strong>：<a href="https://developer.51cto.com/article/648822.html" target="_blank" rel="noopener">Python中删除文件的几种方法</a></p><p><strong>删除文件</strong>：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">os.remove(path)</span><br></pre></td></tr></table></figure><p><strong>注意</strong>：如果文件在之前被打开，会出现报错：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    os.remove(file_path)</span><br><span class="line">PermissionError: [WinError <span class="number">32</span>] 另一个程序正在使用此文件，进程无法访问。: <span class="string">'data3\\dataset\\test\\Benign\\4447.txt'</span></span><br></pre></td></tr></table></figure><p>所以删除前要关闭文件：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">file_path = os.path.join(type_dir, name)</span><br><span class="line">f = open(file_path, <span class="string">"r"</span>)</span><br><span class="line">f.close()</span><br><span class="line">os.remove(file_path)</span><br></pre></td></tr></table></figure><hr><p><strong>删除目录</strong>：Python中的<code>os.remove()</code>方法用于删除文件路径。此方法无法删除目录。如果指定的路径是目录，则该方法将引发OSError。可以使用下面代码删除目录：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">os.rmdir(dir_path)</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
-      
-    
-    
-    
-    <category term="Python" scheme="https://Dragonliu2018.github.io/categories/Python/"/>
-    
+    <category term="深度学习" scheme="https://Dragonliu2022.github.io/tags/深度学习/"/>
     
   </entry>
   
   <entry>
     <title>PA答疑之代码框架</title>
-    <link href="https://dragonliu2018.github.io/2022/04/23/PA%E7%AD%94%E7%96%91%E4%B9%8B%E4%BB%A3%E7%A0%81%E6%A1%86%E6%9E%B6/"/>
-    <id>https://dragonliu2018.github.io/2022/04/23/PA%E7%AD%94%E7%96%91%E4%B9%8B%E4%BB%A3%E7%A0%81%E6%A1%86%E6%9E%B6/</id>
+    <link href="https://dragonliu2022.github.io/2022/04/23/PA%E7%AD%94%E7%96%91%E4%B9%8B%E4%BB%A3%E7%A0%81%E6%A1%86%E6%9E%B6/"/>
+    <id>https://dragonliu2022.github.io/2022/04/23/PA%E7%AD%94%E7%96%91%E4%B9%8B%E4%BB%A3%E7%A0%81%E6%A1%86%E6%9E%B6/</id>
     <published>2022-04-23T07:21:37.000Z</published>
     <updated>2022-04-23T07:42:43.216Z</updated>
     
@@ -391,15 +255,15 @@
     
     
     
-    <category term="计组" scheme="https://Dragonliu2018.github.io/categories/计组/"/>
+    <category term="计组" scheme="https://Dragonliu2022.github.io/categories/计组/"/>
     
     
   </entry>
   
   <entry>
     <title>PA答疑之IDEX和IDEXW</title>
-    <link href="https://dragonliu2018.github.io/2022/04/23/PA%E7%AD%94%E7%96%91%E4%B9%8BIDEX%E5%92%8CIDEXW/"/>
-    <id>https://dragonliu2018.github.io/2022/04/23/PA%E7%AD%94%E7%96%91%E4%B9%8BIDEX%E5%92%8CIDEXW/</id>
+    <link href="https://dragonliu2022.github.io/2022/04/23/PA%E7%AD%94%E7%96%91%E4%B9%8BIDEX%E5%92%8CIDEXW/"/>
+    <id>https://dragonliu2022.github.io/2022/04/23/PA%E7%AD%94%E7%96%91%E4%B9%8BIDEX%E5%92%8CIDEXW/</id>
     <published>2022-04-23T06:43:37.000Z</published>
     <updated>2022-04-23T08:23:06.932Z</updated>
     
@@ -413,15 +277,15 @@
     
     
     
-    <category term="计组" scheme="https://Dragonliu2018.github.io/categories/计组/"/>
+    <category term="计组" scheme="https://Dragonliu2022.github.io/categories/计组/"/>
     
     
   </entry>
   
   <entry>
     <title>深度学习中的一些名词</title>
-    <link href="https://dragonliu2018.github.io/2022/04/22/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%90%8D%E8%AF%8D/"/>
-    <id>https://dragonliu2018.github.io/2022/04/22/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%90%8D%E8%AF%8D/</id>
+    <link href="https://dragonliu2022.github.io/2022/04/22/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%90%8D%E8%AF%8D/"/>
+    <id>https://dragonliu2022.github.io/2022/04/22/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%90%8D%E8%AF%8D/</id>
     <published>2022-04-22T13:53:40.000Z</published>
     <updated>2022-04-25T14:10:08.886Z</updated>
     
@@ -435,21 +299,21 @@
     
     
     
-    <category term="AI" scheme="https://Dragonliu2018.github.io/categories/AI/"/>
+    <category term="AI" scheme="https://Dragonliu2022.github.io/categories/AI/"/>
     
     
-    <category term="深度学习" scheme="https://Dragonliu2018.github.io/tags/深度学习/"/>
+    <category term="深度学习" scheme="https://Dragonliu2022.github.io/tags/深度学习/"/>
     
   </entry>
   
   <entry>
-    <title>pylab.show()或plt.show()报错</title>
-    <link href="https://dragonliu2018.github.io/2022/04/22/pylab-show-%E6%88%96plt-show-%E6%8A%A5%E9%94%99/"/>
-    <id>https://dragonliu2018.github.io/2022/04/22/pylab-show-%E6%88%96plt-show-%E6%8A%A5%E9%94%99/</id>
-    <published>2022-04-22T12:04:21.000Z</published>
-    <updated>2022-04-22T12:11:51.525Z</updated>
+    <title>hexo d报错</title>
+    <link href="https://dragonliu2022.github.io/2022/04/19/hexo-d%E6%8A%A5%E9%94%99/"/>
+    <id>https://dragonliu2022.github.io/2022/04/19/hexo-d%E6%8A%A5%E9%94%99/</id>
+    <published>2022-04-19T03:10:19.000Z</published>
+    <updated>2022-04-19T04:06:00.964Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="1-pylabshow问题"><a class="markdownIt-Anchor" href="#1-pylabshow问题"></a> 1 pylab.show()问题</h1><p>最近使用实验室的机子进行模型训练，<strong>发生报错</strong>：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">XIO:  fatal IO error 0 (Success) on X server <span class="string">"localhost:13.0"</span></span><br><span class="line">      after 355 requests (355 known processed) with 2 events remaining.</span><br></pre></td></tr></table></figure><p><strong>定位代码</strong>：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pylab.show()</span><br></pre></td></tr></table></figure><p><strong>原因</strong>：机子没有界面，导致显示失败。</p><p><strong>解决</strong>：只需将图片保存，而非显示。</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># pylab.show()</span></span><br><span class="line">pylab.savefig(<span class="string">'./data/net_pic/textcnn_100_0.001_300.jpg'</span>)</span><br></pre></td></tr></table></figure><h1 id="2-pltshow问题"><a class="markdownIt-Anchor" href="#2-pltshow问题"></a> 2 plt.show()问题</h1><p>之前一个同学也遇到了类似的报错：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UserWarning: Matplotlib is currently using agg, <span class="built_in">which</span> is a non GUI backend, so cannot show the figure.</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure><p><strong>定位代码</strong>：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plt.show()</span><br></pre></td></tr></table></figure><p><strong>解决方法</strong>：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># plt.show()</span></span><br><span class="line">plt.savefig(<span class="string">'./data/net_pic/textcnn_100_0.001_300.jpg'</span>)</span><br></pre></td></tr></table></figure><h1 id="x-参考"><a class="markdownIt-Anchor" href="#x-参考"></a> X 参考</h1><ul><li><a href="https://blog.csdn.net/m0_37052320/article/details/79640467" target="_blank" rel="noopener">python matplotlib 画图保存图片简单例子</a></li></ul>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="1-报错"><a class="markdownIt-Anchor" href="#1-报错"></a> 1 报错</h1><p>hexo d 命令报错：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/c/Users/Dragon Liu/.ssh/config: line 5: Bad configuration option: password</span><br><span class="line">/c/Users/Dragon Liu/.ssh/config: terminating, 1 bad configuration options</span><br><span class="line">fatal: Could not <span class="built_in">read</span> from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">[41mFATAL[49m Something<span class="string">'s wrong. Maybe you can find the solution here: [4mhttps://hexo.io/docs/troubleshooting.html[24m</span></span><br><span class="line"><span class="string">[33mError: Spawn failed</span></span><br><span class="line"><span class="string">    at ChildProcess.&lt;anonymous&gt; (E:\01 Blog_work\Hexo-Blog\node_modules\hexo-deployer-git\node_modules\hexo-util\lib\spawn.js:51:21)</span></span><br><span class="line"><span class="string">    at ChildProcess.emit (events.js:200:13)</span></span><br><span class="line"><span class="string">    at ChildProcess.cp.emit (E:\01 Blog_work\Hexo-Blog\node_modules\hexo-deployer-git\node_modules\cross-spawn\lib\enoent.js:34:29)</span></span><br><span class="line"><span class="string">    at Process.ChildProcess._handle.onexit (internal/child_process.js:272:12)[39m</span></span><br></pre></td></tr></table></figure><h1 id="2-解决"><a class="markdownIt-Anchor" href="#2-解决"></a> 2 解决</h1><h2 id="21-情况1"><a class="markdownIt-Anchor" href="#21-情况1"></a> 2.1 情况1</h2><p><code>ssh -T git@github.com</code> 测试无法连接：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">E:\01 Blog_work\Hexo-Blog&gt;ssh -T git@github.com</span><br><span class="line">C:\\Users\\Dragon Liu/.ssh/config: line 5: Bad configuration option: password</span><br><span class="line">C:\\Users\\Dragon Liu/.ssh/config: terminating, 1 bad configuration options</span><br></pre></td></tr></table></figure><p>原因是之前vscode下载插件Remote - SSH时配置了此文件：</p><img src="https://s2.loli.net/2022/04/19/EF7GobKALXv1jr3.png" width="800" height="300" alt="图片名称" align="center" id="186"><p>删除<code>config</code>文件即可测试成功：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">E:\01 Blog_work\Hexo-Blog&gt;ssh -T git@github.com</span><br><span class="line">Warning: Permanently added the ECDSA host key <span class="keyword">for</span> IP address <span class="string">'140.82.112.3'</span> to the list of known hosts.</span><br><span class="line">Hi Dragonliu2018! You<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></span><br></pre></td></tr></table></figure><p>然后<code>hexo d</code>也可以成功。</p><h2 id="22-情况2"><a class="markdownIt-Anchor" href="#22-情况2"></a> 2.2 情况2</h2><p>hexo原本部署到GitHub，现在需要另一个hexo-blog来写Algorithm部分，然后部署到gitee，hexo d后出现报错。</p><p><code>ssh -T git@gitee.com</code> 测试无法连接：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">E:\01 Blog_work\Hexo-Blog-Algorithm&gt;ssh -T git@gitee.com</span><br><span class="line">Warning: Permanently added the ED25519 host key <span class="keyword">for</span> IP address <span class="string">'180.97.125.228'</span> to the list of known hosts.</span><br><span class="line">git@gitee.com: Permission denied (publickey).</span><br></pre></td></tr></table></figure><p>原因是没有在 Gitee 中添加 SSH 公钥，复制<code>id_rsa_pub</code> 文件内容，然后打开 gitee 个人设置里面的 安全设置 - SSH公钥，标题可以随便取，把粘贴的内容复制到公钥里面，点击确定就可以：</p><img src="https://s2.loli.net/2022/04/19/yJIVgfYDMd2A7ne.png" width="900" height="250" alt="图片名称" align="center" id="187"><img src="https://s2.loli.net/2022/04/19/75BPQXYca9IuO2C.png" width="900" height="500" alt="图片名称" align="center" id="188"><p>此时测试成功：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">E:\01 Blog_work\Hexo-Blog-Algorithm&gt;ssh -T git@gitee.com</span><br><span class="line">Hi [36;01mDragon-Liu[0m! You<span class="string">'ve [32msuccessfully[0m authenticated, but GITEE.COM does not provide shell access.</span></span><br></pre></td></tr></table></figure><p>然后<code>hexo d</code>即可成功。</p><blockquote><p><strong>吐槽</strong>：</p><ol><li>很容易部署失败：提示可能包含违禁违规内容。</li><li>后期如果新增了文章，执行 <code>hexo g -d</code>后 ，还需要更新 Gitee Pages 服务</li></ol></blockquote><h1 id="x-参考"><a class="markdownIt-Anchor" href="#x-参考"></a> X 参考</h1><ul><li><a href="https://blog.csdn.net/qq_38157825/article/details/112783631" target="_blank" rel="noopener">Hexo 部署到 Gitee</a></li></ul>]]></content>
     
     
       
@@ -459,7 +323,153 @@
     
     
     
-    <category term="环境与工具" scheme="https://Dragonliu2018.github.io/categories/环境与工具/"/>
+    <category term="环境与工具" scheme="https://Dragonliu2022.github.io/categories/环境与工具/"/>
+    
+    
+    <category term="Hexo" scheme="https://Dragonliu2022.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>大数据训练营项目《北京二手房交易数据分析平台》整理</title>
+    <link href="https://dragonliu2022.github.io/2022/04/18/%E5%A4%A7%E6%95%B0%E6%8D%AE%E8%AE%AD%E7%BB%83%E8%90%A5%E9%A1%B9%E7%9B%AE%E3%80%8A%E5%8C%97%E4%BA%AC%E4%BA%8C%E6%89%8B%E6%88%BF%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B9%B3%E5%8F%B0%E3%80%8B%E6%95%B4%E7%90%86/"/>
+    <id>https://dragonliu2022.github.io/2022/04/18/%E5%A4%A7%E6%95%B0%E6%8D%AE%E8%AE%AD%E7%BB%83%E8%90%A5%E9%A1%B9%E7%9B%AE%E3%80%8A%E5%8C%97%E4%BA%AC%E4%BA%8C%E6%89%8B%E6%88%BF%E4%BA%A4%E6%98%93%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B9%B3%E5%8F%B0%E3%80%8B%E6%95%B4%E7%90%86/</id>
+    <published>2022-04-18T05:10:43.000Z</published>
+    <updated>2022-04-18T16:02:57.639Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="1-简介"><a class="markdownIt-Anchor" href="#1-简介"></a> 1 简介</h1><p>北京二手房交易数据分析平台：收集二手房交易数据，利用大数据技术进行处理，大屏展示结果  。</p><h1 id="2-工作流程"><a class="markdownIt-Anchor" href="#2-工作流程"></a> 2 工作流程</h1><ol><li><strong>数据收集</strong>：爬取二手房交易网站的数据（链家、贝壳等）</li><li><strong>数据预处理</strong>：不同的数据源，不同的数据结构，垃圾数据，对收集到的大数据集合进行预处理</li><li><strong>数据存储、处理与分析（我负责）</strong>：搭建hadoop环境，将数据文件上传hdfs，通过mapreduce进行数据分析等</li><li><strong>数据可视化</strong>：后端使用java、前端使用echarts模板等进行展示</li></ol><h1 id="3-负责"><a class="markdownIt-Anchor" href="#3-负责"></a> 3 负责</h1><ul><li><strong>集群</strong>：3台centos虚拟机</li><li><strong>名词解释</strong>：<ul><li>hadoop：Hadoop是一个能够对大量数据进行<a href="https://baike.baidu.com/item/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%84%E7%90%86" target="_blank" rel="noopener">分布式处理</a>的<a href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6" target="_blank" rel="noopener">软件</a>框架。 <a href="https://baike.baidu.com/item/Hadoop/3526507" target="_blank" rel="noopener">https://baike.baidu.com/item/Hadoop/3526507</a><ul><li>hdfs：分布式文件系统 <a href="https://baike.baidu.com/item/hdfs/4836121" target="_blank" rel="noopener">https://baike.baidu.com/item/hdfs/4836121</a></li><li>mapreduce：是一种编程模型，用于大规模数据集（大于1TB）的并行运算 <a href="https://baike.baidu.com/item/MapReduce/133425" target="_blank" rel="noopener">https://baike.baidu.com/item/MapReduce/133425</a></li></ul></li><li>hive：Hive是基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张数据库表，并提供类SQL查询功能。 <a href="https://developer.aliyun.com/article/100911" target="_blank" rel="noopener">https://developer.aliyun.com/article/100911</a></li><li>sqoop：主要用于在Hadoop(Hive)与传统的数据库(mysql、postgresql…)间进行数据的传递   <a href="https://baike.baidu.com/item/sqoop/5033853" target="_blank" rel="noopener">https://baike.baidu.com/item/sqoop/5033853</a></li></ul></li></ul><h1 id="4-项目架构图"><a class="markdownIt-Anchor" href="#4-项目架构图"></a> 4 项目架构图</h1><p><img src="https://s2.loli.net/2022/03/23/FPK2J3Ozo71Veav.png" alt></p><h1 id="5-困难"><a class="markdownIt-Anchor" href="#5-困难"></a> 5 困难</h1><ul><li>hadoop集群搭建失败：版本没用对</li><li></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="大数据" scheme="https://Dragonliu2022.github.io/categories/大数据/"/>
+    
+    
+    <category term="待补充" scheme="https://Dragonliu2022.github.io/tags/待补充/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《世事如书，我只爱你这一句》书籍</title>
+    <link href="https://dragonliu2022.github.io/2022/04/17/%E3%80%8A%E4%B8%96%E4%BA%8B%E5%A6%82%E4%B9%A6%EF%BC%8C%E6%88%91%E5%8F%AA%E7%88%B1%E4%BD%A0%E8%BF%99%E4%B8%80%E5%8F%A5%E3%80%8B%E4%B9%A6%E7%B1%8D/"/>
+    <id>https://dragonliu2022.github.io/2022/04/17/%E3%80%8A%E4%B8%96%E4%BA%8B%E5%A6%82%E4%B9%A6%EF%BC%8C%E6%88%91%E5%8F%AA%E7%88%B1%E4%BD%A0%E8%BF%99%E4%B8%80%E5%8F%A5%E3%80%8B%E4%B9%A6%E7%B1%8D/</id>
+    <published>2022-04-17T14:34:04.000Z</published>
+    <updated>2022-04-17T16:10:08.246Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="1-简介"><a class="markdownIt-Anchor" href="#1-简介"></a> 1 简介</h1><p>朱生豪：“醒来觉得甚是爱你。”</p><p>张爱玲：“因为爱过，所以慈悲；因为懂得，所以宽容。”</p><p>林徽因：“答案很长，我得用一生去回答你，准备好听我了吗？”</p><p>钱钟书：“我见到她之前，从未想到要结婚；我娶了她十几年，从未后悔娶她；也从未想过要娶别的女人。”</p><p>沈从文说：“我走过许多地方的路，行过许多地方的桥，看过许多次数的云，喝过许多种类的酒，却只爱过一个正当最好年龄的人。”</p><p>央视朗读者盛赞，温暖了一个世纪的民国爱情故事。20对民国才子佳人的缱绻情书，有梁思成与林徽因的“门当户对四月天”，有林语堂与廖翠凤的“焚证报卿缠绵意”，有徐志摩与陆小曼的“离悲成欢有绝期”，也有胡兰成与张爱玲的“终成饭粘萎尘泥”，一字字，一句句，令人心生暖意，不禁想回到那个年代，去同他们一起谈天说地，抑或静下心来给心上人，写一封暖暖的情书。</p><p>关于民国美好的爱情故事，是印刻在我们记忆里的传奇，我们不断回忆，不断打磨，把思念书写成文字，把故事打磨成璞玉。最终，裁成四月的天。</p><h1 id="2-作者"><a class="markdownIt-Anchor" href="#2-作者"></a> 2 作者</h1><p>特立独行的猪先生，编剧、民国史研究者。因热爱民国史，致力于把枯燥的历史用年轻人喜闻乐见的方式表述出来，创有历史游记节目“猪游记”，现为独立自媒体人。</p><p>作者访遍书中人物故居，翻阅现存史料记载，游历了各个名人博物馆，并整理了他们当年的信件及书稿，历数年写就成书。</p><p>作者完全摒弃了市面上诸多历史书籍误读的地方，并一一实地考察校正，为我们真实还原了那个时期民国才子佳人的爱情故事，完整重现了他们可歌可泣的爱情历程。</p><h1 id="3-摘抄"><a class="markdownIt-Anchor" href="#3-摘抄"></a> 3 摘抄</h1><center>一刹那的爱意，可以永恒</center><p><strong>醒来觉得甚是爱你 朱生豪&amp;宋清如</strong></p><blockquote><p>朱生豪在给宋清如的信中写道：“要是我们两人一同在雨声里做梦，那意境是如何不同，或者一同在雨声里失眠，那也是何等有味。”</p><hr><p>我是宋清如至上主义者。</p><hr><p>要是世上只有我们两个人多么好，我一定要把你欺负得哭不出来。</p><hr><p>我爱你也许并不为什么理由，虽然可以有理由，例如你聪明，你纯洁，你可爱，你是好人等，但主要的原因大概是你全然适合我的趣味。因此你仍知道我是自私的，故不用感激我。</p></blockquote><p><strong>从今往后，咱们只有死别，再无生离 钱钟书&amp;杨绛</strong></p><blockquote><p>有的时候，人和人的缘分，一面就能注定。</p><hr><p>后来两人再次见面，约在了清华大学工字厅。钱钟书说道：“我没有订婚。”杨绛答：“我也没有男朋友。”</p><p>对话就是这样直白，一旦遇到了自己心动的那个人，不需要太多的言语，从对方的瞳孔里，你会看到光。</p><hr><p>缠绵悱恻好文章，粉恋香凄足断肠。答报情痴无别物，辛酸一把泪千行。</p><p>依穰小妹剧关心，髾瓣多情一往深。别后经时无只字，居然惜墨抵兼金。</p><p>良宵苦被睡相谩，猎猎风声测测寒。如此星辰如此月，与谁指点与谁看。</p><p>困人节气奈何天，泥煞衾函梦不圆。苦雨泼寒宵似水，百虫声里怯孤眠。</p></blockquote><p><strong>我明白你会来，所以我等 沈从文&amp;张兆和</strong></p><blockquote><p>沈从文这个从乡下走出来的男子遇见清秀典雅的张兆和，便爱得一发不可收拾，他按捺不住内心狂热的爱慕。他把爱慕之情化作情书，第一封情书的开头就直白地写道：</p><p>不知道为什么，我突然爱上了你！</p><hr><p>张兆和对于爱的理解是对的，爱是双方的，需要灵魂的契合，爱就是爱，不爱就是不爱。爱不是感动，不是单方面的付出，当爱掺杂了太多的不平等时，这份爱也就不再能给相爱的人带来快乐。</p></blockquote><p><strong>因为懂得，所以慈悲 张爱玲&amp;胡兰成</strong></p><blockquote><p>张爱玲说：“见了他，她变得很低很低，低到尘埃里，但她心里是欢喜的，从尘埃里开出花来。”</p></blockquote><p><strong>明月装饰了你的窗子，你装饰了别人的梦 卞之琳&amp;张充和</strong></p><blockquote><p>那一抹笑，像是一朵莲花，盛开在那清波碧水间，荡起了一圈一圈涟漪，倩影映射在他的瞳孔里，在他明亮细腻的心里，扎下了根。</p><hr><p>这首诗便是《断章》：</p><p>你站在桥上看风景，</p><p>看风景的人在楼上看你。</p><p>明月装饰了你的窗子，</p><p>你装饰了别人的梦。</p><hr><p>张充和无奈地说道：“从来大家都这么问，我说：他没有说请客，我怎么能说不来呢？他从来没有认真跟我表白过，写信说的也只是日常普通的事，只是写得有点啰唆。</p><hr><p>不得不承认，在我们的生命中，有些人哪怕是很多年没见，你早已忘记了她的声音，脑海中模糊了她的容颜，但再次相遇时，那感觉却永远不会变。</p></blockquote><p><strong>你是燕在梁间的呢喃，你是人间的四月天 梁思成&amp;林徽因</strong></p><blockquote><p>中国有句俗话，‘文章是自己的好，老婆是人家的好’。可是对我来说是，老婆是自己的好，文章是老婆的好，我不否认和林徽因在一起有时很累，因为她的思想太活跃，和她在一起必须和她同样的反应敏捷才行，不然就跟不上她。</p></blockquote><p><strong>心里挂念一个人，从此便有一座城 金岳霖&amp;林徽因</strong></p><blockquote><p>金岳霖听闻后不禁恸哭，在林徽因的追悼会上，金岳霖眼泪没停过，并为她送上了一副挽联：</p><p>一身诗意千寻瀑<br>万古人间四月天</p><hr><p>我们能想象，他在想什么，他或许会想起总布胡同的那段时光，那天，他第一次见到林徽因笑靥如花的样子，就像那四月的花，开在了那个初春，扎根在了他的心里；他或许会想起西南联大的艰苦岁月，会想起林徽因的一颦一笑、一步一印，往事一幕一幕在眼前晃过，活着的他又何尝不想去见她？心里挂念一个人，从此便有一座城。</p><hr><p>人生在世，是该相信点什么的。</p><p>相信爱情，相信遇见与离别；相信未来，会有那样一个人，在不远处等着你；相信一切都是最好的安排；相信美好的事即将发生。</p></blockquote><p><strong>风华是一指流沙，苍老是一段年华 徐志摩&amp;陆小曼</strong></p><blockquote><p>这是婚后陆小曼写给王映霞的信里的话，可谓一针见血。这点她没有林徽因明白得早，当年林徽因就知道徐志摩喜欢的自己并不是真实的自己，而是他自己臆想出来的林徽因。</p></blockquote><p><strong>彪悍的婚姻，不需要解释 胡适&amp;江冬秀</strong></p><blockquote><p>…</p></blockquote><p><strong>小白象与小刺猬，他们相拥而爱 鲁迅&amp;许广平</strong></p><blockquote><p>鲁迅说：“我脾气不好。”</p><p>许广平说：“因为你是先生，我多少让你些，如果是年龄相仿的对手，我不会这样的。”</p></blockquote><p><strong>你许我岁月静好，我还你现世安稳 巴金&amp;萧珊</strong></p><blockquote><p>一生选一人，择一城，生同眠，死同穴，生生世世都要在一起。巴金与萧珊二十多年相濡以沫，两个人在一起，朝着相同的方向努力，相互扶持，这就是最好的爱情。</p></blockquote><p><strong>陪伴是最长情的爱恋，相守是最美好的婚姻 林语堂&amp;廖翠凤</strong></p><blockquote><p>结婚的时候，林语堂做了一件奇事，他把结婚证书一把火烧掉了。</p><p>他说了这样一句话：“把婚书烧了吧，因为婚书只是离婚时才用得着。”</p><p>张爱玲说：“也许每一个男子全都有过这样的两个女人，至少两个，娶了红玫瑰，久而久之，红的变了墙上的一抹蚊子血，白的还是床前明月光，娶了白玫瑰，白的便是衣服上沾的一粒饭粘子，红的却是心口上一颗朱砂痣。</p><hr><p>廖翠凤的一生是甜蜜的、快乐的。人生中最幸福的事就是和同床共枕的那个人一起嘻嘻闹闹，一起看着彼此鬓角渐白、牙齿渐松，然后相对掩嘴偷笑，彼此相依，共度一生。</p></blockquote><p><strong>爱情和婚姻，就该是这般模样 梁实秋&amp;程季淑</strong></p><blockquote><p>程季淑去世后，梁实秋说：“我像一棵树，突然一声霹雳，电火殛毁了半劈的树干，还剩下半株，有枝有叶，还活着，但是生意尽矣。两个人手拉着手的走下山，一个突然倒下去，另一个只好踉踉跄跄地独自继续他的旅程！</p><hr><p>娶妻如此，夫复何求。<br>平生伴侣，亦友亦妻。</p></blockquote><p><strong>他们的爱情，如荷塘清风般淡雅 朱自清&amp;陈竹隐</strong></p><blockquote><p>一九三一年六月十二日，朱自清在情书中写道：“隐，一见你的眼睛，我便清醒起来，我更喜欢看你那晕红的双腮，黄昏时的霞彩似的，谢谢你给我力量。</p><hr><p>原来，生活可以美好，只是过去忘了去寻找。</p></blockquote><p><strong>君对我情断义绝，我偏长出倔强花朵 徐志摩&amp;张幼仪</strong></p><blockquote><p>张幼仪其实长得不差，她自己也说： 我身材不错，还长着一双大眼睛，也是被人夸大的。</p></blockquote><p><strong>生同眠，死同穴，生生世世都要在一起 吴文藻&amp;冰心</strong></p><blockquote><p>冰心：“爱在右，同情在左，走在生命路的两旁，随时撒种，随时开花，将这一径长途，点缀得香花弥漫，使穿枝拂叶的行人，踏着荆棘，不觉得痛苦，有泪可落，也不是悲凉。”</p><hr><p>生同眠，死同穴，天地合，不可与君绝，这大抵就是世间最圆满的爱情了。</p><blockquote><p><strong>此处化用</strong>：汉代<a href="https://so.gushiwen.cn/authorv_2128926194cd.aspx" target="_blank" rel="noopener">佚名</a>的《上邪》</p><p>我欲与君相知，长命无绝衰。<br><strong>山无陵</strong>，江水为竭，冬雷震震，夏雨雪，<strong>天地合，乃敢与君绝！</strong></p></blockquote></blockquote><p><strong>你走，我当你没来过 徐悲鸿&amp;蒋碧微</strong></p><blockquote><p>但蒋碧微拒绝了，并拒绝了六次，无论这个男人在她面前表现得多么悔恨。蒋碧微对徐悲鸿说：“你来，我相信你不会走；你走，我当你没来过。”</p></blockquote><p><strong>在你的生命中，我将孤独地老去 鲁迅&amp;朱安</strong></p><blockquote><p>这是母亲给我的一件礼物，我只能好好地供养她，爱情是我所不知道的。</p><hr><p>朱安明白自己这一生的命运，明白她追随鲁迅一辈子，与他也只能是两条平行线，此生没有相交的可能。她终其一生，都不会是那个与鲁迅温馨相伴的女子。</p><hr><p>朱安的一生，是悲剧的一生，如她自己所说：鲁迅与她不好，她想好好地服侍他，一切顺着他，将来总会好的。</p><p>然而一切没有变好，她与鲁迅越走越远，她就这样在岁月中蹉跎了自己的一生。就像那只蜗牛，一点一点地往上爬，她相信总有一天能爬到墙顶，走进鲁迅的心里，但鲁迅终究不是胡适，朱安也不是江冬秀，她拼尽余生的力气终究也没能成为鲁迅心口上的一颗朱砂痣。</p></blockquote><p><strong>最好的爱情，便是我懂你 张伯驹&amp;潘素</strong></p><blockquote><p>…</p></blockquote><p><strong>微风吹动了我的头发，教我如何不想她 赵元任&amp;杨步伟</strong></p><blockquote><p>…</p></blockquote><h1 id="4-自评"><a class="markdownIt-Anchor" href="#4-自评"></a> 4 自评</h1><p>大四上学期一段时间特别喜欢看欧丽娟关于爱情的视频，其中她推荐了这本书《世事如书，我只爱你这一句》。</p><p>向来欣赏民国才子佳人，但是将其冠以<code>择一人终老，携一人白首</code>的刻板印象，未免有些不公平，对此我有心理准备，于是安静地期待地翻开了这本书。</p><hr><p>（待补充）</p><hr><p>我明白你会来，所以我等。等到最好的我，去遇到更好的你。</p><h1 id="5-他评"><a class="markdownIt-Anchor" href="#5-他评"></a> 5 他评</h1><p>xxx</p><h1 id="6-拓展"><a class="markdownIt-Anchor" href="#6-拓展"></a> 6 拓展</h1><p>是否被拍成影视作品？（无）</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="阅读" scheme="https://Dragonliu2022.github.io/categories/阅读/"/>
+    
+    
+    <category term="书评" scheme="https://Dragonliu2022.github.io/tags/书评/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MR(merge request) vs PR(pull request)</title>
+    <link href="https://dragonliu2022.github.io/2022/04/15/MR-merge-request-vs-PR-pull-request/"/>
+    <id>https://dragonliu2022.github.io/2022/04/15/MR-merge-request-vs-PR-pull-request/</id>
+    <published>2022-04-15T08:04:41.000Z</published>
+    <updated>2022-04-18T11:31:16.498Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote><p><strong>转载</strong>：<a href="https://mp.weixin.qq.com/s?__biz=MzkwNzI0MzQ2NQ==&amp;mid=2247489125&amp;idx=2&amp;sn=735299f1744b1074e54cbeeaeadc1e9c&amp;source=41#wechat_redirect" target="_blank" rel="noopener">啥是 PR？啥又是MR？</a></p></blockquote><h1 id="1-引入"><a class="markdownIt-Anchor" href="#1-引入"></a> 1 引入</h1><p>在团队中我承担了<code>Committer</code> 的责任，也就是帮同事们检视代码（<code>Code Review</code>）和合入代码，经常听到有同事在群里喊：“大佬，帮我合个 PR”，“大佬，我刚提交了一个 MR，帮忙合一下，急着出补丁”。我有点懵了，<code>PR</code> 和 <code>MR</code> 到底哪个才是正确的，这两个到底有什么区别，我决定先搞清楚这两个概念再合入他们的代码。[手动滑稽]</p><h1 id="2-什么是pull-request"><a class="markdownIt-Anchor" href="#2-什么是pull-request"></a> 2 什么是Pull Request？</h1><p><code>PR</code> 的全称是<code>Pull Request</code>，经常用 <code>Github</code> 的同学对这个肯定很熟悉了。Github 聚集了4000万开发者，过亿的开源项目，如果想给别人的开源仓库贡献代码，通常是先 <code>fork</code> 别人的项目，然后本地修改完成提交到自己的个人 fork 仓库，最后提交 PR 等待别人合入你的代码。</p><p>Github 的工作流（fork 工作流）：</p><img src="https://s2.loli.net/2022/04/15/CLTr3VjuGOwJUBg.png" width="400" height="400" alt="fork 工作流" align="center" id="150"><p>我们重点看一下第6步，小明写完代码了想合入到原作者的仓库，新建了一个“<code>pull request</code>”，拉请求？这明明是推啊，小明将自己的修改推到原作者的仓，感觉叫“<code>push request</code>”比较合适吧。</p><p>既然 Github 坚持叫“<code>pull request</code>”，我们试着理解一下它的思路，小明写完代码了心里肯定是在想：<code>原作者大神，我改了点东西，你快把我的修改拉回去吧</code>。站在原作者的角度思考，叫pull request好像也说得过去，每天有大量的人从我这里 fork 代码走，我只会拉取我感兴趣的代码回来。</p><p>我好像把自己说服了。</p><h1 id="3-什么是-merge-request"><a class="markdownIt-Anchor" href="#3-什么是-merge-request"></a> 3 什么是 Merge Request？</h1><p>MR 的全称是 <code>Merge Request</code>，相信玩过 Gitlab 的同学都知道这个。</p><p>插播一下，Github这么好用了为什么还有人玩 Gitlab，这就要几年前说起了。在微软没有收购 Github 之前，Github 上面所有的项目必须是公开的，也就是说自己很渣的代码也必须要公开，不能藏着噎着。但是在一些小的公司或者创业团队，代码这种核心资产是不希望被公开，他们迫切需要私密仓这种需求，所以很多人都选择了 Gitlab。当然后面 Github 也放开了私有仓库，这是后话了。</p><p>merge 工作流：</p><img src="https://s2.loli.net/2022/04/15/q4NIh1H7ZVA9CR2.png" width="500" height="400" alt="merge 工作流" align="center" id="151"><p>团队中每个人都从远程仓库 develop 分支拉取代码，本地基于 develop 分支新建特性分支，修改完代码将特性分支推到远程仓，紧接着新建 Merge Request 期望将自己的特性分支合入 develop 分支。</p><p>从上面这个流程来看Merge Request 就是将自己的特性分支合入到主干分支。</p><h1 id="4-pull-request-vs-merge-request"><a class="markdownIt-Anchor" href="#4-pull-request-vs-merge-request"></a> 4 Pull Request VS Merge Request</h1><p>总结一下上面两个例子。</p><p>Github 是玩 fork 模式的，开发者提交自己的代码新建 Pull Request，请求原作者：“把我的代码拉回去吧”。</p><p>Gitlab 是玩分支模式的，开发者提交自己的代码新建 Merge Request，想将自己的特性分支合并到主干。</p><p>上面总结的好像很有道理，但是不要忘了，Github 也可以玩分支模式，Gitlab 也可以玩 fork 模式，更令人无语的是：</p><p>Github 上合并分支还是叫 Pull Request；Gitlab 上fork 模式也是叫 Merge Request；</p><p>不行，这种答案我没法接受，去 stackoverflow上搜一些大家是怎么理解的。果然有一个帖子很火：</p><p>Pull request vs Merge request</p><p>有一个回答摘取了 Gitlab 的官方解释：</p><blockquote><p>Merge or pull requests are created in a git management application and ask an assigned person to merge two branches. Tools such as GitHub and Bitbucket choose the name pull request since the first manual action would be to pull the feature branch. Tools such as GitLab and Gitorious choose the name merge request since that is the final action that is requested of the assignee. In this article we’ll refer to them as merge requests.</p></blockquote><p>翻译过来简单理解就是：这两个没有本质区别，站在不同立场说法不一样而已。</p><p><strong>好了，官方已经盖棺定论了，这两个就是一个东西，不要纠结啦~</strong></p><h1 id="5-疯狂吐槽"><a class="markdownIt-Anchor" href="#5-疯狂吐槽"></a> 5 疯狂吐槽</h1><p>对于初学者来说，Github 的 pull request 确实让人难以理解，我们去各大网站看看用户的声音。</p><p>StackOverflow：</p><img src="https://s2.loli.net/2022/04/15/f8jlvChkSD5FBxi.png" width="600" height="400" alt="merge 工作流" align="center" id="152"><p>知乎：</p><img src="https://s2.loli.net/2022/04/15/LGJDK7hlTadr3Pn.png" width="600" height="400" alt="merge 工作流" align="center" id="153"><p>从国外到国内都有大量的用户对这个名字不理解，明明是提交提交代码，为什么是 pull request，有些人甚至怀疑是名字打错了。</p><p>如果让我来给 Github 取名字，我可能会取：</p><ul><li><code>push request</code> 推请求</li><li><code>merge request</code> 合并请求</li></ul><p>想多了，不会有如果。[嘿哈]</p><h1 id="6-总结"><a class="markdownIt-Anchor" href="#6-总结"></a> 6 总结</h1><p><code>Pull Request</code> 和<code>Merge Request</code> 本质上都是合入代码，只是站在不同角度有不同的说法而已，因此在学习和工作中无论用哪一个都没有问题。</p><p>鼓励大家在 GitHub上多多提交 PR，为个人简历加分</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="环境与工具" scheme="https://Dragonliu2022.github.io/categories/环境与工具/"/>
+    
+    
+    <category term="Git" scheme="https://Dragonliu2022.github.io/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《代码整洁之道 clean code》笔记</title>
+    <link href="https://dragonliu2022.github.io/2022/04/15/%E3%80%8A%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93%20clean%20code%E3%80%8B%E7%AC%94%E8%AE%B0/"/>
+    <id>https://dragonliu2022.github.io/2022/04/15/%E3%80%8A%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93%20clean%20code%E3%80%8B%E7%AC%94%E8%AE%B0/</id>
+    <published>2022-04-15T07:43:14.000Z</published>
+    <updated>2022-04-18T14:18:55.189Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote><ul><li>《代码整洁之道 Clean Code》Robert C. Martin 著 韩磊 译 人民邮电出版社 2020</li><li>《Clean Code(评注版)》Robert C. Martin 著 韩磊 评注 电子工业出版社 2012</li></ul></blockquote><h1 id="ch2-meaningful-names有意义的命名"><a class="markdownIt-Anchor" href="#ch2-meaningful-names有意义的命名"></a> Ch2 Meaningful Names(有意义的命名)</h1><h2 id="21-use-intention-revealing-names名副其实"><a class="markdownIt-Anchor" href="#21-use-intention-revealing-names名副其实"></a> 2.1 Use Intention-Revealing Names(名副其实)</h2><p>如果名称需要注释来补充，那就算不上名副其实。</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> d;<span class="comment">//消逝的时间，以日计</span></span><br><span class="line"><span class="keyword">int</span> elapsedTimeInDays;</span><br></pre></td></tr></table></figure><h2 id="22-avoid-disinformation避免误导"><a class="markdownIt-Anchor" href="#22-avoid-disinformation避免误导"></a> 2.2 Avoid Disinformation(避免误导)</h2><p>程序员必须避免留下掩藏代码本意的错误线索。应当避免使用与本意相悖的词。</p><ul><li><p>缩写形式常常带来误导。编写三角计算程序，hp是hypotenuse(直角三角形的斜边)缩写，但也是UNIX平台或类UNIX平台的专有名称。</p></li><li><p>一些词对于程序员有特殊含义，如List：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">accountList;<span class="comment">//一组账号，如果账号的容器并List，就会引起错误的判断。</span></span><br><span class="line"><span class="comment">// 可以换成</span></span><br><span class="line">accountGroup;</span><br><span class="line">bunchOfAccounts;</span><br></pre></td></tr></table></figure></li><li><p>不使用差异较小的名称，不易区分</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">XYZControllerForEfficientHandlingOfStrings;</span><br><span class="line">XYZControllerForEfficientStorageOfStrings;</span><br></pre></td></tr></table></figure></li><li><p>不用小写字母<code>l</code>和大写字母<code>O</code>做为变量名，容易与数字<code>1</code>和<code>0</code>混淆</p></li></ul><h2 id="23-make-meaningful-distinctions做有意义的区分"><a class="markdownIt-Anchor" href="#23-make-meaningful-distinctions做有意义的区分"></a> 2.3 Make Meaningful Distinctions(做有意义的区分)</h2><ul><li>以数字系列命名：<code>a1,a2,a3...aN</code></li><li>废话：Product类、ProductInfo类、ProductData类三者名称不同，但是意思无区别</li></ul><h2 id="24-use-pronounceable-names使用可读命名"><a class="markdownIt-Anchor" href="#24-use-pronounceable-names使用可读命名"></a> 2.4 Use Pronounceable Names(使用可读命名)</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Data genymdhms;<span class="comment">//生成日期，年、月、日、时、分、秒</span></span><br><span class="line">Data generationTimestamp;<span class="comment">//改进</span></span><br></pre></td></tr></table></figure><h2 id="25-use-searchable-names使用可搜索命名"><a class="markdownIt-Anchor" href="#25-use-searchable-names使用可搜索命名"></a> 2.5 Use Searchable Names(使用可搜索命名)</h2><p>不使用单字母名称和数字常量，在代码中找数字<code>7</code>要比找<code>MAX_CLASSES_PER_STUDENT</code>容易多；单字母名称可用在短方法的本地变量(local variables inside short methods)，如循环中的计数因子<code>i</code>，名称长短应与其作用域大小相对应。</p><h2 id="26-avoid-encoding避免编码"><a class="markdownIt-Anchor" href="#26-avoid-encoding避免编码"></a> 2.6 Avoid Encoding(避免编码)</h2><p>把类型或作用域加进命名中，徒然增加了读懂命名的负担。带编码的名称也不便发音，容易打错。</p><ul><li><p>匈牙利语标记法：</p><ul><li>在变量名中用缩写标记变量的类型。</li><li>在Windows的C语言API时代，编译器并不做类型检查，程序员需要匈牙利语标记法来帮助自己记住类型。</li><li>现代编程语言具有更丰富的类型系统，编译器也记得并强制使用类型。而且，人们趋向于使用更小的类、更短的方法，好让每个变量的定义都在视野范围之内。所以，如今HN和其他类型的编码方式纯属多余。</li></ul><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PhoneNumber phoneString;<span class="comment">//类型发生变化时，名称并不发生变化</span></span><br></pre></td></tr></table></figure></li><li><p>成员前缀：不必使用<code>m_</code>前缀来表明成员变量</p></li><li><p>接口和实现(Interfaces and Implementations)</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// build an Abstract Factory for the creation of shapes</span></span><br><span class="line">ShapeFactory;<span class="comment">//比较好</span></span><br><span class="line">IShapeFactory;<span class="comment">//I前缀表示接口，是废话</span></span><br><span class="line">ShapeFactoryImp;<span class="comment">//实现比接口好一些</span></span><br></pre></td></tr></table></figure></li></ul><h2 id="27-avoid-mental-mapping避免惯性思维"><a class="markdownIt-Anchor" href="#27-avoid-mental-mapping避免惯性思维"></a> 2.7 Avoid Mental Mapping(避免惯性思维)</h2><p>不应当让读者在脑中把你的名称翻译为他们熟知的名称；这种问题经常出现在选择是使用问题领域术语还是解决方案领域术语时。</p><blockquote><p>聪明程序员和专业程序员之间的区别在于，专业程序员了解，明确是王道。专业程序员善用其能，编写其他人能理解的代码。</p></blockquote><h2 id="28-class-names类名"><a class="markdownIt-Anchor" href="#28-class-names类名"></a> 2.8 Class Names(类名)</h2><ul><li>类名和对象名应该是名词或名词短语，如Customer、WikiPage、Account 和AddressParser。</li><li>避免使用Manager、Processor、Data或Info这样的类名。</li><li>类名不应当是动词。</li></ul><h2 id="29-method-names方法名"><a class="markdownIt-Anchor" href="#29-method-names方法名"></a> 2.9 Method Names(方法名)</h2><ul><li><p>方法名应当是动词或动词短语，如postPayment、deletePage 或save。</p></li><li><p>属性访问器、修改器和断言(accessors, mutators, predicates)应该根据其值命名，并依Javabean 标准1加上get、set和is前缀。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> name=employee.getName();</span><br><span class="line">customer.setName(<span class="string">"mike"</span>);</span><br><span class="line"><span class="keyword">if</span>(paycheck.isPosted())...</span><br></pre></td></tr></table></figure></li><li><p>重载构造器时，使用描述了参数的静态工厂方法名(static factory methods)。例如：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Complex fulcrumPoint=Complex.FromRealNumber(<span class="number">23.0</span>);</span><br><span class="line"><span class="comment">// 通常好于</span></span><br><span class="line">Complex fulcrumPoint=<span class="keyword">new</span> Complex(<span class="number">23.0</span>);</span><br></pre></td></tr></table></figure><p>可以考虑将相应的构造器设置为private，强制使用这种命名手段。</p></li></ul><h2 id="210-dont-be-cute别抖机灵"><a class="markdownIt-Anchor" href="#210-dont-be-cute别抖机灵"></a> 2.10 Don’t Be Cute(别抖机灵)</h2><p>别用俗语、俚语。</p><h2 id="211-pick-one-word-per-concept每个概念对应一个词"><a class="markdownIt-Anchor" href="#211-pick-one-word-per-concept每个概念对应一个词"></a> 2.11 Pick One Word per Concept(每个概念对应一个词)</h2><p>给每个抽象概念选一个词，并且一以贯之。例如：</p><ul><li>fetch、retrieve和get虽有区别，但在前后一致、团队一致的情况下，可以任取其一，一以贯之。</li><li>还有controller、manager、driver</li></ul><h2 id="212-dont-pun别用双关语"><a class="markdownIt-Anchor" href="#212-dont-pun别用双关语"></a> 2.12 Don’t Pun(别用双关语)</h2><p>避免将同一单词用于不同目的。“一词一义”原则</p><h2 id="213-use-solution-domain-names使用解决方案领域名称"><a class="markdownIt-Anchor" href="#213-use-solution-domain-names使用解决方案领域名称"></a> 2.13 Use Solution Domain Names(使用解决方案领域名称)</h2><p>只有程序员才会读你的代码，所以尽量用那些计算机科学（Computer Science，CS）术语、算法名、模式名、数学术语。</p><h2 id="214-use-problem-domain-names使用问题领域名称"><a class="markdownIt-Anchor" href="#214-use-problem-domain-names使用问题领域名称"></a> 2.14 Use Problem Domain Names(使用问题领域名称)</h2><p>如果不能用程序员熟悉的术语来命名，就采用从所涉问题领域而来的名称。这样负责维护代码的程序员就能去请教领域专家了。</p><blockquote><p>优秀的程序员和设计师，其工作之一就是分离解决方案领域和问题领域的概念。</p></blockquote><h2 id="215-add-meaningful-context添加有意义的语境"><a class="markdownIt-Anchor" href="#215-add-meaningful-context添加有意义的语境"></a> 2.15 Add Meaningful Context(添加有意义的语境)</h2><p>用有良好命名的类、函数或名称空间来放置名称给读者提供语境，如果没这么做，给名称添加前缀。比如：firstName、lastName、street、houseNumber、city、state和zipcode的变量</p><ol><li>如果他们在一起，很明确是构成了一个地址；</li><li>如果只有state，那么很难猜测是地址的一部分；</li><li>可以添加前缀addrFirstName、addrLastName、addrState等，以此提供语境；</li><li>更好的方案是创建名为Address的类。</li></ol><h2 id="216-dont-add-gratutous-context不要添加没用的语境"><a class="markdownIt-Anchor" href="#216-dont-add-gratutous-context不要添加没用的语境"></a> 2.16 Don’t Add Gratutous Context(不要添加没用的语境)</h2><p>只要短名称足够清楚，就要比长名称好，别给名称添加不必要的语境。</p><p>比如：设若有一个名为“加油站豪华版”（Gas Station Deluxe）的应用，每个类不要添加GSD前缀。</p><h1 id="ch3-functions函数"><a class="markdownIt-Anchor" href="#ch3-functions函数"></a> Ch3 Functions(函数)</h1><h2 id="31-small短小"><a class="markdownIt-Anchor" href="#31-small短小"></a> 3.1 Small(短小)</h2><ul><li>if语句、else语句、while 语句等，其中的代码块应该只有一行。该行大抵应该是一个函数调用语句。这样不但能保持函数短小，而且，因为块内调用的函数拥有较具说明性的名称，从而增加了文档上的价值。</li><li>这也意味着函数不应该大到足以容纳嵌套结构。所以，<strong>函数的缩进层级不该多于一层或两层</strong>。当然，这样的函数易于阅读和理解。</li></ul><h2 id="32-do-one-thing只做一件事"><a class="markdownIt-Anchor" href="#32-do-one-thing只做一件事"></a> 3.2 Do One Thing(只做一件事)</h2><p>如果函数只是做了该函数名下同一抽象层上的步骤，则函数还是只做了一件事。</p><p>只做一件事的函数无法被合理地切分为多个区段。</p><h2 id="33-one-level-of-abstraction-per-function每个函数一个抽象层级"><a class="markdownIt-Anchor" href="#33-one-level-of-abstraction-per-function每个函数一个抽象层级"></a> 3.3 One Level of Abstraction per Function(每个函数一个抽象层级)</h2><p>要确保函数只做一件事，函数中的语句都要在同一抽象层级上。</p><p>自顶向下读代码：向下规则。让代码拥有自顶向下的阅读顺序，让每个函数后面都跟着位于下一抽象层级的函数，这样一来，在查看函数列表时，就能循抽象层级向下阅读了。</p><h2 id="34-switch-statementsswitch语句"><a class="markdownIt-Anchor" href="#34-switch-statementsswitch语句"></a> 3.4 Switch Statements(Switch语句)</h2><p>利用多态能够确保每个switch都埋藏在较低的抽象层级，而且永远不重复。</p><h2 id="35-use-descriptive-names使用描述性的名称"><a class="markdownIt-Anchor" href="#35-use-descriptive-names使用描述性的名称"></a> 3.5 Use Descriptive Names(使用描述性的名称)</h2><ul><li>沃德原则：“如果每个例程都让你感到深合己意，那就是整洁代码。” 函数越短小、功能越集中，就越便于取个好名字。</li><li>长而具有描述性的名称，比短而令人费解的名称好，比描述性的长注释好。</li><li>命名方式要保持一致。使用与模块名一脉相承的短语、名词和动词给函数命名。</li></ul><h2 id="36-function-arguments函数参数"><a class="markdownIt-Anchor" href="#36-function-arguments函数参数"></a> 3.6 Function Arguments(函数参数)</h2><p>最理想的参数数量是零（零参数函数），其次是一（单参数函数），再次是二（双参数函数），应尽量避免三（三参数函数）。有足够特殊的理由才能用三个以上参数（多参数函数）。</p><ul><li><p>标识参数：尽量不向函数传入布尔值；</p></li><li><p>参数对象：如果函数看来需要两个、三个或三个以上参数，就说明其中一些参数应该封装为类了。例如，下面两个声明的差别：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Circle <span class="title">makeCircle</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">double</span> y, <span class="keyword">double</span> radius)</span></span>;</span><br><span class="line"><span class="function">Circle <span class="title">makeCircle</span><span class="params">(Point center, <span class="keyword">double</span> radius)</span></span>;</span><br></pre></td></tr></table></figure></li><li><p>参数列表：有时，我们想要向函数传入数量可变的参数。例如，String.format方法：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String.format(<span class="string">"s worked $.2f hours."</span>, name, hours);</span><br></pre></td></tr></table></figure><p>如果可变参数像上例中那样被同等对待，就和类型为List的单个参数没什么两样。这样一来，String.formate实则是二元函数。下列 String.format的声明也很明显是二元的：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">format</span><span class="params">(String format, Object...args)</span></span>;</span><br></pre></td></tr></table></figure></li></ul><h2 id="37-have-no-side-effects无副作用"><a class="markdownIt-Anchor" href="#37-have-no-side-effects无副作用"></a> 3.7 Have No Side Effects(无副作用)</h2><p>函数承诺只做一件事，但还是会做其他被藏起来的事。有时，它会对自己类中的变量做出未能预期的改动。有时，它会把变量搞成向函数传递的参数或是系统全局变量。无论哪种情况，都是具有破坏性的，会导致古怪的时序性耦合及顺序依赖。</p><h2 id="38-command-query-separation分隔指令和询问"><a class="markdownIt-Anchor" href="#38-command-query-separation分隔指令和询问"></a> 3.8 Command Query Separation(分隔指令和询问)</h2><p>函数要么做什么事，要么回答什么事，但二者不可得兼。函数应该修改某对象的状态，或是返回该对象的有关信息。两样都干常会导致混乱。</p><ol><li>有两种指令与查询混杂的情况：查询某个状态，再根据状态执行操作；执行某个操作，返回该操作的执行情况。</li><li>最常见的就是函数执行某项操作，其布尔类型的返回值代表操作成功与否。</li></ol><h2 id="39-prefer-exceptions-to-returning-error-codes使用异常代替返回错误码"><a class="markdownIt-Anchor" href="#39-prefer-exceptions-to-returning-error-codes使用异常代替返回错误码"></a> 3.9 Prefer Exceptions to Returning Error Codes(使用异常代替返回错误码)</h2><h2 id="310-dont-repeat-yourself别重复自己"><a class="markdownIt-Anchor" href="#310-dont-repeat-yourself别重复自己"></a> 3.10 Don’t Repeat Yourself(别重复自己)</h2><p>重复可能是软件中一切邪恶的根源。许多原则与实践规则都是为控制与消除重复而创建。例如，</p><ul><li>考德（Codd）数据库范式都是为消灭数据重复而服务；</li><li>面向对象编程是如何将代码集中到基类，从而避免了冗余。</li><li>面向方面编程（Aspect Oriented Programming）、面向组件编程（Component Oriented Programming）多少也都是消除重复的一种策略。</li></ul><h2 id="311-structured-programming结构化编程"><a class="markdownIt-Anchor" href="#311-structured-programming结构化编程"></a> 3.11 Structured Programming(结构化编程)</h2><ul><li>Dijkstra认为，每个函数、函数中的每个代码块都应该有一个入口、一个出口。意味着在每个函数中只该有一个return语句，循环中不能有break 或continue 语句，而且不能有任何 goto语句。</li><li>但对于小函数，这些规则助益不大。只有在大函数中，这些规则才会有明显的好处。</li><li>所以，只要函数保持短小，偶尔出现的returm、break 或continue语句没有坏处，甚至还比单入单出原则更具有表达力。另外一方面，goto只在大函数中才有道理，所以应该尽量避免使用。</li></ul><h2 id="312-如何写出这样的函数"><a class="markdownIt-Anchor" href="#312-如何写出这样的函数"></a> 3.12 如何写出这样的函数</h2><p>并不是一开始就按照规则写函数，需要打磨。</p><h1 id="ch4-comments注释"><a class="markdownIt-Anchor" href="#ch4-comments注释"></a> Ch4 Comments(注释)</h1><ol><li>注释最多也就是一种必须的恶。若编程语言足够有表达力，或者我们长于用这些语言来表达意图，就不需要注释。</li><li>代码在发动，演化；注释不总是随之变动；而代码是唯一真正准确的信息来源。</li></ol><h2 id="41-comments-do-not-make-up-for-bad-code注释不能弥补糟糕的代码"><a class="markdownIt-Anchor" href="#41-comments-do-not-make-up-for-bad-code注释不能弥补糟糕的代码"></a> 4.1 Comments Do Not Make Up for Bad Code(注释不能弥补糟糕的代码)</h2><h2 id="42-explain-yourself-in-code用代码来阐述"><a class="markdownIt-Anchor" href="#42-explain-yourself-in-code用代码来阐述"></a> 4.2 Explain Yourself in Code(用代码来阐述)</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方式1</span></span><br><span class="line"><span class="comment">//Check to see if the employee is eligible for full benefits </span></span><br><span class="line"><span class="keyword">if</span> ((employee.flags &amp; HOURLY_FLAG) &amp;&amp; (employee.age &gt;<span class="number">65</span>))</span><br><span class="line"><span class="comment">//方式2</span></span><br><span class="line"><span class="keyword">if</span> (employee.isEligibleForFu11Benefits())</span><br></pre></td></tr></table></figure><h2 id="43-good-comments好注释"><a class="markdownIt-Anchor" href="#43-good-comments好注释"></a> 4.3 Good Comments(好注释)</h2><p>有些注释是必须的，也是有利的。</p><ol><li><p>法律信息：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Copyright (C)2003,2004,2005 by Object Mentor, Inc. All rights reserved.</span></span><br><span class="line"><span class="comment">//Released under the terms of the GNU General Public License version 2 or later.</span></span><br></pre></td></tr></table></figure></li><li><p>提供信息的注释。以下注释解释了某个抽象方法的返回值：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Returns an instance of the Responder being tested.</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> Responder <span class="title">responderInstance</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure></li><li><p>对意图的解释</p></li><li><p>阐释：有时，注释把某些晦涩难明的参数或返回值的意义翻译为某种可读形式，也会是有用的。这类注释在低层抽象中较为常见，也应该只出现在低层抽象中。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testCompareTo</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    WikiPagePath a=PathParser. parse(<span class="string">"PageA"</span>); </span><br><span class="line">    WikiPagePath ab=PathParser. parse(<span class="string">"PageA. PageB"</span>);</span><br><span class="line">    WikiPagePath b=PathParser. parse(<span class="string">"PageB"</span>); </span><br><span class="line">    WikiPagePath aa=PathParser. parse(<span class="string">"PageA. PageA"</span>); </span><br><span class="line">    WikiPagePath bb=PathParser. parse(<span class="string">"PageB. PageB"</span>);</span><br><span class="line">    WikiPagePath ba=PathParser. parse(<span class="string">"PageB. PageA"</span>); </span><br><span class="line">    </span><br><span class="line">    assertTrue(a. compareTo(a)==<span class="number">0</span>);<span class="comment">//a==a</span></span><br><span class="line">    assertTrue(a. compareTo(b)!=<span class="number">0</span>);<span class="comment">//a!=b </span></span><br><span class="line">    assertTrue(ab. compareTo(ab)==<span class="number">0</span>);<span class="comment">//ab==ab </span></span><br><span class="line">    assertTrue(a. compareTo(b)==-<span class="number">1</span>);<span class="comment">//a&lt;b </span></span><br><span class="line">    assertTrue(aa. compareTo(ab)==-<span class="number">1</span>);<span class="comment">//aa&lt; ab </span></span><br><span class="line">    assertTrue(ba. compareTo(bb)==-<span class="number">1</span>);<span class="comment">//ba&lt;bb </span></span><br><span class="line">    assertTrue(b. compareTo(a)==<span class="number">1</span>);<span class="comment">//b&gt;a </span></span><br><span class="line">    assertTrue(ab. compareTo(aa)==<span class="number">1</span>);<span class="comment">//ab&gt;aa </span></span><br><span class="line">    assertTrue(bb. compareTo (ba)==<span class="number">1</span>);<span class="comment">//bb&gt;ba</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>警示：有时，用于警告其他程序员会出现某种后果的注释也是有用的。</p></li><li><p>TODO注释：有时用//TODO形式在源代码中放置要做的工作列表。如今，大多数好IDE都提供了特别的手段来定位所有TODO注释，所以TODO注释变得多余。</p></li><li><p>放大(Amplification)：注释可以用来放大某种看来不合理之物的重要性。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String listItemContent=match.group(<span class="number">3</span>).trim();</span><br><span class="line"><span class="comment">//the trim is real important. It removes the starting//spaces that could cause the itam to be recognized</span></span><br><span class="line"><span class="comment">//as another list.</span></span><br><span class="line"><span class="keyword">new</span> ListItemwidget(<span class="keyword">this</span>, listItemContent, <span class="keyword">this</span>.level+<span class="number">1</span>); </span><br><span class="line"><span class="keyword">return</span> buildList(text.substring(match. end()));</span><br></pre></td></tr></table></figure></li><li><p>公共API中的Javadoc</p></li></ol><h2 id="44-bad-comments坏注释"><a class="markdownIt-Anchor" href="#44-bad-comments坏注释"></a> 4.4 Bad Comments(坏注释)</h2><ol><li><p>Mumbling：自言自语的注释，往往是作者边写代码边整理思路时留下的。</p></li><li><p>多余的注释(Redundant Comments)：对足够小的函数不需要再做注释，但是一些关键业务函数加上“他是用来做什么”之类的注释。</p></li><li><p>误导性注释(Misleading Comments)</p></li><li><p>循规式注释(Mandated Comments)：每个函数都要有Javadoc 或每个变量都要有注释的规矩是愚蠢可笑的。</p></li><li><p>日志式注释(Journal Comments)：很久以前，在模块开始处创建并维护这些记录还算有道理。那时，我们还没有源代码控制系统可用。如今，这种冗长的记录只会让模块变得凌乱不堪，应当全部删除。</p></li><li><p>废话注释(Noise Comments)</p></li><li><p>可怕的废话(Scary Noise)：Javadoc 也可能是废话。</p></li><li><p>Don’t Use a Comment When You can Use a Function or a Variable.</p></li><li><p>位置标记(Position Markers)</p></li><li><p>括号后面的注释</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (...) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;<span class="comment">//while</span></span><br></pre></td></tr></table></figure></li><li><p>归属与署名：源代码控制系统非常善于记住是谁在何时添加了什么，源代码控制系统是这类信息最好的归属地。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*Added by Rick*/</span></span><br></pre></td></tr></table></figure></li><li><p>注释掉的代码：20世纪60年代，曾经有那么一段时间，注释掉的代码可能有用，但现在源代码控制系统记住不要的代码。</p></li><li><p>HTML注释</p></li><li><p>非本地信息：假如你一定要写注释，请确保它描述了离它最近的代码，别在本地注释的上下文环境中给出系统级的信息。</p></li><li><p>信息过多：别在注释中添加有趣的历史性话题或者无关的细节描述。</p></li><li><p>不明显的联系：注释及其描述的代码之间的联系应该显而易见。</p></li><li><p>函数头：短函数不需要太多描述。为只做一件事的短函数选个好名字，通常要比写函数头注释要好。</p></li><li><p>非公共代码中的Javadoc</p></li></ol><h1 id="ch5-formatting格式"><a class="markdownIt-Anchor" href="#ch5-formatting格式"></a> Ch5 Formatting(格式)</h1><h2 id="51-vertical-formatting垂直格式"><a class="markdownIt-Anchor" href="#51-vertical-formatting垂直格式"></a> 5.1 Vertical Formatting(垂直格式)</h2><p>有可能用大多数为200行、最长500行的单个文件构造出色的系统。尽管这并非不可违背的原则，也应该乐于接受。短文件通常比长文件易于理解。</p><ol><li><p>Vertical Openness Between Concepts(间隔)：在封包声明、导入声明和每个函数之间，都有空白行隔开。每个空白行都是一条线索，标识出新的独立概念。</p></li><li><p>Vertical Density(靠近)：紧密相关的代码应该互相靠近</p></li><li><p>Vertical Distance(垂直距离)：</p><ul><li><p>变量声明：变量声明应尽可能靠近其使用位置。因为函数很短，本地变量应该在函数的顶部出现。循环中的控制变量应该总是在循环语句中声明。</p></li><li><p>实体变量应该在类的顶部声明。关于实体变量应该放在哪里，争论不断。在C++中，通常会采用所谓“剪刀原则”（scissors rule），所有实体变量都放在底部。而在Java中，惯例是放在类的顶部。</p><blockquote><p>关于“剪刀原则”较为确切的解释：在类的头文件中，公共部分放在前面，私有部分放到后面，这样就可以用剪刀将文件一分为二，上半部分是该类的可用部分。</p></blockquote></li><li><p>相关函数：若某个函数调用了另外一个，就应该把它们放到一起，而且<strong>调用者应该尽可能放在被调用者上面</strong>。</p></li><li><p>概念相关：概念相关的代码应该放到一起。相关性越强，彼此之间的距离就该越短。这些函数有着极强的概念相关性，因为他们拥有共同的命名模式，执行同一基础任务的不同变种。互相调用是第二位的。即便没有互相调用，也应该放在一起。</p></li></ul></li></ol><h2 id="52-horizontal-formatting横向格式"><a class="markdownIt-Anchor" href="#52-horizontal-formatting横向格式"></a> 5.2 Horizontal Formatting(横向格式)</h2><ul><li><p>尽力保持代码行短小。死守80个字符的上限有点僵化，不反对代码行长度达到100个字符或120个字符。</p></li><li><p>无需拖动滚动条到右边的原则。但近年来显示器越来越宽，而年轻程序员又能将显示字符缩小到如此程度，屏幕上甚至能容纳200个字符的宽度。作者的上限是<strong>120</strong>个字符。</p></li></ul><ol><li><p>Horizontal Openness and Density(区隔与靠近)：使用空格字符将彼此紧密相关的事物连接到一起，也用空格字符把相关性较弱的事物分隔开。请看以下函数：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Func</span><span class="params">(String line)</span></span>&#123;<span class="comment">//不在函数名和左圆括号之间加空格,是函数与其参数密切相关；把参数隔开，是参数互相分离的</span></span><br><span class="line">lineCount++;</span><br><span class="line">    <span class="keyword">int</span> lineSize = line.length(); <span class="comment">//在赋值操作符周围加上空格字符，分隔表达式左边、右边</span></span><br><span class="line">    (-b + c) / (<span class="number">2</span>*a);<span class="comment">//空格表示运算顺序</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>水平对齐：汇编语言程序使用水平对齐来强调某些程序结构，但是C、C++、Java不需要。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>    intNumber;</span><br><span class="line"><span class="keyword">float</span>  floatNumber;</span><br><span class="line"><span class="keyword">double</span> doubleNumber;</span><br></pre></td></tr></table></figure></li><li><p>缩进：在短小的if 语句、while循环或小函数中不要违反缩进规则。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (...) &#123;<span class="keyword">return</span> ;&#125;</span><br></pre></td></tr></table></figure></li><li><p>空范围：while或for语句的语句体为空，尽量不使用。如果无法避免，就确保空范围体的缩进，用括号包围起来。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方式1</span></span><br><span class="line"><span class="keyword">while</span> (...)</span><br><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//方式2</span></span><br><span class="line"><span class="keyword">while</span> (...)</span><br><span class="line">;</span><br></pre></td></tr></table></figure></li></ol><h2 id="53-team-rules团队规则"><a class="markdownIt-Anchor" href="#53-team-rules团队规则"></a> 5.3 Team Rules(团队规则)</h2><h1 id="ch6-objects-and-data-structures对象和数据结构"><a class="markdownIt-Anchor" href="#ch6-objects-and-data-structures对象和数据结构"></a> Ch6 Objects and Data Structures(对象和数据结构)</h1><h2 id="61-data-abstraction数据抽象"><a class="markdownIt-Anchor" href="#61-data-abstraction数据抽象"></a> 6.1 Data Abstraction(数据抽象)</h2><p>数据本体是否一定要隐藏起来，也要视使用场合而定；公共变量存在的原因就是其他类总会有存取他的需要。</p><p>不要乱加取值器和赋值器而曝露其内部结构。</p><h2 id="62-dataobjects-anti-symmetrey数据-对象的反对称性"><a class="markdownIt-Anchor" href="#62-dataobjects-anti-symmetrey数据-对象的反对称性"></a> 6.2 Data/Objects Anti-Symmetrey(数据、对象的反对称性)</h2><p>对象把数据隐藏于抽象之后，曝露操作数据的函数。数据结构曝露其数据，没有提供有意义的函数。</p><h2 id="63-the-law-of-demeter得墨忒耳律"><a class="markdownIt-Anchor" href="#63-the-law-of-demeter得墨忒耳律"></a> * 6.3 The Law of Demeter(得墨忒耳律)</h2><p>著名的得墨忒耳律（The Law of Demeter）认为，模块不应了解它所操作对象的内部情形。<br>更准确地说，得墨忒耳律认为，类C的方法f只应该调用以下对象的方法：</p><ul><li>C</li><li>由f创建的对象；</li><li>作为参数传递给f的对象；</li><li>由C的实体变量持有的对象。</li></ul><p>方法不应调用由任何函数返回的对象的方法。</p><h2 id="64-data-transfer-objects数据传送对象"><a class="markdownIt-Anchor" href="#64-data-transfer-objects数据传送对象"></a> 6.4 Data Transfer Objects(数据传送对象)</h2><p>最为精练的数据结构，是一个只有公共变量、没有函数的类。这种数据结构有时被称为数据传送对象，或DTO（Data Transfer Objects）。DTO是非常有用的结构，尤其是在与数据库通信、或解析套接字传递的消息之类场景中。在应用程序代码里一系列将原始数据转换为数据库的翻译过程中，它们往往是排头兵。</p><h1 id="ch7-error-handling错误处理"><a class="markdownIt-Anchor" href="#ch7-error-handling错误处理"></a> * Ch7 Error Handling(错误处理)</h1><p>错误处理很重要，但如果它搞乱了代码逻辑，就是错误的做法。</p><h2 id="71-使用异常而非返回码"><a class="markdownIt-Anchor" href="#71-使用异常而非返回码"></a> 7.1 使用异常而非返回码</h2><h2 id="72-write-your-try-catch-finally-statement-first"><a class="markdownIt-Anchor" href="#72-write-your-try-catch-finally-statement-first"></a> 7.2 Write Your Try-Catch-Finally Statement First</h2><h2 id="73-use-unchecked-exceptions使用不可控异常"><a class="markdownIt-Anchor" href="#73-use-unchecked-exceptions使用不可控异常"></a> 7.3 Use Unchecked Exceptions(使用不可控异常)</h2><p>可控异常的代价就是违反开放/闭合原则。如果你在方法中抛出可控异常，而catch 语句在三个层级之上，你就得在catch 语句和抛出异常处之间的每个方法签名中声明该异常。这意味着对软件中较低层级的修改，都将波及较高层级的签名。修改好的模块必须重新构建、发布，即便它们自身所关注的任何东西都没改动过。</p><h2 id="74-provide-context-with-exceptions给出异常发生的环境说明"><a class="markdownIt-Anchor" href="#74-provide-context-with-exceptions给出异常发生的环境说明"></a> 7.4 Provide Context with Exceptions(给出异常发生的环境说明)</h2><ul><li>抛出的每个异常，都应当提供足够的环境说明，以便判断错误的来源和处所。在Java中，你可以从任何异常里得到堆栈踪迹（stack trace）；然而，堆栈踪迹却无法告诉你该失败操作的初衷。</li><li>应创建信息充分的错误消息，并和异常一起传递出去。在消息中，包括失败的操作和失败类型。如果你的应用程序有日志系统，传递足够的信息给catch块，并记录下来。</li></ul><h2 id="75-define-exception-classes-in-terms-of-a-callers-needs依照调用者需要定义异常类"><a class="markdownIt-Anchor" href="#75-define-exception-classes-in-terms-of-a-callers-needs依照调用者需要定义异常类"></a> 7.5 Define Exception Classes in Terms of a Caller’s Needs(依照调用者需要定义异常类)</h2><p>对错误分类有很多方式。可以依其来源分类：是来目组件还是其他地方？或依其类型分类：是设备错误、网络错误还是编程错误？不过，当我们在应用程序中定义异常类时，最重要的考虑应该是他们如何被捕获。</p><h2 id="76-define-the-normal-flow定义常规流程"><a class="markdownIt-Anchor" href="#76-define-the-normal-flow定义常规流程"></a> 7.6 Define the Normal Flow(定义常规流程)</h2><h2 id="77-dont-return-null"><a class="markdownIt-Anchor" href="#77-dont-return-null"></a> 7.7 Don’t Return Null</h2><h2 id="78-dont-pass-null不传递null值"><a class="markdownIt-Anchor" href="#78-dont-pass-null不传递null值"></a> 7.8 Don’t Pass Null(不传递null值)</h2><h1 id="ch8-boundaries边界"><a class="markdownIt-Anchor" href="#ch8-boundaries边界"></a> * Ch8 Boundaries(边界)</h1><h2 id="81-using-third-party-code使用第三方代码"><a class="markdownIt-Anchor" href="#81-using-third-party-code使用第三方代码"></a> 8.1 Using Third-Party Code(使用第三方代码)</h2><p>第三方程序包和框架提供者追求普适性，这样就能在多个环境中工作，吸引广泛的用户。而使用者则想要集中满足特定需求的接口，这样会导致系统边界上出现问题。</p><h2 id="82-浏览和学习边界"><a class="markdownIt-Anchor" href="#82-浏览和学习边界"></a> 8.2 浏览和学习边界</h2><p>编写测试来浏览和理解第三方代码。</p><h1 id="ch9-unit-tests单元测试"><a class="markdownIt-Anchor" href="#ch9-unit-tests单元测试"></a> Ch9 Unit Tests(单元测试)</h1><h2 id="91-tdd三定律"><a class="markdownIt-Anchor" href="#91-tdd三定律"></a> 9.1 TDD三定律</h2><blockquote><p>TDD是<strong>测试驱动开发</strong>（Test-Driven Development）的英文简称，是敏捷开发中的一项核心实践和技术，也是一种设计方法论。TDD的原理是在开发功能代码之前，先编写单元测试用例代码，测试代码确定需要编写什么产品代码。TDD虽是敏捷方法的核心实践，但不只适用于<a href="https://baike.baidu.com/item/XP/776028" target="_blank" rel="noopener">XP</a>（Extreme Programming），同样可以适用于其他开发方法和过程。</p></blockquote><p>三定律：</p><ol><li>在编写不能通过的单元测试前，不能编写生成代码；</li><li>只可编写刚好无法通过的单元测试，不能编译也算不通过；</li><li>只可编写刚好足以通过当前失败测试的生产代码。</li></ol><h2 id="92-keeping-tests-clean保持测试整洁"><a class="markdownIt-Anchor" href="#92-keeping-tests-clean保持测试整洁"></a> 9.2 Keeping Tests Clean(保持测试整洁)</h2><p>测试代码与生产代码一样重要。</p><p>测试能给软件带来各种好处，flexibilities(可扩展性)、relabilities(可靠性)等。</p><h2 id="93-clean-tests整洁的测试"><a class="markdownIt-Anchor" href="#93-clean-tests整洁的测试"></a> 9.3 Clean Tests(整洁的测试)</h2><h2 id="94-one-assert-per-test每个测试一个断言"><a class="markdownIt-Anchor" href="#94-one-assert-per-test每个测试一个断言"></a> 9.4 One Assert per Test(每个测试一个断言)</h2><ul><li>有流派认为，JUnit中每个测试函数都应该有且只有一个断言语句。</li><li>单个测试中的断言数量应该最小化。</li></ul><h2 id="95-first"><a class="markdownIt-Anchor" href="#95-first"></a> 9.5 F.I.R.S.T.</h2><ul><li>**快速（Fast）**测试应该够快。测试应该能快速运行。测试运行缓慢，你就不会想要频繁地运行它。如果你不频繁运行测试，就不能尽早发现问题，也无法轻易修正，从而也不能轻而易举地清理代码。最终，代码就会腐坏。</li><li>**独立（Independent）**测试应该相互独立。某个测试不应为下一个测试设定条件。你应该可以单独运行每个测试，及以任何顺序运行测试。当测试互相依赖时，头一个没通过就会导致一连串的测试失败，使问题诊断变得困难，隐藏了下级错误。</li><li>**可重复（Repeatable）**测试应当可在任何环境中重复通过。你应该能够在生产环境、质检环境中运行测试，也能够在无网络的列车上用笔记本电脑运行测试。如果测试不能在任意环境中重复，你就总会有个解释其失败的接口。当环境条件不具备时，你也会无法运行测试。</li><li>**自足验证（Self-Validating）**测试应该有布尔值输出。无论是通过或失败，你不应该查看日志文件来确认测试是否通过。你不应该手工对比两个不同文本文件来确认测试是否通过。如果测试不能自足验证，对失败的判断就会变得依赖主观，而运行测试也需要更长的手工操作时间。</li><li>**及时（Timely）**测试应及时编写。单元测试应该恰好在使其通过的生产代码之前编写。如果在编写生产代码之后编写测试，你会发现生产代码难以测试。你可能会认为某些生产代码本身难以测试。你可能不会去设计可测试的代码。</li></ul><h1 id="ch10-classes类"><a class="markdownIt-Anchor" href="#ch10-classes类"></a> Ch10 Classes(类)</h1><h2 id="101-class-organization类的组织"><a class="markdownIt-Anchor" href="#101-class-organization类的组织"></a> 10.1 Class Organization(类的组织)</h2><p>遵循标准的Java约定，类应该从一组变量列表开始。如果有公共静态常量，应该先出现。然后是私有静态变量，以及私有实体变量。很少会有公共变量。公共函数应跟在变量列表之后。我们喜欢把由某个公共函数调用的私有工具函数紧随在该公共函数后面。这符合了自顶向下原则，让程序读起来就像一篇报纸文章。</p><h2 id="102-class-should-be-small类应该短小"><a class="markdownIt-Anchor" href="#102-class-should-be-small类应该短小"></a> 10.2 Class Should Be Small!(类应该短小)</h2><p>对于函数，我们通过计算代码行数衡量大小。对于类，我们采用不同的衡量方法，计算权责（responsibility）。</p><ol><li><p>单一权责原则：一个类应该只有一个发生变化的原因。</p></li><li><p>内聚：</p><ul><li>类应该只有少量实体变量。类中的每个方法都应该操作一个或多个这种变量。通常而言，方法操作的变量越多，就越黏聚到类上。如果一个类中的每个变量都被每个方法所使用，则该类具有最大的内聚性。</li><li>一般来说，创建这种极大化内聚类是既不可取也不可能的；另一方面，我们希望内聚性保持在较高位置。内聚性高，意味着类中的方法和变量互相依赖、互相结合成一个逻辑整体。</li></ul></li><li><p>保持内聚性就会得到许多短小的类</p></li></ol><h2 id="103-organizing-for-change为了修改而组织"><a class="markdownIt-Anchor" href="#103-organizing-for-change为了修改而组织"></a> 10.3 Organizing for Change(为了修改而组织)</h2><blockquote><p>依赖倒置原则(DIP)：高层模块不应该依赖低层模块，二者都应该依赖其抽象；抽象不应该依赖细节；细节应该依赖抽象。</p></blockquote><p>DIP认为类应当依赖于抽象而不是依赖于具体细节。</p><h1 id="ch11-systems系统"><a class="markdownIt-Anchor" href="#ch11-systems系统"></a> * Ch11 Systems(系统)</h1><h2 id="111-separate-constructing-a-system-from-using-it将系统的构造与使用分开"><a class="markdownIt-Anchor" href="#111-separate-constructing-a-system-from-using-it将系统的构造与使用分开"></a> 11.1 Separate Constructing a System from Using It(将系统的构造与使用分开)</h2><ol><li>分解main</li><li>工厂</li><li>依赖注入</li></ol><h2 id="112-scaling-up扩容"><a class="markdownIt-Anchor" href="#112-scaling-up扩容"></a> 11.2 Scaling Up(扩容)</h2><h2 id="113-java-proxiesjava代理"><a class="markdownIt-Anchor" href="#113-java-proxiesjava代理"></a> 11.3 Java Proxies(Java代理)</h2><h2 id="114-pure-java-aop-frameworks纯java-aop框架"><a class="markdownIt-Anchor" href="#114-pure-java-aop-frameworks纯java-aop框架"></a> 11.4 Pure Java AOP Frameworks(纯Java AOP框架)</h2><h2 id="115-aspectj-aspectsaspectj的方面"><a class="markdownIt-Anchor" href="#115-aspectj-aspectsaspectj的方面"></a> 11.5 AspectJ Aspects(AspectJ的方面)</h2><h2 id="116-test-drive-the-system-architecture测试驱动系统框架"><a class="markdownIt-Anchor" href="#116-test-drive-the-system-architecture测试驱动系统框架"></a> 11.6 Test Drive the System Architecture(测试驱动系统框架)</h2><h2 id="117-optimize-decision-making优化决策"><a class="markdownIt-Anchor" href="#117-optimize-decision-making优化决策"></a> 11.7 Optimize Decision Making(优化决策)</h2><h1 id="ch12-emergence迭进"><a class="markdownIt-Anchor" href="#ch12-emergence迭进"></a> Ch12 Emergence(迭进)</h1><p>Kent Beck关于简单设计的四条规则：</p><ol><li>运行所有测试；</li><li>不可重复；</li><li>表达了程序员的意图；</li><li>尽可能减少类和方法的数量；</li></ol><p>以上规则按其重要程度排列。</p><h1 id="ch13-concurrency并发编程"><a class="markdownIt-Anchor" href="#ch13-concurrency并发编程"></a> * Ch13 Concurrency(并发编程)</h1><blockquote><p>“对象是过程的抽象。线程是调度的抽象。”   一James O Coplien</p></blockquote><h2 id="131-并发防御原则"><a class="markdownIt-Anchor" href="#131-并发防御原则"></a> 13.1 并发防御原则</h2><ol><li>单一权责原则：分离并发相关代码与其他代码</li><li>限制数据作用域：谨记数据封装；严格限制对可能被共享的数据的访问。</li><li>使用数据副本</li><li>线程尽可能独立：尝试将数据分解到可被独立线程（可能在不同处理器上）操作的独立子集。</li></ol><h1 id="ch14-successive-refinement逐步改进"><a class="markdownIt-Anchor" href="#ch14-successive-refinement逐步改进"></a> Ch14 Successive Refinement(逐步改进)</h1><h1 id="ch15-junit-internalsjunit内幕"><a class="markdownIt-Anchor" href="#ch15-junit-internalsjunit内幕"></a> * Ch15 JUnit Internals(JUnit内幕)</h1><h1 id="ch16-refactoring-serialdate重构-serialdate"><a class="markdownIt-Anchor" href="#ch16-refactoring-serialdate重构-serialdate"></a> * Ch16 Refactoring SerialDate(重构 SerialDate)</h1><h1 id="ch17-smells-and-heuristics味道与启发"><a class="markdownIt-Anchor" href="#ch17-smells-and-heuristics味道与启发"></a> * Ch17 Smells and Heuristics(味道与启发)</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="阅读" scheme="https://Dragonliu2022.github.io/categories/阅读/"/>
+    
+    
+    <category term="IT书籍" scheme="https://Dragonliu2022.github.io/tags/IT书籍/"/>
+    
+    <category term="重构" scheme="https://Dragonliu2022.github.io/tags/重构/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>i南航自动打卡</title>
+    <link href="https://dragonliu2022.github.io/2022/04/13/i%E5%8D%97%E8%88%AA%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1/"/>
+    <id>https://dragonliu2022.github.io/2022/04/13/i%E5%8D%97%E8%88%AA%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1/</id>
+    <published>2022-04-13T04:17:36.000Z</published>
+    <updated>2022-05-28T02:29:46.927Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="1-引言"><a class="markdownIt-Anchor" href="#1-引言"></a> 1 引言</h1><p><strong>需求</strong>：每天的i南航打卡比较难受，想自动化处理此事。</p><p><strong>声明</strong>：学习与技术讨论，勿实操！！！</p><h1 id="2-解决"><a class="markdownIt-Anchor" href="#2-解决"></a> 2 解决</h1><p>解决思路主要用四种：</p><table><thead><tr><th style="text-align:center">方法</th><th style="text-align:left">优点</th><th style="text-align:left">缺点</th></tr></thead><tbody><tr><td style="text-align:center">快捷指令</td><td style="text-align:left">1. 方便；<br>2. 打卡失败与否，提醒明显</td><td style="text-align:left">1. 只适用于iPhone和iPad；<br>2. 会上传cookie，安全性无法保障；<br>3. 由于是别人编写的快捷指令，更新受制于人。</td></tr><tr><td style="text-align:center">Curl指令</td><td style="text-align:left"></td><td style="text-align:left"></td></tr><tr><td style="text-align:center">Post请求</td><td style="text-align:left"></td><td style="text-align:left"></td></tr><tr><td style="text-align:center">selenium模拟</td><td style="text-align:left"></td><td style="text-align:left"></td></tr></tbody></table><ol><li><strong>编写快捷指令</strong></li><li></li></ol><h2 id="21-ios系统"><a class="markdownIt-Anchor" href="#21-ios系统"></a> 2.1  IOS系统</h2><p>iPhone和iPad可以使用快捷指令，体验感较好。</p><p>But最近i南航签到界面增加了字段，目前（2022年4月13日）打卡虽然可以成功，但是健康码是黄色的。快捷指令的作者当前未更新，自己不会改。🥦</p><p>(2022年4月14日)打卡恢复正常。</p><ul><li><p><a href="https://blog.cvvv.me/posts/a67c.html" target="_blank" rel="noopener">博客教程：使用快捷指令自动进行i·南航健康打卡</a></p></li><li><p><a href="https://www.bilibili.com/video/BV1CY41137Af" target="_blank" rel="noopener">B站教程：【南航】【i南航打卡】iOS/iPadOS快捷指令i南航自动打卡教程</a></p></li></ul><h2 id="22-linux客户机或服务器"><a class="markdownIt-Anchor" href="#22-linux客户机或服务器"></a> 2.2 Linux客户机或服务器</h2><p>wood的项目：<a href="https://github.com/Wood1314/inuaa" target="_blank" rel="noopener">i南航校外自动打卡小工具</a></p><h2 id="23-windows待完成"><a class="markdownIt-Anchor" href="#23-windows待完成"></a> 2.3 Windows（待完成）</h2><p>上面wood的项目是通过Linux服务器运行脚本，邮件通知提醒打卡成功。</p><p>对脚本稍作修改，迁移到Windows上来，实现定时运行脚本+Windows自带的消息通知。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="未分类" scheme="https://Dragonliu2022.github.io/categories/未分类/"/>
+    
+    
+    <category term="待补充" scheme="https://Dragonliu2022.github.io/tags/待补充/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux操作手册</title>
+    <link href="https://dragonliu2022.github.io/2022/04/13/Linux%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/"/>
+    <id>https://dragonliu2022.github.io/2022/04/13/Linux%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/</id>
+    <published>2022-04-13T02:14:47.000Z</published>
+    <updated>2022-04-13T04:08:07.035Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="1-命令"><a class="markdownIt-Anchor" href="#1-命令"></a> 1 命令</h1><h2 id="11-基本"><a class="markdownIt-Anchor" href="#11-基本"></a> 1.1 基本</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">touch file <span class="comment">#创建文件</span></span><br><span class="line">mkdir dir <span class="comment">#新建目录</span></span><br><span class="line">cp -r src target <span class="comment">#复制文件(夹)</span></span><br><span class="line">rm -rf dir <span class="comment">#强制删除文件(夹)</span></span><br><span class="line">mv src target <span class="comment">#移动或重命名文件(夹)</span></span><br><span class="line"><span class="built_in">cd</span> <span class="comment">#切换目录</span></span><br><span class="line"><span class="built_in">pwd</span> <span class="comment">#查看当前目录</span></span><br><span class="line">man &lt;command_name&gt; <span class="comment">#获得某个命令的说明和使用方式的详细介绍</span></span><br><span class="line">who am i <span class="comment">#查看用户</span></span><br><span class="line">su &lt;user&gt; <span class="comment">#可以切换到用户 user</span></span><br><span class="line">su - &lt;user&gt; <span class="comment">#切换用户，但是同时用户的环境变量和工作目录也会跟着改变成目标用户所对应的</span></span><br><span class="line">sudo adduser &lt;user&gt; <span class="comment">#新建用户</span></span><br><span class="line">groups &lt;user&gt; <span class="comment">#查看自己属于的用户组</span></span><br><span class="line">sudo usermod -G sudo &lt;user&gt; <span class="comment">#将用户添加到sudo用户组</span></span><br><span class="line">sudo deluser &lt;user&gt; --remove-home <span class="comment">#删除用户，参数是在删除用户时候会一并将该用户的工作目录一并删除</span></span><br><span class="line">sudo groupdel &lt;group&gt; <span class="comment">#删除用户组，倘若该群组中仍包括某些用户，则必须先删除这些用户后，才能删除群组</span></span><br><span class="line"><span class="comment"># 修改权限</span></span><br><span class="line">chmod 777 file <span class="comment">#读写执行rwx二进制位数分别是210，文件有三组固定的权限，拥有者，所属用户组，其他用户</span></span><br><span class="line">chmod gou-rw file <span class="comment">#g(group用户组)、o(others其他用户)、u(user用户)，+ - 表示增加和去掉相应的权限</span></span><br><span class="line">file &lt;file&gt; <span class="comment">#查看文件类型</span></span><br><span class="line"><span class="comment">#查看文件</span></span><br><span class="line">cat -n file <span class="comment">#参数是显示行号</span></span><br><span class="line">nl -b a file <span class="comment">#与上面一样</span></span><br><span class="line">nl -b t file <span class="comment">#只列出非空行，默认</span></span><br><span class="line">head/tail -n 1 file <span class="comment">#只看文件首部尾部一行</span></span><br><span class="line">head/tail -f file <span class="comment">#这个参数可以实现不停地读取某个文件的内容并显示，实现实时监视</span></span><br></pre></td></tr></table></figure><h2 id="12-压缩解压"><a class="markdownIt-Anchor" href="#12-压缩解压"></a> 1.2 压缩/解压</h2><h3 id="121-gzip"><a class="markdownIt-Anchor" href="#121-gzip"></a> 1.2.1 gzip</h3><ul><li><p>压缩后的格式为：*.gz</p></li><li><p>这种压缩方式不能保存原文件；且不能压缩目录</p></li><li><p>命令举例：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">压缩</span></span><br><span class="line">gzip file</span><br><span class="line"><span class="meta">#</span><span class="bash">解压</span></span><br><span class="line">gunzip file.gz</span><br></pre></td></tr></table></figure></li></ul><h3 id="122-tar"><a class="markdownIt-Anchor" href="#122-tar"></a> 1.2.2 tar</h3><ul><li><p>命令选项：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-z(gzip)      用gzip来压缩/解压缩文件</span><br><span class="line">-j(bzip2)     用bzip2来压缩/解压缩文件</span><br><span class="line">-v(verbose)   详细报告tar处理的文件信息</span><br><span class="line">-c(create)    创建新的档案文件</span><br><span class="line">-x(extract)   解压缩文件或目录</span><br><span class="line">-f(file)      使用档案文件或设备，这个选项通常是必选的。</span><br></pre></td></tr></table></figure></li><li><p>命令举例</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">压缩</span></span><br><span class="line">tar -zvcf file.tar.gz file</span><br><span class="line">tar -jvcf file.tar.bz2 file</span><br><span class="line"><span class="meta">#</span><span class="bash">解压</span></span><br><span class="line">tar -zvxf file.tar.gz </span><br><span class="line">tar -jvxf file.tar.bz2</span><br></pre></td></tr></table></figure></li></ul><h3 id="123-zip"><a class="markdownIt-Anchor" href="#123-zip"></a> 1.2.3 zip</h3><ul><li><p>与gzip相比：1）可以压缩目录； 2）可以保留原文件</p></li><li><p>命令选项：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-r(recursive)    递归压缩目录内的所有文件和目录</span><br></pre></td></tr></table></figure></li><li><p>命令举例：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">压缩</span></span><br><span class="line">zip -r dir.zip dir</span><br><span class="line"><span class="meta">#</span><span class="bash">解压</span></span><br><span class="line">unzip dir.zip</span><br></pre></td></tr></table></figure></li></ul><h1 id="2-快捷键"><a class="markdownIt-Anchor" href="#2-快捷键"></a> 2 快捷键</h1><table><thead><tr><th style="text-align:center">按键</th><th style="text-align:center">作用</th></tr></thead><tbody><tr><td style="text-align:center"><code>Ctrl+c</code></td><td style="text-align:center">强行终止当前程序</td></tr><tr><td style="text-align:center"><code>Ctrl+z</code></td><td style="text-align:center">将当前程序放到后台运行，恢复到前台为命令<code>fg</code></td></tr><tr><td style="text-align:center"><code>Ctrl+a</code></td><td style="text-align:center">将光标移至输入行头，相当于<code>Home</code>键</td></tr><tr><td style="text-align:center"><code>Ctrl+e</code></td><td style="text-align:center">将光标移至输入行末，相当于<code>End</code>键</td></tr><tr><td style="text-align:center"><code>Ctrl+k</code></td><td style="text-align:center">删除从光标所在位置到行末</td></tr><tr><td style="text-align:center"><code>Alt+Backspace</code></td><td style="text-align:center">向前删除一个单词</td></tr><tr><td style="text-align:center"><code>Shift+PgUp</code></td><td style="text-align:center">将终端显示向上滚动</td></tr><tr><td style="text-align:center"><code>Shift+PgDn</code></td><td style="text-align:center">将终端显示向下滚动</td></tr></tbody></table><h1 id="3-通配符"><a class="markdownIt-Anchor" href="#3-通配符"></a> 3 通配符</h1><table><thead><tr><th style="text-align:center">字符</th><th style="text-align:center">含义</th></tr></thead><tbody><tr><td style="text-align:center"><code>*</code></td><td style="text-align:center">匹配 0 或多个字符</td></tr><tr><td style="text-align:center"><code>?</code></td><td style="text-align:center">匹配任意一个字符</td></tr><tr><td style="text-align:center"><code>[list]</code></td><td style="text-align:center">匹配 list 中的任意单一字符</td></tr><tr><td style="text-align:center"><code>[^list]</code></td><td style="text-align:center">匹配 除 list 中的任意单一字符以外的字符</td></tr><tr><td style="text-align:center"><code>[c1-c2]</code></td><td style="text-align:center">匹配 c1-c2 中的任意单一字符 如：[0-9][a-z]</td></tr><tr><td style="text-align:center"><code>{string1,string2,...}</code></td><td style="text-align:center">匹配 string1 或 string2 (或更多)其一字符串</td></tr><tr><td style="text-align:center"><code>{c1..c2}</code></td><td style="text-align:center">匹配 c1-c2 中全部字符 如{1…10}</td></tr></tbody></table><h1 id="4-目录结构"><a class="markdownIt-Anchor" href="#4-目录结构"></a> 4 目录结构</h1><img src="https://cdn.jsdelivr.net/gh/Dragonliu2018/FigureBed@master/img/4-1.png">]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="环境与工具" scheme="https://Dragonliu2022.github.io/categories/环境与工具/"/>
     
     
   </entry>
